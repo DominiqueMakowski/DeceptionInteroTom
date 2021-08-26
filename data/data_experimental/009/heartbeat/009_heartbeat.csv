@@ -1,0 +1,10 @@
+﻿task,time,text,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,idresponse.text,heartbeatresponse.text,confidenceslider.response,confidenceslider.rt,text_2.started,text_2.stopped,key_guess.keys,key_guess.rt,key_guess.started,key_guess.stopped,text_3.started,text_3.stopped,key_noguess.keys,key_noguess.rt,key_noguess.started,key_noguess.stopped,text_4.started,text_4.stopped,key_noguess_perturbed.keys,key_noguess_perturbed.rt,key_noguess_perturbed.started,key_noguess_perturbed.stopped,text_perturbed.started,text_perturbed.stopped,participant,session,date,expName,psychopyVersion,frameRate
+Count40,40,+,0,0,0,4,ID 009,Enter Number  38,0.723148148,3.582208388,,,,,,,,,,,,,,,,,,,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+Count35,35,+,0,1,1,3,,Enter Number33,0.486111111,2.548248935,,,,,,,,,,,,,,,,,,,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+Count30,30,+,0,2,2,2,,Enter Number   30,0.418518519,4.066794816,,,,,,,,,,,,,,,,,,,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+Count25,25,+,0,3,3,1,,Enter Number   29,0.557407407,1.864124012,,,,,,,,,,,,,,,,,,,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+Count20,20,+,0,4,4,0,,Enter Number   25,0.583333333,1.596882511,,,,,,,,,,,,,,,,,,,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+,,,,,,,,,,,382.2950592,None,None,,429.5903709,None,,,,,,,,,,,,,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+,,,,,,,,,,,490.5674759,None,,,,,429.5903709,None,None,,543.3289859,None,,,,,,,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+,,,,,,,,,,,604.3060191,None,,,,,,,,,,,543.3289859,None,"['space', 'space']","[22.070479227229953, 57.742482006549835]",690.5475576,None,,,9,1,2021_Feb_17_1318,Heartbeat,2020.2.10,60.02198932
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,690.5475576,None,,,,,,
