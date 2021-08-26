@@ -1,0 +1,10 @@
+﻿task,time,text,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,idresponse.text,heartbeatresponse.text,confidenceslider.response,confidenceslider.rt,text_2.started,text_2.stopped,key_guess.keys,key_guess.rt,key_guess.started,key_guess.stopped,text_3.started,text_3.stopped,key_noguess.keys,key_noguess.rt,key_noguess.started,key_noguess.stopped,text_4.started,text_4.stopped,key_noguess_perturbed.keys,key_noguess_perturbed.rt,key_noguess_perturbed.started,key_noguess_perturbed.stopped,text_perturbed.started,text_perturbed.stopped,participant,session,date,expName,psychopyVersion,frameRate
+Count35,35,+,0,0,0,3,ID 013,Enter Number  26,0.256481481,17.26255458,,,,,,,,,,,,,,,,,,,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+Count30,30,+,0,1,1,2,,3,0.000925926,2.265283967,,,,,,,,,,,,,,,,,,,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+Count40,40,+,0,2,2,4,,19,0.135185185,1.86462318,,,,,,,,,,,,,,,,,,,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+Count25,25,+,0,3,3,1,,11,0.067592593,2.630621573,,,,,,,,,,,,,,,,,,,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+Count20,20,+,0,4,4,0,,7,0.061111111,2.331448729,,,,,,,,,,,,,,,,,,,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+,,,,,,,,,,,658.1949276,None,"['space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space']","[4.079905671533197, 6.176033976487815, 11.576124378480017, 13.544066318776459, 15.824000348802656, 18.10391448950395, 27.65605411026627, 38.00838030921295, 46.408067784272134]",725.8714768,None,,,,,,,,,,,,,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+,,,,,,,,,,,786.8482546,None,,,,,725.8714768,None,None,,812.5627569,None,,,,,,,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+,,,,,,,,,,,873.5398853,None,,,,,,,,,,,812.5627569,None,None,,982.5624839,None,,,13,1,2021_Feb_19_1002,Heartbeat,2020.2.10,60.02823101
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,982.5624839,None,,,,,,
