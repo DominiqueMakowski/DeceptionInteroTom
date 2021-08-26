@@ -1,0 +1,294 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,Q2,Q3_1,Q3_2,Q3_3,Q3_4,Q3_5,Q3_6,Q3_7,Q3_8,Q3_9,Q3_10,Q3_11,Q3_12,Q3_13,Q3_14,Q3_15,Q3_16,Q3_17,Q3_18,Q3_19,Q3_20,Q3_21,Q3_22,Q3_23,Q3_24,Q3_25,Q3_26,Q3_27,Q3_28,Q3_29,Q3_30,Q3_31,Q3_32,Q4_1,Q4_2,Q4_3,Q4_4,Q4_5,Q4_6,Q4_7,Q4_8,Q4_9,Q4_10,Q4_11,Q4_12,Q4_13,Q4_14,Q4_15,Q4_16,Q4_17,Q4_18,Q4_19,Q4_20,Q4_21,Q4_22,Q4_23,Q4_24,Q4_25,Q4_26,Q4_27,Q4_28,Q4_29,Q4_30,Q4_31,Q4_32
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Please indicate your subject ID:,"Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 1.	I’m a rebellious person.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 2.	I’m more tough-minded than other people.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 3.	I think I could ""beat"" a lie detector.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 4.	I have taken illegal drugs (e.g., marijuana, ecstasy).","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 5.	I have never been involved in delinquent gang activity.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 6.	I have never stolen a truck, car or motorcycle.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 7.	Most people are wimps.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 8.	I purposely flatter people to get them on my side.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 9.	I’ve often done something dangerous just for the thrill of it.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 10.	I have tricked someone into giving me money.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 11.	It tortures me to see an injured animal.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 12.	I have assaulted a law enforcement official or social worker.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 13.	I have pretended to be someone else in order to get something.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 14.	I always plan out my weekly activities.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 15.	I like to see fist-fights.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 16.	I’m not tricky or sly.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 17.	I’d be good at a dangerous job because I make fast decisions.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 18.	I have never tried to force someone to have sex.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 19.	My friends would say that I am a warm person.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 20.	I would get a kick out of ‘scamming’ someone.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 21.	I have never attacked someone with the idea of injuring them.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 22.	I never miss appointments.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 23.	I avoid horror movies.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 24.	I trust other people to be honest.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 25.	I hate high speed driving.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 26.	I feel so sorry when I see a homeless person.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 27.	It's fun to see how far you can push people before they get upset.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 28.	I enjoy doing wild things.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 29.	I have broken into a building or vehicle in order to steal something or vandalize.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 30.	I don’t bother to keep in touch with my family any more.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 31.	I find it difficult to manipulate people.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 32. I rarely follow the rules.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 33.	I never cry at movies.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 34.	I have never been arrested.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 35.	You should take advantage of other people before they do it to you.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 36.	I don’t enjoy gambling for real money.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 37.	People sometimes say that I’m cold-hearted.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 38.	People can usually tell if I am lying.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 39.	I like to have sex with people I barely know.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 40.	I love violent sports and movies.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 41. Sometimes you have to pretend you like people to get something out of them.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 42.	I am an impulsive person.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 43.	I have taken hard drugs (e.g., heroin, cocaine).","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 44.	I'm a soft-hearted person.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 45.	I can talk people into anything.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 46.	I never shoplifted from a store.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 47.	I don’t enjoy taking risks.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 48.	 People are too sensitive when I tell them the truth about themselves.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 49.	I was convicted of a serious crime.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 50.	Most people tell lies everyday.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 51.	I keep getting in trouble for the same things over and over.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 52.	Every now and then I carry a weapon (knife or gun) for protection.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 53.	People cry way too much at funerals.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 54.	You can get what you want by telling people what they want to hear.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 55.	I easily get bored.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 56.	I never feel guilty over hurting others.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 57.	I have threatened people into giving me money, clothes, or makeup.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 58.	A lot of people are “suckers” and can easily be fooled.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 59.	I admit that I often “mouth off” without thinking.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 60.	I sometimes dump friends that I don’t need any more.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 61.	I would never step on others to get what I want.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 62.	I have close friends who served time in prison.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 63.	I purposely tried to hit someone with the vehicle I was driving.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 64. I have violated my probation from prison."
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID2_TEXT""}","{""ImportId"":""QID3_1""}","{""ImportId"":""QID3_2""}","{""ImportId"":""QID3_3""}","{""ImportId"":""QID3_4""}","{""ImportId"":""QID3_5""}","{""ImportId"":""QID3_6""}","{""ImportId"":""QID3_7""}","{""ImportId"":""QID3_8""}","{""ImportId"":""QID3_9""}","{""ImportId"":""QID3_10""}","{""ImportId"":""QID3_11""}","{""ImportId"":""QID3_12""}","{""ImportId"":""QID3_13""}","{""ImportId"":""QID3_14""}","{""ImportId"":""QID3_15""}","{""ImportId"":""QID3_16""}","{""ImportId"":""QID3_17""}","{""ImportId"":""QID3_18""}","{""ImportId"":""QID3_19""}","{""ImportId"":""QID3_20""}","{""ImportId"":""QID3_21""}","{""ImportId"":""QID3_22""}","{""ImportId"":""QID3_23""}","{""ImportId"":""QID3_24""}","{""ImportId"":""QID3_25""}","{""ImportId"":""QID3_26""}","{""ImportId"":""QID3_27""}","{""ImportId"":""QID3_28""}","{""ImportId"":""QID3_29""}","{""ImportId"":""QID3_30""}","{""ImportId"":""QID3_31""}","{""ImportId"":""QID3_32""}","{""ImportId"":""QID4_1""}","{""ImportId"":""QID4_2""}","{""ImportId"":""QID4_3""}","{""ImportId"":""QID4_4""}","{""ImportId"":""QID4_5""}","{""ImportId"":""QID4_6""}","{""ImportId"":""QID4_7""}","{""ImportId"":""QID4_8""}","{""ImportId"":""QID4_9""}","{""ImportId"":""QID4_10""}","{""ImportId"":""QID4_11""}","{""ImportId"":""QID4_12""}","{""ImportId"":""QID4_13""}","{""ImportId"":""QID4_14""}","{""ImportId"":""QID4_15""}","{""ImportId"":""QID4_16""}","{""ImportId"":""QID4_17""}","{""ImportId"":""QID4_18""}","{""ImportId"":""QID4_19""}","{""ImportId"":""QID4_20""}","{""ImportId"":""QID4_21""}","{""ImportId"":""QID4_22""}","{""ImportId"":""QID4_23""}","{""ImportId"":""QID4_24""}","{""ImportId"":""QID4_25""}","{""ImportId"":""QID4_26""}","{""ImportId"":""QID4_27""}","{""ImportId"":""QID4_28""}","{""ImportId"":""QID4_29""}","{""ImportId"":""QID4_30""}","{""ImportId"":""QID4_31""}","{""ImportId"":""QID4_32""}"
+2021-01-14 02:10:29,2021-01-14 02:18:53,IP Address,155.69.193.53,100,503,True,2021-01-14 02:18:53,R_2V9MmS5tBzchSYC,,,,,1.3209991455078125,103.839508056640625,anonymous,EN,004,4,4,2,1,1,1,1,1,3,1,5,1,4,4,1,1,2,1,4,1,1,2,2,5,2,5,1,4,1,1,3,2,2,1,1,5,1,4,1,1,3,4,1,4,2,5,2,2,1,5,4,1,1,4,2,1,1,1,1,1,5,1,1,1
+2021-01-21 01:29:51,2021-01-21 01:35:29,IP Address,155.69.190.53,100,337,True,2021-01-21 01:35:30,R_3rMn1OuprKNLeo6,,,,,1.2928924560546875,103.854705810546875,anonymous,EN,005,3,3,3,4,5,5,2,4,5,1,3,1,4,2,1,3,3,5,5,1,5,4,3,5,3,5,1,5,1,1,3,1,4,5,3,5,1,3,1,1,5,3,1,5,3,5,3,2,1,5,2,1,3,5,4,1,1,3,4,1,3,1,1,1
+2021-01-24 21:41:47,2021-01-24 23:06:33,IP Address,155.69.190.53,100,5086,True,2021-01-24 23:06:33,R_1InquAgTVrMaZ3C,,,,,1.2928924560546875,103.854705810546875,anonymous,EN,006,3,4,1,1,5,5,1,1,1,1,5,1,1,5,1,3,1,5,3,1,5,3,5,4,3,3,1,3,1,1,4,1,1,5,1,3,1,2,1,1,1,1,1,5,3,1,4,4,1,5,1,1,1,3,2,1,1,1,1,2,4,1,1,1

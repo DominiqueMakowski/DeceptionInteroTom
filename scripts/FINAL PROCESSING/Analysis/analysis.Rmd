@@ -1,0 +1,747 @@
+---
+title: "Analysis"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+editor_options: 
+  chunk_output_type: console
+---
+
+# Libraries
+```{r setup, include=TRUE, warning = FALSE, message = FALSE}
+setwd("~/Dropbox/FYP_Jia Rong/R Processing/FINAL PROCESSING/Analysis")
+library(tidyverse)
+library(lme4)
+library(ggplot2)
+library(glmmTMB)
+library(correlation)
+library(sjPlot)
+library(easystats)
+library(report)
+#library(ggpubr)
+
+descriptive_statistics <- function(df, begins_with){
+  df %>% 
+    select(dplyr::starts_with(begins_with)) %>% 
+    report() %>% 
+    as.data.frame() %>% 
+    select(-one_of(c("n_Obs", "Median", "MAD", "n_Missing"))) %>% 
+    print()
+  
+  plot(df %>% 
+    select(dplyr::starts_with(begins_with)) %>% 
+    bayestestR::estimate_density(method = "KernSmooth") %>% 
+    plot() + 
+      xlab("Score") + ylab("Frequency") +
+    see::theme_modern())
+}
+
+```
+
+# Read data
+
+```{r read_data, include=TRUE, warning = FALSE, message = FALSE}
+Behav <- read.csv('BehaviouraldataNEW.csv', stringsAsFactors = FALSE, header = TRUE)[-c(1)] %>% 
+  rename(participant = ID,
+         truthfulness = condition) %>% 
+  mutate(ConditionSP = rep(c("social","polygraph"), each = 40, times = 30))
+
+Behav[stringr::str_detect(names(Behav), "subresp")] <- effectsize::change_scale(Behav[stringr::str_detect(names(Behav), "subresp")], from = c(0, 1), to = c(10, -10))
+
+
+Phy <- read.csv('DT.csv', stringsAsFactors = FALSE, header = TRUE) [-c(1),] %>% 
+  rename(participant = Participant.number,) %>% 
+  mutate(Trial = rep(1:80, each = 4, times = 30)) 
+
+Phy2 <- read.csv('DT_04.csv', stringsAsFactors = FALSE, header = TRUE) [-c(1),] %>% 
+  rename(participant = Participant.number,) %>% 
+  mutate(Trial = rep(1:80, each = 4, times = 30)) 
+
+Phy3 <- read.csv('DT_03.csv', stringsAsFactors = FALSE, header = TRUE) [-c(1),] %>% 
+  rename(participant = Participant.number,) %>% 
+  mutate(Trial = rep(1:80, each = 4, times = 30)) 
+
+data <- merge(Behav, Phy2, by = c("participant" ,"Trial"), all = TRUE) %>% 
+  arrange(participant,Trial) %>% 
+  mutate(participant = as.factor(participant),
+         ConditionSP = as.factor(ConditionSP))
+
+Demo <- read.csv('demo_30.csv', stringsAsFactors = FALSE, header = TRUE)[-c(2,3,4:6,9,11,12,18)]
+
+```
+
+# Cleaning data
+
+```{r cleandata, include=TRUE, warning = FALSE, message = FALSE}
+data <- data %>% 
+  filter(Inclusion != "0")
+
+```
+
+
+# Descriptive Statistics
+
+## Participants Demographics Information
+Summary of participants Gender, Age, and handedness
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+#General Descriptive Stats
+report(Demo)
+report_participants(Demo)
+
+Gender <- Demo %>% 
+  group_by(Gender) %>% 
+  summarize(n = n(),
+            Ratio = n() / nrow(Demo))
+
+Age <- Demo [-c(1),] %>% 
+  summarise(mean(Age),sd(Age))
+report(Demo$Age)
+
+Handedness <- Demo %>% 
+  group_by(handedness) %>% 
+  summarize(n = n(),
+            Ratio = n() / nrow(Demo))
+report(Demo$handedness)
+
+
+#Gender
+as.data.frame(table(Demo$Gender)) %>%
+  ggplot(aes(x="", y =Freq, fill = reorder(Var1, -Freq))) +
+  geom_bar(width = 1, stat = "identity") +
+  labs(fill = "Gender") +
+  coord_polar("y", start = 0, direction = -1) +
+  scale_fill_brewer(palette="Blues") +
+  theme_void() +
+  theme(legend.text = element_text(size = 12)) +
+  theme(legend.title = element_text(face = "bold", size = 20))
+
+#Age
+as.data.frame(table(Demo$Age)) %>%
+  ggplot(aes(x="", y =Freq, fill = reorder(Var1, -Freq))) +
+  geom_bar(width = 1, stat = "identity") +
+  labs(fill = "Age") +
+  coord_polar("y", start = 0, direction = 1) +
+  scale_fill_brewer(palette="Oranges", breaks=c("18","19","20","21","22","24","25")) +
+  theme_void() +
+  theme(legend.text = element_text(size = 15)) +
+  theme(legend.title = element_text(face = "bold", size = 20))
+
+#Handedness
+as.data.frame(table(Demo$handedness)) %>%
+  ggplot(aes(x="", y =Freq, fill = reorder(Var1, Freq))) +
+  geom_bar(width = 1, stat = "identity") +
+  labs(fill = "Handedness") +
+  coord_polar("y", start = 0, direction = -1) +
+  scale_fill_brewer(palette="greens") +
+  theme_void() +
+  theme(legend.text = element_text(size = 12)) +
+  theme(legend.title = element_text(face = "bold", size = 20))
+
+#Ethnicity
+as.data.frame(table(Demo$Ethnicity)) %>%
+  ggplot(aes(x="", y =Freq, fill = reorder(Var1, -Freq))) +
+  geom_bar(width = 1, stat = "identity") +
+  labs(fill = "Ethnicity") +
+  coord_polar("y", start = 0, direction = -1) +
+  scale_fill_brewer(palette="Pastel1") +
+  theme_void() +
+  theme(legend.text = element_text(size = 12)) +
+  theme(legend.title = element_text(face = "bold", size = 20))
+
+#Religion
+as.data.frame(table(Demo$Religion)) %>%
+  ggplot(aes(x="", y =Freq, fill = reorder(Var1, -Freq))) +
+  geom_bar(width = 1, stat = "identity") +
+  labs(fill = "Religion") +
+  coord_polar("y", start = 0, direction = -1) +
+  scale_fill_brewer(palette="Set2") +
+  theme_void() +
+  theme(legend.text = element_text(size = 12)) +
+  theme(legend.title = element_text(face = "bold", size = 20))
+
+#Nationality
+as.data.frame(table(Demo$Nationality)) %>%
+  ggplot(aes(x="", y =Freq, fill = reorder(Var1, -Freq))) +
+  geom_bar(width = 1, stat = "identity") +
+  labs(fill = "Nationality") +
+  coord_polar("y", start = 0, direction = -1) +
+  scale_fill_brewer(palette="Set2") +
+  theme_void() +
+  theme(legend.text = element_text(size = 12)) +
+  theme(legend.title = element_text(face = "bold", size = 20))
+
+
+des_stat <- data %>% 
+group_by(participant) %>% 
+  summarise_all(mean) %>% 
+  mutate(yoni_new = yoni_affective + yoni_cognitive) %>% 
+  select(-ends_with("Total"),
+          -ends_with("TotalAvg"))
+
+descriptive_statistics(des_stat, "BES_")          #Basic Empathy/ToM
+descriptive_statistics(des_stat, "Lie_")          #Deceptive Tendency
+descriptive_statistics(des_stat, "MAIA")          #Interoceptive Awareness
+descriptive_statistics(des_stat, "SRP3_")         #Psychopathic Traits
+descriptive_statistics(des_stat, "HCT") +
+  facet_wrap(~Parameter, scales="free")         #Heartbeat Counting Task (Interoception)
+descriptive_statistics(des_stat, "yoni_")         #Yoni Task (ToM)
+
+df_sub <- Behav %>% 
+  filter(truthfulness == "LIE") %>% 
+  group_by(participant, ConditionSP) %>% 
+  summarise_all(mean) %>% 
+  select(1,2,9) %>% 
+  pivot_wider(names_from = ConditionSP, values_from = subresp) %>% 
+  rename(sub_poly = polygraph,
+         sub_soc = social) %>% 
+  mutate(participant = as.factor(participant)) %>% 
+  mutate(sub_total = (sub_poly + sub_soc)/2) %>% 
+  ungroup(participant)
+
+
+descriptive_statistics(df_sub, "sub_")
+
+```
+
+The final sample included 30 participants (Mean age = 21.1, SD = 2.1, range: [18, 25]; 63.3% females).
+
+
+## Participants Individual Summary Results for Behavioural Tasks (Deception, HCT & Yoni Task)
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+df_descriptive <- data %>% 
+  filter(truthfulness != "TRUTH") %>% 
+  group_by(participant, ConditionSP) %>% 
+  summarise_all(mean)
+
+df_descriptive <- df_descriptive %>% 
+  select(c(1,2,9,36:42)) %>% 
+  pivot_wider(names_from = ConditionSP, values_from = subresp) %>% 
+  rename(PolyCon_subresp = polygraph,
+         SociCon_subresp = social)
+
+
+```
+
+##Plot of Average Subjective Response of Lies for Each Participant
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+plot_desriptive <- data %>% 
+  filter(truthfulness != "TRUTH") %>% 
+  group_by(participant, ConditionSP) %>% 
+  summarise_all(mean) %>% 
+  select(c(1,2,9)) %>% 
+  filter(participant != "3",
+         participant != "15",
+         participant != "19",
+         participant != "23")
+
+pd <- position_dodge(0.1)
+plot_desriptive %>% 
+  mutate(participant = as.factor(participant)) %>% 
+  ggplot(aes(x = ConditionSP, y = subresp, color = participant, group=participant)) +
+  geom_point(position = pd) +
+  geom_line(position = pd) +
+  xlab("Condition") + ylab("Subjective Response")+
+  ggtitle("Plot of Average Subjective Responses for Lies")  + 
+  see::theme_modern() +
+  theme(plot.title = element_text(size=12))
+
+```
+
+## Summary of Tasks
+average and SD of each task
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+Summary_of_task <- data.frame(
+  Mean = sapply(df_descriptive[2:ncol(df_descriptive)], mean, na.rm = TRUE),
+  SD = sapply(df_descriptive[2:ncol(df_descriptive)], sd, na.rm = TRUE)
+)
+
+```
+
+
+# Analysis
+
+##Inferential (TO REMOVE)
+Plot of various average Physio scores in 2 conditions
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+Corr <- data %>% 
+  filter(truthfulness != "TRUTH") %>% 
+  filter(Condition == "R") %>% 
+  group_by(participant, ConditionSP) %>% 
+  summarise_all(mean) %>% 
+  select(c(1,2,9,58,72,80))
+
+#Plot of Average Physio Response of lies in 2 conditions
+##ECG_Rate_Mean
+pd <- position_dodge(0.1)
+Corr %>% 
+  mutate(participant = as.factor(participant)) %>% 
+  ggplot(aes(x = ConditionSP, y = ECG_Rate_Mean, color = participant, group=participant)) +
+  geom_point(position = pd) +
+  geom_line(position = pd) +
+  xlab("Condition") + ylab("Subjective Response")+
+  ggtitle("Plot of ECG Rate Mean for Lies")  + 
+  see::theme_modern() +
+  theme(plot.title = element_text(size=12))
+
+##RSP_Rate_Mean
+Corr %>% 
+  mutate(participant = as.factor(participant)) %>% 
+  ggplot(aes(x = ConditionSP, y = RSP_Rate_Mean, color = participant, group=participant)) +
+  geom_point(position = pd) +
+  geom_line(position = pd) +
+  xlab("Condition") + ylab("Subjective Response")+
+  ggtitle("Plot of RSP Rate Mean for Lies")  + 
+  see::theme_modern() +
+  theme(plot.title = element_text(size=12))
+
+##RSP_Amplitude_Mean
+Corr %>% 
+  mutate(participant = as.factor(participant)) %>% 
+  ggplot(aes(x = ConditionSP, y = RSP_Amplitude_Mean, color = participant, group=participant)) +
+  geom_point(position = pd) +
+  geom_line(position = pd) +
+  xlab("Condition") + ylab("Subjective Response")+
+  ggtitle("Plot of RSP Amplitude Mean for Lies")  + 
+  see::theme_modern() +
+  theme(plot.title = element_text(size=12))
+
+#Correlation of Average subjective response vs Physio + Scatterplots
+#http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r
+
+
+```
+
+#Correlation Matrix of all Variables
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+  
+df_correlation <- data %>% 
+  filter(truthfulness != "TRUTH") %>% 
+  filter(Condition == "R") %>% 
+  select(c(1,8,50,55:90)) %>% 
+  mutate(participant = as.factor(participant),
+         ConditionSP = as.factor(ConditionSP))
+
+Corr_Matrix <- correlation::correlation(
+  select(df_correlation,
+         participant, 
+         ConditionSP, 
+         subresp, 
+         starts_with("ECG"), 
+         starts_with("RSP"),
+         starts_with("EDA")),
+  multilevel = F, p_adjust = "none") 
+
+dplyr::filter(Corr_Matrix, Parameter1 == "subresp") %>% 
+  arrange(desc(abs(r)))
+
+```
+
+#Hypothesis Nested Regression Analysis
+##Subjective Response Comparison
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+df <- data %>% 
+  mutate(participant = as.factor(participant),
+         ConditionSP = as.factor(ConditionSP)) %>% 
+  filter(truthfulness == "LIE") %>% 
+  filter(Inclusion2 != "0") %>% 
+  filter(participant != "3",
+         participant != "15",
+         participant != "19",
+         participant != "23") %>% 
+  filter(Condition == "Q") %>% 
+  mutate(yoni_new = yoni_affective + yoni_cognitive) 
+
+df$ConditionSP <- relevel(df$ConditionSP, ref = "social")
+
+#TOM Hypothesis 1A: SUBRESP -> YONI/BES
+model_sub1 <- lme4::lmer(subresp ~ ConditionSP * yoni_total + (1|participant), data = df)
+parameters::parameters(model_sub1)
+plot_model(model_sub1, type = "pred", terms = c("yoni_total", "ConditionSP"), axis.title = c("Yoni Task", "Subjective Response"), title = "Predicted Values of Subjective Response by Yoni Task", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_sub1)
+
++ font_size(title = 15, axis_title.x = 15, axis_title.y = 15) + legend_style(inside = TRUE, pos = "top right")
+
+model_sub2 <- lme4::lmer(subresp ~ ConditionSP * yoni_new + (1|participant), data = df)  #explorative
+parameters::parameters(model_sub2)
+plot_model(model_sub2, type = "pred", terms = c("yoni_new", "ConditionSP"), axis.title = c("Yoni Task", "Subjective Response"), title = "Predicted Values of Subjective Response by Yoni Task", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")report(model_sub2)
+
+
+model_sub3 <- lme4::lmer(subresp ~ ConditionSP * BES_Total + (1|participant), data = df)
+parameters::parameters(model_sub3)
+plot_model(model_sub3, type = "pred", terms = c("BES_Total", "ConditionSP"), axis.title = c("BES Questionnaire", "Subjective Response"), title = "Predicted Values of Subjective Response by BES Questionnaire", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_sub3)
+
+model_sub4 <- lme4::lmer(subresp ~ (ConditionSP * yoni_total) + BES_Total + (1|participant), data = df)  #explorative
+parameters::parameters(model_sub4)
+plot_model(model_sub4, type = "pred", terms = c("yoni_total", "ConditionSP", "BES_Total"))
+
+#TOM Hypothesis 1C: SUBRESP -> SRP3
+model_sub5 <- lme4::lmer(subresp ~ ConditionSP * SRP3_Total + (1|participant), data = df)
+parameters::parameters(model_sub5)
+plot_model(model_sub5, type = "pred", terms = c("SRP3_Total", "ConditionSP"), axis.title = c("SRP3 Inventory", "Subjective Response"), title = "Predicted Values of Subjective Response by SRP3 Inventory", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_sub5)
+
+model_sub6 <- lme4::lmer(subresp ~ ConditionSP * SRP3_ELS + (1|participant), data = df)  #explorative
+parameters::parameters(model_sub6)
+plot_model(model_sub6, type = "pred", terms = c("SRP3_ELS", "ConditionSP"), axis.title = c("SRP3 (Erratic Life Style)", "Subjective Response"), title = "Predicted Values of Subjective Response by SRP3 - ELS", legend.title = "Condition")
+
+#Interoception Hypothesis 2A: SUBRESP -> HCT/MAIA
+model_sub7 <- lme4::lmer(subresp ~ ConditionSP * HCT_Accuracy + (1|participant), data = df)
+parameters::parameters(model_sub7)
+plot_model(model_sub7, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"), axis.title = c("HCT Accuracy (%)", "Subjective Response"), title = "Predicted Values of Subjective Response by HCT Accuracy", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_sub7)
+
+model_sub8 <- lme4::lmer(subresp ~ ConditionSP * MAIA_Total + (1|participant), data = df)
+parameters::parameters(model_sub8)
+plot_model(model_sub8, type = "pred", terms = c("MAIA_Total", "ConditionSP"), axis.title = c("MAIA2", "Subjective Response"), title = "Predicted Values of Subjective Response by MAIA2", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_sub8)
+
+model_sub9 <- lme4::lmer(subresp ~ (ConditionSP * HCT_Accuracy) + HCT_Confidence + MAIA_Total + (1|participant), data = df)                                                                                       #explorative
+parameters::parameters(model_sub9)
+plot_model(model_sub9, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+#Interoception Hypothesis 2C: SUBRESP -> SRP3_PRI
+model_sub10 <- lme4::lmer(subresp ~ ConditionSP * SRP3_PRI + (1|participant), data = df)
+parameters::parameters(model_sub10)
+plot_model(model_sub10, type = "pred", terms = c("SRP3_PRI", "ConditionSP"), axis.title = c("SRP3 (PRI) Inventory", "Subjective Response"), title = "Predicted Values of Subjective Response by SRP3 (PRI)", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_sub10)
+
+```
+
+##ECG Physio scores comparison
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+df2 <- data %>% 
+  mutate(participant = as.factor(participant),
+         ConditionSP = as.factor(ConditionSP)) %>% 
+  filter(truthfulness == "LIE") %>% 
+  filter(Inclusion2 != "0") %>%
+#  filter(participant != "22") %>% 
+#  filter(participant != "23") %>%         
+  filter(participant != "30") %>% 
+  filter(participant != "15") %>% 
+  filter(Condition == "Q") %>% 
+  mutate(yoni_new = yoni_affective + yoni_cognitive) 
+
+df2$ConditionSP <- relevel(df2$ConditionSP, ref = "social")
+
+good combo: remove 30 and 15 / dont remove 12 / use "Q"
+
+#ECG_RATE_MAX
+#TOM Hypothesis 1A: ECG_Rate_Max -> YONI/BES
+model_ecg1 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * yoni_total + (1|participant), data = df2)
+parameters::parameters(model_ecg1)
+plot_model(model_ecg1, type = "pred", terms = c("yoni_total", "ConditionSP"), axis.title = c("Yoni Task", " Heartrate Acceleration"), title = "Predicted Values of Heartrate Acceleration by Yoni Task", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_ecg1)
+
+model_ecg2 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * yoni_new + (1|participant), data = df2)  #explorative
+parameters::parameters(model_ecg2)
+plot_model(model_ecg2, type = "pred", terms = c("yoni_new", "ConditionSP"), axis.title = c("Yoni Task", "Heartrate Acceleration (beats/min)"), title = "Predicted Values of Heartrate Acceleration by Yoni Task ", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_ecg2)
+
+model_ecg3 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * BES_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg3)
+plot_model(model_ecg3, type = "pred", terms = c("BES_Total", "ConditionSP"), axis.title = c("BES Questionnaire", "Heartrate Acceleration (beats/min)"), title = "Predicted Values of Heartrate Acceleration by BES Questionnaire", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_ecg3)
+
+model_ecg4 <- lme4::lmer(ECG_Rate_Max ~ (ConditionSP * yoni_total) + BES_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg4)
+plot_model(model_ecg4, type = "pred", terms = c("yoni_total", "ConditionSP", "BES_Total"))
+
+#TOM Hypothesis 1C: ECG_Rate_Max -> SRP3
+model_ecg5 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * SRP3_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg5)
+plot_model(model_ecg5, type = "pred", terms = c("SRP3_Total", "ConditionSP"), axis.title = c("SRP3 Inventory", "Heartrate Acceleration (beats/min)"), title = "Predicted Values of Heartrate Acceleration by SRP3 Inventory", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_ecg5)
+
+model_ecg6 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * SRP3_ELS + (1|participant), data = df2)  #explorative
+parameters::parameters(model_ecg6)
+plot_model(model_ecg6, type = "pred", terms = c("SRP3_ELS", "ConditionSP"), axis.title = c("SRP3 (Erratic Life Style)", "Heartrate Acceleration"), title = "Predicted Values of Heartrate Acceleration by SRP3 - ELS", legend.title = "Condition")
+
+df2$ConditionSP <- relevel(df2$ConditionSP, ref = "polygraph")
+
+#Interoception Hypothesis 2A: ECG_Rate_Max -> HCT/MAIA
+model_ecg7 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * HCT_Accuracy + (1|participant), data = df2)
+parameters::parameters(model_ecg7)
+plot_model(model_ecg7, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"), axis.title = c("HCT Accuracy (%)", "Heartrate Acceleration (beats/min)"), title = "Predicted Values of Heartrate Acceleration by HCT Accuracy", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_ecg7)
+
+model_ecg8 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * MAIA_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg8)
+plot_model(model_ecg8, type = "pred", terms = c("MAIA_Total", "ConditionSP"), axis.title = c("MAIA2", "Heartrate Acceleration (beats/min)"), title = "Predicted Values of Heartrate Acceleration by MAIA2", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_ecg8)
+
+model_ecg9 <- lme4::lmer(ECG_Rate_Max ~ (ConditionSP * HCT_Accuracy) + HCT_Confidence + MAIA_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg9)
+plot_model(model_ecg9, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+#Interoception Hypothesis 2C: ECG_Rate_Max -> SRP3_PRI
+model_ecg10 <- lme4::lmer(ECG_Rate_Max ~ ConditionSP * SRP3_PRI + (1|participant), data = df2)
+parameters::parameters(model_ecg10)
+plot_model(model_ecg10, type = "pred", terms = c("SRP3_PRI", "ConditionSP"), axis.title = c("SRP3 (PRI) Inventory", "Heartrate Acceleration (beats/min)"), title = "Predicted Values of Heartrate Acceleration by SRP3 (PRI) ", legend.title = "Condition") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_ecg10)
+
+#ONLY CA was showing good results
+
+
+
+#ECG_RATE_MIN
+#TOM Hypothesis 1A: ECG_Rate_Min -> YONI/BES
+model_ecg1a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * yoni_total + (1|participant), data = df2)
+parameters::parameters(model_ecg1a)
+plot_model(model_ecg1a, type = "pred", terms = c("yoni_total", "ConditionSP"))
+
+model_ecg2a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * yoni_affective + (1|participant), data = df2)  #explorative
+parameters::parameters(model_ecg2a)
+plot_model(model_ecg2a, type = "pred", terms = c("yoni_affective", "ConditionSP"))
+
+model_ecg3a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * BES_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg3a)
+plot_model(model_ecg3a, type = "pred", terms = c("BES_Total", "ConditionSP"))
+
+model_ecg4a <- lme4::lmer(ECG_Rate_Min ~ (ConditionSP * yoni_total) + BES_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg4a)
+plot_model(model_ecg4a, type = "pred", terms = c("yoni_total", "ConditionSP", "BES_Total"))
+
+#TOM Hypothesis 1C: ECG_Rate_Min -> SRP3
+model_ecg5a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * SRP3_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg5a)
+plot_model(model_ecg5a, type = "pred", terms = c("SRP3_Total", "ConditionSP"))
+
+model_ecg6a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * SRP3_ELS + (1|participant), data = df2)  #explorative
+parameters::parameters(model_ecg6a)
+plot_model(model_ecg6a, type = "pred", terms = c("SRP3_ELS", "ConditionSP"))
+
+
+#Interoception Hypothesis 2A: ECG_Rate_Min -> HCT/MAIA
+model_ecg7a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * HCT_Accuracy + (1|participant), data = df2)
+parameters::parameters(model_ecg7a)
+plot_model(model_ecg7a, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+model_ecg8a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * MAIA_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg8a)
+plot_model(model_ecg8, type = "pred", terms = c("MAIA_Total", "ConditionSP"))
+
+model_ecg9a <- lme4::lmer(ECG_Rate_Min ~ (ConditionSP * HCT_Accuracy) + HCT_Confidence + MAIA_Total + (1|participant), data = df2)
+parameters::parameters(model_ecg9a)
+plot_model(model_ecg9, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+#Interoception Hypothesis 2C: ECG_Rate_Min -> SRP3_PRI
+model_ecg10a <- lme4::lmer(ECG_Rate_Min ~ ConditionSP * SRP3_PRI + (1|participant), data = df2)
+parameters::parameters(model_ecg10a)
+plot_model(model_ecg10a, type = "pred", terms = c("SRP3_PRI", "ConditionSP"))
+
+```
+
+##RESPIRATION PHYSIO ANALYSIS
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+  
+df3 <- data %>% 
+  mutate(participant = as.factor(participant),
+         ConditionSP = as.factor(ConditionSP)) %>% 
+  filter(truthfulness == "LIE") %>% 
+  filter(Inclusion2 != "0") %>% 
+  filter(participant != "22") %>% 
+    filter(Condition == "Q")
+#  filter(participant != "23") %>% 
+  # filter(participant != "30") %>% 
+  # filter(#participant != "12",            #try keep 15
+  #        participant != "15") %>% 
+  
+#RSP_Amplitude_Max
+#TOM Hypothesis 1A: RSP_Amplitude_Max -> YONI/BES
+model_rsp1 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * yoni_total + (1|participant), data = df3)
+parameters::parameters(model_rsp1)
+plot_model(model_rsp1, type = "pred", terms = c("yoni_total", "ConditionSP"))
+
+model_rsp2 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * yoni_affective + (1|participant), data = df3)  #explorative
+parameters::parameters(model_rsp2)
+plot_model(model_rsp2, type = "pred", terms = c("yoni_affective", "ConditionSP"))
+
+model_rsp3 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * BES_Total + (1|participant), data = df3)
+parameters::parameters(model_rsp3)
+plot_model(model_rsp3, type = "pred", terms = c("BES_Total", "ConditionSP"))
+
+model_rsp4 <- lme4::lmer(RSP_Amplitude_Max ~ (ConditionSP * yoni_total) + BES_Total + (1|participant), data = df3)
+parameters::parameters(model_rsp4)
+plot_model(model_rsp4, type = "pred", terms = c("yoni_total", "ConditionSP", "BES_Total"))
+
+#TOM Hypothesis 1C: RSP_Amplitude_Max -> SRP3
+model_rsp5 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * SRP3_Total + (1|participant), data = df3)
+parameters::parameters(model_rsp5)
+plot_model(model_rsp5, type = "pred", terms = c("SRP3_Total", "ConditionSP"))
+
+model_rsp6 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * SRP3_ELS + (1|participant), data = df3)  #explorative
+parameters::parameters(model_rsp6)
+plot_model(model_rsp6, type = "pred", terms = c("SRP3_ELS", "ConditionSP"))
+
+
+#Interoception Hypothesis 2A: RSP_Amplitude_Max -> HCT/MAIA
+model_rsp7 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * HCT_Accuracy + (1|participant), data = df3)
+parameters::parameters(model_rsp7)
+plot_model(model_rsp7, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+model_rsp8 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * MAIA_Total + (1|participant), data = df3)
+parameters::parameters(model_rsp8)
+plot_model(model_rsp8, type = "pred", terms = c("MAIA_Total", "ConditionSP"))
+
+model_rsp9 <- lme4::lmer(RSP_Amplitude_Max ~ (ConditionSP * HCT_Accuracy) + HCT_Confidence + MAIA_Total + (1|participant), data = df3)
+parameters::parameters(model_rsp9)
+plot_model(model_rsp9, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+#Interoception Hypothesis 2C: RSP_Amplitude_Max -> SRP3_PRI
+model_rsp10 <- lme4::lmer(RSP_Amplitude_Max ~ ConditionSP * SRP3_PRI + (1|participant), data = df3)
+parameters::parameters(model_rsp10)
+plot_model(model_rsp10, type = "pred", terms = c("SRP3_PRI", "ConditionSP"))
+
+```
+
+##EDA_SCR
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+  df4 <- data %>% 
+  mutate(participant = as.factor(participant),
+         ConditionSP = as.factor(ConditionSP)) %>% 
+  filter(truthfulness == "LIE") %>% 
+  filter(Inclusion2 != "0") %>% 
+  filter(participant != "22") %>% 
+  filter(participant != "4",
+         participant != "5",
+         participant != "10",
+         participant != "12",
+         participant != "16",
+         participant != "23",
+         participant != "27",
+         participant != "29") %>% 
+  filter(Condition == "C")
+
+#  filter(participant != "23") %>% 
+#  filter(participant != "30") %>% 
+
+#TOM Hypothesis 1A: EDA_SCR -> YONI/BES
+model_eda1 <- lme4::lmer(EDA_SCR ~ ConditionSP * yoni_total + (1|participant), data = df4)
+parameters::parameters(model_eda1)
+plot_model(model_eda1, type = "pred", terms = c("yoni_total", "ConditionSP"))
+
+model_eda2 <- lme4::lmer(EDA_SCR ~ ConditionSP * yoni_affective + (1|participant), data = df4)  #explorative
+parameters::parameters(model_eda2)
+plot_model(model_eda2, type = "pred", terms = c("yoni_affective", "ConditionSP"))
+
+model_eda3 <- lme4::lmer(EDA_SCR ~ ConditionSP * BES_Total + (1|participant), data = df4)
+parameters::parameters(model_eda3)
+plot_model(model_eda3, type = "pred", terms = c("BES_Total", "ConditionSP"))
+
+model_eda4 <- lme4::lmer(EDA_SCR ~ (ConditionSP * yoni_total) + BES_Total + (1|participant), data = df4)
+parameters::parameters(model_eda4)
+plot_model(model_eda4, type = "pred", terms = c("yoni_total", "ConditionSP", "BES_Total"))
+
+#TOM Hypothesis 1C: EDA_SCR -> SRP3
+model_eda5 <- lme4::lmer(EDA_SCR ~ ConditionSP * SRP3_Total + (1|participant), data = df4)
+parameters::parameters(model_eda5)
+plot_model(model_eda5, type = "pred", terms = c("SRP3_Total", "ConditionSP"))
+
+model_eda6 <- lme4::lmer(EDA_SCR ~ ConditionSP * SRP3_ELS + (1|participant), data = df4)  #explorative
+parameters::parameters(model_eda6)
+plot_model(model_eda6, type = "pred", terms = c("SRP3_ELS", "ConditionSP"))
+
+
+#Interoception Hypothesis 2A: EDA_SCR -> HCT/MAIA
+model_eda7 <- lme4::lmer(EDA_SCR ~ ConditionSP * HCT_Accuracy + (1|participant), data = df4)
+parameters::parameters(model_eda7)
+plot_model(model_eda7, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+model_eda8 <- lme4::lmer(EDA_SCR ~ ConditionSP * MAIA_Total + (1|participant), data = df4)
+parameters::parameters(model_eda8)
+plot_model(model_eda8, type = "pred", terms = c("MAIA_Total", "ConditionSP"))
+
+model_eda9 <- lme4::lmer(EDA_SCR ~ (ConditionSP * HCT_Accuracy) + HCT_Confidence + MAIA_Total + (1|participant), data = df4)
+parameters::parameters(model_eda9)
+plot_model(model_eda9, type = "pred", terms = c("HCT_Accuracy", "ConditionSP"))
+
+#Interoception Hypothesis 2C: EDA_SCR -> SRP3_PRI
+model_eda10 <- lme4::lmer(EDA_SCR ~ ConditionSP * SRP3_PRI + (1|participant), data = df4)
+parameters::parameters(model_eda10)
+plot_model(model_eda10, type = "pred", terms = c("SRP3_PRI", "ConditionSP"))
+
+
+```
+
+## Correalation Analysis
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+df5 <- data %>% 
+  mutate(yoni_new = yoni_affective + yoni_cognitive) %>% 
+group_by(participant) %>% 
+  summarise_all(mean)
+  
+model_H1 <- lm(yoni_affective ~  SRP3_Total, data = df5)
+parameters::parameters(model_H1)
+plot_model(model_H1, type = "pred", terms = c("SRP3_Total"), axis.title = c("SRP3 Inventory", "Yoni Task (Affective)"), title = "Relationship Between Yoni Task (Affective) and SRP3") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_H1)
+
+correlation::correlation(select(df5,
+         yoni_affective,
+         SRP3_Total), method = "pearson")
+
+model_H1a <- lm(BES_Affective ~  SRP3_Total, data = df5)
+parameters::parameters(model_H1a)
+plot_model(model_H1a, type = "pred",  axis.title = c("SRP3 Inventory", "BES (Affective)"), title = "Relationship Between BES (Affective) Score and SRP3") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_H1a)
+
+correlation::correlation(select(df5,
+         BES_Affective,
+         SRP3_Total), method = "pearson")
+
+model_H2 <- lm(HCT_Accuracy ~  SRP3_PRI, data = df5)
+parameters::parameters(model_H2)
+plot_model(model_H2, type = "pred", axis.title = c("SRP3 (PRI) Inventory", "HCT Accuracy"), title = "Relationship Between HCT Accuracy and SRP3 (PRI)") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_H2)
+
+correlation::correlation(select(df5,
+         HCT_Accuracy,
+         SRP3_PRI), method = "pearson")
+
+model_H2a <- lm(MAIA_Total ~  SRP3_PRI, data = df5)
+parameters::parameters(model_H2)
+plot_model(model_H2, type = "pred", axis.title = c("SRP3 (PRI) Inventory", "MAIA2"), title = "Relationship Between MAIA2 and SRP3 (PRI)") + theme_sjplot(base_size = 25, base_family = "Times New Roman")
+report(model_H2a)
+
+correlation::correlation(select(df5,
+         MAIA_Total,
+         SRP3_PRI), method = "pearson")
+
+correlation::correlation(select(df5,
+         yoni_new,
+         BES_Total), method = "pearson")
+
+correlation::correlation(select(df5,
+         yoni_affective,
+         BES_Affective), method = "pearson")
+
+correlation::correlation(select(df5,
+         HCT_Accuracy,
+         MAIA_Total), method = "pearson")
+```
+
+
+An interaction is present when the effects of one IV on DV change at the different levels of the second IV.
+the +ve effect of the HCT_Accuracy on the subjective response varies on the different level of the ConditionSP. The rate of change of HCT_Accuracy on the subjective response in the polygraph condition is larger than the rate of change of HCT_Accuracy on the subjective response in the social condition.
+
+Interaction EXPLANATION
+- ConditionSP - differences between social and poly condition when HCTACCuracy is 0
+- HCTAccuracy (poly condition as 0) - only in polygraph condition, there is a positive effect of HCT_Accuracy on sub resp but not significant
+- interaction - participants who have a better HCTAccur (interoceptive ability) have better confidence on their lies in the poly condition compared to social condition
+
+
+# Other Analysis
+```{r , include=TRUE, warning = FALSE, message = FALSE}
+
+
+
+```
