@@ -1,0 +1,11 @@
+﻿task,time,text,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,idresponse.text,heartbeatresponse.text,confidenceslider.response,confidenceslider.rt,text_2.started,text_2.stopped,key_guess.keys,key_guess.rt,key_guess.started,key_guess.stopped,text_3.started,text_3.stopped,key_noguess.keys,key_noguess.rt,key_noguess.started,key_noguess.stopped,text_4.started,text_4.stopped,key_noguess_perturbed.keys,key_noguess_perturbed.rt,key_noguess_perturbed.started,key_noguess_perturbed.stopped,text_perturbed.started,text_perturbed.stopped,participant,session,date,expName,psychopyVersion,frameRate
+Count30,30,+,0,0,0,2,ID 010,"Enter Number  31
+",0.57962963,2.280141268,,,,,,,,,,,,,,,,,,,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+Count25,25,+,0,1,1,1,,Enter Number22,0.665740741,2.914455913,,,,,,,,,,,,,,,,,,,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+Count35,35,+,0,2,2,3,,Enter Number   35 ,0.665740741,1.964966822,,,,,,,,,,,,,,,,,,,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+Count40,40,+,0,3,3,4,,Enter Number  46 ,0.714814815,2.314407408,,,,,,,,,,,,,,,,,,,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+Count20,20,+,0,4,4,0,,Enter Number  20,0.714814815,1.846757719,,,,,,,,,,,,,,,,,,,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+,,,,,,,,,,,341.7915724,None,"['space', 'space', 'space']","[34.91749102110043, 36.93350577540696, 46.54962742095813]",375.738206,None,,,,,,,,,,,,,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+,,,,,,,,,,,436.7154156,None,,,,,375.738206,None,None,,466.6956629,None,,,,,,,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+,,,,,,,,,,,527.672986,None,,,,,,,,,,,466.6956629,None,"['space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space', 'space']","[2.855455622076988, 3.77544729411602, 4.783250160049647, 5.783539844211191, 7.007470835931599, 8.991547510027885, 10.471553528215736, 11.73561620246619, 13.079445641487837, 14.447751948144287, 16.191638104617596, 17.63969673914835, 18.87961746286601, 20.175431510433555, 21.479605657048523]",594.599764,None,,,10,1,2021_Feb_16_1303,Heartbeat,2020.2.10,59.8426943
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,594.599764,None,,,,,,
