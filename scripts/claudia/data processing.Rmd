@@ -2,6 +2,36 @@
 library(tidyverse)
 ```
 
+```{r demo}
+rm(list=ls())
+cat("\014")
+
+mydata <- read.csv('../../data/data_questionnaire/Demographics.csv', stringsAsFactors = FALSE)[-c(1:2), -c(1:17, 30, 32, 34, 36)] 
+
+mydata <- mydata %>% 
+  rename(Name = Q2,
+         ID = Q3,
+         Matric = Q4,
+         HP = Q5,
+         Email = Q6,
+         Gender = Q7,
+         Age = Q8,
+         Birthday = Q9,
+         handedness = Q10,
+         School = Q11,
+         Course = Q12,
+         Polyjc = Q13,
+         Ethnicity = Q14,
+         Religion = Q15,
+         Nationality = Q16,
+         RaisedinSG = Q17,
+         LivedinSG = Q18) %>% 
+  mutate(ID = as.numeric(ID)) %>% 
+  arrange(ID)
+
+write.csv(mydata, file = "demo.csv", row.names = FALSE)
+```
+
 ```{r tom obj yoni}
 rm(list=ls())
 cat("\014")
@@ -27,8 +57,8 @@ results <- data %>%
          yoni_physical = physical,
          ID = participant)
 
-write.csv(data, file = "yonitask_extracted.csv", row.names=FALSE)
-write.csv(results, file = "yonitask_processed.csv", row.names=FALSE)
+write.csv(data, file = "yoni_extracted.csv", row.names=FALSE)
+write.csv(results, file = "yoni_processed.csv", row.names=FALSE)
 ```
 
 ```{r tom subj bes}
@@ -75,9 +105,9 @@ results <- mydata %>%
          Q13 = as.numeric(Q13), Q14 = as.numeric(Q14), Q15 = as.numeric(Q15), Q16 = as.numeric(Q16),
          Q17 = as.numeric(Q17), Q18 = as.numeric(Q18), Q19 = as.numeric(Q19), Q20 = as.numeric(Q20)) %>%
   
-  mutate(BES_Cognitive = Q3+Q6+Q9+Q10+Q12+Q14+Q16+Q19+Q20) %>% 
-  mutate(BES_Affective = Q1+Q2+Q4+Q5+Q7+Q8+Q11+Q13+Q15+Q17+Q18) %>% 
-  mutate(BES_Total = BES_Cognitive+BES_Affective) %>% 
+  mutate(BES_cognitive = Q3+Q6+Q9+Q10+Q12+Q14+Q16+Q19+Q20) %>% 
+  mutate(BES_affective = Q1+Q2+Q4+Q5+Q7+Q8+Q11+Q13+Q15+Q17+Q18) %>% 
+  mutate(BES_total = BES_cognitive+BES_affective) %>% 
   
   arrange(ID)
 
@@ -137,6 +167,31 @@ results <- data %>%
   select(c(ID, HCT_confidence, HCT_accuracy, HCT_awareness)) %>% 
   group_by(ID) %>%
   summarise_all(mean, na.rm = TRUE)
+
+parttwo <- data.frame()
+for (participant in list.files("../../data/data_experimental")) {
+  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/heartbeat/", participant, "_heartbeat.csv"))[-c(1:5, 9), -c(1:13, 16:19, 22:25, 28:31, 33:38)]  
+  parttwo <- rbind(parttwo, df_sub)
+}
+  
+parttwo <- parttwo %>% 
+  rename(guess = key_guess.keys,
+         guessRT = key_guess.rt,
+         noguess = key_noguess.keys,
+         noguessRT = key_noguess.rt,
+         onebreath = key_noguess_perturbed.keys,
+         onebreathRT = key_noguess_perturbed.rt,
+         ID = participant) %>% 
+  group_by(ID) %>% 
+  summarise_all(funs(trimws(paste(., collapse = ''))))
+
+parttwo <- parttwo %>% 
+  mutate(HCT_guess = str_count(parttwo$guess, "space")) %>% 
+  mutate(HCT_noguess = str_count(parttwo$noguess, "space")) %>% 
+  mutate(HCT_onebreath = str_count(parttwo$onebreath, "space")) %>% 
+  select(c(ID, HCT_guess, HCT_noguess, HCT_onebreath))
+
+results <- left_join(results, parttwo)
 
 write.csv(data, file = "HCT_extracted.csv", row.names=FALSE)
 write.csv(results, file = "HCT_processed.csv", row.names=FALSE)
@@ -211,10 +266,27 @@ results <- mydata %>%
   
   mutate(MAIA1 = (Q1+Q2+Q3+Q4)/4, MAIA2 = (Q5+Q6+Q7+Q8+Q9+Q10)/6, MAIA3 = (Q11+Q12+Q13+Q14+Q15)/5, MAIA4 = (Q16+Q17+Q18+Q19+Q20+Q21+Q22)/7,
         MAIA5 = (Q23+Q24+Q25+Q26+Q27)/5, MAIA6 = (Q28+Q29+Q30+Q31)/4, MAIA7 = (Q32+Q33+Q34)/3, MAIA8 = (Q35+Q36+Q37)/3) %>% 
-  mutate(MAIA_Total = (MAIA1+MAIA2+MAIA3+MAIA4+MAIA5+MAIA6+MAIA7+MAIA8)/8) %>%
+  mutate(MAIA_total = (MAIA1+MAIA2+MAIA3+MAIA4+MAIA5+MAIA6+MAIA7+MAIA8)/8) %>%
   
   arrange(ID)
 
 write.csv(results, file = "MAIA2_processed.csv", row.names=FALSE)
+```
+
+```{r deception}
+
+```
+
+```{r merge all}
+data_combined <- read.csv("demo.csv") %>% 
+  select(-c(Name, Matric, HP, Email, Birthday, School, Course, LivedinSG)) %>% 
+  left_join(read.csv("yoni_processed.csv")) %>% 
+  left_join(read.csv("BES_processed.csv")) %>% 
+  select(-c(contains("Q"))) %>% 
+  left_join(read.csv("HCT_processed.csv")) %>% 
+  left_join(read.csv("MAIA2_processed.csv")) %>% 
+  select(-c(contains("Q")))
+
+write.csv(data_combined, file = "../../data/data_combined.csv", row.names = FALSE)
 ```
 

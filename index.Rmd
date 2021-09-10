@@ -165,11 +165,12 @@ summary(report::report(sessionInfo()))
 ## Data
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
-df <- read.csv("data/data.csv")
+df <- read.csv("data/data_combined.csv")
 
 cat(paste("The data consists of",
           report::report_participants(df,
-                                      participants = "Participant",
+                                      participants = "ID",
+                                      sex = "Gender",
                                       age = "Age")))
 ```
 
