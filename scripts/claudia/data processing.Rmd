@@ -273,8 +273,42 @@ results <- mydata %>%
 write.csv(results, file = "MAIA2_processed.csv", row.names=FALSE)
 ```
 
-```{r deception}
+```{r deception subj}
+rm(list=ls())
+cat("\014")
 
+mydata <- data.frame()
+for (participant in list.files("../../data/data_experimental")) {
+  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), -c(5:34, 37:46, 48:54)]  
+  mydata <- rbind(mydata, df_sub)
+}
+
+data <- mydata %>% 
+  rename(item = V1,
+       style = V2,
+       condition = V3,
+       question = V4,
+       subresp = V35,
+       RT = V36,
+       ID = V47) %>% 
+  
+  mutate(subresp = str_replace_all(subresp, "None", "0")) %>% 
+  mutate(RT = str_replace_all(RT, "None", "0")) %>% 
+  mutate(subresp = as.numeric(subresp)) %>% 
+  mutate(RT = as.numeric(RT)) %>% 
+  mutate(condition = as.factor(condition)) %>% 
+  mutate(ID = as.numeric(ID))
+
+results <- data %>% 
+  group_by(ID, condition, style) %>% 
+  summarise(DT_SubjAvg = mean(subresp), DT_RTAvg = mean(RT)) %>% 
+  group_by(ID, condition) %>% 
+  mutate(DT_TotalAvg = mean(DT_SubjAvg), TotalRT = mean(DT_RTAvg)) %>% 
+  rename(DT_condition = condition,
+         DT_style = style)
+
+write.csv(data, file = "deceptiontask_extracted.csv", row.names=FALSE)
+write.csv(results, file = "deceptiontask_processed.csv", row.names=FALSE)
 ```
 
 ```{r merge all}
@@ -285,7 +319,8 @@ data_combined <- read.csv("demo.csv") %>%
   select(-c(contains("Q"))) %>% 
   left_join(read.csv("HCT_processed.csv")) %>% 
   left_join(read.csv("MAIA2_processed.csv")) %>% 
-  select(-c(contains("Q")))
+  select(-c(contains("Q"))) %>% 
+  right_join(read.csv("deceptiontask_processed.csv"))
 
 write.csv(data_combined, file = "../../data/data_combined.csv", row.names = FALSE)
 ```
