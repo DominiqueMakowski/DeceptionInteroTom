@@ -1,3 +1,9 @@
+```{r clear everything}
+rm(list=ls())
+cat("\014")
+```
+
+
 ```{r load packages}
 library(tidyverse)
 ```
@@ -17,7 +23,7 @@ mydata <- mydata %>%
          Gender = Q7,
          Age = Q8,
          Birthday = Q9,
-         handedness = Q10,
+         Handedness = Q10,
          School = Q11,
          Course = Q12,
          Polyjc = Q13,
@@ -44,18 +50,19 @@ for (participant in list.files("../../data/data_experimental")) {
 
 data <- mydata %>% 
   rename(response = mouse_2.clicked_name,
-         responsetime = mouse_2.time) %>% 
-  mutate(answer = ifelse(correct == response, 1, 0))
+         responseRT = mouse_2.time,
+         ID = participant) %>% 
+  mutate(answer = ifelse(correct == response, 1, 0)) %>% 
+  select(ID, everything()) #move ID column to front
 
 results <- data %>%
-  group_by(participant, condition) %>%
+  group_by(ID, condition) %>%
   summarise(total = sum(answer)) %>%
   pivot_wider(names_from = condition, values_from = total) %>%
   mutate(yoni_total = affect+cognitive+physical) %>%
   rename(yoni_affective = affect,
          yoni_cognitive = cognitive,
-         yoni_physical = physical,
-         ID = participant)
+         yoni_physical = physical)
 
 write.csv(data, file = "yoni_extracted.csv", row.names=FALSE)
 write.csv(results, file = "yoni_processed.csv", row.names=FALSE)
@@ -134,8 +141,6 @@ data <- mydata %>%
   
   mutate(hbcount_reported = str_remove_all(hbcount_reported, "Enter Number")) %>% 
   mutate(hbcount_reported = as.numeric(hbcount_reported)) %>% 
-  mutate(HCT_confidence = str_replace_all(HCT_confidence, "None", "0")) %>% 
-  mutate(HCT_confidenceRT = str_replace_all(HCT_confidenceRT, "None", "0")) %>% 
   mutate(HCT_confidence = as.numeric(HCT_confidence)) %>% 
   
   arrange(ID, time)
@@ -279,48 +284,53 @@ cat("\014")
 
 mydata <- data.frame()
 for (participant in list.files("../../data/data_experimental")) {
-  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), -c(5:34, 37:46, 48:54)]  
+  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), -c(5:34, 37:46, 48:54)] %>% 
+    mutate(DT_trial = c(1:80)) %>% 
+    mutate(DT_condition = c(rep("Social", 40), rep("Polygraph", 40)))
   mydata <- rbind(mydata, df_sub)
 }
 
+inclusion <- read.csv("../final_processing/Errors.csv") %>%
+  rename(ID = ï..participant,
+         DT_trial = Trial,
+         inclusion = Inclusion,
+         inclusion2 = Inclusion2)
+
 data <- mydata %>% 
-  rename(item = V1,
-       style = V2,
-       condition = V3,
-       question = V4,
-       subresp = V35,
-       RT = V36,
+  rename(DT_item = V1,
+       DT_style = V2,
+       DT_instruction = V3,
+       DT_question = V4,
+       DT_confidence = V35,
+       DT_confidenceRT = V36,
        ID = V47) %>% 
   
-  mutate(subresp = str_replace_all(subresp, "None", "0")) %>% 
-  mutate(RT = str_replace_all(RT, "None", "0")) %>% 
-  mutate(subresp = as.numeric(subresp)) %>% 
-  mutate(RT = as.numeric(RT)) %>% 
-  mutate(condition = as.factor(condition)) %>% 
-  mutate(ID = as.numeric(ID))
+  mutate(DT_confidence = as.numeric(DT_confidence)) %>% 
+  mutate(DT_confidenceRT = as.numeric(DT_confidenceRT)) %>% 
+  mutate(DT_instruction = as.factor(DT_instruction)) %>% 
+  mutate(ID = as.numeric(ID)) %>% 
+  left_join(inclusion) %>% 
+  
+  select(ID, DT_trial, DT_condition, inclusion, inclusion2, everything()) #move columns to front
 
 results <- data %>% 
-  group_by(ID, condition, style) %>% 
-  summarise(DT_SubjAvg = mean(subresp), DT_RTAvg = mean(RT)) %>% 
-  group_by(ID, condition) %>% 
-  mutate(DT_TotalAvg = mean(DT_SubjAvg), TotalRT = mean(DT_RTAvg)) %>% 
-  rename(DT_condition = condition,
-         DT_style = style)
+  group_by(ID, DT_instruction, DT_style) %>% 
+  summarise(DT_confidence_avg = mean(DT_confidence), DT_confidenceRT_avg = mean(DT_confidenceRT))
 
 write.csv(data, file = "deceptiontask_extracted.csv", row.names=FALSE)
 write.csv(results, file = "deceptiontask_processed.csv", row.names=FALSE)
 ```
 
-```{r merge all}
-data_combined <- read.csv("demo.csv") %>% 
-  select(-c(Name, Matric, HP, Email, Birthday, School, Course, LivedinSG)) %>% 
+```{r combine data}
+data_combined <- read.csv("deceptiontask_extracted.csv") %>% 
   left_join(read.csv("yoni_processed.csv")) %>% 
   left_join(read.csv("BES_processed.csv")) %>% 
   select(-c(contains("Q"))) %>% 
   left_join(read.csv("HCT_processed.csv")) %>% 
   left_join(read.csv("MAIA2_processed.csv")) %>% 
   select(-c(contains("Q"))) %>% 
-  right_join(read.csv("deceptiontask_processed.csv"))
+  left_join(read.csv("demo.csv")) %>% 
+  select(-c(Name, Matric, HP, Email, Birthday, School, Course, LivedinSG))
 
 write.csv(data_combined, file = "../../data/data_combined.csv", row.names = FALSE)
 ```
