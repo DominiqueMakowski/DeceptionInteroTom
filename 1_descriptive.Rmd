@@ -28,12 +28,29 @@ plot(bayestestR::estimate_density(df[c("V1", "V2")])) +
 
 ## Part 3
 
-```{r}
+```{r independent var}
 ggplot(df, aes(yoni_total)) + geom_histogram()
 ggplot(df, aes(BES_total)) + geom_histogram()
 ggplot(df, aes(yoni_total, BES_total)) + geom_point()
 ggplot(df, aes(HCT_accuracy)) + geom_histogram()
 ggplot(df, aes(MAIA_total)) + geom_histogram()
 ggplot(df, aes(HCT_accuracy, MAIA_total)) + geom_point()
+```
+
+```{r dependent var}
+ggplot(df, aes(instruction, DT_confidence)) + geom_boxplot()
+ggplot(df, aes(instruction, DT_confidenceRT)) + geom_boxplot()
+ggplot(df, aes(condition, DT_confidence)) + geom_boxplot()
+ggplot(df, aes(condition, DT_confidenceRT)) + geom_boxplot()
+```
+
+```{r}
+df.social <- df %>% filter(condition == 'Social')
+ggplot(df.social, aes(yoni_total, DT_confidence_avg)) + geom_point()
+ggplot(df.social, aes(BES_total, DT_confidence_avg)) + geom_point()
+
+df.polyg <- df %>% filter(condition == 'Polygraph')
+ggplot(df.polyg, aes(HCT_accuracy, DT_confidence_avg)) + geom_point()
+ggplot(df.polyg, aes(MAIA_total, DT_confidence_avg)) + geom_point()
 ```
 

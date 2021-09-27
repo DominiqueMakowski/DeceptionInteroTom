@@ -10,3 +10,59 @@ Here is another analysis that is contained in a separate file. Let's check-out t
 model <- lm(Petal.Length ~ Sepal.Length, data=iris)
 performance::check_model(model)
 ```
+
+```{r}
+y.var <- c('DT_confidence', 'DT_confidence', 'DT_confidenceRT')
+x.var <- c('DT_confidenceRT', 'condition*instruction', 'condition*instruction')
+
+for (i in seq_along(y.var)){
+  for (j in seq_along(x.var)){
+    if (i==j){
+      model <- lmer(paste(y.var[i],' ~', x.var[j],' + (1|ID) + (1|item) + (1|trial)'), df)
+      print(report(model))
+      print(parameters(model, effects = "fixed"))
+      if (grepl('\\*', x.var[j]) == TRUE){
+        p <- interactions::cat_plot(model, pred = instruction, modx = condition)
+      }
+      else{
+        viz_data <- estimate_relation(model)
+        p <- ggplot(data = viz_data, aes(x = DT_confidenceRT, y = Predicted)) +
+          geom_line() +
+          geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3) +
+          geom_point(data = df, aes(x = DT_confidenceRT, y = DT_confidence, color = ID))
+      }
+      print(p)
+    }
+  }
+}
+```
+
+```{r}
+model <- lmer(DT_confidence ~ DT_confidenceRT + (1|ID) + (1|item) + (1|trial), df)
+report(model)
+parameters(model, effects = "fixed")
+viz_data <- estimate_relation(model)
+p <- ggplot(data = viz_data, aes(x = DT_confidenceRT, y = Predicted)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3) +
+  geom_point(data = df, aes(x = DT_confidenceRT, y = DT_confidence, color = ID))
+p
+#R2 does not account for random effects
+#weirdly significant given the plot
+#what's the include_random thing (6.5 vs 6.7)
+```
+
+```{r}
+model <- lmer(DT_confidence ~ condition*instruction + (1|ID) + (1|item) + (1|trial), df)
+report(model)
+parameters(model, effects = "fixed")
+interactions::cat_plot(model, pred = instruction, modx = condition)
+#R2 does not account for random effects
+#interaction is significant
+```
+
+```{r}
+model <- lmer(DT_confidenceRT ~ condition*instruction + (1|ID) + (1|item) + (1|trial), df)
+#actually this is not the reaction time? it's the reaction time to the question of how confident
+```
+

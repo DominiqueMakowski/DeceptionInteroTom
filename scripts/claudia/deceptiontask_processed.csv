@@ -1,4 +1,4 @@
-"ID","DT_instruction","DT_style","DT_confidence_avg","DT_confidenceRT_avg"
+"ID","instruction","style","DT_confidence_avg","DT_confidenceRT_avg"
 1,"LIE","Direct",0.425231481481481,2.87650501028402
 1,"LIE","Indirect",0.373472222222222,3.01937526706606
 1,"TRUTH","Direct",0.500740740740741,3.08016293851542

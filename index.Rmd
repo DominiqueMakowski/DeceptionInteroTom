@@ -157,6 +157,8 @@ library(performance)
 library(report)
 library(see)
 library(ggplot2)
+library(lme4)
+library(modelbased)
 
 summary(report::report(sessionInfo()))
 ```

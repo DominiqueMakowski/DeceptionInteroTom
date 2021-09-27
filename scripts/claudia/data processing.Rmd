@@ -285,36 +285,36 @@ cat("\014")
 mydata <- data.frame()
 for (participant in list.files("../../data/data_experimental")) {
   df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), -c(5:34, 37:46, 48:54)] %>% 
-    mutate(DT_trial = c(1:80)) %>% 
-    mutate(DT_condition = c(rep("Social", 40), rep("Polygraph", 40)))
+    mutate(trial = c(1:80)) %>% 
+    mutate(condition = c(rep("Social", 40), rep("Polygraph", 40)))
   mydata <- rbind(mydata, df_sub)
 }
 
 inclusion <- read.csv("../final_processing/Errors.csv") %>%
   rename(ID = ï..participant,
-         DT_trial = Trial,
+         trial = Trial,
          inclusion = Inclusion,
          inclusion2 = Inclusion2)
 
 data <- mydata %>% 
-  rename(DT_item = V1,
-       DT_style = V2,
-       DT_instruction = V3,
-       DT_question = V4,
+  rename(item = V1,
+       style = V2,
+       instruction = V3,
+       question = V4,
        DT_confidence = V35,
        DT_confidenceRT = V36,
        ID = V47) %>% 
   
   mutate(DT_confidence = as.numeric(DT_confidence)) %>% 
   mutate(DT_confidenceRT = as.numeric(DT_confidenceRT)) %>% 
-  mutate(DT_instruction = as.factor(DT_instruction)) %>% 
+  mutate(instruction = as.factor(instruction)) %>% 
   mutate(ID = as.numeric(ID)) %>% 
   left_join(inclusion) %>% 
   
-  select(ID, DT_trial, DT_condition, inclusion, inclusion2, everything()) #move columns to front
+  select(ID, trial, condition, inclusion, inclusion2, everything()) #move columns to front
 
 results <- data %>% 
-  group_by(ID, DT_instruction, DT_style) %>% 
+  group_by(ID, instruction, style) %>% 
   summarise(DT_confidence_avg = mean(DT_confidence), DT_confidenceRT_avg = mean(DT_confidenceRT))
 
 write.csv(data, file = "deceptiontask_extracted.csv", row.names=FALSE)
@@ -323,6 +323,7 @@ write.csv(results, file = "deceptiontask_processed.csv", row.names=FALSE)
 
 ```{r combine data}
 data_combined <- read.csv("deceptiontask_extracted.csv") %>% 
+  left_join(read.csv("deceptiontask_processed.csv")) %>% 
   left_join(read.csv("yoni_processed.csv")) %>% 
   left_join(read.csv("BES_processed.csv")) %>% 
   select(-c(contains("Q"))) %>% 
