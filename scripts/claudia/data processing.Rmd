@@ -3,7 +3,6 @@ rm(list=ls())
 cat("\014")
 ```
 
-
 ```{r load packages}
 library(tidyverse)
 ```
@@ -284,7 +283,7 @@ cat("\014")
 
 mydata <- data.frame()
 for (participant in list.files("../../data/data_experimental")) {
-  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), -c(5:34, 37:46, 48:54)] %>% 
+  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), c(1:4, 29, 31, 35, 36, 43, 45, 47)] %>% 
     mutate(trial = c(1:80)) %>% 
     mutate(condition = c(rep("Social", 40), rep("Polygraph", 40)))
   mydata <- rbind(mydata, df_sub)
@@ -301,21 +300,31 @@ data <- mydata %>%
        style = V2,
        instruction = V3,
        question = V4,
+       social_start = V29,
+       social_stop = V31,
        DT_confidence = V35,
        DT_confidenceRT = V36,
+       polyg_start = V43,
+       polyg_stop = V45,
        ID = V47) %>% 
   
   mutate(DT_confidence = as.numeric(DT_confidence)) %>% 
-  mutate(DT_confidenceRT = as.numeric(DT_confidenceRT)) %>% 
   mutate(instruction = as.factor(instruction)) %>% 
-  mutate(ID = as.numeric(ID)) %>% 
-  left_join(inclusion) %>% 
-  
+  mutate(social_start = as.numeric(social_start)) %>% 
+  mutate(social_stop = as.numeric(social_stop)) %>% 
+  mutate(polyg_start = as.numeric(polyg_start)) %>% 
+  mutate(polyg_stop = as.numeric(polyg_stop)) %>% 
+  mutate(ID = as.numeric(ID)) %>%
+  mutate(DT_RT = ifelse(condition == "Social", social_stop - social_start,
+         ifelse(condition == "Polygraph", polyg_stop - polyg_start, NA))) %>% 
+
+  left_join(inclusion) %>%
   select(ID, trial, condition, inclusion, inclusion2, everything()) #move columns to front
 
-results <- data %>% 
-  group_by(ID, instruction, style) %>% 
-  summarise(DT_confidence_avg = mean(DT_confidence), DT_confidenceRT_avg = mean(DT_confidenceRT))
+results <- data %>%
+  group_by(ID, instruction, style) %>%
+  summarise(DT_RT_avg = mean(DT_RT, na.rm = TRUE),
+            DT_confidence_avg = mean(DT_confidence, na.rm = TRUE))
 
 write.csv(data, file = "deceptiontask_extracted.csv", row.names=FALSE)
 write.csv(results, file = "deceptiontask_processed.csv", row.names=FALSE)
@@ -323,7 +332,7 @@ write.csv(results, file = "deceptiontask_processed.csv", row.names=FALSE)
 
 ```{r combine data}
 data_combined <- read.csv("deceptiontask_extracted.csv") %>% 
-  left_join(read.csv("deceptiontask_processed.csv")) %>% 
+  select(-c(contains("start")|contains("stop"))) %>% 
   left_join(read.csv("yoni_processed.csv")) %>% 
   left_join(read.csv("BES_processed.csv")) %>% 
   select(-c(contains("Q"))) %>% 

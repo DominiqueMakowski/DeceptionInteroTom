@@ -53,12 +53,19 @@ p
 ```
 
 ```{r}
-model <- lmer(DT_confidence ~ condition*instruction + (1|ID) + (1|item) + (1|trial), df)
+model <- lmer(DT_confidence ~ condition*instruction + (1|ID) + (1|item), df)
 report(model)
 parameters(model, effects = "fixed")
 interactions::cat_plot(model, pred = instruction, modx = condition)
+means <- modelbased::estimate_means(model, at = c("condition", "instruction"))
+means
+contrasts <- modelbased::estimate_contrasts(model, contrast = c("condition", "instruction"))
+ggplot(means, aes(x = instruction, y = Mean, colour = condition)) + 
+  geom_line(aes(group = condition)) +
+  geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
 #R2 does not account for random effects
 #interaction is significant
+performance::performance(model)
 ```
 
 ```{r}

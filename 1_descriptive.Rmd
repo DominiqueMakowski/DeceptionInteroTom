@@ -38,19 +38,20 @@ ggplot(df, aes(HCT_accuracy, MAIA_total)) + geom_point()
 ```
 
 ```{r dependent var}
+ggplot(df, aes(instruction, DT_RT)) + geom_boxplot()
 ggplot(df, aes(instruction, DT_confidence)) + geom_boxplot()
-ggplot(df, aes(instruction, DT_confidenceRT)) + geom_boxplot()
+ggplot(df, aes(condition, DT_RT)) + geom_boxplot()
 ggplot(df, aes(condition, DT_confidence)) + geom_boxplot()
-ggplot(df, aes(condition, DT_confidenceRT)) + geom_boxplot()
 ```
 
 ```{r}
-df.social <- df %>% filter(condition == 'Social')
-ggplot(df.social, aes(yoni_total, DT_confidence_avg)) + geom_point()
-ggplot(df.social, aes(BES_total, DT_confidence_avg)) + geom_point()
-
-df.polyg <- df %>% filter(condition == 'Polygraph')
-ggplot(df.polyg, aes(HCT_accuracy, DT_confidence_avg)) + geom_point()
-ggplot(df.polyg, aes(MAIA_total, DT_confidence_avg)) + geom_point()
+df %>% 
+  group_by(ID, condition, instruction) %>% 
+  summarise(confidence = mean(DT_confidence, na.rm = TRUE),
+            yoni_total = mean(yoni_total, na.rm = TRUE)) %>% #create a new df for plot
+  ggplot(aes(x = yoni_total, y = confidence, colour = instruction)) +
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  facet_wrap(~condition)
 ```
 
