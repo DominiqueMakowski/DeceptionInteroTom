@@ -28,30 +28,69 @@ plot(bayestestR::estimate_density(df[c("V1", "V2")])) +
 
 ## Part 3
 
+```{r}
+df.plot <- df %>% 
+  group_by(ID, condition, instruction) %>% 
+  summarise(confidence = mean(DT_confidence, na.rm = TRUE),
+            RT = mean(DT_RT, na.rm = TRUE),
+            yoni_total = mean(yoni_total, na.rm = TRUE),
+            BES_total = mean(BES_total, na.rm = TRUE),
+            HCT_accuracy = mean(HCT_accuracy, na.rm = TRUE),
+            MAIA_total = mean(MAIA_total, na.rm = TRUE))
+```
+
 ```{r independent var}
-ggplot(df, aes(yoni_total)) + geom_histogram()
-ggplot(df, aes(BES_total)) + geom_histogram()
-ggplot(df, aes(yoni_total, BES_total)) + geom_point()
-ggplot(df, aes(HCT_accuracy)) + geom_histogram()
-ggplot(df, aes(MAIA_total)) + geom_histogram()
-ggplot(df, aes(HCT_accuracy, MAIA_total)) + geom_point()
+ggplot(df.plot, aes(yoni_total)) + geom_histogram()
+ggplot(df.plot, aes(BES_total)) + geom_histogram()
+ggplot(df.plot, aes(yoni_total, BES_total)) + geom_point()
+ggplot(df.plot, aes(HCT_accuracy)) + geom_histogram()
+ggplot(df.plot, aes(MAIA_total)) + geom_histogram()
+ggplot(df.plot, aes(HCT_accuracy, MAIA_total)) + geom_point()
 ```
 
 ```{r dependent var}
-ggplot(df, aes(instruction, DT_RT)) + geom_boxplot()
+ggplot(df, aes(DT_confidence)) + geom_density()
+ggplot(df, aes(DT_RT)) + geom_density()
+
 ggplot(df, aes(instruction, DT_confidence)) + geom_boxplot()
-ggplot(df, aes(condition, DT_RT)) + geom_boxplot()
+# much higher confidence in truth
+ggplot(df, aes(instruction, DT_RT)) + geom_boxplot()
+# no diff in reaction time in truth or lie
+
 ggplot(df, aes(condition, DT_confidence)) + geom_boxplot()
+ggplot(df, aes(condition, DT_RT)) + geom_boxplot()
+# not much diff for diff conditions
+
+ggplot(df, aes(DT_RT, DT_confidence)) + geom_point()
+# RT and confidence don't seem to have a correlation
 ```
 
-```{r}
-df %>% 
-  group_by(ID, condition, instruction) %>% 
-  summarise(confidence = mean(DT_confidence, na.rm = TRUE),
-            yoni_total = mean(yoni_total, na.rm = TRUE)) %>% #create a new df for plot
-  ggplot(aes(x = yoni_total, y = confidence, colour = instruction)) +
+```{r both}
+# is there a way to loop this
+ggplot(df.plot, aes(x = yoni_total, y = confidence, colour = instruction)) +
   geom_point() +
   geom_smooth(method = "lm") + 
   facet_wrap(~condition)
+
+ggplot(df.plot, aes(x = BES_total, y = confidence, colour = instruction)) +
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  facet_wrap(~condition)
+# both yoni and BES do not seem to have effect in social condition, higher yoni/BES increases confidence in truth and decreases confidences in lie
+
+ggplot(df.plot, aes(x = HCT_accuracy, y = confidence, colour = instruction)) +
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  facet_wrap(~condition)
+# same effect in both social and polygraph, higher HCT accuracy decreases confidence in truth and increases confidence in lie
+
+ggplot(df.plot, aes(x = MAIA_total, y = confidence, colour = instruction)) +
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  facet_wrap(~condition)
+# same effect for lie in both social and polygraph, higher MAIA increases confidence
+# higher MAIA increases confidence in lie for social and not polygraph
+
+# interesting that the social tests are more correlated with polygraph and vice versa
 ```
 

@@ -151,14 +151,14 @@ Do not hesitate to improve this template by updating, documenting, or expanding 
 This document was prepared on `r format(Sys.Date())`. 
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
-library(bayestestR)
-library(parameters)
-library(performance)
-library(report)
-library(see)
 library(tidyverse)
 library(lme4)
+library(report)
+library(parameters)
 library(modelbased)
+library(performance)
+library(bayestestR)
+library(see)
 
 summary(report::report(sessionInfo()))
 ```
