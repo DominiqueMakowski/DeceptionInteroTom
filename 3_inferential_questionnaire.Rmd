@@ -3,119 +3,60 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+```{r}
+plot_effect <- function(model, var) {
+  viz_data <- estimate_relation(model, at = c("condition", var, "instruction"))
+  ggplot(data = viz_data, aes_string(x = var, y = "Predicted")) +
+    geom_point(data = df.plot, aes_string(y = "DT_confidence", color = "condition"), show.legend = FALSE) +
+    geom_line(aes_string(color = "condition")) +
+    geom_ribbon(aes_string(ymin = "CI_low", ymax = "CI_high", fill = "condition"), alpha = 0.3) + 
+    facet_wrap(~instruction)
+}
+plot_effect(model, "MAIA_total")
+```
+
 ## The effect of TOM ability on confidence and RT
 ### Yoni task
-no correlation of yoni score with confidence
 ```{r}
-model <- glmmTMB(DT_confidence ~ yoni_total + DT_RT + (1|ID) + (1|item), data = df)
+model <- glmmTMB(DT_confidence ~ instruction/(condition*yoni_total) + (1|ID) + (1|item), data = df)
 parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "yoni_total")
+viz_data <- estimate_relation(model, at = c("condition", "yoni_total", "instruction"))
 ggplot(data = viz_data, aes(x = yoni_total, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = yoni_total, y = DT_confidence, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
+  geom_point(data = df.plot, aes(y = DT_confidence, color = condition), show.legend = FALSE) +
+  geom_line(aes(color = condition)) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = condition), alpha = 0.3) + 
+  facet_wrap(~instruction)
 ```
-
-no correlation of yoni score with RT
-```{r}
-model <- glmmTMB(DT_RT ~ yoni_total + DT_confidence + (1|ID) + (1|item), data = df)
-parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "yoni_total")
-ggplot(data = viz_data, aes(x = yoni_total, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = yoni_total, y = DT_RT, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
-```
+the higher someone scores in yoni, the bigger the difference in lie and truth
 
 ### BES
-no correlation of BES score with confidence
 ```{r}
-model <- glmmTMB(DT_confidence ~ BES_total + DT_RT + (1|ID) + (1|item), data = df)
+model <- glmmTMB(DT_confidence ~ instruction/(condition*BES_total) + (1|ID) + (1|item), data = df)
 parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "BES_total")
+viz_data <- estimate_relation(model, at = c("condition", "BES_total", "instruction"))
 ggplot(data = viz_data, aes(x = BES_total, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = BES_total, y = DT_confidence, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
-```
-
-no correlation of BES score with RT
-```{r}
-model <- glmmTMB(DT_RT ~ BES_total + DT_confidence + (1|ID) + (1|item), data = df)
-parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "BES_total")
-ggplot(data = viz_data, aes(x = BES_total, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = BES_total, y = DT_RT, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
+  geom_point(data = df.plot, aes(y = DT_confidence, color = condition), show.legend = FALSE) +
+  geom_line(aes(color = condition)) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = condition), alpha = 0.3) + 
+  facet_wrap(~instruction)
 ```
 
 ## The effect of interoceptive ability on confidence and RT
 ### HCT
-no correlation of HCT accuracy with confidence
 ```{r}
-model <- glmmTMB(DT_confidence ~ HCT_accuracy + DT_RT + (1|ID) + (1|item), data = df)
+model <- glmmTMB(DT_confidence ~ instruction/(condition*HCT_accuracy) + (1|ID) + (1|item), data = df)
 parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "HCT_accuracy")
+viz_data <- estimate_relation(model, at = c("condition", "HCT_accuracy", "instruction"))
 ggplot(data = viz_data, aes(x = HCT_accuracy, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = HCT_accuracy, y = DT_confidence, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
-```
-
-no correlation of HCT accuracy with RT
-```{r}
-model <- glmmTMB(DT_RT ~ HCT_accuracy + DT_confidence + (1|ID) + (1|item), data = df)
-parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "HCT_accuracy")
-ggplot(data = viz_data, aes(x = HCT_accuracy, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = HCT_accuracy, y = DT_RT, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
+  geom_point(data = df.plot, aes(y = DT_confidence, color = condition), show.legend = FALSE) +
+  geom_line(aes(color = condition)) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = condition), alpha = 0.3) + 
+  facet_wrap(~instruction)
 ```
 
 ### MAIA
-the higher the MAIA the higher the confidence (p=0.048)
 ```{r}
-model <- glmmTMB(DT_confidence ~ MAIA_total + DT_RT + (1|ID) + (1|item), data = df)
+model <- glmmTMB(DT_confidence ~ instruction/(condition*MAIA_total) + (1|ID) + (1|item), data = df)
 parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "MAIA_total")
-ggplot(data = viz_data, aes(x = MAIA_total, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = MAIA_total, y = DT_confidence, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
+parameters(emmeans::emtrends(model, ~instruction, var = "MAIA_total")) # main effect only significant for lie, averages (properly) over condition -> similar to instruction/MAIA_total but takes into account condition
 ```
-
-the higher the MAIA the lower the RT (p=0.035)
-```{r}
-model <- glmmTMB(DT_RT ~ MAIA_total + DT_confidence + (1|ID) + (1|item), data = df)
-parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "MAIA_total")
-ggplot(data = viz_data, aes(x = MAIA_total, y = Predicted)) +
-  geom_point(data = df.plot, aes(x = MAIA_total, y = DT_RT, color = ID), show.legend = FALSE) +
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
-```
-
-```{r test}
-model <- glmmTMB(DT_confidence ~ MAIA_total + DT_RT + (1|ID) + (1|item), data = df)
-parameters(model, effects = "fixed")
-viz_data <- estimate_relation(model, at = "MAIA_total")
-ggplot(data = viz_data, aes(x = MAIA_total, y = Predicted)) +
-  geom_boxplot(data = df, aes(x = MAIA_total, y = DT_confidence, color = ID), show.legend = FALSE) + 
-  geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
-```
-
-## idea for within
-independent variable: 
-each participant is assigned a percentile for yoni/bes/hct/maia
-objective-objective and subjective-subjective to obtain difference in TOM-int ability
-
-dependent variable:
-average of DT_confidence in social - polygraph
-hmm
-
-hypothesis: 
-the higher the difference in TOM-int, the higher the social-polygraph confidence
-(though this does not seem to be the case in descriptive)

@@ -271,6 +271,14 @@ results <- mydata %>%
   mutate(MAIA1 = (Q1+Q2+Q3+Q4)/4, MAIA2 = (Q5+Q6+Q7+Q8+Q9+Q10)/6, MAIA3 = (Q11+Q12+Q13+Q14+Q15)/5, MAIA4 = (Q16+Q17+Q18+Q19+Q20+Q21+Q22)/7,
         MAIA5 = (Q23+Q24+Q25+Q26+Q27)/5, MAIA6 = (Q28+Q29+Q30+Q31)/4, MAIA7 = (Q32+Q33+Q34)/3, MAIA8 = (Q35+Q36+Q37)/3) %>% 
   mutate(MAIA_total = (MAIA1+MAIA2+MAIA3+MAIA4+MAIA5+MAIA6+MAIA7+MAIA8)/8) %>%
+  rename(MAIA_noticing = MAIA1,
+         MAIA_not_distracting = MAIA2,
+         MAIA_not_worrying = MAIA3,
+         MAIA_attention_regulation = MAIA4,
+         MAIA_emotional_awareness = MAIA5,
+         MAIA_self_regulation = MAIA6,
+         MAIA_body_listening = MAIA7,
+         MAIA_trusting = MAIA8) %>% 
   
   arrange(ID)
 
@@ -309,9 +317,14 @@ results <- mydata %>%
          Q13 = as.numeric(Q13), Q14 = as.numeric(Q14), Q15 = as.numeric(Q15), Q16 = as.numeric(Q16),
          Q17 = as.numeric(Q17), Q18 = as.numeric(Q18)) %>% 
   
+  mutate(lie_ability = (Q4+Q5+Q6+Q7)/4, 
+         lie_frequency = (Q1+Q2+Q3+Q8)/4, 
+         lie_negativity = (Q9+Q11+Q13+Q16)/4, 
+         lie_contextuality = (Q10+Q12+Q14+Q15)/4) %>% 
+  
   arrange(ID)
 
-# write.csv(results, file = "Lie Scale_processed.csv", row.names=FALSE)
+write.csv(results, file = "liescale_processed.csv", row.names=FALSE)
 ```
 
 ```{r deception subj}
