@@ -4,96 +4,64 @@ editor_options:
   chunk_output_type: console
 ---
 
-Here is another analysis that is contained in a separate file. Let's check-out this linear regression model (note that, in the code chunk parameters, I multiplied `figheight` by 2 to have a taller plot):
-
-```{r 2_plot_model, warning=FALSE, message=FALSE, fig.heiht=figheight * 2, fig.width=figwidth, dpi=150}
-model <- lm(Petal.Length ~ Sepal.Length, data=iris)
-performance::check_model(model)
-```
-
-```{r loop archive}
-y.var <- c('DT_confidence', 'DT_confidence', 'DT_RT')
-x.var <- c('DT_RT', 'condition*instruction', 'condition*instruction')
-
-for (i in seq_along(y.var)){
-  for (j in seq_along(x.var)){
-    if (i==j){
-      model <- lmer(paste(y.var[i],' ~', x.var[j],' + (1|ID) + (1|item) + (1|trial)'), df)
-      print(report(model))
-      print(parameters(model, effects = "fixed"))
-      if (grepl('\\*', x.var[j]) == TRUE){
-        p <- interactions::cat_plot(model, pred = instruction, modx = condition)
-      }
-      else{
-        viz_data <- estimate_relation(model)
-        p <- ggplot(data = viz_data, aes(x = DT_RT, y = Predicted)) +
-          geom_line() +
-          geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3) +
-          geom_point(data = df, aes(x = DT_RT, y = DT_confidence, color = ID))
-      }
-      print(p)
-    }
-  }
-}
-```
-
-```{r confidence and RT}
-model <- lmer(DT_confidence ~ DT_RT + (1|ID) + (1|item), df) # removed trial
+## The effect of confidence on RT
+Confidence has a significant impact on RT.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ DT_RT + (1|ID) + (1|item), data = df) # removed trial
 parameters(model, effects = "fixed")
 viz_data <- estimate_relation(model)
-p <- ggplot(data = viz_data, aes(x = DT_RT, y = Predicted)) +
+ggplot(data = viz_data, aes(x = DT_RT, y = Predicted)) +
+  geom_point(data = df, aes(x = DT_RT, y = DT_confidence, color = ID), show.legend = FALSE) +
   geom_line() +
-  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3) +
-  geom_point(data = df, aes(x = DT_RT, y = DT_confidence, color = ID))
-p
-# there's still a singular fit?
-# weirdly significant given the plot
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
+
 # what's the include_random thing (6.5 vs 6.7)
 ```
 
-```{r condition*instruction}
-y.var <- c('DT_confidence', 'DT_RT')
-
-for (i in seq_along(y.var)){
-  model <- lmer(paste(y.var[i],' ~ condition*instruction + (1|ID) + (1|item)'), df)
-  print(parameters(model, effects = "fixed"))
-  means <- modelbased::estimate_means(model, at = c("condition", "instruction"))
-  contrasts <- modelbased::estimate_contrasts(model, contrast = c("condition", "instruction"))
-  p <- ggplot(means, aes(x = instruction, y = Mean, colour = condition)) + 
-    geom_line(aes(group = condition)) +
-    geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
-  print(p)
-}
-# what's the better way to loop
-# significant interaction for confidence: in truth, polygraph increases confidence but no diff in lie
-# non-significant interaction for RT
-```
-
-```{r style*instruction}
-y.var <- c('DT_confidence', 'DT_RT')
-
-for (i in seq_along(y.var)){
-  model <- lmer(paste(y.var[i],' ~ style*instruction + (1|ID) + (1|item)'), df)
-  print(parameters(model, effects = "fixed"))
-  means <- modelbased::estimate_means(model, at = c("style", "instruction"))
-  contrasts <- modelbased::estimate_contrasts(model, contrast = c("style", "instruction"))
-  p <- ggplot(means, aes(x = instruction, y = Mean, colour = style)) + 
-    geom_line(aes(group = style)) +
-    geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
-  print(p)
-}
-# non-significant interaction for both (large CI)
-```
-
+## Interaction of condition and instruction
+### Confidence
+There is a significant interaction of condition and instruction on confidence.
+The increase in confidence from lie to truth is more in polygraph than social.
 ```{r}
-model <- lmer(DT_confidence ~ condition*instruction + (1|ID) + (1|item), df)
-report(model)
+model <- glmmTMB(DT_confidence ~ condition*instruction + (1|ID) + (1|item), data = df)
 parameters(model, effects = "fixed")
 means <- modelbased::estimate_means(model, at = c("condition", "instruction"))
 contrasts <- modelbased::estimate_contrasts(model, contrast = c("condition", "instruction"))
 ggplot(means, aes(x = instruction, y = Mean, colour = condition)) + 
   geom_line(aes(group = condition)) +
   geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
-performance::performance(model)
 ```
 
+### Reaction time
+There is no significant interaction of condition and instruction on RT.
+```{r}
+model <- glmmTMB(DT_RT ~ condition*instruction + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+means <- modelbased::estimate_means(model, at = c("condition", "instruction"))
+ggplot(means, aes(x = instruction, y = Mean, colour = condition)) + 
+  geom_line(aes(group = condition)) +
+  geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
+```
+
+## Interaction of style and instruction
+### Confidence
+There is no significant interaction of style and instruction on confidence.
+```{r}
+model <- glmmTMB(DT_confidence ~ style*instruction + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+means <- modelbased::estimate_means(model, at = c("style", "instruction"))
+ggplot(means, aes(x = instruction, y = Mean, colour = style)) + 
+  geom_line(aes(group = style)) +
+  geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
+```
+
+### Reaction time
+There is no significant interaction of style and instruction on RT.
+```{r}
+model <- glmmTMB(DT_RT ~ style*instruction + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+means <- modelbased::estimate_means(model, at = c("style", "instruction"))
+ggplot(means, aes(x = instruction, y = Mean, colour = style)) + 
+  geom_line(aes(group = style)) +
+  geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
+```

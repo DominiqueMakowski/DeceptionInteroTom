@@ -111,9 +111,9 @@ results <- mydata %>%
          Q13 = as.numeric(Q13), Q14 = as.numeric(Q14), Q15 = as.numeric(Q15), Q16 = as.numeric(Q16),
          Q17 = as.numeric(Q17), Q18 = as.numeric(Q18), Q19 = as.numeric(Q19), Q20 = as.numeric(Q20)) %>%
   
-  mutate(BES_cognitive = Q3+Q6+Q9+Q10+Q12+Q14+Q16+Q19+Q20) %>% 
-  mutate(BES_affective = Q1+Q2+Q4+Q5+Q7+Q8+Q11+Q13+Q15+Q17+Q18) %>% 
-  mutate(BES_total = BES_cognitive+BES_affective) %>% 
+  mutate(BES_cognitive = Q3+Q6+Q9+Q10+Q12+Q14+Q16+Q19+Q20, 
+         BES_affective = Q1+Q2+Q4+Q5+Q7+Q8+Q11+Q13+Q15+Q17+Q18,
+         BES_total = BES_cognitive+BES_affective) %>% 
   
   arrange(ID)
 
@@ -139,8 +139,8 @@ data <- mydata %>%
   select(ID, everything()) %>% #move ID column to front
   
   mutate(hbcount_reported = str_remove_all(hbcount_reported, "Enter Number")) %>% 
-  mutate(hbcount_reported = as.numeric(hbcount_reported)) %>% 
-  mutate(HCT_confidence = as.numeric(HCT_confidence)) %>% 
+  mutate(hbcount_reported = as.numeric(hbcount_reported),
+         HCT_confidence = as.numeric(HCT_confidence)) %>% 
   
   arrange(ID, time)
 
@@ -190,9 +190,9 @@ parttwo <- parttwo %>%
   summarise_all(funs(trimws(paste(., collapse = ''))))
 
 parttwo <- parttwo %>% 
-  mutate(HCT_guess = str_count(parttwo$guess, "space")) %>% 
-  mutate(HCT_noguess = str_count(parttwo$noguess, "space")) %>% 
-  mutate(HCT_onebreath = str_count(parttwo$onebreath, "space")) %>% 
+  mutate(HCT_guess = str_count(parttwo$guess, "space"),
+         HCT_noguess = str_count(parttwo$noguess, "space"),
+         HCT_onebreath = str_count(parttwo$onebreath, "space")) %>% 
   select(c(ID, HCT_guess, HCT_noguess, HCT_onebreath))
 
 results <- left_join(results, parttwo)
@@ -277,6 +277,43 @@ results <- mydata %>%
 write.csv(results, file = "MAIA2_processed.csv", row.names=FALSE)
 ```
 
+```{r lie scale}
+rm(list=ls())
+cat("\014")
+
+mydata <- read.csv('../../data/data_questionnaire/Lie Scale.csv', stringsAsFactors = FALSE)[-c(1, 2), -c(1:17)] 
+
+results <- mydata %>% 
+  rename(Q1 = Q1_4,
+       Q2 = Q2_4,
+       Q3 = Q3_4,
+       Q4 = Q4_4,
+       Q5 = Q5_4,
+       Q6 = Q6_4,
+       Q7 = Q7_4,
+       Q8 = Q8_4,
+       Q9 = Q9_4,
+       Q10 = Q10_1,
+       Q11 = Q11_1,
+       Q12 = Q12_4,
+       Q13 = Q13_4,
+       Q14 = Q14_4,
+       Q15 = Q15_4,
+       Q16 = Q16_4,
+       Q17 = Q17,
+       Q18 = Q18) %>% 
+  
+  mutate(Q1 = as.numeric(Q1), Q2 = as.numeric(Q2), Q3 = as.numeric(Q3), Q4 = as.numeric(Q4),
+         Q5 = as.numeric(Q5), Q6 = as.numeric(Q6), Q7 = as.numeric(Q7), Q8 = as.numeric(Q8),
+         Q9 = as.numeric(Q9), Q10 = as.numeric(Q10), Q11 = as.numeric(Q11), Q12 = as.numeric(Q12),
+         Q13 = as.numeric(Q13), Q14 = as.numeric(Q14), Q15 = as.numeric(Q15), Q16 = as.numeric(Q16),
+         Q17 = as.numeric(Q17), Q18 = as.numeric(Q18)) %>% 
+  
+  arrange(ID)
+
+# write.csv(results, file = "Lie Scale_processed.csv", row.names=FALSE)
+```
+
 ```{r deception subj}
 rm(list=ls())
 cat("\014")
@@ -284,8 +321,8 @@ cat("\014")
 mydata <- data.frame()
 for (participant in list.files("../../data/data_experimental")) {
   df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), c(1:4, 29, 31, 35, 36, 43, 45, 47)] %>% 
-    mutate(trial = c(1:80)) %>% 
-    mutate(condition = c(rep("Social", 40), rep("Polygraph", 40)))
+    mutate(trial = c(1:80),
+           condition = c(rep("Social", 40), rep("Polygraph", 40)))
   mydata <- rbind(mydata, df_sub)
 }
 
@@ -308,18 +345,17 @@ data <- mydata %>%
        polyg_stop = V45,
        ID = V47) %>% 
   
-  mutate(DT_confidence = as.numeric(DT_confidence)) %>% 
-  mutate(instruction = as.factor(instruction)) %>% 
-  mutate(social_start = as.numeric(social_start)) %>% 
-  mutate(social_stop = as.numeric(social_stop)) %>% 
-  mutate(polyg_start = as.numeric(polyg_start)) %>% 
-  mutate(polyg_stop = as.numeric(polyg_stop)) %>% 
-  mutate(ID = as.numeric(ID)) %>%
+  mutate(DT_confidence = as.numeric(DT_confidence),
+         social_start = as.numeric(social_start),
+         social_stop = as.numeric(social_stop),
+         polyg_start = as.numeric(polyg_start),
+         polyg_stop = as.numeric(polyg_stop),
+         ID = as.numeric(ID)) %>%
   mutate(DT_RT = ifelse(condition == "Social", social_stop - social_start,
-         ifelse(condition == "Polygraph", polyg_stop - polyg_start, NA))) %>% 
+         ifelse(condition == "Polygraph", polyg_stop - polyg_start, NA))) %>%
 
   left_join(inclusion) %>%
-  select(ID, trial, condition, inclusion, inclusion2, everything()) #move columns to front
+  select(ID, trial, condition, inclusion, inclusion2, everything()) # move columns to front
 
 results <- data %>%
   group_by(ID, instruction, style) %>%
