@@ -380,14 +380,17 @@ write.csv(results, file = "deceptiontask_processed.csv", row.names=FALSE)
 ```
 
 ```{r combine data}
+qn <- paste0("Q", 1:40)
 data_combined <- read.csv("deceptiontask_extracted.csv") %>% 
   select(-c(contains("start")|contains("stop"))) %>% 
   left_join(read.csv("yoni_processed.csv")) %>% 
   left_join(read.csv("BES_processed.csv")) %>% 
-  select(-c(contains("Q"))) %>% 
+  select(-c(contains(paste0("Q", 0:9)))) %>%
   left_join(read.csv("HCT_processed.csv")) %>% 
   left_join(read.csv("MAIA2_processed.csv")) %>% 
-  select(-c(contains("Q"))) %>% 
+  select(-c(contains(paste0("Q", 0:9)))) %>%
+  left_join(read.csv("liescale_processed.csv")) %>% 
+  select(-c(contains(paste0("Q", 0:9)))) %>%
   left_join(read.csv("demo.csv")) %>% 
   select(-c(Name, Matric, HP, Email, Birthday, School, Course, LivedinSG))
 

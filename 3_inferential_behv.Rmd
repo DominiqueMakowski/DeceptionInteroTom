@@ -1,0 +1,184 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+plot_behv <- function(model, varx, vary) {
+  viz_data <- estimate_relation(model, at = c("condition", varx, "instruction"))
+  ggplot(data = viz_data, aes_string(x = varx, y = "Predicted")) +
+    geom_point(data = df.plot, aes_string(y = vary, color = "condition"), show.legend = FALSE) +
+    geom_line(aes(color = condition)) +
+    geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = condition), alpha = 0.3) + 
+    facet_wrap(~instruction)
+}
+```
+
+## Summary
+```{r}
+summary <- data.frame("yoni", "decrease (trend)", "social", "increase (ns)", "ns")
+names(summary) <- c("measure", "conf main effect (lie)", "conf interact", "RT main effect (lie)", "RT interact")
+summary <- summary %>% 
+  rbind(c("BES", "decrease (ns)", "social (trend)", "decrease (ns)", "polygraph")) %>% 
+  rbind(c("HCT confidence", "increase", "polygraph", "decrease", "ns")) %>% 
+  rbind(c("HCT accuracy", "increase", "polygraph", "decrease (ns)", "ns")) %>% 
+  rbind(c("HCT awareness", "decrease", "social", "increase", "polygraph")) %>% 
+  rbind(c("MAIA", "increase", "ns", "decrease", "social"))
+summary
+```
+
+## TOM ability
+### Yoni task
+When instructed to lie, the decrease in confidence in participants with higher yoni score is less in social than polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*yoni_total) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "yoni_total", "DT_confidence")
+```
+
+When instructed to lie, participants with higher yoni score show no significant difference in RT between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*yoni_total) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "yoni_total", "DT_RT")
+```
+
+### BES
+When instructed to lie, the decrease in confidence in participants with higher BES score has a trend towards being less in social than polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*BES_total) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "BES_total", "DT_confidence")
+```
+
+When instructed to lie, the decrease in RT in participants with higher BES score is more in social than polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*BES_total) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "BES_total", "DT_RT")
+```
+
+## Interoceptive ability
+### HCT confidence
+When instructed to lie, the increase in confidence in participants with higher HCT confidence is more in polygraph than social condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*HCT_confidence) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "HCT_confidence", "DT_confidence")
+```
+
+When instructed to lie, participants with higher HCT confidence show no significant difference in RT between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*HCT_confidence) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "HCT_confidence", "DT_RT")
+```
+
+### HCT accuracy
+When instructed to lie, the increase in confidence in participants with higher HCT accuracy is more in polygraph than social condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*HCT_accuracy) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "HCT_accuracy", "DT_confidence")
+```
+
+When instructed to lie, participants with higher HCT accuracy show no significant difference in RT between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*HCT_accuracy) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "HCT_accuracy", "DT_RT")
+```
+
+### HCT awareness
+When instructed to lie, participants with higher HCT awareness have higher confidence in social than polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*HCT_awareness) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "HCT_awareness", "DT_confidence")
+```
+
+When instructed to lie, the increase in RT in participants with higher HCT awareness is less in social than polygraph condition. (Strange considering confidence increases)
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*HCT_awareness) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "HCT_awareness", "DT_RT")
+```
+
+### MAIA
+When instructed to lie, participants with higher MAIA score show no significant difference in confidence between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*MAIA_total) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "MAIA_total", "DT_confidence")
+```
+
+When instructed to lie, the decrease in RT in participants with higher MAIA score is more in polygraph than social condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*MAIA_total) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "MAIA_total", "DT_RT")
+```
+
+## Lie scale
+### Lie ability
+Higher lie ability increases confidence more in lie than truth.
+When instructed to lie, participants with higher lie ability show no significant difference in confidence between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*lie_ability) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_ability", "DT_confidence")
+```
+
+When instructed to lie, participants with higher lie ability show no significant difference in RT between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*lie_ability) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_ability", "DT_RT")
+```
+
+### Lie frequency
+When instructed to lie, participants with higher lie frequency show no significant difference in confidence between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*lie_frequency) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_frequency", "DT_confidence")
+```
+
+Participants with higher lie frequency show significant increase in RT for both lie and truth.
+When instructed to lie, the increase in RT in participants with higher lie frequency is more in polygraph than social condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*lie_frequency) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_frequency", "DT_RT")
+```
+
+### Lie negativity
+When instructed to lie, participants with higher perception of lie negativity show no significant difference in confidence between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*lie_negativity) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_negativity", "DT_confidence")
+```
+
+Participants with higher perception of lie negativity show significant decrease in RT for both lie and truth.
+When instructed to lie, the decrease in RT in participants with higher perception of lie negativity is more in polygraph than social condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*lie_negativity) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_negativity", "DT_RT")
+```
+
+### Lie contextuality
+When instructed to lie, participants with higher lie contextuality show no significant difference in confidence between social and polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ instruction/(condition*lie_contextuality) + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_contextuality", "DT_confidence")
+```
+
+When instructed to lie, the decrease in RT in participants with higher lie contextuality is more in social than polygraph condition.
+```{r warning=FALSE}
+model <- glmmTMB(DT_RT ~ instruction/(condition*lie_contextuality) + style + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_behv(model, "lie_contextuality", "DT_RT")
+```

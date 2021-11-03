@@ -73,8 +73,8 @@ library(report)
 library(parameters)
 library(modelbased)
 library(performance)
-library(bayestestR)
-library(see)
+# library(bayestestR)
+# library(see)
 
 summary(report::report(sessionInfo()))
 ```
@@ -83,6 +83,7 @@ summary(report::report(sessionInfo()))
 ## Data
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
+setwd("C:/Users/user/Desktop/Sputnik/2019-23/DeceptionInteroTom")
 df <- read.csv("data/data_combined.csv") %>% 
   mutate(ID = as.factor(ID),
          condition = as.factor(condition),
@@ -104,17 +105,20 @@ Note that the chunks generating figures in the code below have some arguments sp
 
 # Descriptive Stats {.tabset}
 
-Notice the `{.tabset}` tag after the section name. This will show the subsections as different tabs (in the [html version](https://realitybending.github.io/TemplateResults/#Descriptive_Stats) only, because the other formats are static).
-
-
 ```{r child=if (fast == FALSE) '1_descriptive.Rmd'}
 ```
 
-# Inferential Stats {.tabset}
+# Inferential Stats (Experimental) {.tabset}
 
-```{r child=if (fast == FALSE) '2_inferential.Rmd'}
+```{r child=if (fast == FALSE) '2_inferential_expt.Rmd'}
 ```
 
+# Inferential Stats (Behavioural) {.tabset}
+
+Effect on confidence and RT
+
+```{r child=if (fast == FALSE) '3_inferential_behv.Rmd'}
+```
 
 # Full Code
 

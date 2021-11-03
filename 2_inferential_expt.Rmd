@@ -1,0 +1,61 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+plot_expt <- function(model, var){
+  means <- estimate_means(model, at = c(var, "instruction"))
+  ggplot(means, aes_string(x = "instruction", y = "Mean", colour = var)) + 
+    geom_line(aes_string(group = var)) +
+    geom_pointrange(aes(ymin = CI_low, ymax= CI_high))
+}
+```
+
+## The effect of confidence on RT
+Confidence has a significant impact on RT. Increased confidence decreases RT.
+```{r warning=FALSE}
+model <- glmmTMB(DT_confidence ~ DT_RT + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+viz_data <- estimate_relation(model)
+ggplot(data = viz_data, aes(x = DT_RT, y = Predicted)) +
+  geom_point(data = df, aes(x = DT_RT, y = DT_confidence, color = ID), show.legend = FALSE) +
+  geom_line() +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high), alpha = 0.3)
+```
+
+## Confidence
+### Interaction of condition and instruction
+There is a significant interaction of condition and instruction on confidence.
+The increase in confidence from lie to truth is more in polygraph than social.
+```{r}
+model <- glmmTMB(DT_confidence ~ condition*instruction + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_expt(model, "condition")
+```
+
+### Interaction of style and instruction
+There is no significant interaction of style and instruction on confidence.
+```{r}
+model <- glmmTMB(DT_confidence ~ style*instruction + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_expt(model, "style")
+```
+
+## Reaction time
+### Interaction of condition and instruction
+There is no significant interaction of condition and instruction on RT.
+```{r}
+model <- glmmTMB(DT_RT ~ condition*instruction + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_expt(model, "condition")
+```
+
+### Interaction of style and instruction
+There is no significant interaction of style and instruction on RT.
+Indirect style significantly increases RT.
+```{r}
+model <- glmmTMB(DT_RT ~ style*instruction + (1|ID) + (1|item), data = df)
+parameters(model, effects = "fixed")
+plot_expt(model, "style")
+```
