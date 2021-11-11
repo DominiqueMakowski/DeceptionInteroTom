@@ -136,7 +136,7 @@ data <- mydata %>%
        HCT_confidenceRT = confidenceslider.rt,
        ID = participant) %>% 
   
-  select(ID, everything()) %>% #move ID column to front
+  select(ID, everything()) %>% # move ID column to front
   
   mutate(hbcount_reported = str_remove_all(hbcount_reported, "Enter Number")) %>% 
   mutate(hbcount_reported = as.numeric(hbcount_reported),
@@ -144,9 +144,9 @@ data <- mydata %>%
   
   arrange(ID, time)
 
-HCT <- read.csv("../heartbeat/HCT.csv", stringsAsFactors = FALSE)[-c(2,8:10)] %>% 
-  rename(participant = Participant.number) %>%
-  pivot_longer(!participant, names_to = "task", values_to = "hbcount_real")
+HCT <- read.csv("HCT_real.csv") %>% 
+  pivot_longer(!task, names_to = "participant", values_to = "hbcount_real") %>%
+  arrange(participant)
 data <- cbind(data, HCT)
 
 data <- data %>% 
