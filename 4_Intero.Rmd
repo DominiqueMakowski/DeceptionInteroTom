@@ -22,7 +22,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_hct_accuracy <- plot_effect(model, var = "HCT_Accuracy", outcome = "Confidence")
+p_conf_hct_accuracy <- plot_effect(model, results, var = "HCT_Accuracy", outcome = "Confidence")
 ```
 
 #### RT
@@ -37,7 +37,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_hct_accuracy <- plot_effect(model, var = "HCT_Accuracy", outcome = "RT")
+p_rt_hct_accuracy <- plot_effect(model, results, var = "HCT_Accuracy", outcome = "RT")
 ```
 
 
@@ -55,7 +55,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_hct_confidence <- plot_effect(model, var = "HCT_Confidence", outcome = "Confidence")
+p_conf_hct_confidence <- plot_effect(model, results, var = "HCT_Confidence", outcome = "Confidence")
 ```
 
 #### RT
@@ -70,7 +70,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_hct_confidence <- plot_effect(model, var = "HCT_Confidence", outcome = "RT")
+p_rt_hct_confidence <- plot_effect(model, results, var = "HCT_Confidence", outcome = "RT")
 ```
 
 ### Interoceptive Awareness
@@ -87,7 +87,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_hct_awareness <- plot_effect(model, var = "HCT_Awareness", outcome = "Confidence")
+p_conf_hct_awareness <- plot_effect(model, results, var = "HCT_Awareness", outcome = "Confidence")
 ```
 
 #### RT
@@ -102,7 +102,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_hct_awareness <- plot_effect(model, var = "HCT_Awareness", outcome = "RT")
+p_rt_hct_awareness <- plot_effect(model, results, var = "HCT_Awareness", outcome = "RT")
 ```
 
 ### Correlation with LIE Scale
@@ -147,7 +147,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_maia_total <- plot_effect(model, var = "MAIA_Total", outcome = "Confidence")
+p_conf_maia_total <- plot_effect(model, results, var = "MAIA_Total", outcome = "Confidence")
 ```
 
 #### RT
@@ -162,7 +162,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_maia_total <- plot_effect(model, var = "MAIA_Total", outcome = "RT")
+p_rt_maia_total <- plot_effect(model, results, var = "MAIA_Total", outcome = "RT")
 ```
 
 
@@ -180,7 +180,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_maia_noticing <- plot_effect(model, var = "MAIA_Noticing", outcome = "Confidence")
+p_conf_maia_noticing <- plot_effect(model, results, var = "MAIA_Noticing", outcome = "Confidence")
 ```
 
 #### RT
@@ -195,7 +195,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_maia_noticing <- plot_effect(model, var = "MAIA_Noticing", outcome = "RT")
+p_rt_maia_noticing <- plot_effect(model, results, var = "MAIA_Noticing", outcome = "RT")
 ```
 
 
@@ -214,7 +214,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_maia_notdistracting <- plot_effect(model, var = "MAIA_NotDistracting", outcome = "Confidence")
+p_conf_maia_notdistracting <- plot_effect(model, results, var = "MAIA_NotDistracting", outcome = "Confidence")
 ```
 
 #### RT
@@ -229,7 +229,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_maia_notdistracting <- plot_effect(model, var = "MAIA_NotDistracting", outcome = "RT")
+p_rt_maia_notdistracting <- plot_effect(model, results, var = "MAIA_NotDistracting", outcome = "RT")
 ```
 
 
@@ -248,7 +248,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_maia_bodylistening <- plot_effect(model, var = "MAIA_BodyListening", outcome = "Confidence")
+p_conf_maia_bodylistening <- plot_effect(model, results, var = "MAIA_BodyListening", outcome = "Confidence")
 ```
 
 #### RT
@@ -263,7 +263,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_maia_bodylistening <- plot_effect(model, var = "MAIA_BodyListening", outcome = "RT")
+p_rt_maia_bodylistening <- plot_effect(model, results, var = "MAIA_BodyListening", outcome = "RT")
 ```
 
 

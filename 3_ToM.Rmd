@@ -36,7 +36,7 @@ results$marginal_effects
 
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect <- function(model, var = "YONI_Total", outcome = "Confidence") {
+plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidence") {
   data <- df |> 
     group_by(Participant, Answer, Condition) |> 
     summarise({{var}} := mean(.data[[var]], na.rm = TRUE),
@@ -44,22 +44,46 @@ plot_effect <- function(model, var = "YONI_Total", outcome = "Confidence") {
               {{outcome}} := mean(.data[[outcome]], na.rm = TRUE),
               CI_low = .data[[outcome]] - SD / 2,
               CI_high = .data[[outcome]] + SD / 2) 
-  
-  dodge_width <- 0.02 * diff(range(data[[var]]))
-  ylab <- ifelse(outcome == "RT", "Reaction Time (s)", "Confidence")
-  
+
   link_data <- estimate_relation(model, at = c("Condition", var, "Answer"), length = 30)
-  ggplot(link_data, aes_string(x = var, y = "Predicted")) +
-    geom_pointrange(data = data, aes_string(y = outcome, color = "Condition", ymin = "CI_low", ymax = "CI_high"), position = position_dodge(width = dodge_width)) +
+  range_x <- diff(range(data[[var]]))
+
+  annot <- results$marginal_effects  
+  annot$Label <- insight::format_p(annot$p, stars_only = TRUE)
+  annot$x <- mean(range(data[[var]]))
+  annot$x <- ifelse(annot$Condition == "Polygraph", 
+                    annot$x - 0.05 * range_x, 
+                    annot$x + 0.05 * range_x)
+  annot$y <- max(data[[outcome]]) - 0.01 * diff(range(data[[outcome]]))
+    
+  
+  p <- ggplot(link_data, aes_string(x = var, y = "Predicted")) +
+    geom_pointrange(data = data, 
+                    aes_string(y = outcome, 
+                               color = "Condition", 
+                               ymin = "CI_low", 
+                               ymax = "CI_high"), 
+                    position = position_dodge(width = 0.02 * range_x)) +
     geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 0.33) + 
     geom_line(aes(color = Condition)) +
-    labs(y = ylab, x = paste0(stringr::str_replace(var, "_", " ("), ")")) +
+    geom_text(data=annot, aes(x = x, y = y, label = Label, color = Condition), 
+              size = 8, show.legend = FALSE) +
+    labs(y = ifelse(outcome == "RT", "Reaction Time (s)", "Confidence"), 
+         x = paste0(stringr::str_replace(var, "_", " ("), ")")) +
     scale_color_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) +
-    scale_fill_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) +
+    scale_fill_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) + 
     facet_wrap(~Answer) 
+  
+  # Narrow y range
+  if(outcome == "Confidence") {
+    p <- p +
+      coord_cartesian(ylim = c(0, 1)) +
+      scale_y_continuous(expand=expansion(c(0, 0))) 
+  }
+  p
 }
 
-p_conf_yoni_total <- plot_effect(model, var = "YONI_Total", outcome = "Confidence")
+p_conf_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "Confidence")
 # p_conf_yoni_total
 ```
 
@@ -75,7 +99,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_yoni_total <- plot_effect(model, var = "YONI_Total", outcome = "RT")
+p_rt_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "RT")
 # p_rt_yoni_total
 ```
 
@@ -93,7 +117,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_yoni_cognitive <- plot_effect(model, var = "YONI_Cognitive", outcome = "Confidence")
+p_conf_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outcome = "Confidence")
 # p_conf_yoni_cognitive
 ```
 
@@ -109,7 +133,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_yoni_cognitive <- plot_effect(model, var = "YONI_Cognitive", outcome = "RT")
+p_rt_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outcome = "RT")
 # p_rt_yoni_cognitive
 ```
 
@@ -127,7 +151,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_yoni_affective <- plot_effect(model, var = "YONI_Affective", outcome = "Confidence")
+p_conf_yoni_affective <- plot_effect(model, results, var = "YONI_Affective", outcome = "Confidence")
 # p_conf_yoni_affective
 ```
 
@@ -143,7 +167,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_yoni_affective <- plot_effect(model, var = "YONI_Affective", outcome = "RT")
+p_rt_yoni_affective <- plot_effect(model, results, var = "YONI_Affective", outcome = "RT")
 # p_rt_yoni_affective
 ```
 
@@ -162,7 +186,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_yoni_physical <- plot_effect(model, var = "YONI_Physical", outcome = "Confidence")
+p_conf_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome = "Confidence")
 # p_conf_yoni_physical
 ```
 
@@ -178,7 +202,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_yoni_physical <- plot_effect(model, var = "YONI_Physical", outcome = "RT")
+p_rt_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome = "RT")
 # p_rt_yoni_physical
 ```
 
@@ -235,7 +259,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_bes_total <- plot_effect(model, var = "BES_Total", outcome = "Confidence")
+p_conf_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "Confidence")
 # p_conf_bes_total
 ```
 
@@ -251,7 +275,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_bes_total <- plot_effect(model, var = "BES_Total", outcome = "RT")
+p_rt_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "RT")
 # p_rt_bes_total
 ```
 
@@ -270,7 +294,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_bes_cognitive <- plot_effect(model, var = "BES_Cognitive", outcome = "Confidence")
+p_conf_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "Confidence")
 # p_conf_bes_cognitive
 ```
 
@@ -286,7 +310,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_bes_cognitive <- plot_effect(model, var = "BES_Cognitive", outcome = "RT")
+p_rt_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "RT")
 # p_rt_bes_cognitive
 ```
 
@@ -304,7 +328,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_conf_bes_affective <- plot_effect(model, var = "BES_Affective", outcome = "Confidence")
+p_conf_bes_affective <- plot_effect(model, results, var = "BES_Affective", outcome = "Confidence")
 # p_conf_bes_affective
 ```
 
@@ -320,7 +344,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-p_rt_bes_affective <- plot_effect(model, var = "BES_Affective", outcome = "RT")
+p_rt_bes_affective <- plot_effect(model, results, var = "BES_Affective", outcome = "RT")
 # p_rt_bes_affective
 ```
 
@@ -328,14 +352,14 @@ p_rt_bes_affective <- plot_effect(model, var = "BES_Affective", outcome = "RT")
 
 ### Correlation with LIE Scale
 
-```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
+```{r message=FALSE, warning=FALSE}
 r <- get_correlation(var = "BES_")
 r$plot
 ```
 
 ### Summary
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
 p_conf_bes_total / 
   p_conf_bes_cognitive / 
   p_conf_bes_affective +
