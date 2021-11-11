@@ -1,0 +1,142 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Yoni Task {.tabset}
+
+- When instructed to lie, the decrease in confidence in participants with higher yoni score is less in social than polygraph condition.
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+get_correlation <- function(var = "YONI_", var2 = "LIE_") {
+  r <- correlation(select(dfsub, starts_with(var2)),
+                 select(dfsub, starts_with(var)), 
+                 p_adjust = "none") |> 
+  mutate(Parameter1 = paste0(str_replace(Parameter1, "_", " ("), ")"),
+         Parameter2 = paste0(str_replace(Parameter2, "_", " ("), ")"))
+
+  p <- summary(r) |> 
+    plot() +
+    theme_minimal()
+  list(r = r, plot = p)
+}
+
+r <- get_correlation(var = "YONI_")
+r$plot
+```
+
+### Total Score
+
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Total) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+get_parameters <- function(model) {
+  # Parameters
+  params <- parameters::parameters(model, effects = "fixed") 
+  # Marginal effects
+  at <- c("Answer", "Condition")
+  trend <- insight::find_predictors(model)$conditional
+  trend <- trend[!trend %in% at]
+  marg <- modelbased::estimate_slopes(model, trend = trend, at = at)
+  # Output
+  list(params = params, marginal_effects = marg)
+}
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+
+```{r message=FALSE, warning=FALSE}
+plot_effect <- function(model, var = "YONI_Total", outcome = "Confidence") {
+  data <- df |> 
+    group_by(Participant, Answer, Condition) |> 
+    summarise({{var}} := mean(.data[[var]], na.rm = TRUE),
+              SD = sd(.data[[outcome]], na.rm = TRUE),
+              {{outcome}} := mean(.data[[outcome]], na.rm = TRUE),
+              CI_low = .data[[outcome]] - SD / 2,
+              CI_high = .data[[outcome]] + SD / 2) 
+  
+  dodge_width <- 0.02 * diff(range(data[[var]]))
+  ylab <- ifelse(outcome == "RT", "Reaction Time (s)", "Confidence")
+  
+  link_data <- estimate_relation(model, at = c("Condition", var, "Answer"), length = 30)
+  ggplot(link_data, aes_string(x = var, y = "Predicted")) +
+    geom_pointrange(data = data, aes_string(y = outcome, color = "Condition", ymin = "CI_low", ymax = "CI_high"), position = position_dodge(width = dodge_width)) +
+    geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 0.33) + 
+    geom_line(aes(color = Condition)) +
+    labs(y = ylab, x = paste0(stringr::str_replace(var, "_", " ("), ")")) +
+    scale_color_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) +
+    scale_fill_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) +
+    facet_wrap(~Answer) 
+}
+
+plot_effect(model, var = "YONI_Total", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * YONI_Total) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "YONI_Total", outcome = "RT")
+```
+
+
+
+## BES {.tabset}
+
+### Total Score
+
+#### LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+r <- get_correlation(var = "BES_")
+r$plot
+```
+
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * BES_Total) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "BES_Total", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * BES_Total) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "BES_Total", outcome = "RT")
+```

@@ -1,5 +1,5 @@
 ---
-title: '**Results Template**'
+title: '**The Place of Interoception and Theory of Mind in Deception**'
 subtitle: A Subtitle
 output:
   html_document:
@@ -40,8 +40,10 @@ csl: utils/apa.csl
 ```{r setup, warning=FALSE, message=TRUE, include=FALSE}
 # Set up the environment (or use local alternative `source("utils/config.R")`)
 source("https://raw.githubusercontent.com/RealityBending/TemplateResults/main/utils/config.R")  
-
-fast <- FALSE  # Make this false to skip the chunks
+options(dplyr.summarise.inform = FALSE) 
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+theme_set(see::theme_modern())
 ```
 
 # Introduction
@@ -59,6 +61,9 @@ if (!knitr::is_latex_output() && knitr::is_html_output()) {
 ```
 
 
+<!-- Title ideas:-->
+<!-- Theory of Body and Others -->
+
 # Packages & Data
 
 ## Packages
@@ -71,10 +76,10 @@ library(patchwork)
 library(glmmTMB)
 library(report)
 library(parameters)
+library(correlation)
 library(modelbased)
 library(performance)
-# library(bayestestR)
-# library(see)
+library(see)
 
 summary(report::report(sessionInfo()))
 ```
@@ -83,42 +88,80 @@ summary(report::report(sessionInfo()))
 ## Data
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
-setwd("C:/Users/user/Desktop/Sputnik/2019-23/DeceptionInteroTom")
+# setwd("C:/Users/user/Desktop/Sputnik/2019-23/DeceptionInteroTom")
+
 df <- read.csv("data/data_combined.csv") %>% 
-  mutate(ID = as.factor(ID),
+  mutate(ID = as.factor(paste0("S", ID)),
          condition = as.factor(condition),
          item = as.factor(item),
          style = as.factor(style),
-         instruction = as.factor(instruction))
+         instruction = as.factor(instruction)) |> 
+  #TODO: This renaming should be done at the preprocessing stage
+  rename("Participant" = "ID",
+         "Condition" = "condition",
+         "Item" = "item",
+         "Phrasing" = "style",
+         "Answer" = "instruction",
+         "YONI_Total" = "yoni_total",
+         "YONI_Affective" = "yoni_affective",
+         "YONI_Cognitive" = "yoni_cognitive",
+         "YONI_Physical" = "yoni_physical",
+         "BES_Total" = "BES_total",
+         "BES_Cognitive" = "BES_cognitive",
+         "BES_Affective" = "BES_affective",
+         "HCT_Confidence" = "HCT_confidence",
+         "HCT_Accuracy" = "HCT_accuracy",
+         "HCT_Awareness" = "HCT_awareness",
+         "MAIA_Total" = "MAIA_total",
+         "MAIA_AttentionRegulation" = "MAIA_attention_regulation",
+         "MAIA_BodyListening" = "MAIA_body_listening",
+         "MAIA_EmotionalAwareness" = "MAIA_emotional_awareness",
+         "MAIA_NotDistracting" = "MAIA_not_distracting",
+         "MAIA_NotWorrying" = "MAIA_not_worrying",
+         "MAIA_Noticing" = "MAIA_noticing",
+         "MAIA_SelfRegulation" = "MAIA_self_regulation",
+         "MAIA_Trusting" = "MAIA_trusting",
+         "LIE_Ability" = "lie_ability",
+         "LIE_Frequency" = "lie_frequency",
+         "LIE_Negativity" = "lie_negativity",
+         "LIE_Contextuality" = "lie_contextuality",
+         "Confidence" = "DT_confidence",
+         "RT" = "DT_RT") |> 
+  mutate(Answer = fct_recode(Answer, Lie = "LIE", Truth = "TRUTH")) |> 
+  select(-HCT_guess, -HCT_noguess, -HCT_onebreath)
 
 cat(paste("The data consists of",
           report::report_participants(df,
-                                      participants = "ID",
+                                      participants = "Participant",
                                       sex = "Gender",
                                       age = "Age")))
 ```
 
 
 
-Note that the chunks generating figures in the code below have some arguments specified in their header, such as `fig.width` and `fig.height`, which controls the figure size. These were filled with an eponym argument defined in [`utils/config.R`](https://github.com/RealityBending/TemplateResults/blob/main/utils/config.R#L26-L27). We also set the resolution, i.e., `dpi`, to a low value so that the resulting file is lighter. But **don't forget to crank this value up** (to 300-600) to get nice-looking results.
 
+# Measures {.tabset}
 
-# Descriptive Stats {.tabset}
-
-```{r child=if (fast == FALSE) '1_descriptive.Rmd'}
+```{r child='1_Measures.Rmd'}
 ```
 
-# Inferential Stats (Experimental) {.tabset}
 
-```{r child=if (fast == FALSE) '2_inferential_expt.Rmd'}
-```
+<!-- # Manipulation Checks -->
 
-# Inferential Stats (Behavioural) {.tabset}
 
-Effect on confidence and RT
+<!-- ```{r child='2_ManipulationChecks.Rmd'} -->
+<!-- ``` -->
 
-```{r child=if (fast == FALSE) '3_inferential_behv.Rmd'}
-```
+<!-- # Theory of Mind / Empathy -->
+
+<!-- ```{r child='3_ToM.Rmd'} -->
+<!-- ``` -->
+
+<!-- # Interoception -->
+
+<!-- ```{r child='4_Intero.Rmd'} -->
+<!-- ``` -->
+
 
 # Full Code
 

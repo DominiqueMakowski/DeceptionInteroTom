@@ -1,0 +1,152 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Theory of Mind / Empathy
+
+### Yoni Task
+
+```{r message=FALSE}
+df %>% 
+  group_by(Participant) %>% 
+  select(starts_with("YONI_")) |> 
+  summarise_all(mean, na.rm=TRUE) |> 
+  tidyr::pivot_longer(-Participant, values_to = "Scores") |> 
+  mutate(name = paste0(str_replace(name, "_", " ("), ")")) |> 
+  ggplot(aes(x = Scores, fill = name)) +
+  geom_density() +
+  scale_fill_manual(values = c("YONI (Affective)" = "Purple",
+                                 "YONI (Cognitive)" = "Blue",
+                                 "YONI (Physical)" = "Green",
+                                 "YONI (Total)"= "DarkBlue"),
+                      guide = "none") +
+  facet_wrap(~name, scales = "free")
+```
+
+### BES Questionnaire
+
+```{r message=FALSE}
+df %>% 
+  group_by(Participant) %>% 
+  select(starts_with("BES_")) |> 
+  summarise_all(mean, na.rm=TRUE) |> 
+  tidyr::pivot_longer(-Participant, values_to = "Scores") |> 
+  mutate(name = paste0(str_replace(name, "_", " ("), ")")) |> 
+  ggplot(aes(x = Scores, fill = name)) +
+  geom_density() +
+  scale_fill_manual(values = c("BES (Affective)" = "Purple",
+                               "BES (Cognitive)" = "Blue",
+                               "BES (Total)"= "DarkBlue"),
+                      guide = "none") +
+  facet_wrap(~name, scales = "free")
+```
+
+## Interoception
+
+### Heartbeat Counting Task (HCT)
+
+```{r message=FALSE}
+df %>% 
+  group_by(Participant) %>% 
+  select(starts_with("HCT_")) |> 
+  summarise_all(mean, na.rm=TRUE) |> 
+  tidyr::pivot_longer(-Participant, values_to = "Scores") |> 
+  mutate(name = paste0(str_replace(name, "_", " ("), ")")) |> 
+  ggplot(aes(x = Scores, fill = name)) +
+  geom_density() +
+  scale_fill_manual(values = c("HCT (Accuracy)" = "Red",
+                               "HCT (Awareness)" = "Orange",
+                               "HCT (Confidence)"= "DarkOrange"),
+                      guide = "none") +
+  facet_wrap(~name, scales = "free")
+```
+
+### MAIA
+
+```{r message=FALSE}
+df %>% 
+  group_by(Participant) %>% 
+  select(starts_with("MAIA_")) |> 
+  summarise_all(mean, na.rm=TRUE) |> 
+  tidyr::pivot_longer(-Participant, values_to = "Scores") |> 
+  mutate(name = paste0(str_replace(name, "_", " ("), ")")) |> 
+  ggplot(aes(x = Scores, fill = name)) +
+  geom_density() +
+  scale_fill_brewer(palette = "Reds", guide = "none") +
+  facet_wrap(~name, scales = "free")
+```
+
+
+## Deception
+
+### LIE Scale
+
+```{r message=FALSE}
+df %>% 
+  group_by(Participant) %>% 
+  select(starts_with("LIE_")) |> 
+  summarise_all(mean, na.rm=TRUE) |> 
+  tidyr::pivot_longer(-Participant, values_to = "Scores") |> 
+  mutate(name = paste0(str_replace(name, "_", " ("), ")")) |> 
+  ggplot(aes(x = Scores, fill = name)) +
+  geom_density() +
+  scale_fill_manual(values = c("LIE (Ability)" = "#2196F3",
+                               "LIE (Frequency)" = "#4CAF50",
+                               "LIE (Contextuality)"= "#FF9800",
+                               "LIE (Negativity)"= "#E91E63"),
+                    guide = "none") +
+  facet_wrap(~name, scales = "free")
+```
+
+### Deception Task
+
+#### Summary Table
+
+```{r warning=FALSE}
+
+df |> 
+  group_by(Participant, Answer) |> 
+  summarise(Confidence = paste(insight::format_value(mean(Confidence, na.rm = TRUE)),
+                               " +- ",
+                               insight::format_value(sd(Confidence, na.rm = TRUE))),
+            RT = paste(insight::format_value(mean(RT, na.rm = TRUE)),
+                       " +- ",
+                       insight::format_value(sd(RT, na.rm = TRUE)))) |> 
+  arrange(Participant) |> 
+  knitr::kable()
+```
+
+#### Outliers
+
+```{r warning=FALSE}
+df <- df |> 
+  dplyr::filter(Participant != "S9",  # Extreme answers
+                !Participant %in% c("S3", "S15", "S19", "S23"))  # No data
+```
+
+#### Distributions
+
+```{r warning=FALSE}
+p1 <- df |> 
+  dplyr::filter(!Participant %in% c("S29")) |>
+  ggplot(aes(x = Confidence, fill = Participant)) +
+  geom_density(alpha = 0.1) +
+  see::scale_fill_material_d(palette = "rainbow", guide = "none") +
+  see::theme_modern() +
+  scale_x_continuous(labels = scales::percent, expand=expansion(c(0, .05))) +
+  scale_y_continuous(expand=expansion(c(0, .05))) +
+  facet_wrap(~Answer)
+p2 <- df |> 
+  dplyr::filter(!Participant %in% c("S29")) |> 
+  ggplot(aes(x = RT, fill = Participant)) +
+  geom_density(alpha = 0.1) +
+  see::scale_fill_material_d(palette = "rainbow", guide = "none") +
+  scale_x_continuous(expand=expansion(c(0, .05))) +
+  scale_y_continuous(expand=expansion(c(0, .05))) +
+  facet_wrap(~Answer)
+p1 / p2
+```
+

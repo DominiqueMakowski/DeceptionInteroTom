@@ -1,0 +1,146 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Correlation {.tabset}
+
+```{r message=FALSE, warning=FALSE}
+dfsub <- df |> 
+  select(Participant, 
+         starts_with("YONI_"), 
+         starts_with("BES_"),
+         starts_with("HCT_"),
+         starts_with("MAIA_"),
+         starts_with("LIE_")) |> 
+  group_by(Participant) |> 
+  summarise_all(mean)
+```
+
+### Theory of Mind / Empathy
+
+```{r message=FALSE, warning=FALSE}
+r <- correlation(select(dfsub, starts_with("YONI_")),
+                 select(dfsub, starts_with("BES_")), 
+                 p_adjust = "none")
+
+summary(r) |> 
+  plot()
+```
+
+### Interoception
+
+```{r message=FALSE, warning=FALSE}
+r <- correlation(select(dfsub, starts_with("MAIA_")),
+                 select(dfsub, starts_with("HCT_")), 
+                 p_adjust = "none")
+
+summary(r) |> 
+  plot()
+```
+
+### ToM and Interoception
+
+```{r message=FALSE, warning=FALSE}
+r <- correlation(select(dfsub, starts_with(c("MAIA_", "HCT_"))),
+                 select(dfsub, starts_with(c("YONI_", "BES_"))), 
+                 p_adjust = "none")
+
+summary(r) |> 
+  plot()
+```
+
+
+## Phrasing {.tabset}
+
+- Main effect of phrasing on RT only. Indirect questions lead to slower answers.
+
+
+### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer * Phrasing + (1|Participant) + (1|Item), data = df) 
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Answer", "Phrasing")) |> 
+  plot(show_data = "none") 
+```
+
+### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer * Phrasing + (1|Participant) + (1|Item), data = df) 
+
+parameters::parameters(model)
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Answer", "Phrasing")) |> 
+  plot(show_data = "none") 
+```
+
+
+## Lies and RT
+
+- The faster they answer, the more confident they are in their lies.
+
+```{r message=FALSE, warning=FALSE}
+# Adjustments for beta models
+df$Confidence[df$Confidence == 1] <- 0.99999
+df$Confidence[df$Confidence == 0] <- 0.00001
+
+model <- glmmTMB(Confidence ~ RT * Answer + Phrasing + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_relation(model, at = c("RT", "Answer")) |> 
+  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
+```
+
+
+
+## Effect of Condition
+
+### Confidence
+
+- Significant interaction between the condition and the answer: the effect of answer (being more confident in truths than in lies) is lower in the social condition.
+- Effect mostly driven by the social condition that increases the confidence in lies. 
+- In other words: harder to lie in the polygraph condition: less obvious feedback cues?
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer * Condition + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Condition", "Answer")) |> 
+  plot(show_data = "none") 
+```
+
+
+
+### RT
+
+- Significant main effect of the condition: people are slower in the polygraph condition.
+- Consistent with the "less intuitive cues".
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer * Condition + (1|Participant) + (1|Item), 
+                 data = df)
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Condition", "Answer")) |> 
+  plot(show_data = "none") 
+```

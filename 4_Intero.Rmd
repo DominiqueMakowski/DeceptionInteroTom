@@ -1,0 +1,226 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Heartbeat Counting {.tabset}
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+r <- get_correlation(var = "HCT_")
+r$plot
+
+# plot(correlation::cor_test(dfsub, "HCT_Accuracy", "LIE_Ability"))
+```
+
+
+### Accuracy
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * HCT_Accuracy) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "HCT_Accuracy", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * HCT_Accuracy) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "HCT_Accuracy", outcome = "RT")
+```
+
+
+### Interoceptive Confidence
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * HCT_Confidence) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "HCT_Confidence", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * HCT_Confidence) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "HCT_Confidence", outcome = "RT")
+```
+
+### Interoceptive Awareness
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * HCT_Awareness) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "HCT_Awareness", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * HCT_Awareness) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "HCT_Awareness", outcome = "RT")
+```
+
+
+
+## MAIA {.tabset}
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+r <- get_correlation(var = "MAIA_")
+r$plot +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+
+### Total Score
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_Total) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "MAIA_Total", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_Total) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "MAIA_Total", outcome = "RT")
+```
+
+
+### Noticing
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_Noticing) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "MAIA_Noticing", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_Noticing) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "MAIA_Noticing", outcome = "RT")
+```
+
+
+
+### Not Distracting
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_NotDistracting) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "MAIA_NotDistracting", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_NotDistracting) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+plot_effect(model, var = "MAIA_NotDistracting", outcome = "RT")
+```
