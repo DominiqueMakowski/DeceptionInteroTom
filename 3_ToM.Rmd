@@ -8,28 +8,8 @@ editor_options:
 
 - When instructed to lie, the decrease in confidence in participants with higher yoni score is less in social than polygraph condition.
 
-### Correlation with LIE Scale
-
-```{r message=FALSE, warning=FALSE}
-get_correlation <- function(var = "YONI_", var2 = "LIE_") {
-  r <- correlation(select(dfsub, starts_with(var2)),
-                 select(dfsub, starts_with(var)), 
-                 p_adjust = "none") |> 
-  mutate(Parameter1 = paste0(str_replace(Parameter1, "_", " ("), ")"),
-         Parameter2 = paste0(str_replace(Parameter2, "_", " ("), ")"))
-
-  p <- summary(r) |> 
-    plot() +
-    theme_minimal()
-  list(r = r, plot = p)
-}
-
-r <- get_correlation(var = "YONI_")
-r$plot
-```
 
 ### Total Score
-
 
 #### Confidence
 
@@ -79,7 +59,8 @@ plot_effect <- function(model, var = "YONI_Total", outcome = "Confidence") {
     facet_wrap(~Answer) 
 }
 
-plot_effect(model, var = "YONI_Total", outcome = "Confidence")
+p_conf_yoni_total <- plot_effect(model, var = "YONI_Total", outcome = "Confidence")
+# p_conf_yoni_total
 ```
 
 #### RT
@@ -94,22 +75,153 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "YONI_Total", outcome = "RT")
+p_rt_yoni_total <- plot_effect(model, var = "YONI_Total", outcome = "RT")
+# p_rt_yoni_total
+```
+
+### Cognitive Theory of Mind
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Cognitive) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_yoni_cognitive <- plot_effect(model, var = "YONI_Cognitive", outcome = "Confidence")
+# p_conf_yoni_cognitive
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * YONI_Cognitive) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_yoni_cognitive <- plot_effect(model, var = "YONI_Cognitive", outcome = "RT")
+# p_rt_yoni_cognitive
+```
+
+### Affective Theory of Mind
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Affective) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_yoni_affective <- plot_effect(model, var = "YONI_Affective", outcome = "Confidence")
+# p_conf_yoni_affective
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * YONI_Affective) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_yoni_affective <- plot_effect(model, var = "YONI_Affective", outcome = "RT")
+# p_rt_yoni_affective
 ```
 
 
+### Physical Theory of Mind
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Physical) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_yoni_physical <- plot_effect(model, var = "YONI_Physical", outcome = "Confidence")
+# p_conf_yoni_physical
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * YONI_Physical) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_yoni_physical <- plot_effect(model, var = "YONI_Physical", outcome = "RT")
+# p_rt_yoni_physical
+```
+
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+get_correlation <- function(var = "YONI_", var2 = "LIE_") {
+  r <- correlation(select(dfsub, starts_with(var2)),
+                 select(dfsub, starts_with(var)), 
+                 p_adjust = "none") |> 
+  mutate(Parameter1 = paste0(str_replace(Parameter1, "_", " ("), ")"),
+         Parameter2 = paste0(str_replace(Parameter2, "_", " ("), ")"))
+
+  p <- summary(r) |> 
+    plot() +
+    theme_minimal()
+  list(r = r, plot = p)
+}
+
+r <- get_correlation(var = "YONI_")
+r$plot
+```
+
+### Summary
+
+```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
+p_conf_yoni_total / 
+  p_conf_yoni_cognitive / 
+  p_conf_yoni_affective / 
+  p_conf_yoni_physical +
+  patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_rt_yoni_total / 
+  p_rt_yoni_cognitive / 
+  p_rt_yoni_affective / 
+  p_rt_yoni_physical +
+  patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
+```
 
 ## BES {.tabset}
 
 ### Total Score
-
-#### LIE Scale
-
-```{r message=FALSE, warning=FALSE}
-r <- get_correlation(var = "BES_")
-r$plot
-```
-
 
 #### Confidence
 
@@ -123,7 +235,8 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "BES_Total", outcome = "Confidence")
+p_conf_bes_total <- plot_effect(model, var = "BES_Total", outcome = "Confidence")
+# p_conf_bes_total
 ```
 
 #### RT
@@ -138,5 +251,98 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "BES_Total", outcome = "RT")
+p_rt_bes_total <- plot_effect(model, var = "BES_Total", outcome = "RT")
+# p_rt_bes_total
+```
+
+
+### Cognitive Empathy
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * BES_Cognitive) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_bes_cognitive <- plot_effect(model, var = "BES_Cognitive", outcome = "Confidence")
+# p_conf_bes_cognitive
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * BES_Cognitive) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_bes_cognitive <- plot_effect(model, var = "BES_Cognitive", outcome = "RT")
+# p_rt_bes_cognitive
+```
+
+### Affective Empathy
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * BES_Affective) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_bes_affective <- plot_effect(model, var = "BES_Affective", outcome = "Confidence")
+# p_conf_bes_affective
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * BES_Affective) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_bes_affective <- plot_effect(model, var = "BES_Affective", outcome = "RT")
+# p_rt_bes_affective
+```
+
+
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
+r <- get_correlation(var = "BES_")
+r$plot
+```
+
+### Summary
+
+```{r message=FALSE, warning=FALSE}
+p_conf_bes_total / 
+  p_conf_bes_cognitive / 
+  p_conf_bes_affective +
+  patchwork::plot_annotation(title = "Empathy", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_rt_bes_total / 
+  p_rt_bes_cognitive / 
+  p_rt_bes_affective +
+  patchwork::plot_annotation(title = "Empathy", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```

@@ -6,14 +6,6 @@ editor_options:
 
 ## Heartbeat Counting {.tabset}
 
-### Correlation with LIE Scale
-
-```{r message=FALSE, warning=FALSE}
-r <- get_correlation(var = "HCT_")
-r$plot
-
-# plot(correlation::cor_test(dfsub, "HCT_Accuracy", "LIE_Ability"))
-```
 
 
 ### Accuracy
@@ -30,7 +22,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "HCT_Accuracy", outcome = "Confidence")
+p_conf_hct_accuracy <- plot_effect(model, var = "HCT_Accuracy", outcome = "Confidence")
 ```
 
 #### RT
@@ -45,7 +37,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "HCT_Accuracy", outcome = "RT")
+p_rt_hct_accuracy <- plot_effect(model, var = "HCT_Accuracy", outcome = "RT")
 ```
 
 
@@ -63,7 +55,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "HCT_Confidence", outcome = "Confidence")
+p_conf_hct_confidence <- plot_effect(model, var = "HCT_Confidence", outcome = "Confidence")
 ```
 
 #### RT
@@ -78,7 +70,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "HCT_Confidence", outcome = "RT")
+p_rt_hct_confidence <- plot_effect(model, var = "HCT_Confidence", outcome = "RT")
 ```
 
 ### Interoceptive Awareness
@@ -95,7 +87,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "HCT_Awareness", outcome = "Confidence")
+p_conf_hct_awareness <- plot_effect(model, var = "HCT_Awareness", outcome = "Confidence")
 ```
 
 #### RT
@@ -110,20 +102,35 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "HCT_Awareness", outcome = "RT")
+p_rt_hct_awareness <- plot_effect(model, var = "HCT_Awareness", outcome = "RT")
+```
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+r <- get_correlation(var = "HCT_")
+r$plot
+
+# plot(correlation::cor_test(dfsub, "HCT_Accuracy", "LIE_Ability"))
+```
+
+### Summary
+
+```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
+p_conf_hct_accuracy / 
+  p_conf_hct_confidence / 
+  p_conf_hct_awareness +
+  patchwork::plot_annotation(title = "Interoception", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_rt_hct_accuracy / 
+  p_rt_hct_confidence / 
+  p_rt_hct_awareness +
+  patchwork::plot_annotation(title = "Interoception", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```
 
 
 
 ## MAIA {.tabset}
-
-### Correlation with LIE Scale
-
-```{r message=FALSE, warning=FALSE}
-r <- get_correlation(var = "MAIA_")
-r$plot +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-```
 
 
 ### Total Score
@@ -140,7 +147,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "MAIA_Total", outcome = "Confidence")
+p_conf_maia_total <- plot_effect(model, var = "MAIA_Total", outcome = "Confidence")
 ```
 
 #### RT
@@ -155,7 +162,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "MAIA_Total", outcome = "RT")
+p_rt_maia_total <- plot_effect(model, var = "MAIA_Total", outcome = "RT")
 ```
 
 
@@ -173,7 +180,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "MAIA_Noticing", outcome = "Confidence")
+p_conf_maia_noticing <- plot_effect(model, var = "MAIA_Noticing", outcome = "Confidence")
 ```
 
 #### RT
@@ -188,7 +195,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "MAIA_Noticing", outcome = "RT")
+p_rt_maia_noticing <- plot_effect(model, var = "MAIA_Noticing", outcome = "RT")
 ```
 
 
@@ -207,7 +214,7 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "MAIA_NotDistracting", outcome = "Confidence")
+p_conf_maia_notdistracting <- plot_effect(model, var = "MAIA_NotDistracting", outcome = "Confidence")
 ```
 
 #### RT
@@ -222,5 +229,64 @@ results$marginal_effects
 ```
 
 ```{r message=FALSE, warning=FALSE}
-plot_effect(model, var = "MAIA_NotDistracting", outcome = "RT")
+p_rt_maia_notdistracting <- plot_effect(model, var = "MAIA_NotDistracting", outcome = "RT")
+```
+
+
+
+### Body Listening
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_BodyListening) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_maia_bodylistening <- plot_effect(model, var = "MAIA_BodyListening", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_BodyListening) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_maia_bodylistening <- plot_effect(model, var = "MAIA_BodyListening", outcome = "RT")
+```
+
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+r <- get_correlation(var = "MAIA_")
+r$plot +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+### Summary
+
+```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
+p_conf_maia_total / 
+  p_conf_maia_noticing / 
+  p_conf_maia_notdistracting / 
+  p_conf_maia_bodylistening +
+  patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_rt_maia_total / 
+  p_rt_maia_noticing / 
+  p_rt_maia_notdistracting / 
+  p_rt_maia_bodylistening +
+  patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```

@@ -9,7 +9,7 @@ output:
     toc_depth: 3
     toc_float: yes
     number_sections: no
-    df_print: kable
+    df_print: default
     code_folding: hide
     code_download: yes
   word_document:
@@ -39,7 +39,7 @@ csl: utils/apa.csl
 
 ```{r setup, warning=FALSE, message=TRUE, include=FALSE}
 # Set up the environment (or use local alternative `source("utils/config.R")`)
-source("https://raw.githubusercontent.com/RealityBending/TemplateResults/main/utils/config.R")  
+source("https://raw.githubusercontent.com/RealityBending/TemplateResults/main/utils/config.R")
 options(dplyr.summarise.inform = FALSE) 
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
@@ -146,21 +146,21 @@ cat(paste("The data consists of",
 ```
 
 
-<!-- # Manipulation Checks -->
+# Manipulation Checks
 
 
-<!-- ```{r child='2_ManipulationChecks.Rmd'} -->
-<!-- ``` -->
+```{r child='2_ManipulationChecks.Rmd'}
+```
 
-<!-- # Theory of Mind / Empathy -->
+# Theory of Mind / Empathy
 
-<!-- ```{r child='3_ToM.Rmd'} -->
-<!-- ``` -->
+```{r child='3_ToM.Rmd'}
+```
 
-<!-- # Interoception -->
+# Interoception
 
-<!-- ```{r child='4_Intero.Rmd'} -->
-<!-- ``` -->
+```{r child='4_Intero.Rmd'}
+```
 
 
 # Full Code
