@@ -136,4 +136,5 @@ for i, participant in enumerate(list_participants):
     
     df_all = pd.concat([df_all, df])  # combine all participants
 
-df_all.to_csv("HCT_Part2.csv", na_rep="NA", index=False)
+# df_all.to_csv("HCT_Part2.csv", na_rep="NA", index=False)  too big file
+nk.write_csv(df_all, "Heartbeat_Tracking", parts=5)  # split into subsets of csvs
