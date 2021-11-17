@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import neurokit2 as nk
 import numpy as np
 import pandas as pd
+
 pd.options.mode.chained_assignment = None  # default='warn'
 
 ### Get psychopy data files ---------------------------------------------------
@@ -39,18 +40,22 @@ def align_taps(ecg, start, stop, sampling_rate, taps, task="Guess"):
     df = ecg_processed[["ECG_Clean", "ECG_R_Peaks"]]  # keep only cleaned and R peaks cols
 
     # Index periods in which taps are expected
-    search = np.repeat(np.nan, len(ecg))
-    interval = 0.2 * sampling_rate  # 0.2 milliseconds epoch
-    before_beat_interval = np.concatenate([np.arange(peak - interval, peak) for peak in peaks['ECG_R_Peaks']])
-    after_beat_interval = np.concatenate([np.arange(peak, peak + interval) for peak in peaks['ECG_R_Peaks']])
+    intervals = np.diff(peaks["ECG_R_Peaks"])  # get intervals between R peaks
 
-    for i, _ in enumerate(search):
-        if i in before_beat_interval:
-            search[i] = 0  # taps not expected 0.2 ms before beat
-        elif i in after_beat_interval:
-            search[i] = 1  # taps expected 0.2 ms after beat
+    before_first_peak = np.repeat(0, peaks["ECG_R_Peaks"][0]) # index 0 for period before first R-peak
+    before_last_peak = np.repeat(1, len(ecg) - peaks["ECG_R_Peaks"][-1]) # index 1 for period after last R-peak
 
-    df["Periods"] = search  # append indexes of periods to ecg dataframe
+    search = np.array([])
+    for i, interval in enumerate(intervals):
+        # 1 to index time periods in which systole signal was present and tap should be expected, 0 where diastole was present and tap not expected
+        if (interval % 2) == 0: # even number
+            index = np.repeat([1, 0], interval/2)
+        else: # odd number
+            index = np.append(np.repeat([1, 0], interval/2), 0)
+        search = np.concatenate([search, index])
+
+    # append indexes of periods to ecg dataframe
+    df["Periods"] = np.concatenate([before_first_peak, search, before_last_peak]).astype(int)
 
     # Align ecg to taps
     taps = nk.find_closest(taps * sampling_rate, np.array(df.index))
@@ -69,7 +74,7 @@ def align_taps(ecg, start, stop, sampling_rate, taps, task="Guess"):
 df_all = pd.DataFrame([])
 
 for i, participant in enumerate(list_participants):
-#     # Check number of photosensor events per participant (16 expected)  
+#     # Check number of photosensor events per participant (16 expected)
 #     subdir = directory + "/../../data/data_experimental/" + participant + "/heartbeat/"
 #     filename = [i for i in os.listdir(subdir) if i.endswith('.txt')][0]
 #     bio, sampling_rate = nk.read_bitalino(subdir + "/" + filename)
@@ -115,7 +120,7 @@ for i, participant in enumerate(list_participants):
                               taps_guess, task="Guess")
         df_noguess = align_taps(bio["ECGBIT"], start_noguess, stop_noguess, sampling_rate,
                               taps_noguess, task="NoGuess")
-        df = pd.concat([df_guess, df_noguess])      
+        df = pd.concat([df_guess, df_noguess])
     else:
         df_guess = align_taps(bio["ECGBIT"], start_guess, stop_guess, sampling_rate,
                               taps_guess, task="Guess")
@@ -127,13 +132,13 @@ for i, participant in enumerate(list_participants):
         df = pd.concat([df_guess, df_noguess, df_noguess_perturbed])
 
     df['ID'] = i + 1  # append participant number
-    
+
     # Visualize to see where taps align with ecg signal
     # tap_indices = np.where(df["Tap"] == 1)[0]
     # peaks = np.where(df["ECG_R_Peaks"] == 1)[0]
     # signal = nk.as_vector(df["ECG_Clean"])
     # nk.events_plot(events=[peaks, tap_indices], signal=signal)
-    
+
     df_all = pd.concat([df_all, df])  # combine all participants
 
 # df_all.to_csv("HCT_Part2.csv", na_rep="NA", index=False)  too big file
