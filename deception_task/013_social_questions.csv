@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+9,Indirect,LIE,Is your favourite drink Iced Latte?,video/V25.mp4,mountain dew,.
+20,Indirect,TRUTH,Is your house on the 9th floor of the building?,video/V20.mp4,9,.
+29,Indirect,LIE,Do you use a Apple phone?,video/V38.mp4,iphone,.
+18,Indirect,LIE,Was the last country you visited Thailand?,video/V23.mp4,japan,.
+1,Direct,LIE,Which primary school are you from?,video/V26.mp4,northland,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V11.mp4,social studies,.
+27,Indirect,LIE,Do you drink alcohol socially?,video/V37.mp4,do not drink socially,/
+9,Indirect,TRUTH,Is your favourite drink MIilo?,video/V17.mp4,iced latte,.
+5,Direct,LIE,What is your favourite country you visited? ,video/V7.mp4,thailand,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V9.mp4,2,.
+2,Indirect,TRUTH,Are you from Punggol Secondary School?,video/V24.mp4,northbrooks,.
+24,Indirect,LIE,Is your mum 46 years old this year?,video/V4.mp4,46,.
+23,Direct,TRUTH,What course are you studying?,video/V33.mp4,ppga,.
+26,Direct,LIE,How often do you smoke?,video/V39.mp4,socially once in a while,.
+26,Indirect,TRUTH,Do you smoke socially?,video/V6.mp4,I do not smoke socially,/
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V31.mp4,soh,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V34.mp4,yishun,.
+5,Direct,TRUTH,What is your favourite country you visited? ,video/V12.mp4,china,.
+25,Indirect,TRUTH,Is your dad 53 years old this year?,video/V40.mp4,53,.
+27,Indirect,TRUTH,Do you drink alcohol frequently?,video/V32.mp4,do not drink frequently,/
+21,Indirect,TRUTH,Are you from School of Social Sciences in NTU?,video/V8.mp4,sss,.
+24,Indirect,TRUTH,Is your mum 52 years old this year?,video/V28.mp4,52,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,video/V1.mp4,npcc,.
+22,Indirect,LIE,Are you in your 3rd year in NTU?,video/V19.mp4,3,.
+25,Direct,LIE,"How old is your dad? (Eg. 45, 52)",video/V15.mp4,55,.
+15,Indirect,LIE,Are you from Yishun Junior College?,video/V35.mp4,innova jc,.
+29,Indirect,TRUTH,Do you use a OPPO phone?,video/V29.mp4,oppo,.
+22,Indirect,TRUTH,Are you in your 2nd year in NTU?,video/V22.mp4,2,.
+30,Indirect,LIE,Do you use a Acer laptop?,video/V36.mp4,lenova,.
+15,Indirect,TRUTH,Are you from Singapore Polytechnic?,video/V27.mp4,yishun jc,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V3.mp4,1,.
+18,Direct,TRUTH,What was the last country you visited?,video/V16.mp4,thailand,.
+1,Indirect,TRUTH,Are you from Canberra Primary School?,video/V10.mp4,canberra,.
+19,Indirect,TRUTH,Is the Queenstown station the closest MRT to your house?,video/V30.mp4,katib,.
+23,Indirect,LIE,Are you studying Business course in NTU?,video/V13.mp4,business,.
+6,Indirect,LIE,Were you in the NPCC CCA during secondary school?,video/V2.mp4,ncc,.
+2,Indirect,LIE,Are you from Northbrooks Secondary School?,video/V5.mp4,chung cheng yishun,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V18.mp4,8,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,video/V14.mp4,acer,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V21.mp4,history,.

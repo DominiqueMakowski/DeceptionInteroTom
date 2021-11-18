@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+1,Direct,LIE,Which primary school are you from?,video/V9.mp4,kranji,.
+16,Indirect,TRUTH,Do you have 2 siblings?,video/V15.mp4,2,.
+28,Direct,TRUTH,What religion do you practice?,video/V24.mp4,buddhism,.
+28,Indirect,LIE,Is your religion Catholicism?,video/V18.mp4,catholic,.
+21,Indirect,LIE,Are you from School of Humanities in NTU?,video/V8.mp4,soh,.
+7,Direct,LIE,What is your favourite sport?,video/V11.mp4,football,.
+1,Indirect,TRUTH,Are you from First Toa Payoh Primary School?,video/V4.mp4,first toa payoh,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V31.mp4,1,.
+26,Direct,TRUTH,How often do you smoke?,video/V1.mp4,non-smoker,.
+2,Indirect,TRUTH,Are you from Serangoon Secondary School?,video/V40.mp4,not from serangoon,/
+16,Indirect,LIE,Do you have 4 siblings?,video/V36.mp4,4,.
+30,Indirect,TRUTH,Do you use a Asus laptop?,video/V6.mp4,don’t use asus,/
+22,Indirect,LIE,Are you in your 3rd year in NTU?,video/V12.mp4,3,.
+30,Direct,LIE,What brand of laptop do you mainly use?,video/V19.mp4,asus,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V32.mp4,oppo,.
+18,Direct,LIE,What was the last country you visited?,video/V29.mp4,indonesia,.
+23,Direct,TRUTH,What course are you studying?,video/V28.mp4,dsai,.
+20,Indirect,LIE,Is your house on the 12th floor of the building?,video/V7.mp4,3,.
+21,Indirect,TRUTH,Are you from School of Computer Science and Engineering in NTU?,video/V30.mp4,scse,.
+26,Direct,LIE,How often do you smoke?,video/V38.mp4,socially,.
+29,Direct,LIE,What brand of handphone do you use?,video/V27.mp4,samsung,.
+19,Indirect,LIE,Is the Chua Chu Kang station the closest MRT to your house?,video/V34.mp4,cck,X
+23,Indirect,LIE,Are you studying Accounting course in NTU?,video/V16.mp4,accounting,.
+20,Indirect,TRUTH,Is your house on the 7th floor of the building?,video/V21.mp4,7,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V25.mp4,history,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,video/V3.mp4,anderson jc,.
+6,Indirect,TRUTH,Were you in the Basketball CCA during secondary school?,video/V35.mp4,basketball,X
+15,Indirect,LIE,Are you from Anderson Junior College?,video/V26.mp4,serangoon jc,.
+17,Direct,TRUTH,Where did you celebrate your 21st birthday?,video/V14.mp4,home,.
+13,Direct,TRUTH,What is your dream job growing up?,video/V33.mp4,architect,.
+19,Indirect,TRUTH,Is the Cityhall station the closest MRT to your house?,video/V17.mp4,cck,.
+7,Indirect,TRUTH,Is your favourite sport Badminton?,video/V10.mp4,badminton,.
+27,Indirect,LIE,Do you drink alcohol socially?,video/V23.mp4,don’t drink at all,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V13.mp4,basketball,.
+2,Indirect,LIE,Are you from Kranji Secondary School?,video/V2.mp4,cck sec,.
+13,Direct,LIE,What is your dream job growing up?,video/V22.mp4,doctor,.
+18,Indirect,TRUTH,Was the last country you visited Japan?,video/V39.mp4,japan,X
+27,Indirect,TRUTH,Do you not drink alcohol at all? ,video/V37.mp4,socially,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V20.mp4,physics,.
+17,Direct,LIE,Where did you celebrate your 21st birthday?,video/V5.mp4,chalet,.

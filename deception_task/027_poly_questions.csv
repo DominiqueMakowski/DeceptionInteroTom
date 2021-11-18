@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+8,Direct,TRUTH,What is your favourite food?,bit/B35.mp4,seafood,.
+19,Indirect,TRUTH,Is the Eunos station the closest MRT to your house?,bit/B11.mp4,boonlay,.
+21,Indirect,TRUTH,Are you from School of Biological Sciences in NTU?,bit/B19.mp4,sbs,.
+13,Indirect,LIE,Is your dream job a Teacher when you were growing up?,bit/B1.mp4,teacher,.
+3,Indirect,TRUTH,Is Jamie your closest friend back in secondary school?,bit/B38.mp4,caroline,.
+4,Direct,LIE,Who is your favourite teacher in secondary school?,bit/B12.mp4,mr doby,.
+23,Direct,LIE,What course are you studying?,bit/B24.mp4,mathematical sciences,.
+8,Direct,LIE,What is your favourite food?,bit/B2.mp4,brocolli,.
+22,Indirect,LIE,Are you in your 2nd year in NTU?,bit/B27.mp4,2,.
+26,Indirect,LIE,Do you not smoke at all? ,bit/B20.mp4,occasionally,.
+7,Indirect,TRUTH,Do you not like sports at all?,bit/B18.mp4,don’t like at all,.
+25,Indirect,TRUTH,Is your dad 46 years old this year?,bit/B4.mp4,46,.
+20,Direct,LIE,Which floor of the building is your house on?,bit/B33.mp4,11,.
+23,Indirect,TRUTH,Are you studying Biological Sciences course in NTU?,bit/B17.mp4,biological sciences,.
+12,Indirect,TRUTH,Was your favourite subject Natural Sciences back in secondary school?,bit/B8.mp4,natural sciences,.
+16,Indirect,TRUTH,Do you have 3 siblings?,bit/B23.mp4,3,.
+16,Indirect,LIE,Do you have 1 sibling?,bit/B36.mp4,1,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B34.mp4,don’t drink,.
+9,Direct,TRUTH,What is your favourite drink?,bit/B28.mp4,water,.
+14,Indirect,TRUTH,Is your favourite flavour Banana?,bit/B22.mp4,cookies and cream,.
+4,Indirect,TRUTH,Is Mr Wong your favourite teacher in secondary school?,bit/B7.mp4,ms mery,.
+9,Indirect,LIE,Is your favourite drink Water?,bit/B5.mp4,bbtea,.
+13,Direct,TRUTH,What is your dream job growing up?,bit/B40.mp4,doctor,.
+7,Indirect,LIE,Is your favourite sport Tennis?,bit/B14.mp4,tennis,.
+19,Indirect,LIE,Is the Boonlay station the closest MRT to your house?,bit/B37.mp4,tampines,.
+27,Indirect,LIE,Do you not drink alcohol at all? ,bit/B21.mp4,once in a while,.
+25,Indirect,LIE,Is your dad 55 years old this year?,bit/B3.mp4,55,.
+18,Direct,LIE,What was the last country you visited?,bit/B15.mp4,korea,.
+12,Indirect,LIE,Was your favourite subject Mathematics back in secondary school?,bit/B16.mp4,maths,.
+26,Direct,TRUTH,How often do you smoke?,bit/B31.mp4,never smoke,.
+21,Indirect,LIE,Are you from Nanyang Business School in NTU?,bit/B39.mp4,nbs,.
+20,Indirect,TRUTH,Is your house on the 5th floor of the building?,bit/B13.mp4,5,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B26.mp4,mint,.
+18,Indirect,TRUTH,Was the last country you visited France?,bit/B25.mp4,australia,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B30.mp4,didn’t join any cca,.
+29,Indirect,LIE,Do you use a Xiaomi phone?,bit/B32.mp4,samsung,.
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,bit/B10.mp4,1,.
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B29.mp4,iphone,.
+3,Indirect,LIE,Is Caroline your closest friend back in secondary school?,bit/B9.mp4,josel,.
+6,Indirect,LIE,Were you not in any CCA during secondary school?,bit/B6.mp4,robotics club,.

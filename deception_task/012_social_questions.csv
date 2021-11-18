@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+2,Indirect,LIE,Are you from Temasek Secondary School?,video/V19.mp4,yep?,/
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,video/V5.mp4,ngee ann poly,.
+11,Indirect,TRUTH,Is The Spook's Apprentice the best book you read so far?,video/V27.mp4,it is the best book I read so far,/
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V39.mp4,3,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V6.mp4,sss,.
+16,Indirect,TRUTH,Do you have 2 siblings?,video/V11.mp4,do not have 2 siblings,/
+23,Direct,TRUTH,What course are you studying?,video/V31.mp4,sociology,.
+17,Direct,LIE,Where did you celebrate your 21st birthday?,video/V22.mp4,voiddeck,.
+20,Indirect,TRUTH,Is your house on the 5th floor of the building?,video/V20.mp4,not on 5th floor,/
+29,Direct,TRUTH,What brand of handphone do you use?,video/V37.mp4,samsung,.
+21,Indirect,LIE,Are you from School of Social Sciences in NTU?,video/V2.mp4,not from sss,/
+1,Indirect,TRUTH,Are you from Pasir Ris Primary School?,video/V7.mp4,not from pasir ris pri,/
+12,Indirect,LIE,Was your favourite subject Geography back in secondary school?,video/V17.mp4,english,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V28.mp4,pasir ris,.
+27,Indirect,TRUTH,Do you drink alcohol rarely?,video/V32.mp4,don’t drink often,/
+5,Indirect,LIE,Is your favourite country Australia?,video/V9.mp4,australia,.
+25,Indirect,TRUTH,Is your dad 51 years old this year?,video/V38.mp4,not 51,/
+2,Direct,TRUTH,Which secondary school did you attend?,video/V18.mp4,swiss cottage,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V24.mp4,cck,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V14.mp4,catholic jc,.
+11,Direct,LIE,What is the best book you read so far?,video/V23.mp4,sec science tb,.
+22,Indirect,LIE,Are you in your 3rd year in NTU?,video/V8.mp4,2,.
+26,Indirect,LIE,Do you smoke socially?,video/V1.mp4,socially,.
+17,Direct,TRUTH,Where did you celebrate your 21st birthday?,video/V12.mp4,home,.
+28,Direct,LIE,What religion do you practice?,video/V13.mp4,buddhist,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V29.mp4,24,.
+23,Indirect,LIE,Are you studying Sociology course in NTU?,video/V16.mp4,econs,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V40.mp4,geog,.
+26,Direct,TRUTH,How often do you smoke?,video/V26.mp4,don’t smoke,.
+16,Indirect,LIE,Do you have 1 sibling?,video/V4.mp4,2,.
+18,Direct,TRUTH,What was the last country you visited?,video/V33.mp4,malaysia,.
+25,Indirect,LIE,Is your dad 58 years old this year?,video/V15.mp4,58,X
+5,Direct,TRUTH,What is your favourite country you visited? ,video/V21.mp4,taiwan,.
+28,Indirect,TRUTH,Is your religion Buddhism?,video/V3.mp4,buddhism is not my relgion!,/
+18,Indirect,LIE,Was the last country you visited Japan?,video/V36.mp4,japan,.
+6,Indirect,TRUTH,Were you in the NPCC CCA during secondary school?,video/V34.mp4,npcc,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V35.mp4,drama club,.
+27,Indirect,LIE,Do you drink alcohol frequently?,video/V30.mp4,frequently,.
+1,Direct,LIE,Which primary school are you from?,video/V10.mp4,coral pri,.
+29,Direct,LIE,What brand of handphone do you use?,video/V25.mp4,iphone,.

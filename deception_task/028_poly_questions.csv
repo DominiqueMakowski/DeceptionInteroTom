@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+23,Direct,TRUTH,What course are you studying?,bit/B39.mp4,ppga,.
+16,Indirect,TRUTH,Do you have 3 siblings?,bit/B37.mp4,2,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,bit/B19.mp4,asus,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B10.mp4,vjc,.
+4,Direct,LIE,Who is your favourite teacher in secondary school?,bit/B23.mp4,ms siao,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B21.mp4,punggol,.
+20,Indirect,LIE,Is your house on the 4th floor of the building?,bit/B33.mp4,5,.
+8,Direct,LIE,What is your favourite food?,bit/B11.mp4,nasi lemak,.
+1,Direct,LIE,Which primary school are you from?,bit/B34.mp4,punggol,.
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B30.mp4,4,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,bit/B18.mp4,zyzann,.
+27,Indirect,TRUTH,Do you not drink alcohol at all? ,bit/B7.mp4,do not drink,.
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,bit/B40.mp4,sss,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B28.mp4,belgium choc,.
+30,Indirect,LIE,Do you use a Lenovo laptop?,bit/B1.mp4,lenovo,.
+18,Indirect,TRUTH,Was the last country you visited Malaysia?,bit/B3.mp4,malaysia,.
+18,Direct,LIE,What was the last country you visited?,bit/B29.mp4,australia,.
+26,Direct,LIE,How often do you smoke?,bit/B14.mp4,once every 3 days,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B2.mp4,buangkok,.
+27,Indirect,LIE,Do you drink alcohol frequently?,bit/B12.mp4,frequently,.
+5,Indirect,LIE,Is your favourite country Korea?,bit/B9.mp4,korea,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B27.mp4,business school,/
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B24.mp4,3,.
+23,Indirect,LIE,Are you studying Public Policy and Global Affairs course in NTU?,bit/B15.mp4,business,.
+1,Indirect,TRUTH,Are you from Punggol Primary School?,bit/B35.mp4,north vista,.
+29,Indirect,LIE,Do you use a Apple phone?,bit/B32.mp4,samsung,.
+2,Indirect,TRUTH,Are you from Compassvale Secondary School?,bit/B13.mp4,compassvale,.
+6,Indirect,LIE,Were you in the Choir CCA during secondary school?,bit/B20.mp4,choir,.
+22,Indirect,TRUTH,Are you in your 3rd year in NTU?,bit/B38.mp4,2,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B31.mp4,matcha green tea,.
+16,Indirect,LIE,Do you have 2 siblings?,bit/B26.mp4,0,.
+8,Indirect,TRUTH,Is your favourite food Sushi?,bit/B4.mp4,creamy pasta,.
+6,Indirect,TRUTH,Were you in the Drama Club CCA during secondary school?,bit/B16.mp4,drama club,.
+4,Indirect,TRUTH,Is Mr Idroz your favourite teacher in secondary school?,bit/B25.mp4,mr idroz,.
+5,Direct,TRUTH,What is your favourite country you visited? ,bit/B5.mp4,UAE,.
+15,Indirect,TRUTH,Are you from Meridian Junior College?,bit/B17.mp4,meridian jc,.
+26,Direct,TRUTH,How often do you smoke?,bit/B36.mp4,do not smoke,.
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B6.mp4,apple,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,bit/B8.mp4,mathilda,.
+19,Indirect,LIE,Is the Tampines station the closest MRT to your house?,bit/B22.mp4,tampines,.

@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+2,Indirect,LIE,Are you from Temasek Secondary School?,bit/B5.mp4,temasek,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B9.mp4,0,.
+19,Indirect,LIE,Is the Bishan station the closest MRT to your house?,bit/B30.mp4,bishan,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B21.mp4,swim club,.
+23,Direct,LIE,What course are you studying?,bit/B14.mp4,computer science,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B22.mp4,EEE,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B39.mp4,jiaxiang 49 preschool attached chengdu no 7 middle school,X
+22,Indirect,LIE,Are you in your 1st year in NTU?,bit/B17.mp4,2,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B6.mp4,NBS,.
+26,Direct,LIE,How often do you smoke?,bit/B20.mp4,once a week,.
+17,Indirect,LIE,Did you not celebrate your 21st birthday?,bit/B33.mp4,no I celebrated my 21st birthday,/
+7,Indirect,LIE,Is your favourite sport Basketball?,bit/B24.mp4,soccer,.
+29,Direct,LIE,What brand of handphone do you use?,bit/B23.mp4,iphone,.
+30,Indirect,LIE,Do you use a Lenovo laptop?,bit/B2.mp4,lenovo,.
+9,Direct,LIE,What is your favourite drink?,bit/B13.mp4,green tea,.
+9,Direct,TRUTH,What is your favourite drink?,bit/B15.mp4,pure water,.
+23,Indirect,TRUTH,Are you studying Accounting course in NTU?,bit/B36.mp4,not studying accounting,/
+28,Indirect,LIE,Are you a free-thinker?,bit/B19.mp4,buddhist,.
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B10.mp4,twice a week,/
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B25.mp4,didn’t join any,.
+24,Indirect,TRUTH,Is your mum 42 years old this year?,bit/B32.mp4,49,X
+17,Indirect,TRUTH,Did you celebrate your 21st birthday at NTU?,bit/B38.mp4,havent celebrated,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B34.mp4,pioneer,.
+18,Direct,LIE,What was the last country you visited?,bit/B4.mp4,japan,.
+18,Indirect,TRUTH,Was the last country you visited Singapore?,bit/B18.mp4,singapore,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,bit/B1.mp4,ross,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B37.mp4,rarely,.
+25,Indirect,LIE,Is your dad 47 years old this year?,bit/B12.mp4,47,X
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B3.mp4,1,.
+7,Direct,TRUTH,What is your favourite sport?,bit/B31.mp4,basketball,.
+28,Direct,TRUTH,What religion do you practice?,bit/B8.mp4,do not practice any,.
+25,Indirect,TRUTH,Is your dad 52 years old this year?,bit/B16.mp4,48,X
+30,Indirect,TRUTH,Do you use a Huawei laptop?,bit/B27.mp4,huawei,.
+3,Indirect,TRUTH,Is Jack your closest friend back in secondary school?,bit/B7.mp4,jack,.
+24,Indirect,LIE,Is your mum 48 years old this year?,bit/B28.mp4,48,X
+26,Indirect,TRUTH,Do you not smoke at all? ,bit/B35.mp4,do not smoke at all,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B26.mp4,4,.
+1,Direct,LIE,Which primary school are you from?,bit/B29.mp4,chengdu no4 pri,.
+29,Indirect,TRUTH,Do you use a Apple phone?,bit/B40.mp4,huawei,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B11.mp4,jiaxiang foreign language school,.

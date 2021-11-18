@@ -1,0 +1,41 @@
+item,style,condition,question,video,,,
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V32.mp4,,canberra,.
+18,Direct,TRUTH,What was the last country you visited?,video/V8.mp4,,malaysia,.
+14,Indirect,LIE,Is your favourite flavour Vanilla?,video/V37.mp4,,chocolate,.
+21,Indirect,LIE,Are you from Nanyang Business School in NTU?,video/V33.mp4,,NBS,.
+17,Indirect,LIE,Did you celebrate your 21st birthday at MBS?,video/V35.mp4,,MBS,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V28.mp4,,12th,.
+26,Direct,LIE,How often do you smoke?,video/V5.mp4,,once/twice a week,.
+1,Indirect,LIE,Are you from Temasek Primary School?,video/V12.mp4,,temasek,.
+2,Direct,TRUTH,Which secondary school did you attend?,video/V16.mp4,,nanyang girls,.
+23,Indirect,TRUTH,Are you studying Linguistics and Multilingual Studies course in NTU?,video/V15.mp4,,LMS,.
+27,Indirect,TRUTH,Do you drink alcohol socially?,video/V3.mp4,,socially,?X
+30,Indirect,LIE,Do you use a Acer laptop?,video/V23.mp4,,asus,.
+16,Indirect,TRUTH,Do you have 2 siblings?,video/V39.mp4,,2,.
+2,Direct,LIE,Which secondary school did you attend?,video/V25.mp4,,dunman high,.
+7,Direct,TRUTH,What is your favourite sport?,video/V21.mp4,,kayaking,.
+23,Direct,LIE,What course are you studying?,video/V18.mp4,,accounting,.
+26,Indirect,TRUTH,Do you smoke regularly?,video/V40.mp4,,"no, don’t smoke regularly",/
+30,Indirect,TRUTH,Do you use a Lenovo laptop?,video/V19.mp4,,"no, don’t use a lenovo laptop",/
+29,Direct,TRUTH,What brand of handphone do you use?,video/V36.mp4,,xiaomi,.
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,video/V6.mp4,,1st,.
+7,Indirect,LIE,Is your favourite sport Hockey?,video/V7.mp4,,hockey,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",video/V11.mp4,,vanilla,.
+20,Indirect,LIE,Is your house on the 3rd floor of the building?,video/V22.mp4,,3rd,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V38.mp4,,bishan,.
+10,Indirect,LIE,Do you hate eating Eggplant the most?,video/V4.mp4,,parsley,.
+22,Indirect,LIE,Are you in your 3rd year in NTU?,video/V26.mp4,,3rd,.
+10,Direct,TRUTH,What food do you hate the most?,video/V27.mp4,,eggplant,.
+6,Indirect,TRUTH,Were you in the Volleyball CCA during secondary school?,video/V13.mp4,,wasn’t in volleyball,/
+27,Direct,LIE,How frequently do you drink alcohol?,video/V31.mp4,,once a week,/
+15,Indirect,LIE,Are you from Hwa Chong Institution (College)?,video/V24.mp4,,national jc,.
+17,Direct,TRUTH,Where did you celebrate your 21st birthday?,video/V9.mp4,,didnt celebrate,.
+21,Indirect,TRUTH,Are you from the School of Humanities in NTU?,video/V29.mp4,,SoH,.
+28,Direct,LIE,What religion do you practice?,video/V2.mp4,,Taoism,.
+28,Direct,TRUTH,What religion do you practice?,video/V34.mp4,,free-thinker,.
+1,Indirect,TRUTH,Are you from Tao Nan Primary School?,video/V17.mp4,,taonan,.
+6,Indirect,LIE,Were you in the Infocomm Club CCA during secondary school?,video/V20.mp4,,XXX sports,.
+18,Indirect,LIE,Was the last country you visited Malaysia?,video/V30.mp4,,japan,.
+16,Indirect,LIE,Do you have 4 siblings?,video/V1.mp4,,4,.
+29,Direct,LIE,What brand of handphone do you use?,video/V10.mp4,,huawei,.
+15,Indirect,TRUTH,Are you from Singapore Polytechnic?,video/V14.mp4,,HCI,.

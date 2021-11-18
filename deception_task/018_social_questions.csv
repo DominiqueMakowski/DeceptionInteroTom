@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+3,Indirect,TRUTH,Is Vera your closest friend back in secondary school?,video/V4.mp4,vera,.
+23,Indirect,LIE,Are you studying Communication Studies course in NTU?,video/V18.mp4,communication studies,X
+21,Indirect,TRUTH,Are you from Nanyang Business School in NTU?,video/V40.mp4,not from nbs,/
+3,Direct,LIE,Who is your closest friend back in secondary school?,video/V14.mp4,audrey,.
+28,Indirect,LIE,Are you a free-thinker?,video/V30.mp4,not a freethinker,/
+1,Indirect,LIE,Are you from CHIJ Our Lady Queen of Peace?,video/V28.mp4,not from chij,/
+10,Indirect,TRUTH,Do you hate eating Vegetables the most?,video/V2.mp4,vegetables,.
+2,Direct,TRUTH,Which secondary school did you attend?,video/V5.mp4,scgs,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V12.mp4,acjc,.
+26,Indirect,LIE,Do you smoke socially?,video/V27.mp4,socially,.
+18,Direct,LIE,What was the last country you visited?,video/V8.mp4,korea,.
+15,Indirect,TRUTH,Are you from Eunoia Junior College?,video/V6.mp4,eunoia,.
+28,Direct,TRUTH,What religion do you practice?,video/V22.mp4,freethinker,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V19.mp4,almost everyday,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V26.mp4,7,.
+6,Indirect,LIE,Were you in the Choir CCA during secondary school?,video/V15.mp4,choir,.
+6,Indirect,TRUTH,Were you in the English Drama CCA during secondary school?,video/V32.mp4,english drama,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V13.mp4,6th,.
+1,Direct,TRUTH,Which primary school are you from?,video/V34.mp4,chij our lady,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V10.mp4,apple,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V35.mp4,1,.
+26,Direct,TRUTH,How often do you smoke?,video/V25.mp4,do not smoke,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V9.mp4,3,.
+16,Indirect,LIE,Do you have 0 siblings?,video/V36.mp4,1,.
+8,Direct,TRUTH,What is your favourite food?,video/V23.mp4,chicken,.
+9,Indirect,LIE,Is your favourite drink Mocha?,video/V1.mp4,mocha,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V21.mp4,nbs,.
+2,Indirect,LIE,Are you from Anderson Secondary School?,video/V17.mp4,anderson,.
+18,Indirect,TRUTH,Was the last country you visited Japan?,video/V7.mp4,japan,.
+9,Direct,TRUTH,What is your favourite drink?,video/V24.mp4,green tea,.
+5,Indirect,LIE,Is your favourite country India?,video/V33.mp4,india,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V20.mp4,bukit batok,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V29.mp4,0,.
+29,Direct,LIE,What brand of handphone do you use?,video/V3.mp4,nokia,.
+23,Direct,TRUTH,What course are you studying?,video/V11.mp4,communication studies,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V37.mp4,rarely,X
+10,Indirect,LIE,Do you hate eating Ramen the most?,video/V16.mp4,ramen,.
+19,Indirect,LIE,Is the Simei station the closest MRT to your house?,video/V38.mp4,simei,.
+8,Indirect,LIE,Is your favourite food Chicken?,video/V39.mp4,not chicken,/
+5,Direct,TRUTH,What is your favourite country you visited? ,video/V31.mp4,korea,.

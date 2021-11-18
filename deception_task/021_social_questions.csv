@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V19.mp4,physics,.
+4,Indirect,LIE,Is Mrs Raj your favourite teacher in secondary school?,video/V32.mp4,ms maraini,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V15.mp4,school band,.
+22,Indirect,LIE,Are you in your 3rd year in NTU?,video/V9.mp4,3,.
+1,Direct,TRUTH,Which primary school are you from?,video/V33.mp4,pei hua pesbyterian,.
+8,Indirect,LIE,Is your favourite food Sushi?,video/V1.mp4,sushi,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V27.mp4,samsung,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,video/V24.mp4,deyna,.
+20,Indirect,LIE,Is your house on the 5th floor of the building?,video/V31.mp4,5,.
+14,Indirect,TRUTH,Is your favourite flavour Vanilla?,video/V36.mp4,coffee/espresso,.
+4,Indirect,TRUTH,Is Mr Teo your favourite teacher in secondary school?,video/V11.mp4,mrs raj,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V21.mp4,9th,.
+23,Direct,LIE,What course are you studying?,video/V18.mp4,psychology,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V14.mp4,st andrew/acjc,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,video/V20.mp4,catholic jc,.
+6,Indirect,TRUTH,Were you in the Badminton CCA during secondary school?,video/V30.mp4,choir,.
+2,Indirect,TRUTH,Are you from Pasir Ris Secondary School?,video/V34.mp4,st margeret,.
+3,Indirect,TRUTH,Is Derrick your closest friend back in secondary school?,video/V8.mp4,sarah lou,.
+23,Direct,TRUTH,What course are you studying?,video/V2.mp4,LMS,.
+9,Direct,TRUTH,What is your favourite drink?,video/V12.mp4,coke light,.
+8,Indirect,TRUTH,Is your favourite food Roast Pork?,video/V40.mp4,roast pork,.
+7,Direct,LIE,What is your favourite sport?,video/V26.mp4,Tchoukball,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V7.mp4,0,.
+21,Indirect,LIE,Are you from Nanyang Business School in NTU?,video/V16.mp4,nbs,.
+19,Indirect,TRUTH,Is the Redhill station the closest MRT to your house?,video/V6.mp4,beauty world,.
+16,Indirect,TRUTH,Do you have 1 sibling?,video/V25.mp4,1,.
+29,Indirect,LIE,Do you use a Apple phone?,video/V3.mp4,apple,.
+13,Indirect,LIE,Is your dream job a Teacher when you were growing up?,video/V17.mp4,teacher,.
+12,Indirect,TRUTH,Was your favourite subject English back in secondary school?,video/V10.mp4,english,.
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,video/V23.mp4,soh,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V38.mp4,do not drink,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V35.mp4,1,.
+13,Direct,TRUTH,What is your dream job growing up?,video/V22.mp4,fashion designer,.
+7,Indirect,TRUTH,Is your favourite sport Floorball?,video/V28.mp4,floorball,.
+9,Indirect,LIE,Is your favourite drink Coke Light?,video/V13.mp4,kopi peng,.
+2,Indirect,LIE,Are you from St. Margaret's Secondary School?,video/V39.mp4,cresent girls,.
+19,Indirect,LIE,Is the Beauty World station the closest MRT to your house?,video/V5.mp4,bukit batok,.
+1,Indirect,LIE,Are you from Yishun Primary School?,video/V4.mp4,yishun,.
+27,Indirect,LIE,Do you not drink alcohol at all? ,video/V29.mp4,regularly,.
+14,Indirect,LIE,Is your favourite flavour Coffee?,video/V37.mp4,matcha/green tea,.

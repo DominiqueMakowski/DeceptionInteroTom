@@ -1,0 +1,43 @@
+item,style,condition,question,bitalino,,
+24,Indirect,LIE,Is your mum 46 years old this year?,bit/B32.mp4,46,.
+18,Direct,TRUTH,What was the last country you visited?,bit/B34.mp4,australia,X
+25,Direct,TRUTH,"How old is your dad? (Eg. 45, 52)",bit/B7.mp4,60,.
+16,Indirect,LIE,Do you have 3 siblings?,bit/B39.mp4,3,.
+30,Indirect,LIE,Do you use a Asus laptop?,bit/B9.mp4,do not use asus,/
+26,Direct,TRUTH,How often do you smoke?,bit/B31.mp4,often,.
+27,Indirect,LIE,Do you drink alcohol frequently?,bit/B11.mp4,do not drink,.
+15,Indirect,TRUTH,Are you from Victoria Junior College?,bit/B24.mp4,not from vic jc,/
+23,Direct,LIE,What course are you studying?,bit/B5.mp4,business,.
+1,Indirect,LIE,Are you from Clementi Primary School?,bit/B25.mp4,clementi,.
+5,Direct,TRUTH,What is your favourite country you visited? ,bit/B6.mp4,thailand,.
+14,Indirect,TRUTH,Is your favourite flavour Blueberry?,bit/B29.mp4,not blueberry,/
+27,Indirect,TRUTH,Do you drink alcohol rarely?,bit/B37.mp4,often,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B20.mp4,4,.
+21,Indirect,LIE,Are you from School of Humanities in NTU?,bit/B4.mp4,soh,.
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B14.mp4,13,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B19.mp4,3,.
+18,Indirect,LIE,Was the last country you visited Taiwan?,bit/B16.mp4,not taiwan,/
+1,Direct,TRUTH,Which primary school are you from?,bit/B28.mp4,ngee ann,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,bit/B17.mp4,asus,.
+5,Direct,LIE,What is your favourite country you visited? ,bit/B8.mp4,australia,.
+24,Direct,TRUTH,"How old is your mum? (Eg. 45, 52)",bit/B10.mp4,59,.
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B33.mp4,bugis,.
+20,Indirect,LIE,Is your house on the 8th floor of the building?,bit/B38.mp4,8,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B13.mp4,victoria jc,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B18.mp4,ngee ann sec,.
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B40.mp4,samsung,.
+23,Indirect,TRUTH,Are you studying Physics course in NTU?,bit/B22.mp4,physics,.
+16,Indirect,TRUTH,Do you have 1 sibling?,bit/B27.mp4,1,.
+29,Direct,LIE,What brand of handphone do you use?,bit/B12.mp4,apple,.
+2,Indirect,LIE,Are you from Ngee Ann Secondary School?,bit/B2.mp4,not from ngee ann sec,/
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B15.mp4,spms,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B30.mp4,npcc,X
+9,Direct,TRUTH,What is your favourite drink?,bit/B23.mp4,single malt whiskey,.
+26,Direct,LIE,How often do you smoke?,bit/B36.mp4,do not smoke,.
+25,Indirect,LIE,Is your dad 52 years old this year?,bit/B3.mp4,52,.
+9,Direct,LIE,What is your favourite drink?,bit/B21.mp4,blueberry milk,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B1.mp4,hougang,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B26.mp4,npcc,.
+14,Indirect,LIE,Is your favourite flavour Vanilla?,bit/B35.mp4,not vanilla,/
+,,,,,,
+,,,"did not answer all the subjective ratings, spammed the spacebar trying to go through it faster.",,,

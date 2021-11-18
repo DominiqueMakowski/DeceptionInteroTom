@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B19.mp4,npcc,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B24.mp4,don’t drink frequently,/
+2,Indirect,TRUTH,Are you from Swiss Cottage Secondary School?,bit/B25.mp4,swiss cottage,.
+11,Indirect,LIE,Is Tuesdays with Morrie the best book you read so far?,bit/B6.mp4,tuesdays with morrie,.
+29,Indirect,LIE,Do you use a Samsung phone?,bit/B40.mp4,don’t use samsung,/
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B13.mp4,1,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B14.mp4,5,.
+19,Indirect,TRUTH,Is the Chua Chu Kang station the closest MRT to your house?,bit/B27.mp4,cck,.
+5,Direct,LIE,What is your favourite country you visited? ,bit/B9.mp4,new zealand,.
+1,Indirect,LIE,Are you from Chua Chu Kang Primary School?,bit/B3.mp4,not from cck,/
+20,Indirect,LIE,Is your house on the 12th floor of the building?,bit/B39.mp4,25,.
+26,Indirect,TRUTH,Do you not smoke at all? ,bit/B21.mp4,don’t smoke,.
+19,Indirect,LIE,Is the Woodlands station the closest MRT to your house?,bit/B35.mp4,woodlands,.
+28,Direct,TRUTH,What religion do you practice?,bit/B4.mp4,don’t practice any religion,.
+28,Indirect,LIE,Are you a free-thinker?,bit/B7.mp4,freethinker,.
+26,Direct,LIE,How often do you smoke?,bit/B11.mp4,everyday,.
+15,Indirect,LIE,Are you from Victoria Junior College?,bit/B12.mp4,victoria jc,.
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B2.mp4,once every 2 hours,.
+17,Indirect,TRUTH,Did you celebrate your 21st birthday at NTU?,bit/B38.mp4,did not celebrate at ntu,/
+12,Indirect,TRUTH,Was your favourite subject Chemistry back in secondary school?,bit/B30.mp4,chemistry is not my fav,/
+21,Indirect,TRUTH,Are you from Nanyang Business School in NTU?,bit/B26.mp4,not from NBS,/
+25,Direct,TRUTH,"How old is your dad? (Eg. 45, 52)",bit/B8.mp4,57,.
+23,Direct,LIE,What course are you studying?,bit/B37.mp4,business,.
+11,Direct,TRUTH,What is the best book you read so far?,bit/B34.mp4,the spooks apprentice,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B32.mp4,NBS,.
+23,Indirect,TRUTH,Are you studying Accounting course in NTU?,bit/B17.mp4,not studying accounting,/
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B31.mp4,12,.
+17,Indirect,LIE,Did you celebrate your 21st birthday at Home?,bit/B33.mp4,yes no I celebrated my 21st outside my house,/
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B15.mp4,1,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B5.mp4,cck,.
+5,Indirect,TRUTH,Is your favourite country Taiwan?,bit/B18.mp4,taiwan,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,bit/B22.mp4,english,.
+15,Indirect,TRUTH,Are you from Ngee Ann Polytechnic?,bit/B23.mp4,ngee ann poly,.
+18,Direct,LIE,What was the last country you visited?,bit/B28.mp4,thailand,.
+29,Indirect,TRUTH,Do you use a Apple phone?,bit/B36.mp4,don’t use apple,/
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,bit/B20.mp4,not 1st year,/
+25,Direct,LIE,"How old is your dad? (Eg. 45, 52)",bit/B10.mp4,58,X
+6,Indirect,LIE,Were you in the Basketball CCA during secondary school?,bit/B16.mp4,basketball,.
+18,Indirect,TRUTH,Was the last country you visited Malaysia?,bit/B29.mp4,thailand,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B1.mp4,ngee ann sec,.

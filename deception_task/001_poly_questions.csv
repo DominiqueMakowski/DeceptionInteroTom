@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+30,Direct,LIE,What brand of laptop do you mainly use?,bit/B37.mp4,asus,.
+18,Indirect,TRUTH,Was the last country you visited Australia?,bit/B40.mp4,malaysia,.
+7,Direct,LIE,What is your favourite sport?,bit/B35.mp4,volleyball,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B21.mp4,taonan,.
+23,Direct,TRUTH,What course are you studying?,bit/B2.mp4,LMS,.
+7,Indirect,TRUTH,Is your favourite sport Kayaking?,bit/B12.mp4,kayaking,.
+2,Indirect,TRUTH,Are you from Serangoon Secondary School?,bit/B10.mp4,Nanyang Girls,.
+27,Indirect,LIE,Do you drink alcohol rarely?,bit/B3.mp4,frequently,.
+23,Indirect,LIE,Are you studying Sociology course in NTU?,bit/B20.mp4,sociology,.
+19,Indirect,LIE,Is the Canberra station the closest MRT to your house?,bit/B34.mp4,bishan,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,bit/B31.mp4,acer,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B39.mp4,1st,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B19.mp4,Soh,X
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B38.mp4,Mind sports,.
+26,Direct,TRUTH,How often do you smoke?,bit/B17.mp4,don’t smoke,.
+10,Indirect,TRUTH,Do you hate eating cheese the most?,bit/B29.mp4,eggplant,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B30.mp4,chocolate,.
+28,Indirect,LIE,Is your religion Catholicism?,bit/B22.mp4,catholicism,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B27.mp4,2,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B36.mp4,don’t have,.
+26,Indirect,LIE,Do you not smoke at all?,bit/B26.mp4,I smoke,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B32.mp4,infocomm club,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B23.mp4,2nd,.
+20,Direct,LIE,Which floor of the building is your house on?,bit/B25.mp4,3rd,.
+29,Indirect,LIE,Do you use a Samsung phone?,bit/B14.mp4,samsung,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B7.mp4,don’t drink alcohol,X
+20,Indirect,TRUTH,Is your house on the 12th floor of the building?,bit/B24.mp4,12th,.
+2,Indirect,LIE,Are you from Nanyang Girls' High School?,bit/B11.mp4,dunman high,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B28.mp4,HCI,.
+28,Indirect,TRUTH,Is your religion a free-thinker?,bit/B1.mp4,freethinker,.
+10,Direct,LIE,What food do you hate the most?,bit/B13.mp4,parsley,.
+17,Direct,LIE,Where did you celebrate your 21st birthday?,bit/B33.mp4,MBS,.
+19,Indirect,TRUTH,Is the Bedok station the closest MRT to your house?,bit/B6.mp4,canberra,.
+29,Indirect,TRUTH,Do you use a Xiaomi phone?,bit/B16.mp4,xiaomi,.
+14,Indirect,TRUTH,Is your favourite flavour Chocolate?,bit/B9.mp4,vanilla,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B18.mp4,nanyang poly,.
+17,Indirect,TRUTH,Did you not celebrate your 21st birthday?,bit/B5.mp4,didn’t celebrate,.
+18,Direct,LIE,What was the last country you visited?,bit/B8.mp4,japan,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B4.mp4,SOH,.
+1,Direct,LIE,Which primary school are you from?,bit/B15.mp4,Maha Bodhi,.

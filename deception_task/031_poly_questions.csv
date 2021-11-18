@@ -1,0 +1,5 @@
+﻿item,style,condition,question,bitalino
+1,Indirect,TRUTH,Are you from Pioneer Primary School?,bit/B2.mp4
+1,Direct,LIE,Which primary school are you from?,bit/B3.mp4
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B5.mp4
+2,Indirect,LIE,Are you from Woodlands Secondary School?,bit/B8.mp4

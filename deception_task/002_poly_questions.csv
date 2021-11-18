@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+10,Indirect,TRUTH,Do you hate eating Pancakes the most?,bit/B21.mp4,,X
+22,Indirect,LIE,Are you in your 1st year in NTU?,bit/B13.mp4,,X
+3,Indirect,LIE,Is Joel your closest friend back in secondary school?,bit/B39.mp4,,X
+7,Direct,TRUTH,What is your favourite sport?,bit/B26.mp4,,X
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B31.mp4,,X
+22,Indirect,TRUTH,Are you in your 3rd year in NTU?,bit/B29.mp4,,X
+21,Indirect,LIE,Are you from School of Physical and Mathematical Sciences in NTU?,bit/B28.mp4,,X
+19,Indirect,TRUTH,Is the Punggol station the closest MRT to your house?,bit/B25.mp4,,X
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B12.mp4,,X
+18,Indirect,TRUTH,Was the last country you visited Taiwan?,bit/B20.mp4,,X
+20,Direct,LIE,Which floor of the building is your house on?,bit/B15.mp4,,X
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,bit/B33.mp4,,X
+13,Direct,LIE,What is your dream job growing up?,bit/B3.mp4,neopet?vet?,/
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B17.mp4,njc,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B30.mp4,basketball,.
+10,Indirect,LIE,Do you hate eating Ramen the most?,bit/B34.mp4,ramen,.
+29,Direct,LIE,What brand of handphone do you use?,bit/B32.mp4,apple,.
+2,Indirect,TRUTH,Are you from Edgefield Secondary School?,bit/B27.mp4,edgefield,.
+27,Indirect,TRUTH,Do you not drink alcohol at all?,bit/B38.mp4,do not drink,.
+5,Direct,TRUTH,What is your favourite country you visited? ,bit/B16.mp4,korea,.
+13,Indirect,TRUTH,Is your dream job a Teacher when you were growing up?,bit/B7.mp4,scientist,.
+23,Direct,TRUTH,What course are you studying?,bit/B6.mp4,chemistry,/
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B19.mp4,spms,.
+18,Indirect,LIE,Was the last country you visited Japan?,bit/B2.mp4,japan,.
+5,Indirect,LIE,Is your favourite country Italy?,bit/B11.mp4,italy,.
+2,Indirect,LIE,Are you from Serangoon Secondary School?,bit/B5.mp4,serangoon,.
+1,Direct,LIE,Which primary school are you from?,bit/B8.mp4,greendale,.
+30,Direct,LIE,What brand of laptop do you mainly use?,bit/B23.mp4,acer,.
+7,Indirect,LIE,Is your favourite sport Tennis?,bit/B40.mp4,badminton,.
+27,Indirect,LIE,Do you drink alcohol socially?,bit/B37.mp4,socially,.
+28,Indirect,LIE,Is your religion Buddhism?,bit/B9.mp4,freethinker,.
+23,Indirect,LIE,Are you studying Chemistry and Biological Chemistry in NTU?,bit/B24.mp4,mathematics,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B36.mp4,taekwondo,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B35.mp4,2,.
+29,Indirect,TRUTH,Do you use a Samsung phone?,bit/B10.mp4,huawei,.
+30,Indirect,TRUTH,Do you use an Apple laptop?,bit/B14.mp4,apple,.
+16,Indirect,LIE,Do you have 2 siblings?,bit/B22.mp4,3,.
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B4.mp4,sengkang,.
+1,Indirect,TRUTH,Are you from Woodlands Primary School?,bit/B1.mp4,edgefield,.
+28,Direct,TRUTH,What religion do you practice?,bit/B18.mp4,buddhism,.

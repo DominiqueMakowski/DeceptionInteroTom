@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+22,Indirect,LIE,Are you in your 1st year in NTU?,bit/B28.mp4,not 1st,/
+6,Indirect,TRUTH,Were you in the Girl Guides CCA during secondary school?,bit/B14.mp4,girl guides,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B5.mp4,wellington,.
+28,Indirect,LIE,Is your religion Buddhism?,bit/B20.mp4,not budhism,/
+21,Indirect,LIE,Are you from School of Physics and Mathematical Sciences in NTU?,bit/B15.mp4,not spms,/
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B37.mp4,bukit panjang,.
+15,Indirect,LIE,Are you from Nanyang Polytechnic?,bit/B12.mp4,nanyang poly,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B16.mp4,pistachio,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B39.mp4,1,.
+29,Direct,LIE,What brand of handphone do you use?,bit/B4.mp4,samsung,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B7.mp4,3,.
+1,Direct,LIE,Which primary school are you from?,bit/B9.mp4,ahmad ibrahim,.
+3,Indirect,LIE,Is Benson your closest friend back in secondary school?,bit/B3.mp4,benson,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,bit/B33.mp4,cherise,.
+23,Direct,LIE,What course are you studying?,bit/B35.mp4,chemistry,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B38.mp4,yishun town,.
+12,Indirect,TRUTH,Was your favourite subject Physics back in secondary school?,bit/B13.mp4,not physics,/
+26,Indirect,TRUTH,Do you not smoke at all? ,bit/B2.mp4,do not smoke,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B29.mp4,spms,.
+24,Indirect,LIE,Is your mum 48 years old this year?,bit/B22.mp4,not 48,/
+4,Indirect,TRUTH,Is Ms Chia your favourite teacher in secondary school?,bit/B36.mp4,ms chia,.
+16,Indirect,TRUTH,Do you have 1 sibling?,bit/B31.mp4,don’t have 1 sibling,/
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B19.mp4,pioneer,.
+20,Indirect,LIE,Is your house on the 7th floor of the building?,bit/B27.mp4,not 7th,.
+24,Direct,TRUTH,"How old is your mum? (Eg. 45, 52)",bit/B26.mp4,48,.
+23,Direct,TRUTH,What course are you studying?,bit/B21.mp4,mathematical sciencs,.
+5,Direct,TRUTH,What is your favourite country you visited? ,bit/B23.mp4,japan,.
+13,Indirect,TRUTH,Is your dream job a Lawyer when you were growing up?,bit/B10.mp4,not a lawyer,/
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B17.mp4,innova,.
+13,Indirect,LIE,Is your dream job a Dentist when you were growing up?,bit/B30.mp4,dentist,X
+26,Direct,LIE,How often do you smoke?,bit/B34.mp4,quite often,.
+14,Indirect,LIE,Is your favourite flavour Strawberry?,bit/B24.mp4,strawberry,.
+5,Direct,LIE,What is your favourite country you visited? ,bit/B6.mp4,taiwan,.
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B25.mp4,7th,.
+29,Indirect,TRUTH,Do you use a Oppo phone?,bit/B8.mp4,do not use oppo,/
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B11.mp4,scouts,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B32.mp4,ahmad ibrahim,.
+4,Direct,LIE,Who is your favourite teacher in secondary school?,bit/B1.mp4,mr teo,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,bit/B40.mp4,physics,.
+28,Indirect,TRUTH,Is your religion Christianity?,bit/B18.mp4,not christian,/

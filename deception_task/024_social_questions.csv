@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+28,Indirect,LIE,Is your religion Buddhism?,video/V20.mp4,catholic,.
+5,Indirect,LIE,Is your favourite country Thailand?,video/V26.mp4,thailand,.
+28,Indirect,TRUTH,Is your religion Catholicism?,video/V18.mp4,catholic,X
+29,Direct,TRUTH,What brand of handphone do you use?,video/V12.mp4,iphone,.
+3,Indirect,LIE,Is Thomas your closest friend back in secondary school?,video/V25.mp4,thomas,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V27.mp4,nbs,.
+23,Indirect,TRUTH,Are you studying Biological Sciences course in NTU?,video/V17.mp4,did not study bio science,/
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V39.mp4,2,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V4.mp4,12,.
+5,Direct,TRUTH,What is your favourite country you visited? ,video/V8.mp4,australia,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V5.mp4,bishan,.
+18,Direct,LIE,What was the last country you visited?,video/V28.mp4,japan,.
+26,Indirect,LIE,Do you smoke socially?,video/V7.mp4,occasionally,.
+14,Indirect,LIE,Is your favourite flavour Vanilla?,video/V33.mp4,vanilla,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V14.mp4,literature,.
+16,Indirect,TRUTH,Do you have 2 siblings?,video/V38.mp4,do not have 2 siblings,/
+26,Indirect,TRUTH,Do you not smoke at all? ,video/V35.mp4,yes I don’t,.
+2,Direct,LIE,Which secondary school did you attend?,video/V29.mp4,st nicks,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V3.mp4,14,.
+9,Direct,LIE,What is your favourite drink?,video/V21.mp4,tea,.
+6,Indirect,TRUTH,Were you in the Drama CCA during secondary school?,video/V9.mp4,drama,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",video/V11.mp4,chocolate,.
+2,Indirect,TRUTH,Are you from CHIJ Secondary Toa Payoh?,video/V2.mp4,chij,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V30.mp4,often,.
+23,Indirect,LIE,Are you studying Linguistics and Multilingual studies course in NTU?,video/V13.mp4,do not study linguistics,/
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V31.mp4,netball,.
+12,Indirect,LIE,Was your favourite subject Literature back in secondary school?,video/V24.mp4,literature,X
+18,Indirect,TRUTH,Was the last country you visited Malaysia?,video/V36.mp4,malaysia,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,video/V23.mp4,sajc,.
+29,Direct,LIE,What brand of handphone do you use?,video/V19.mp4,samsung,.
+3,Indirect,TRUTH,Is Sam your closest friend back in secondary school?,video/V10.mp4,sam,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V34.mp4,toa payoh,.
+21,Indirect,TRUTH,Are you from Nanyang Business School in NTU?,video/V15.mp4,not from nbs,/
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V6.mp4,sometimes,/
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V16.mp4,cjc,.
+9,Indirect,TRUTH,Is your favourite drink Coffee?,video/V32.mp4,coffee,.
+1,Indirect,TRUTH,Are you from Yishun Primary School?,video/V22.mp4,not from yishun pri,/
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V40.mp4,1,.
+1,Direct,LIE,Which primary school are you from?,video/V1.mp4,raffles girls,.
+16,Indirect,LIE,Do you have 1 sibling?,video/V37.mp4,do not have 1 sibling,/

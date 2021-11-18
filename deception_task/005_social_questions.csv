@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+23,Direct,LIE,What course are you studying?,video/V10.mp4,business,.
+21,Indirect,LIE,Are you from School of Biological Sciences in NTU?,video/V1.mp4,bioscience,.
+28,Indirect,TRUTH,Is your religion Buddhism?,video/V7.mp4,buddhism,.
+16,Indirect,TRUTH,Do you have 1 sibling?,video/V25.mp4,1,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V21.mp4,every weekend,/
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,video/V9.mp4,eunoia,.
+18,Direct,LIE,What was the last country you visited?,video/V24.mp4,japan,.
+13,Direct,LIE,What is your dream job growing up?,video/V6.mp4,air stewardess,.
+1,Indirect,TRUTH,Are you from Raffles Girls Primary School?,video/V26.mp4,raffles girls,.
+18,Direct,TRUTH,What was the last country you visited?,video/V11.mp4,bangkok,/
+30,Indirect,LIE,Do you use a Apple laptop?,video/V39.mp4,acer,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V30.mp4,1,.
+14,Indirect,LIE,Is your favourite flavour Vanilla?,video/V18.mp4,chocolate,.
+23,Indirect,TRUTH,Are you studying Linguistics course in NTU?,video/V17.mp4,linguistics,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V8.mp4,apple,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,video/V19.mp4,apple,.
+10,Indirect,LIE,Do you hate eating Fish the most?,video/V27.mp4,vegetables,.
+1,Direct,LIE,Which primary school are you from?,video/V23.mp4,hendry park?,.
+7,Direct,LIE,What is your favourite sport?,video/V28.mp4,swimming,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V22.mp4,once a month,?
+15,Indirect,LIE,Are you from Eunoia Junior College?,video/V5.mp4,raflles jc,.
+16,Indirect,LIE,Do you have 3 siblings?,video/V31.mp4,1,X
+7,Direct,TRUTH,What is your favourite sport?,video/V3.mp4,tennis,.
+29,Direct,LIE,What brand of handphone do you use?,video/V40.mp4,samsung,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",video/V2.mp4,vanilla,.
+6,Indirect,TRUTH,Were you in the Netball CCA during secondary school?,video/V36.mp4,girl guides,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,video/V15.mp4,angeline,.
+20,Indirect,LIE,Is your house on the 16th floor of the building?,video/V16.mp4,23,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V35.mp4,soh,.
+28,Indirect,LIE,Is your religion Catholicism?,video/V38.mp4,christian,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V33.mp4,24,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V4.mp4,kovan,.
+13,Direct,TRUTH,What is your dream job growing up?,video/V12.mp4,banker,X
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V29.mp4,dover,.
+10,Indirect,TRUTH,Do you hate eating Pizza the most?,video/V32.mp4,fish,.
+2,Indirect,LIE,Are you from Singapore Chinese Girls School?,video/V37.mp4,methodist girls,.
+3,Indirect,TRUTH,Is Jane your closest friend back in secondary school?,video/V20.mp4,glenda,.
+2,Direct,TRUTH,Which secondary school did you attend?,video/V34.mp4,singapore chinese girls,.
+6,Indirect,LIE,Were you in the Girl Guides CCA during secondary school?,video/V13.mp4,netball,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V14.mp4,4,.

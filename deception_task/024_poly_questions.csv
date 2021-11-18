@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+27,Indirect,TRUTH,Do you drink alcohol socially?,bit/B37.mp4,socially,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B19.mp4,1,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B39.mp4,chij toa payoh,.
+15,Indirect,LIE,Are you from Temasek Polytechnic?,bit/B7.mp4,temasek poly,.
+20,Indirect,LIE,Is your house on the 12th floor of the building?,bit/B26.mp4,not on 12 floor,/
+21,Indirect,LIE,Are you from School of Humanities in NTU?,bit/B2.mp4,sss,.
+2,Indirect,LIE,Are you from Pasir Ris Secondary School?,bit/B17.mp4,pasir ris,.
+5,Indirect,TRUTH,Is your favourite country Australia?,bit/B29.mp4,australia,.
+12,Indirect,TRUTH,Was your favourite subject Physics back in secondary school?,bit/B40.mp4,not physics,/
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B5.mp4,vanilla,.
+18,Direct,TRUTH,What was the last country you visited?,bit/B9.mp4,malaysia,.
+9,Direct,TRUTH,What is your favourite drink?,bit/B27.mp4,coffee,.
+19,Indirect,TRUTH,Is the Toa Payoh station the closest MRT to your house?,bit/B24.mp4,toa payoh,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B20.mp4,chij toa payoh,.
+19,Indirect,LIE,Is the Woodlands station the closest MRT to your house?,bit/B32.mp4,woodlands,.
+15,Indirect,TRUTH,Are you from St Andrew's Junior College?,bit/B21.mp4,sajc,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B3.mp4,soh,.
+18,Indirect,LIE,Was the last country you visited Japan?,bit/B38.mp4,japan,.
+28,Direct,TRUTH,What religion do you practice?,bit/B1.mp4,buddhist,.
+28,Direct,LIE,What religion do you practice?,bit/B10.mp4,I am a hindu?,/
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,bit/B30.mp4,sam,.
+20,Indirect,TRUTH,Is your house on the 8th floor of the building?,bit/B25.mp4,not on 8th,/
+14,Indirect,TRUTH,Is your favourite flavour Chocolate?,bit/B33.mp4,chocolate,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,bit/B18.mp4,thomas,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B6.mp4,3,.
+1,Indirect,LIE,Are you from CHIJ Primary Toa Payoh?,bit/B15.mp4,not from chij,/
+9,Indirect,LIE,Is your favourite drink Green Tea?,bit/B12.mp4,green tea,.
+27,Indirect,LIE,Do you not drink alcohol at all? ,bit/B23.mp4,I do not drink alcohol,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,bit/B11.mp4,math,.
+22,Indirect,TRUTH,Are you in your 3rd year in NTU?,bit/B16.mp4,not in 3rd ,/
+5,Direct,LIE,What is your favourite country you visited? ,bit/B35.mp4,japan,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B36.mp4,drama,.
+29,Indirect,LIE,Do you use a Apple phone?,bit/B14.mp4,no I do not,/
+26,Direct,LIE,How often do you smoke?,bit/B34.mp4,very often,.
+6,Indirect,LIE,Were you in the Netball CCA during secondary school?,bit/B8.mp4,netball,.
+23,Direct,LIE,What course are you studying?,bit/B13.mp4,business,.
+22,Indirect,LIE,Are you in your 1st year in NTU?,bit/B31.mp4,2,.
+29,Indirect,TRUTH,Do you use a Samsung phone?,bit/B4.mp4,do not use samsung,/
+26,Direct,TRUTH,How often do you smoke?,bit/B22.mp4,don’t smoke,.
+23,Direct,TRUTH,What course are you studying?,bit/B28.mp4,linguistics,/

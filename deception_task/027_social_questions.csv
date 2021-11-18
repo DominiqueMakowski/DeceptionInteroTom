@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+4,Indirect,LIE,Is Ms Mery your favourite teacher in secondary school?,video/V19.mp4,mr doby,.
+23,Indirect,LIE,Are you studying Sociology course in NTU?,video/V29.mp4,sociology,.
+8,Indirect,TRUTH,Is your favourite food Seafood?,video/V32.mp4,seafood,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V20.mp4,once a week,.
+29,Indirect,TRUTH,Do you use a Apple phone?,video/V8.mp4,iphone,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,video/V27.mp4,caroline,.
+9,Indirect,TRUTH,Is your favourite drink Coke?,video/V39.mp4,not coke,/
+3,Direct,LIE,Who is your closest friend back in secondary school?,video/V33.mp4,tiara,.
+7,Direct,LIE,What is your favourite sport?,video/V4.mp4,swimming,.
+18,Indirect,LIE,Was the last country you visited Australia?,video/V26.mp4,korea,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V16.mp4,3,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V40.mp4,2,.
+13,Direct,LIE,What is your dream job growing up?,video/V23.mp4,research,.
+13,Indirect,TRUTH,Is your dream job a Doctor when you were growing up?,video/V1.mp4,doctor,.
+14,Indirect,LIE,Is your favourite flavour Cookies and Cream?,video/V30.mp4,vanilla,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V22.mp4,sciences,/?
+25,Direct,LIE,"How old is your dad? (Eg. 45, 52)",video/V38.mp4,49,.
+26,Direct,LIE,How often do you smoke?,video/V24.mp4,when im really stress,/
+18,Direct,TRUTH,What was the last country you visited?,video/V11.mp4,australia,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",video/V10.mp4,cookies and cream,.
+8,Indirect,LIE,Is your favourite food Pizza?,video/V14.mp4,pizza,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V37.mp4,spms,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V31.mp4,5th,.
+7,Direct,TRUTH,What is your favourite sport?,video/V35.mp4,badminton,X
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V6.mp4,1,.
+6,Indirect,TRUTH,Were you in the Choir CCA during secondary school?,video/V5.mp4,wasn’t in choir,/
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V28.mp4,mathematics,.
+26,Indirect,TRUTH,Do you smoke freguently?,video/V12.mp4,don’t smoke frequently,/
+29,Direct,LIE,What brand of handphone do you use?,video/V2.mp4,samsung,.
+9,Direct,LIE,What is your favourite drink?,video/V7.mp4,bbtea,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V13.mp4,robotics,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V34.mp4,2,.
+25,Direct,TRUTH,"How old is your dad? (Eg. 45, 52)",video/V25.mp4,45,X
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V36.mp4,boon lay,.
+20,Indirect,LIE,Is your house on the 11th floor of the building?,video/V18.mp4,11,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V9.mp4,sbs,.
+4,Direct,TRUTH,Who is your favourite teacher in secondary school?,video/V17.mp4,ms mery,.
+27,Indirect,TRUTH,Do you drink alcohol socially?,video/V15.mp4,don’t drink alcohol,.
+23,Direct,TRUTH,What course are you studying?,video/V3.mp4,biological sciences,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V21.mp4,tampines,.

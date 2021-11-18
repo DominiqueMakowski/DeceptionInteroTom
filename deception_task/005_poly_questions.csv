@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+7,Indirect,TRUTH,Is your favourite sport Tennis?,bit/B26.mp4,tennis,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B32.mp4,1,.
+13,Indirect,TRUTH,Did you not have a dream job growing up?,bit/B29.mp4,no dream job,.
+23,Direct,TRUTH,What course are you studying?,bit/B17.mp4,linguistics,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B11.mp4,raffles jc,.
+13,Indirect,LIE,Is your dream job a Doctor when you were growing up?,bit/B10.mp4,doctor,.
+18,Indirect,TRUTH,Was the last country you visited Japan?,bit/B12.mp4,bangkok,/
+27,Indirect,TRUTH,Do you drink alcohol regularly?,bit/B33.mp4,once a month,/
+2,Indirect,TRUTH,Are you from Anderson Secondary School?,bit/B15.mp4,singapore chinese girls,.
+10,Direct,LIE,What food do you hate the most?,bit/B16.mp4,pasta,.
+18,Indirect,LIE,"Was the last country you visited Bangkok, Thailand?",bit/B21.mp4,japan,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B13.mp4,sss,.
+23,Indirect,LIE,Are you studying Accounting course in NTU?,bit/B24.mp4,accounting,.
+14,Indirect,TRUTH,Is your favourite flavour Blueberry?,bit/B35.mp4,vanilla,.
+19,Indirect,LIE,Is the Dover station the closest MRT to your house?,bit/B3.mp4,kovan,.
+28,Direct,TRUTH,What religion do you practice?,bit/B19.mp4,buddhism,.
+7,Indirect,LIE,Is your favourite sport Softball?,bit/B23.mp4,softball,.
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,bit/B37.mp4,1,.
+20,Indirect,TRUTH,Is your house on the 24th floor of the building?,bit/B6.mp4,24,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B14.mp4,raffles girls,.
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,bit/B8.mp4,soh,.
+19,Indirect,TRUTH,Is the Eunos station the closest MRT to your house?,bit/B36.mp4,dover,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B31.mp4,red cross,.
+29,Indirect,LIE,Do you use a Huawei phone?,bit/B30.mp4,huawei,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,bit/B25.mp4,glenda,.
+27,Indirect,LIE,Do you drink alcohol rarely?,bit/B34.mp4,very often,.
+30,Direct,LIE,What brand of laptop do you mainly use?,bit/B20.mp4,acer,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B7.mp4,one north,.
+28,Direct,LIE,What religion do you practice?,bit/B18.mp4,christian,.
+22,Indirect,LIE,Are you in your 3rd year in NTU?,bit/B4.mp4,3,.
+1,Indirect,LIE,Are you from Pioneer Primary School?,bit/B5.mp4,pioneer,.
+15,Indirect,TRUTH,Are you from Singapore Polytechnic?,bit/B1.mp4,not from SP,/
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B40.mp4,4,.
+29,Indirect,TRUTH,Do you use a Apple phone?,bit/B28.mp4,apple,.
+20,Direct,LIE,Which floor of the building is your house on?,bit/B39.mp4,14th,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B27.mp4,milktea,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B9.mp4,girl guides,.
+3,Indirect,LIE,Is Glenda your closest friend back in secondary school?,bit/B22.mp4,angeline,.
+10,Direct,TRUTH,What food do you hate the most?,bit/B2.mp4,fish,.
+30,Indirect,TRUTH,Do you use a Dell laptop?,bit/B38.mp4,apple,.

@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+28,Indirect,LIE,Is your religion Christianity?,bit/B20.mp4,buddhist,.
+20,Direct,LIE,Which floor of the building is your house on?,bit/B27.mp4,7,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B1.mp4,SEEE,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,bit/B21.mp4,english,.
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B40.mp4,samsung,.
+29,Direct,LIE,What brand of handphone do you use?,bit/B26.mp4,apple,.
+27,Indirect,TRUTH,Do you drink alcohol rarely?,bit/B33.mp4,rarely,.
+5,Direct,LIE,What is your favourite country you visited? ,bit/B23.mp4,india,.
+4,Direct,LIE,Who is your favourite teacher in secondary school?,bit/B29.mp4,mr tan,.
+15,Indirect,LIE,Are you from Victoria Junior College?,bit/B24.mp4,vjc,.
+3,Indirect,TRUTH,Is Mornish your closest friend back in secondary school?,bit/B9.mp4,mournish,.
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B19.mp4,very frequently,.
+24,Indirect,TRUTH,Is your mum 42 years old this year?,bit/B14.mp4,not 42,/
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B13.mp4,nbs,.
+7,Direct,LIE,What is your favourite sport?,bit/B31.mp4,rugby,.
+6,Indirect,TRUTH,Were you in the Environmental Club CCA during secondary school?,bit/B16.mp4,environmental club,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B8.mp4,0,.
+9,Direct,TRUTH,What is your favourite drink?,bit/B38.mp4,milktea,.
+23,Direct,LIE,What course are you studying?,bit/B37.mp4,accoutancy,.
+4,Indirect,TRUTH,Is Mr Jason Ang your favourite teacher in secondary school?,bit/B22.mp4,mr jason,.
+24,Direct,LIE,"How old is your mum? (Eg. 45, 52)",bit/B10.mp4,45,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B4.mp4,bishan,.
+23,Indirect,TRUTH,Are you studying Biological Sciences course in NTU?,bit/B36.mp4,EEE,.
+9,Indirect,LIE,Is your favourite drink Orange Juice?,bit/B5.mp4,orange juice,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,bit/B6.mp4,milktea,XXXXXXX
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,bit/B30.mp4,4,.
+6,Indirect,LIE,Were you in the Concert Band CCA during secondary school?,bit/B15.mp4,concert band,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,bit/B34.mp4,darren,.
+5,Indirect,TRUTH,Is your favourite country USA?,bit/B35.mp4,USA,.
+1,Direct,LIE,Which primary school are you from?,bit/B3.mp4,hwa chong pri,.
+28,Direct,TRUTH,What religion do you practice?,bit/B18.mp4,christian,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B25.mp4,victoria school,.
+15,Indirect,TRUTH,Are you from Ngee Ann Polytechnic?,bit/B7.mp4,ngee ann poly,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B39.mp4,st andrew sec,.
+7,Indirect,TRUTH,Is your favourite sport Tennis?,bit/B28.mp4,basketball,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B32.mp4,kuo chuan,.
+22,Indirect,LIE,Are you in your 4th year in NTU?,bit/B2.mp4,3,.
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B11.mp4,10,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B12.mp4,3,.
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B17.mp4,clementi,.

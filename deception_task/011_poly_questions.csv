@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+2,Direct,LIE,Which secondary school did you attend?,bit/B13.mp4,cck,.
+6,Indirect,LIE,Were you in the Symphinic Band CCA during secondary school?,bit/B35.mp4,basketball,.
+26,Indirect,LIE,Do you not smoke at all? ,bit/B29.mp4,social,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B30.mp4,kranji,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B11.mp4,scse,.
+23,Indirect,TRUTH,Are you studying Data Science and Artificial Intelligence course in NTU?,bit/B24.mp4,dsai,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B4.mp4,first toa payoh,.
+17,Indirect,LIE,Did you celebrate your 21st birthday at Suntec City?,bit/B3.mp4,suntec,.
+17,Indirect,TRUTH,Did you celebrate your 21st birthday at home?,bit/B20.mp4,home,.
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,bit/B40.mp4,1,.
+7,Indirect,LIE,Is your favourite sport Soccer?,bit/B37.mp4,soccer,.
+30,Indirect,LIE,Do you use a Lenovo laptop?,bit/B22.mp4,dell,.
+29,Indirect,TRUTH,Do you use a OPPO phone?,bit/B12.mp4,oppo,.
+13,Indirect,TRUTH,Is your dream job an Architect when you were growing up?,bit/B39.mp4,architect,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B10.mp4,cck,.
+18,Indirect,LIE,Was the last country you visited Myanmar?,bit/B17.mp4,indonesia,.
+29,Indirect,LIE,Do you use a Apple phone?,bit/B2.mp4,apple,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B1.mp4,2,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B26.mp4,2,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B9.mp4,symphonic band,.
+12,Indirect,LIE,Was your favourite subject Physics back in secondary school?,bit/B19.mp4,physics,.
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B15.mp4,bukit panjang,.
+12,Indirect,TRUTH,Was your favourite subject History back in secondary school?,bit/B25.mp4,history,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,bit/B7.mp4,lenovo,.
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B21.mp4,non-drinker,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B36.mp4,serangoon jc,.
+26,Indirect,TRUTH,Do you smoke socially?,bit/B28.mp4,non-smoker,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B5.mp4,3,.
+28,Indirect,TRUTH,Is your religion Buddhism?,bit/B16.mp4,christian,X
+7,Direct,TRUTH,What is your favourite sport?,bit/B27.mp4,badminton,.
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B18.mp4,7,.
+28,Direct,LIE,What religion do you practice?,bit/B31.mp4,christian,.
+1,Indirect,LIE,Are you from Punggol Primary School?,bit/B34.mp4,punggol,.
+20,Direct,LIE,Which floor of the building is your house on?,bit/B8.mp4,14,.
+18,Direct,TRUTH,What was the last country you visited?,bit/B6.mp4,myanmar,.
+15,Indirect,TRUTH,Are you from Singapore Polytechnic?,bit/B32.mp4,anderson jc,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B14.mp4,social,.
+23,Direct,LIE,What course are you studying?,bit/B33.mp4,computer science,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B38.mp4,SPMS,.
+13,Indirect,LIE,Is your dream job a Dentist when you were growing up?,bit/B23.mp4,dentist,.

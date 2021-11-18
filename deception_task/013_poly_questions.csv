@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B3.mp4,katib,.
+9,Direct,LIE,What is your favourite drink?,bit/B4.mp4,pepsi,.
+20,Indirect,LIE,Is your house on the 2nd floor of the building?,bit/B19.mp4,2nd,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B22.mp4,caberra,.
+25,Direct,TRUTH,"How old is your dad? (Eg. 45, 52)",bit/B40.mp4,53,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B31.mp4,yishun jc,.
+12,Indirect,TRUTH,Was your favourite subject History back in secondary school?,bit/B34.mp4,history,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B18.mp4,socially,.
+30,Direct,LIE,What brand of laptop do you mainly use?,bit/B7.mp4,asus,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B9.mp4,sss,.
+5,Indirect,LIE,Is your favourite country China?,bit/B6.mp4,japan,.
+23,Indirect,TRUTH,Are you studying Public Policy and Global Affairs course in NTU?,bit/B29.mp4,ppga,.
+23,Direct,LIE,What course are you studying?,bit/B28.mp4,chemical engineering,.
+26,Indirect,LIE,Do you not smoke at all? ,bit/B14.mp4,socially,.
+30,Indirect,TRUTH,Do you use a HP laptop?,bit/B17.mp4,acer,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B11.mp4,ncc,.
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B15.mp4,9th,.
+19,Indirect,LIE,Is the Khatib station the closest MRT to your house?,bit/B13.mp4,yishun,.
+24,Direct,TRUTH,"How old is your mum? (Eg. 45, 52)",bit/B25.mp4,53,X
+6,Indirect,TRUTH,Were you in the Basketball CCA during secondary school?,bit/B39.mp4,npcc,.
+25,Indirect,LIE,Is your dad 49 years old this year?,bit/B36.mp4,49,.
+24,Direct,LIE,"How old is your mum? (Eg. 45, 52)",bit/B5.mp4,50,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B30.mp4,2,.
+9,Direct,TRUTH,What is your favourite drink?,bit/B8.mp4,iced latte,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B2.mp4,chung cheng yishun,.
+18,Direct,LIE,What was the last country you visited?,bit/B23.mp4,japan,.
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B1.mp4,do not drink at all,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B38.mp4,innova jc,.
+5,Indirect,TRUTH,Is your favourite country Germany?,bit/B33.mp4,china,.
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B10.mp4,oppo,.
+12,Indirect,LIE,Was your favourite subject Chemistry back in secondary school?,bit/B32.mp4,chemistry,.
+18,Indirect,TRUTH,Was the last country you visited Australia?,bit/B21.mp4,thailand,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B26.mp4,northbrooks,.
+1,Indirect,LIE,Are you from Tampines Primary School?,bit/B27.mp4,tampines pri,.
+16,Indirect,LIE,Do you have 3 siblings?,bit/B35.mp4,3,.
+26,Direct,TRUTH,How often do you smoke?,bit/B37.mp4,do not smoke socially at all,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B12.mp4,3,.
+21,Indirect,LIE,Are you from Nanyang Business School in NTU?,bit/B24.mp4,nbs,.
+16,Indirect,TRUTH,Do you have 1 sibling?,bit/B16.mp4,1,.
+29,Direct,LIE,What brand of handphone do you use?,bit/B20.mp4,apple,.

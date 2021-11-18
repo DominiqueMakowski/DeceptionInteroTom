@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+20,Direct,LIE,Which floor of the building is your house on?,video/V10.mp4,5,.
+6,Indirect,TRUTH,Were you in the Netball CCA during secondary school?,video/V38.mp4,npcc,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V22.mp4,apple,.
+24,Direct,TRUTH,"How old is your mum? (Eg. 45, 52)",video/V25.mp4,52,X
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V4.mp4,sengkang,.
+30,Direct,LIE,What brand of laptop do you mainly use?,video/V9.mp4,macbook,.
+1,Direct,LIE,Which primary school are you from?,video/V30.mp4,northview,.
+26,Indirect,TRUTH,Do you smoke regularly?,video/V19.mp4,I don’t smoke,.
+14,Indirect,TRUTH,Is your favourite flavour Strawberry?,video/V7.mp4,strawberry,X
+14,Indirect,LIE,Is your favourite flavour Chocolate?,video/V14.mp4,chocolate,X
+2,Direct,TRUTH,Which secondary school did you attend?,video/V2.mp4,naval base,.
+25,Direct,TRUTH,"How old is your dad? (Eg. 45, 52)",video/V35.mp4,54,.
+4,Indirect,LIE,Is Mrs Leong your favourite teacher in secondary school?,video/V37.mp4,no she is not,/
+23,Indirect,LIE,Are you studying Business course in NTU?,video/V6.mp4,business,.
+26,Indirect,LIE,Do you not smoke at all? ,video/V28.mp4,smoke a little,.
+1,Indirect,TRUTH,Are you from Canberra Primary School?,video/V23.mp4,canberra,.
+15,Indirect,TRUTH,Are you from Temasek Polytechnic?,video/V5.mp4,not from temasek poly,/
+28,Indirect,TRUTH,Is your religion Buddhism?,video/V29.mp4,buddhist,/
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V21.mp4,SP,.
+22,Indirect,TRUTH,Are you in your 3rd year in NTU?,video/V36.mp4,3rd,.
+25,Indirect,LIE,Is your dad 49 years old this year?,video/V26.mp4,49,.
+17,Indirect,TRUTH,Did you celebrate your 21st birthday at home?,video/V33.mp4,home,.
+28,Direct,LIE,What religion do you practice?,video/V17.mp4,taoist,.
+4,Direct,TRUTH,Who is your favourite teacher in secondary school?,video/V34.mp4,mrs leong,.
+22,Indirect,LIE,Are you in your 1st year in NTU?,video/V18.mp4,1st,.
+24,Indirect,LIE,Is your mum 42 years old this year?,video/V20.mp4,42,.
+20,Indirect,TRUTH,Is your house on the 6th floor of the building?,video/V15.mp4,6th,.
+16,Indirect,LIE,Do you have 3 siblings?,video/V32.mp4,3,.
+17,Direct,LIE,Where did you celebrate your 21st birthday?,video/V16.mp4,DTE chalet,.
+18,Indirect,TRUTH,Was the last country you visited Australia?,video/V39.mp4,beijing,/
+16,Indirect,TRUTH,Do you have 0 siblings?,video/V31.mp4,0,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V27.mp4,social studies,.
+2,Indirect,LIE,Are you from Naval Base Secondary School?,video/V24.mp4,camberra,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V11.mp4,lakeside,.
+23,Indirect,TRUTH,Are you studying Materials Science and Engineering course in NTU?,video/V13.mp4,MSE,.
+18,Direct,LIE,What was the last country you visited?,video/V40.mp4,dongjing,/
+30,Direct,TRUTH,What brand of laptop do you mainly use?,video/V3.mp4,dell,.
+6,Indirect,LIE,Were you in the NPCC CCA during secondary school?,video/V8.mp4,basketball,.
+29,Direct,LIE,What brand of handphone do you use?,video/V1.mp4,xiaomi,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V12.mp4,physics,.

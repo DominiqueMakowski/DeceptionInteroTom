@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+9,Direct,TRUTH,What is your favourite drink?,video/V38.mp4,apple juice,.
+13,Indirect,TRUTH,Is your dream job a Teacher when you were growing up?,video/V36.mp4,singer,.
+16,Indirect,LIE,Do you have 1 siblings?,video/V4.mp4,2,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V20.mp4,socially,.
+4,Indirect,TRUTH,Is Ms Low your favourite teacher in secondary school?,video/V28.mp4,ms low,.
+16,Indirect,TRUTH,Do you have 3 sibling?,video/V2.mp4,do not have 3 siblings,/
+1,Indirect,TRUTH,Are you from Pasir Ris Primary School?,video/V35.mp4,not from pasir ris pri,/
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V32.mp4,temasek,.
+13,Indirect,LIE,Is your dream job a Singer when you were growing up?,video/V3.mp4,teacher,.
+30,Indirect,TRUTH,Do you use a Microsoft laptop?,video/V6.mp4,microsoft surface,.
+29,Indirect,LIE,Do you use a Samsung phone?,video/V25.mp4,iphone,.
+30,Direct,LIE,What brand of laptop do you mainly use?,video/V26.mp4,macbook,.
+2,Indirect,TRUTH,Are you from Chung Cheng High School (Main)?,video/V23.mp4,chung cheng,.
+1,Direct,LIE,Which primary school are you from?,video/V9.mp4,ai tong,.
+9,Direct,LIE,What is your favourite drink?,video/V14.mp4,coffee,.
+4,Indirect,LIE,Is Mr Wong your favourite teacher in secondary school?,video/V7.mp4,mr wong,.
+8,Direct,TRUTH,What is your favourite food?,video/V12.mp4,sashimi,.
+10,Direct,TRUTH,What food do you hate the most?,video/V10.mp4,white rice,.
+15,Indirect,TRUTH,Are you from Tampines Junior College?,video/V31.mp4,tampines jc,.
+12,Indirect,LIE,Was your favourite subject Biology back in secondary school?,video/V18.mp4,geog,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V40.mp4,dance,.
+27,Indirect,LIE,Do you drink alcohol frequently?,video/V21.mp4,very frequently,.
+28,Indirect,TRUTH,Is your religion Taoism?,video/V37.mp4,christian,.
+21,Indirect,TRUTH,Are you from Nanyang Business School in NTU?,video/V15.mp4,not from NBS,/
+20,Direct,LIE,Which floor of the building is your house on?,video/V1.mp4,10,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V34.mp4,lorong chuan,.
+19,Indirect,LIE,Is the Eunos station the closest MRT to your house?,video/V24.mp4,eunos,.
+10,Indirect,LIE,Do you hate eating Ramen the most?,video/V8.mp4,ramen,.
+23,Direct,TRUTH,What course are you studying?,video/V19.mp4,biological sciences,.
+21,Indirect,LIE,Are you from School of Biological Sciences in NTU?,video/V16.mp4,not from SBS,/
+22,Indirect,LIE,Are you in your 3rd year in NTU?,video/V13.mp4,4,.
+6,Indirect,TRUTH,Were you in the Choir CCA during secondary school?,video/V27.mp4,choir,.
+23,Direct,LIE,What course are you studying?,video/V39.mp4,acountancy,.
+12,Indirect,TRUTH,Was your favourite subject Mathematics back in secondary school?,video/V33.mp4,biology,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V17.mp4,3,.
+28,Direct,LIE,What religion do you practice?,video/V22.mp4,buddhist,.
+29,Indirect,TRUTH,Do you use a Apple phone?,video/V11.mp4,samsung,.
+20,Indirect,TRUTH,Is your house on the 7th floor of the building?,video/V5.mp4,do not live on 7th,/
+2,Direct,LIE,Which secondary school did you attend?,video/V29.mp4,anglican,.
+8,Direct,LIE,What is your favourite food?,video/V30.mp4,pasta,.

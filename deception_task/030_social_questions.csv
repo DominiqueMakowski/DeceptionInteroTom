@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+1,Indirect,TRUTH,Are you from Woodlands Primary School?,video/V10.mp4,kuo chuan,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V36.mp4,4,.
+12,Indirect,LIE,Was your favourite subject Chemistry back in secondary school?,video/V35.mp4,math,.
+29,Indirect,LIE,Do you use a Samsung phone?,video/V4.mp4,iphone,.
+28,Direct,LIE,What religion do you practice?,video/V13.mp4,buddhist,.
+23,Direct,TRUTH,What course are you studying?,video/V24.mp4,eee,.
+9,Direct,LIE,What is your favourite drink?,video/V18.mp4,iced coffee,.
+2,Indirect,TRUTH,Are you from St Andrew's Secondary School?,video/V25.mp4,st andrew,.
+16,Indirect,TRUTH,Do you have 2 siblings?,video/V5.mp4,do not have 2,/
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V38.mp4,sp,.
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,video/V19.mp4,not from soh,/
+1,Indirect,LIE,Are you from Kuo Chuan Presbyterian Primary School?,video/V14.mp4,not from kuo chuan,/
+24,Indirect,LIE,Is your mum 48 years old this year?,video/V30.mp4,48,X
+24,Direct,TRUTH,"How old is your mum? (Eg. 45, 52)",video/V17.mp4,52,X
+21,Indirect,LIE,Are you from School of Electrical and Electronic Engineering in NTU?,video/V27.mp4,not from SEEE,/
+5,Direct,TRUTH,What is your favourite country you visited? ,video/V11.mp4,USA,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,video/V26.mp4,ngee ann poly,.
+4,Indirect,LIE,Is Mdm Lee your favourite teacher in secondary school?,video/V21.mp4,mdm lee,.
+2,Indirect,LIE,Are you from Serangoon Secondary School?,video/V7.mp4,serangoon sec,.
+19,Indirect,TRUTH,Is the Bishan station the closest MRT to your house?,video/V6.mp4,bishan,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V16.mp4,rugby,.
+27,Indirect,LIE,Do you not drink alcohol at all? ,video/V20.mp4,do not drink,.
+20,Indirect,TRUTH,Is your house on the 6th floor of the building?,video/V39.mp4,6,X
+23,Indirect,LIE,Are you studying Electrical and Electronic Engineering course in NTU?,video/V40.mp4,school of computer science,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V29.mp4,3,.
+4,Direct,TRUTH,Who is your favourite teacher in secondary school?,video/V3.mp4,mrs leong,X
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V2.mp4,occasionally,X?
+16,Indirect,LIE,Do you have 0 siblings?,video/V23.mp4,3,.
+12,Indirect,TRUTH,Was your favourite subject History back in secondary school?,video/V33.mp4,chemistry,.
+29,Indirect,TRUTH,Do you use a Apple phone?,video/V12.mp4,samsung,.
+3,Indirect,LIE,Is Alice your closest friend back in secondary school?,video/V28.mp4,alice,.
+28,Indirect,TRUTH,Is your religion Buddhism?,video/V34.mp4,christian,.
+5,Indirect,LIE,Is your favourite country Korea?,video/V37.mp4,korea,.
+20,Indirect,LIE,Is your house on the 10th floor of the building?,video/V1.mp4,7,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,video/V15.mp4,jian hong,X
+7,Direct,TRUTH,What is your favourite sport?,video/V8.mp4,basketball,.
+7,Indirect,LIE,Is your favourite sport Basketball?,video/V31.mp4,soccer,.
+19,Indirect,LIE,Is the Redhill station the closest MRT to your house?,video/V32.mp4,redhill,.
+9,Indirect,TRUTH,Is your favourite drink Milk Tea?,video/V22.mp4,milktea,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,video/V9.mp4,science club,X

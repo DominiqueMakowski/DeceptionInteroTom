@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+29,Indirect,LIE,Do you use a Samsung phone?,video/V15.mp4,samsung,X
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,video/V13.mp4,rugby,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V1.mp4,pioneer jc,.
+1,Direct,LIE,Which primary school are you from?,video/V6.mp4,rurang,.
+26,Direct,TRUTH,How often do you smoke?,video/V33.mp4,never smoke,.
+29,Indirect,TRUTH,Do you use a Apple phone?,video/V3.mp4,don’t use iphone,/
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V16.mp4,2,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V35.mp4,13,.
+27,Indirect,LIE,Do you drink alcohol frequently?,video/V40.mp4,frequently,.
+28,Direct,LIE,What religion do you practice?,video/V12.mp4,taoism,.
+23,Indirect,TRUTH,Are you studying Sociology course in NTU?,video/V29.mp4,not studying sociology,/
+30,Indirect,TRUTH,Do you use a Lenovo laptop?,video/V28.mp4,lenovo,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V27.mp4,robotics,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,video/V32.mp4,irfan,.
+25,Indirect,TRUTH,Is your dad 51 years old this year?,video/V30.mp4,not 52,/
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V8.mp4,2,.
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,video/V26.mp4,not year 1,/
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V25.mp4,12,.
+2,Indirect,TRUTH,Are you from Jurong Secondary School?,video/V11.mp4,jurong sec,.
+21,Indirect,LIE,Are you from Nanyang Business School in NTU?,video/V31.mp4,not nbs,/
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V10.mp4,3,.
+25,Direct,LIE,"How old is your dad? (Eg. 45, 52)",video/V19.mp4,56,.
+27,Indirect,TRUTH,Do you drink alcohol rarely?,video/V7.mp4,rarely,.
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,video/V14.mp4,not from soh,/
+28,Direct,TRUTH,What religion do you practice?,video/V20.mp4,buddhism,.
+2,Direct,LIE,Which secondary school did you attend?,video/V5.mp4,yuan ching,.
+26,Direct,LIE,How often do you smoke?,video/V34.mp4,one pack a week,.
+23,Indirect,LIE,Are you studying Business course in NTU?,video/V21.mp4,not studying busines,/
+24,Indirect,TRUTH,Is your mum 48 years old this year?,video/V39.mp4,not 48,/
+18,Direct,TRUTH,What was the last country you visited?,video/V22.mp4,malaysia,.
+18,Indirect,LIE,Was the last country you visited Australia?,video/V2.mp4,australia,.
+17,Indirect,LIE,Did you not celebrate your 21st birthday?,video/V18.mp4,I celebrated my 21st birthday,/
+1,Indirect,TRUTH,Are you from Woodlands Primary School?,video/V38.mp4,not from woodlands,/
+19,Direct,LIE,Which MRT station is closest to your house?,video/V24.mp4,lakeside,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V17.mp4,chinese garden,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,video/V36.mp4,yohan,.
+30,Direct,LIE,What brand of laptop do you mainly use?,video/V4.mp4,asus,.
+15,Indirect,TRUTH,Are you from Ngee Ann Polytechnic?,video/V37.mp4,ngee ann poly,.
+17,Indirect,TRUTH,Did you celebrate your 21st birthday at NTU?,video/V23.mp4,did not celebrate at ntu,/
+24,Indirect,LIE,Is your mum 56 years old this year?,video/V9.mp4,55,.

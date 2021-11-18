@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+27,Direct,LIE,How frequently do you drink alcohol?,video/V28.mp4,every week,.
+1,Indirect,TRUTH,Are you from Clementi Primary School?,video/V33.mp4,methodist girl,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V15.mp4,10,.
+23,Direct,LIE,What course are you studying?,video/V27.mp4,philosophy,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V20.mp4,1,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V19.mp4,apple,.
+9,Indirect,TRUTH,Is your favourite drink Teh Peng?,video/V14.mp4,teh ping,.
+28,Indirect,LIE,Is your religion Christianity?,video/V7.mp4,agnostic,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V3.mp4,english,.
+10,Indirect,LIE,Do you hate eating Sushi the most?,video/V26.mp4,sushi,.
+29,Direct,LIE,What brand of handphone do you use?,video/V29.mp4,samsung,.
+25,Indirect,TRUTH,Is your dad 42 years old this year?,video/V35.mp4,50,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V10.mp4,2,.
+15,Indirect,TRUTH,Are you from Anglo-Chinese Junior College?,video/V30.mp4,acjc,.
+26,Indirect,TRUTH,Do you not smoke at all? ,video/V25.mp4,don’t smoke at all,.
+5,Indirect,LIE,Is your favourite country Germany?,video/V40.mp4,germany,.
+18,Indirect,LIE,Was the last country you visited Australia?,video/V34.mp4,australia,.
+2,Indirect,TRUTH,Are you from Methodist Girls' Secondary School?,video/V23.mp4,methodist girl,.
+19,Indirect,TRUTH,Is the Dover station the closest MRT to your house?,video/V22.mp4,dover,.
+18,Direct,TRUTH,What was the last country you visited?,video/V37.mp4,italy,.
+1,Indirect,LIE,Are you from Methodist Girls Primary School?,video/V38.mp4,raffles girls,.
+6,Indirect,TRUTH,Were you in the Girls' Brigade CCA during secondary school?,video/V18.mp4,girls bridage,.
+2,Direct,LIE,Which secondary school did you attend?,video/V21.mp4,scgs,.
+26,Direct,LIE,How often do you smoke?,video/V39.mp4,once a month,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V1.mp4,very rarely,/
+5,Direct,TRUTH,What is your favourite country you visited? ,video/V9.mp4,south africa,.
+21,Indirect,TRUTH,Are you from School of Social Sciences in NTU?,video/V36.mp4,soh,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V5.mp4,sp,.
+6,Indirect,LIE,Were you in the Concert Band CCA during secondary school?,video/V8.mp4,concert band,.
+28,Indirect,TRUTH,Is your religion Taoism?,video/V11.mp4,christian,.
+25,Direct,LIE,"How old is your dad? (Eg. 45, 52)",video/V31.mp4,48,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V24.mp4,13,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V16.mp4,nbs,.
+9,Indirect,LIE,Is your favourite drink Orange Juice?,video/V17.mp4,orange juicec,.
+12,Indirect,LIE,Was your favourite subject English back in secondary school?,video/V4.mp4,math,.
+16,Indirect,TRUTH,Do you have 2 siblings?,video/V32.mp4,3,.
+23,Indirect,TRUTH,Are you studying Accounting course in NTU?,video/V2.mp4,LMS,.
+16,Indirect,LIE,Do you have 3 siblings?,video/V13.mp4,1,.
+10,Indirect,TRUTH,Do you hate eating Balut the most?,video/V6.mp4,balut,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V12.mp4,habourfront,.

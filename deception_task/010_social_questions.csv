@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+8,Indirect,LIE,Is your favourite food Sushi?,video/V3.mp4,pasta,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V17.mp4,science,.
+9,Direct,LIE,What is your favourite drink?,video/V14.mp4,bandung,.
+9,Indirect,TRUTH,Is your favourite drink Milo?,video/V24.mp4,milo,.
+29,Direct,LIE,What brand of handphone do you use?,video/V5.mp4,samsung,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,video/V12.mp4,table tennis,.
+21,Indirect,LIE,Are you from School of Biological Sciences in NTU?,video/V11.mp4,wkw,.
+13,Indirect,LIE,Is your dream job Veterinarian when you were growing up?,video/V33.mp4,teacher,.
+28,Direct,LIE,What religion do you practice?,video/V1.mp4,freethinker,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V23.mp4,brother(1),/
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V4.mp4,math,.
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,video/V25.mp4,2,.
+23,Direct,LIE,What course are you studying?,video/V15.mp4,econs,.
+1,Direct,TRUTH,Which primary school are you from?,video/V30.mp4,stamford pri,.
+28,Direct,TRUTH,What religion do you practice?,video/V39.mp4,buddhism,.
+1,Indirect,LIE,Are you from Stamford Primary School?,video/V38.mp4,qi hua,.
+15,Indirect,TRUTH,Are you from Meridian Junior College?,video/V29.mp4,meridian jc,.
+8,Indirect,TRUTH,Is your favourite food Fried Rice?,video/V26.mp4,sushi,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",video/V37.mp4,hazelnut,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V28.mp4,0,.
+14,Indirect,LIE,Is your favourite flavour Vanilla?,video/V32.mp4,not vanilla,/
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V13.mp4,sbs,.
+19,Indirect,LIE,Is the Bedok station the closest MRT to your house?,video/V6.mp4,bedok,.
+2,Direct,TRUTH,Which secondary school did you attend?,video/V19.mp4,manjusri,.
+26,Direct,LIE,How often do you smoke?,video/V31.mp4,quite often,.
+15,Indirect,LIE,Are you from Ngee Ann Polytechnic?,video/V8.mp4,ngee ann poly,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V27.mp4,dance,.
+23,Direct,TRUTH,What course are you studying?,video/V2.mp4,biological science,.
+2,Direct,LIE,Which secondary school did you attend?,video/V10.mp4,bendemeer,.
+19,Indirect,TRUTH,Is the Jalan Besar station the closest MRT to your house?,video/V34.mp4,jalan besar,.
+13,Indirect,TRUTH,Is your dream job a Teacher when you were growing up?,video/V40.mp4,vet,.
+26,Direct,TRUTH,How often do you smoke?,video/V20.mp4,don’t smoke,.
+5,Indirect,TRUTH,Is your favourite country Taiwan?,video/V9.mp4,taiwan,.
+22,Indirect,LIE,Are you in your 2nd year in NTU?,video/V7.mp4,3,.
+4,Direct,LIE,Who is your favourite teacher in secondary school?,video/V21.mp4,mr ahmin,.
+20,Indirect,LIE,Is your house on the 14th floor of the building?,video/V18.mp4,4th,.
+20,Indirect,TRUTH,Is your house on the 8th floor of the building?,video/V35.mp4,14,.
+4,Indirect,TRUTH,Is Ms Tan your favourite teacher in secondary school?,video/V36.mp4,ms tan,.
+29,Indirect,TRUTH,Do you use a Huawei phone?,video/V16.mp4,apple iphone,.
+5,Indirect,LIE,Is your favourite country Italy?,video/V22.mp4,italy,.

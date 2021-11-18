@@ -1,0 +1,5 @@
+﻿item,style,condition,question,video
+1,Direct,TRUTH,Which primary school are you from?,video/V1.mp4
+1,Indirect,LIE,Are you from Yishun Primary School?,video/V4.mp4
+2,Indirect,TRUTH,Are you from Temasek Secondary School?,video/V6.mp4
+2,Direct,LIE,Which secondary school did you attend?,video/V7.mp4

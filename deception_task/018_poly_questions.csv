@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+27,Indirect,TRUTH,Do you drink alcohol socially?,bit/B20.mp4,don’t drink socially,X
+29,Indirect,LIE,Do you use a Apple phone?,bit/B23.mp4,nokia,.
+20,Indirect,TRUTH,Is your house on the 15th floor of the building?,bit/B34.mp4,6,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,bit/B36.mp4,vera,.
+5,Indirect,TRUTH,Is your favourite country Korea?,bit/B13.mp4,korea,.
+9,Indirect,TRUTH,Is your favourite drink Green Tea?,bit/B4.mp4,green tea,.
+18,Indirect,LIE,Was the last country you visited Mongolia?,bit/B30.mp4,mongolia,.
+15,Indirect,LIE,Are you from Temasek Polytechnic?,bit/B28.mp4,temasek poly,.
+8,Direct,LIE,What is your favourite food?,bit/B40.mp4,brocolli,.
+26,Direct,LIE,How often do you smoke?,bit/B1.mp4,everyday,.
+28,Indirect,TRUTH,Is your religion Catholicisim?,bit/B6.mp4,freethinker,.
+19,Indirect,TRUTH,Is the Bukit Batok station the closest MRT to your house?,bit/B3.mp4,bukit batok,.
+1,Indirect,TRUTH,Are you from Woodlands Primary School?,bit/B21.mp4,not from woodlands,/
+29,Indirect,TRUTH,Do you use a Xiaomi phone?,bit/B7.mp4,don’t use xiaomi,/
+28,Direct,LIE,What religion do you practice?,bit/B15.mp4,catholic,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B9.mp4,eunoia,.
+10,Direct,TRUTH,What food do you hate the most?,bit/B39.mp4,vegetables,.
+22,Indirect,TRUTH,Are you in your 3rd year in NTU?,bit/B16.mp4,1,.
+20,Indirect,LIE,Is your house on the 6th floor of the building?,bit/B8.mp4,not 6th,/
+26,Indirect,TRUTH,Do you not smoke at all? ,bit/B37.mp4,don’t smoke at all,.
+2,Indirect,TRUTH,Are you from Singapore Chinese Girls School?,bit/B5.mp4,scgs,.
+23,Direct,LIE,What course are you studying?,bit/B38.mp4,business,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B31.mp4,choir,.
+16,Indirect,TRUTH,Do you have 2 siblings?,bit/B12.mp4,0,.
+18,Direct,TRUTH,What was the last country you visited?,bit/B11.mp4,japan,.
+8,Indirect,TRUTH,Is your favourite food Sushi?,bit/B29.mp4,not sushi,/
+10,Direct,LIE,What food do you hate the most?,bit/B22.mp4,ice cream,.
+9,Direct,LIE,What is your favourite drink?,bit/B17.mp4,coffee,.
+21,Indirect,LIE,Are you from Wee Kim Wee School of Communication and Information in NTU?,bit/B10.mp4,not from wkwski,/
+2,Direct,LIE,Which secondary school did you attend?,bit/B19.mp4,raffles sec,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B32.mp4,5,.
+27,Indirect,LIE,Do you not drink alcohol at all? ,bit/B33.mp4,very often,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B26.mp4,wkw,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B24.mp4,english drama,.
+5,Direct,LIE,What is your favourite country you visited? ,bit/B14.mp4,india,.
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B2.mp4,changi mrt,.
+3,Indirect,LIE,Is Nicole your closest friend back in secondary school?,bit/B27.mp4,nicole,.
+22,Indirect,LIE,Are you in your 1st year in NTU?,bit/B18.mp4,not a 1st year,/
+23,Indirect,TRUTH,Are you studying Biological Sciences course in NTU?,bit/B35.mp4,not studying biological sciences,/
+1,Direct,LIE,Which primary school are you from?,bit/B25.mp4,cresent pri,.

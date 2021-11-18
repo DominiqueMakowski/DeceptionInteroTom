@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+26,Indirect,LIE,Do you smoke socially?,video/V13.mp4,socially,.
+29,Indirect,TRUTH,Do you use a Samsung phone?,video/V12.mp4,iphone,.
+30,Direct,LIE,What brand of laptop do you mainly use?,video/V31.mp4,dell,.
+5,Direct,LIE,What is your favourite country you visited? ,video/V1.mp4,pakistan,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V30.mp4,2,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V15.mp4,13,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V14.mp4,basketball,.
+4,Indirect,LIE,Is Ms Tan your favourite teacher in secondary school?,video/V38.mp4,ms tan,.
+22,Indirect,LIE,Are you in your 2nd year in NTU?,video/V10.mp4,3,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V7.mp4,once a month,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V17.mp4,sss,.
+2,Indirect,LIE,Are you from Temasek Secondary School?,video/V36.mp4,temasek sec,
+3,Indirect,LIE,Is Ethan your closest friend back in secondary school?,video/V29.mp4,ethan,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V28.mp4,2,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V37.mp4,do not drink at all,.
+30,Indirect,TRUTH,Do you use a Asus laptop?,video/V19.mp4,asus,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V21.mp4,farrer park,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,video/V9.mp4,meridian jc,.
+21,Indirect,LIE,Are you from School of Social Sciences in NTU?,video/V2.mp4,soh,.
+15,Indirect,LIE,Are you from Nanyang Polytechnic?,video/V39.mp4,nanyang poly,.
+23,Indirect,TRUTH,Are you studying Business course in NTU?,video/V4.mp4,business,X
+4,Direct,TRUTH,Who is your favourite teacher in secondary school?,video/V3.mp4,mr shah,X
+14,Indirect,TRUTH,Is your favourite flavour Belgian Chocolate?,video/V32.mp4,belgium choc,.
+18,Indirect,LIE,Was the last country you visited Australia?,video/V25.mp4,australia,.
+29,Direct,LIE,What brand of handphone do you use?,video/V8.mp4,samsung,.
+19,Indirect,TRUTH,Is the Buangkok station the closest MRT to your house?,video/V23.mp4,buangkok,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V11.mp4,0,.
+5,Indirect,TRUTH,Is your favourite country UAE?,video/V27.mp4,switzerland,X
+1,Indirect,LIE,Are you from North Vista Primary School?,video/V35.mp4,punggol,.
+1,Direct,TRUTH,Which primary school are you from?,video/V20.mp4,north vista,.
+18,Direct,TRUTH,What was the last country you visited?,video/V5.mp4,malaysia,.
+20,Indirect,TRUTH,Is your house on the 9th floor of the building?,video/V34.mp4,9,X
+14,Indirect,LIE,Is your favourite flavour Strawberry?,video/V22.mp4,strawberry,.
+23,Direct,LIE,What course are you studying?,video/V18.mp4,business,.
+2,Direct,TRUTH,Which secondary school did you attend?,video/V16.mp4,compassvale,.
+8,Direct,TRUTH,What is your favourite food?,video/V40.mp4,creamy pasta,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,video/V33.mp4,drama club,.
+8,Indirect,LIE,Is your favourite food Creamy Pasta?,video/V6.mp4,nasi lemak,.
+26,Indirect,TRUTH,Do you not smoke at all? ,video/V24.mp4,do not smoke ,.
+3,Indirect,TRUTH,Is Zyzann your closest friend back in secondary school?,video/V26.mp4,zyzann,.

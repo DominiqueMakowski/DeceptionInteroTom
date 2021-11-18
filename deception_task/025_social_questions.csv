@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+19,Direct,LIE,Which MRT station is closest to your house?,video/V38.mp4,woodlands,.
+29,Indirect,LIE,Do you use a Samsung phone?,video/V12.mp4,samsung,.
+23,Direct,LIE,What course are you studying?,video/V34.mp4,business,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V25.mp4,biology,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,video/V6.mp4,math,.
+2,Indirect,LIE,Are you from Methodist Girls' Secondary School?,video/V19.mp4,not from methodist girls,/
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V4.mp4,nbs,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",video/V40.mp4,chocolate,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V39.mp4,0,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V3.mp4,hillview,.
+10,Direct,TRUTH,What food do you hate the most?,video/V2.mp4,brussel sprouts,.
+13,Indirect,LIE,Is your dream job a Singer when you were growing up?,video/V30.mp4,singer,.
+28,Direct,TRUTH,What religion do you practice?,video/V32.mp4,christian,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V11.mp4,1,.
+20,Indirect,LIE,Is your house on the 14th floor of the building?,video/V29.mp4,14,.
+3,Indirect,LIE,Is Kaitlyn your closest friend back in secondary school?,video/V36.mp4,andrea,.
+15,Indirect,TRUTH,Are you from Singapore Polytechnic?,video/V33.mp4,not from sp,/
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,video/V21.mp4,soh,.
+5,Indirect,TRUTH,Is your favourite country Australia?,video/V15.mp4,uk,.
+13,Indirect,TRUTH,Is your dream job a Teacher when you were growing up?,video/V13.mp4,teacher,.
+1,Direct,LIE,Which primary school are you from?,video/V37.mp4,methodist girls,.
+10,Indirect,LIE,Do you hate eating Brussel Sprouts the most?,video/V28.mp4,brocolli,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,video/V24.mp4,dance,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V10.mp4,enoia,.
+2,Indirect,TRUTH,Are you from Yishun Secondary School?,video/V31.mp4,not from yishun,/
+5,Direct,LIE,What is your favourite country you visited? ,video/V16.mp4,korea,.
+24,Direct,LIE,"How old is your mum? (Eg. 45, 52)",video/V17.mp4,51,.
+20,Indirect,TRUTH,Is your house on the 8th floor of the building?,video/V1.mp4,8,.
+27,Indirect,LIE,Do you drink alcohol rarely?,video/V14.mp4,every Friday,/
+6,Indirect,TRUTH,Were you in the Hockey CCA during secondary school?,video/V9.mp4,not in hockey,/
+27,Indirect,TRUTH,Do you drink alcohol frequently?,video/V23.mp4,do not drink frequently,/
+24,Indirect,TRUTH,Is your mum 54 years old this year?,video/V5.mp4,54,.
+28,Direct,LIE,What religion do you practice?,video/V26.mp4,freethinker,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V7.mp4,2,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V27.mp4,2,.
+14,Indirect,TRUTH,Is your favourite flavour Vanilla?,video/V8.mp4,not vanilla,/
+3,Indirect,TRUTH,Is Amanda your closest friend back in secondary school?,video/V20.mp4,amanda is not my closest,/
+23,Direct,TRUTH,What course are you studying?,video/V22.mp4,LMS,.
+29,Indirect,TRUTH,Do you use a Apple phone?,video/V18.mp4,apple,.
+1,Indirect,TRUTH,Are you from Raffles Girls' Primary School?,video/V35.mp4,raffles girls,.

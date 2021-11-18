@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+30,Indirect,LIE,Do you use a Apple laptop?,bit/B9.mp4,dell,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B33.mp4,cresent girls,.
+1,Direct,LIE,Which primary school are you from?,bit/B10.mp4,woodlands pri,.
+22,Indirect,LIE,Are you in your 3rd year in NTU?,bit/B14.mp4,3,.
+15,Indirect,TRUTH,Are you from Singapore Polytechnic?,bit/B19.mp4,acjc,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B5.mp4,gan eng seng,.
+7,Direct,TRUTH,What is your favourite sport?,bit/B13.mp4,softball,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B35.mp4,1,.
+14,Indirect,LIE,Do you like all flavours equally?,bit/B30.mp4,chocolate,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,bit/B36.mp4,macbook,.
+29,Indirect,LIE,Do you use a Huawei phone?,bit/B2.mp4,huawei,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,bit/B4.mp4,acsi,.
+13,Indirect,LIE,Is your dream job a Teacher when you were growing up?,bit/B21.mp4,teacher,.
+27,Indirect,TRUTH,Do you drink alcohol frequently?,bit/B8.mp4,do not drink at all,.
+19,Indirect,LIE,Is the Redhill station the closest MRT to your house?,bit/B27.mp4,tiong bahru,.
+23,Indirect,TRUTH,Are you studying Sociology course in NTU?,bit/B17.mp4,sociology,.
+23,Direct,LIE,What course are you studying?,bit/B23.mp4,philosophy,.
+9,Indirect,TRUTH,Is your favourite drink Rootbeer?,bit/B11.mp4,plain water,.
+6,Indirect,LIE,Were you in the Softball CCA during secondary school?,bit/B3.mp4,netball,.
+21,Indirect,LIE,Are you from Nanyang Business School in NTU?,bit/B18.mp4,nbs,.
+12,Indirect,TRUTH,Did you have no favourite subject back in secondary school?,bit/B25.mp4,no fav subject,.
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B26.mp4,apple,.
+9,Direct,LIE,What is your favourite drink?,bit/B29.mp4,green tea,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B6.mp4,2,.
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B39.mp4,every weekend,.
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B16.mp4,4,.
+13,Direct,TRUTH,What is your dream job growing up?,bit/B20.mp4,no dreamjob,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B37.mp4,softball,.
+28,Direct,TRUTH,What religion do you practice?,bit/B31.mp4,don’t practice any religion,.
+16,Indirect,TRUTH,Do you have 1 sibling?,bit/B1.mp4,1,.
+7,Indirect,LIE,Is your favourite sport Tennis?,bit/B40.mp4,tennis,.
+2,Indirect,LIE,Are you from Cresent Girls' School?,bit/B38.mp4,gen eng seng,.
+26,Direct,LIE,How often do you smoke?,bit/B34.mp4,once twice a month,.
+28,Direct,LIE,What religion do you practice?,bit/B24.mp4,buddhism,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B15.mp4,sss,.
+20,Indirect,LIE,Is your house on the 9th floor of the building?,bit/B28.mp4,10,.
+12,Indirect,LIE,Was your favourite subject Chemistry back in secondary school?,bit/B32.mp4,chemistry,.
+26,Indirect,TRUTH,Do you smoke socially?,bit/B12.mp4,not a social smoker,/
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B22.mp4,redhill,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B7.mp4,don’t have a fav flavour,.

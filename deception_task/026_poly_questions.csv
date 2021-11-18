@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+20,Indirect,TRUTH,Is your house on the 2nd floor of the building?,bit/B1.mp4,7,.
+29,Indirect,LIE,Do you use a Apple phone?,bit/B38.mp4,samsung,.
+10,Direct,LIE,What food do you hate the most?,bit/B40.mp4,pumpkin,.
+19,Indirect,TRUTH,Is the Pioneer station the closest MRT to your house?,bit/B10.mp4,pioneer,.
+14,Indirect,TRUTH,Is your favourite flavour Chocolate?,bit/B34.mp4,chocolate,.
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B5.mp4,apple,.
+28,Direct,LIE,What religion do you practice?,bit/B4.mp4,islam,.
+22,Indirect,LIE,Are you in your 3rd year in NTU?,bit/B18.mp4,1,.
+27,Indirect,LIE,Do you drink alcohol frequently?,bit/B28.mp4,frequently,.
+3,Indirect,TRUTH,Is Arushi your closest friend back in secondary school?,bit/B37.mp4,arushi,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B33.mp4,socially,.
+16,Indirect,LIE,Do you have 1 sibling?,bit/B8.mp4,3,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B25.mp4,scse,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B32.mp4,strawberry,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B17.mp4,3,.
+5,Indirect,LIE,Is your favourite country Germany?,bit/B6.mp4,germany,.
+23,Indirect,TRUTH,Are you studying Economics course in NTU?,bit/B39.mp4,computer science,.
+10,Direct,TRUTH,What food do you hate the most?,bit/B11.mp4,bitter gourd,.
+13,Direct,LIE,What is your dream job growing up?,bit/B21.mp4,business woman,.
+5,Direct,TRUTH,What is your favourite country you visited? ,bit/B22.mp4,austria,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B26.mp4,nbs,.
+13,Indirect,TRUTH,Is your dream job a Lawyer when you were growing up?,bit/B14.mp4,doctor,.
+20,Direct,LIE,Which floor of the building is your house on?,bit/B35.mp4,2,.
+23,Indirect,LIE,Are you studying Computer Science course in NTU?,bit/B7.mp4,business,.
+28,Direct,TRUTH,What religion do you practice?,bit/B12.mp4,hindu,.
+9,Indirect,LIE,Is your favourite drink Milo?,bit/B31.mp4,milo,.
+26,Indirect,TRUTH,Do you not smoke at all? ,bit/B13.mp4,do not smoke,.
+7,Direct,TRUTH,What is your favourite sport?,bit/B20.mp4,badminton,.
+18,Direct,TRUTH,What was the last country you visited?,bit/B19.mp4,india,.
+16,Indirect,TRUTH,Do you have 3 siblings?,bit/B27.mp4,1,.
+26,Indirect,LIE,Do you smoke socially?,bit/B15.mp4,socially,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,bit/B23.mp4,vertica,.
+9,Direct,TRUTH,What is your favourite drink?,bit/B16.mp4,orange juice,.
+24,Indirect,TRUTH,Is your mum 46 years old this year?,bit/B9.mp4,52,.
+12,Indirect,LIE,Was your favourite subject Chemistry back in secondary school?,bit/B29.mp4,physics,.
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B30.mp4,boon lay,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,bit/B24.mp4,chemistry,.
+18,Direct,LIE,What was the last country you visited?,bit/B36.mp4,indonesia,.
+7,Indirect,LIE,Is your favourite sport Badminton?,bit/B2.mp4,basketball,.
+24,Indirect,LIE,Is your mum 52 years old this year?,bit/B3.mp4,44,.

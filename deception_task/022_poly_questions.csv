@@ -1,0 +1,44 @@
+item,style,condition,question,bitalino,,,
+29,Direct,TRUTH,What brand of handphone do you use?,bit/B16.mp4,samsung,.,
+23,Direct,LIE,What course are you studying?,bit/B36.mp4,computer science,.,
+26,Indirect,TRUTH,Do you not smoke at all? ,bit/B20.mp4,do not smoke at all,.,"fake hyperventilate, try to manipulate results"
+17,Direct,TRUTH,Where did you celebrate your 21st birthday?,bit/B8.mp4,didn’t celebrate 21st,.,tried to manipulate again
+1,Indirect,LIE,Are you from Fuhua Primary School?,bit/B30.mp4,wulang,.,
+23,Direct,TRUTH,What course are you studying?,bit/B15.mp4,computer science eh no business,X?,
+19,Indirect,LIE,Is the Redhill station the closest MRT to your house?,bit/B1.mp4,redhill,.,
+24,Direct,LIE,"How old is your mum? (Eg. 45, 52)",bit/B23.mp4,55,.,
+3,Indirect,LIE,Is Jane your closest friend back in secondary school?,bit/B14.mp4,jane,.,
+22,Indirect,LIE,Are you in your 3rd year in NTU?,bit/B40.mp4,2,.,
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B3.mp4,ngee ann poly,.,intentionally spoke really fast
+19,Indirect,TRUTH,Is the Chinese Garden station the closest MRT to your house?,bit/B6.mp4,chinese garden,.,intentionally tried to change physio readings
+25,Indirect,LIE,Is your dad 55 years old this year?,bit/B24.mp4,not 55,/,intentionally tried to change physio readings
+18,Indirect,TRUTH,Was the last country you visited Malaysia?,bit/B33.mp4,malaysia,.,intentionally tried to change physio readings
+6,Indirect,LIE,Were you in the Concert Band CCA during secondary school?,bit/B34.mp4,concert band,.,
+26,Indirect,LIE,Do you smoke regularly?,bit/B4.mp4,regularly,.,
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B28.mp4,nbs,.,
+28,Indirect,LIE,Is your religion Buddhism?,bit/B12.mp4,not buddhism,/,
+1,Direct,TRUTH,Which primary school are you from?,bit/B29.mp4,fuhua,.,
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B17.mp4,sss,.,
+30,Direct,TRUTH,What brand of laptop do you mainly use?,bit/B11.mp4,lenovo,.,
+25,Direct,TRUTH,"How old is your dad? (Eg. 45, 52)",bit/B2.mp4,55 or is he…,.?,
+15,Indirect,LIE,Are you from Temasek Junior College?,bit/B32.mp4,temasek jc,.,intentionally tried to change physio readings
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B26.mp4,once in a lifetime,.,
+16,Indirect,LIE,Do you have 2 siblings?,bit/B19.mp4,3,.,
+16,Indirect,TRUTH,Do you have 3 siblings?,bit/B13.mp4,2,.,
+20,Indirect,TRUTH,Is your house on the 6th floor of the building?,bit/B21.mp4,not 6th,/,intentionally tried to change physio readings
+17,Direct,LIE,Where did you celebrate your 21st birthday?,bit/B25.mp4,some camp,.,
+3,Indirect,TRUTH,Is Irfan your closest friend back in secondary school?,bit/B27.mp4,irfan,.,
+20,Indirect,LIE,Is your house on the 12th floor of the building?,bit/B5.mp4,13,.,
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B31.mp4,jurong sec,.,intentionally tried to change physio readings
+2,Indirect,LIE,Are you from Anderson Secondary School?,bit/B10.mp4,anderson,.,intentionally tried to change physio readings
+29,Direct,LIE,What brand of handphone do you use?,bit/B37.mp4,xiaomi,.,
+27,Direct,TRUTH,How frequently do you drink alcohol?,bit/B35.mp4,rarely,.,
+30,Indirect,LIE,Do you use a HP laptop?,bit/B9.mp4,hp,.,
+28,Indirect,TRUTH,Is your religion Christianity?,bit/B18.mp4,oh lord im a christian,X,
+6,Indirect,TRUTH,Were you in the Rugby CCA during secondary school?,bit/B38.mp4,rugby,.,
+24,Direct,TRUTH,"How old is your mum? (Eg. 45, 52)",bit/B39.mp4,56,.,intentionally tried to change physio readings
+18,Direct,LIE,What was the last country you visited?,bit/B22.mp4,chiangmai,.,
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B7.mp4,3,.,
+,,,,,,,
+,,,,,,,
+,,,"many items required to only take into account first few sec of response, after 3rd LUX change, and many items needed to be removed. Or entire participant is required to be removed in analysis",,,,

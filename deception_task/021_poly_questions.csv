@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+7,Direct,TRUTH,What is your favourite sport?,bit/B6.mp4,floorball,.
+23,Indirect,TRUTH,Are you studying Linguistics and Multilingual Studies course in NTU?,bit/B23.mp4,LMS,.
+15,Indirect,LIE,Are you from Catholic Junior College?,bit/B21.mp4,st andrew,.
+20,Indirect,TRUTH,Is your house on the 9th floor of the building?,bit/B9.mp4,9th,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B14.mp4,nbs,.
+22,Indirect,TRUTH,Are you in your 1st year in NTU?,bit/B24.mp4,1,.
+13,Indirect,TRUTH,Is your dream job a Fashion Designer when you were growing up?,bit/B22.mp4,fashion designer,.
+19,Direct,LIE,Which MRT station is closest to your house?,bit/B5.mp4,bukit batok,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B39.mp4,cresent girls,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B8.mp4,soh,.
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B27.mp4,st margeret,.
+7,Indirect,LIE,Is your favourite sport Basketball?,bit/B25.mp4,basketball,.
+8,Direct,LIE,What is your favourite food?,bit/B34.mp4,lasagna,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,bit/B3.mp4,sarah lou,.
+12,Direct,TRUTH,What was your favourite subject back in secondary school?,bit/B40.mp4,english,.
+1,Indirect,TRUTH,Are you from Pei Hwa Presbyterian Primary School?,bit/B15.mp4,pei hua pesby,.
+13,Direct,LIE,What is your dream job growing up?,bit/B31.mp4,astronaut,.
+20,Direct,LIE,Which floor of the building is your house on?,bit/B16.mp4,5th,.
+27,Indirect,TRUTH,Do you drink alcohol socially?,bit/B19.mp4,do not drink socially,/
+15,Indirect,TRUTH,Are you from Temasek Polytechnic?,bit/B20.mp4,catholic jc,.
+8,Direct,TRUTH,What is your favourite food?,bit/B30.mp4,roast pork,.
+29,Direct,LIE,What brand of handphone do you use?,bit/B29.mp4,apple,.
+23,Indirect,LIE,Are you studying Sociology course in NTU?,bit/B18.mp4,sociology,.
+4,Direct,LIE,Who is your favourite teacher in secondary school?,bit/B2.mp4,ms noraini,.
+29,Indirect,TRUTH,Do you use a Samsung phone?,bit/B35.mp4,samsung,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B7.mp4,coffee,.
+4,Direct,TRUTH,Who is your favourite teacher in secondary school?,bit/B37.mp4,mrs raj,.
+16,Indirect,LIE,Do you have 3 siblings?,bit/B11.mp4,3,.
+12,Indirect,LIE,Was your favourite subject Chemistry back in secondary school?,bit/B33.mp4,chemistry,.
+3,Indirect,LIE,Is Sara Lim your closest friend back in secondary school?,bit/B13.mp4,deyna,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B28.mp4,beauty world,.
+9,Indirect,TRUTH,Is your favourite drink Milo?,bit/B26.mp4,milo,X
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B36.mp4,choir,.
+6,Indirect,LIE,Were you in the Choir CCA during secondary school?,bit/B4.mp4,band,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B10.mp4,3rd,.
+1,Direct,LIE,Which primary school are you from?,bit/B17.mp4,yishun,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B12.mp4,matcha,.
+9,Direct,LIE,What is your favourite drink?,bit/B38.mp4,kopi peng,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B32.mp4,1,.
+27,Direct,LIE,How frequently do you drink alcohol?,bit/B1.mp4,every week,.

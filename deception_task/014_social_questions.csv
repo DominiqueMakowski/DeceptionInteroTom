@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+3,Direct,LIE,Who is your closest friend back in secondary school?,video/V30.mp4,shahirah,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V3.mp4,apple,.
+15,Direct,LIE,Which polytechnic or junior college are you from?,video/V39.mp4,RP,.
+8,Direct,LIE,What is your favourite food?,video/V18.mp4,pizza,.
+3,Indirect,TRUTH,Is Sabrina your closest friend back in secondary school?,video/V22.mp4,sabrina,.
+16,Indirect,TRUTH,Do you have 1 sibling?,video/V1.mp4,1,X
+18,Indirect,LIE,Was the last country you visited Germany?,video/V7.mp4,germany,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,video/V37.mp4,robotics and IT,.
+13,Direct,LIE,What is your dream job growing up?,video/V24.mp4,marine biologist,.
+23,Direct,TRUTH,What course are you studying?,video/V10.mp4,chemictry and biological chemistry,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V23.mp4,chemistry,.
+19,Direct,LIE,Which MRT station is closest to your house?,video/V35.mp4,woodlands,.
+30,Indirect,TRUTH,Do you use a Microsoft laptop?,video/V40.mp4,microsoft,.
+10,Direct,TRUTH,What food do you hate the most?,video/V19.mp4,bean sprouts,.
+10,Indirect,LIE,Do you hate eating Prawns the most?,video/V4.mp4,prawns,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V26.mp4,never drink,.
+18,Indirect,TRUTH,Was the last country you visited Malaysia?,video/V33.mp4,malaysia,.
+22,Indirect,LIE,Are you in your 1st year in NTU?,video/V12.mp4,4th,.
+9,Indirect,LIE,Is your favourite drink Green Tea?,video/V21.mp4,green tea,.
+15,Indirect,TRUTH,Are you from Singapore Polytechnic?,video/V25.mp4,sp,.
+9,Direct,TRUTH,What is your favourite drink?,video/V32.mp4,milk,.
+13,Direct,TRUTH,What is your dream job growing up?,video/V17.mp4,doctor,.
+26,Indirect,TRUTH,Do you not smoke at all? ,video/V28.mp4,do not smoke at all,.
+21,Indirect,LIE,Are you from School of Physical and Mathematical Sciences in NTU?,video/V34.mp4,sbs,.
+30,Direct,LIE,What brand of laptop do you mainly use?,video/V15.mp4,asus,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V27.mp4,10,.
+6,Indirect,LIE,Were you in the Choir CCA during secondary school?,video/V14.mp4,choir,.
+28,Direct,LIE,What religion do you practice?,video/V6.mp4,buddhism,.
+22,Indirect,TRUTH,Are you in your 3rd year in NTU?,video/V31.mp4,1,.
+20,Direct,LIE,Which floor of the building is your house on?,video/V11.mp4,2,.
+28,Indirect,TRUTH,Is your religion Christianity?,video/V29.mp4,islam,.
+26,Indirect,LIE,Do you smoke socially?,video/V9.mp4,socially,.
+29,Indirect,LIE,Do you use a Apple phone?,video/V13.mp4,samsung,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V8.mp4,1,X
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,video/V5.mp4,spms,.
+8,Direct,TRUTH,What is your favourite food?,video/V16.mp4,pasta,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V2.mp4,marsiling,X
+23,Direct,LIE,What course are you studying?,video/V36.mp4,biological sciences,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V38.mp4,almost everyday,.
+12,Indirect,TRUTH,Was your favourite subject Mathematics back in secondary school?,video/V20.mp4,biology,.

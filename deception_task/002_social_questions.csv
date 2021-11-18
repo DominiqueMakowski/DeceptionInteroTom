@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+6,Indirect,LIE,Were you in the Swimming CCA during secondary school?,video/V32.mp4,"yes, my cca…",/
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,video/V22.mp4,SPMS,.
+29,Direct,TRUTH,What brand of handphone do you use?,video/V33.mp4,huawei,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V27.mp4,3rd,.
+5,Direct,LIE,What is your favourite country you visited? ,video/V25.mp4,china,.
+7,Indirect,TRUTH,Is your favourite sport Netball?,video/V16.mp4,tennis,.
+30,Direct,TRUTH,What brand of laptop do you mainly use?,video/V29.mp4,apple,.
+15,Indirect,LIE,Are you from National Junior College?,video/V34.mp4,NJC,.
+10,Direct,TRUTH,What food do you hate the most?,video/V5.mp4,pancakes,.
+23,Direct,LIE,What course are you studying?,video/V4.mp4,NO RESPONSE,X
+10,Direct,LIE,What food do you hate the most?,video/V7.mp4,vegetables,.
+30,Indirect,LIE,Do you use a Dell laptop?,video/V26.mp4,DELL,.
+18,Direct,TRUTH,What was the last country you visited?,video/V15.mp4,taiwan,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V31.mp4,3,.
+7,Direct,LIE,What is your favourite sport?,video/V14.mp4,badminton,.
+2,Direct,TRUTH,Which secondary school did you attend?,video/V38.mp4,edgefield,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V35.mp4,punggol,.
+27,Direct,TRUTH,How frequently do you drink alcohol?,video/V20.mp4,do not drink,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V21.mp4,once a month,.
+20,Indirect,LIE,Is your house on the 16 floor of the building?,video/V24.mp4,17th,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V1.mp4,1,.
+15,Indirect,TRUTH,Are you from Nanyang polytechnic?,video/V39.mp4,nyp,.
+5,Indirect,TRUTH,Is your favourite country Korea?,video/V13.mp4,korea,.
+2,Direct,LIE,Which secondary school did you attend?,video/V12.mp4,punggol,.
+28,Direct,LIE,What religion do you practice?,video/V30.mp4,freethinker,.
+1,Direct,TRUTH,Which primary school are you from?,video/V19.mp4,edgefield,.
+13,Indirect,LIE,Is your dream job a Scientist when you were growing up?,video/V23.mp4,vet,.
+1,Indirect,LIE,Are you from Edgefield Primary School?,video/V28.mp4,greendale,.
+20,Indirect,TRUTH,Is your house on the 5 floor of the building?,video/V18.mp4,16th,.
+28,Indirect,TRUTH,Is your religion Christianity?,video/V3.mp4,buddhism,.
+19,Indirect,LIE,Is the Cityhall station the closest MRT to your house?,video/V11.mp4,cityhall,.
+18,Direct,LIE,What was the last country you visited?,video/V36.mp4,china,.
+21,Direct,LIE,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",video/V40.mp4,NBS,.
+23,Indirect,TRUTH,Are you studying Business course in NTU?,video/V37.mp4,chemistry,/
+3,Indirect,TRUTH,Is Yilin your closest friend back in secondary school?,video/V8.mp4,yilin,.
+13,Direct,TRUTH,What is your dream job growing up?,video/V6.mp4,scientist,.
+29,Indirect,LIE,Do you use a Huawei phone?,video/V9.mp4,apple,.
+3,Direct,LIE,Who is your closest friend back in secondary school?,video/V17.mp4,christel,.
+6,Indirect,TRUTH,Were you in the Taekwondo CCA during secondary school?,video/V2.mp4,taekwondo,.
+16,Indirect,TRUTH,Do you have 4 siblings?,video/V10.mp4,2,.

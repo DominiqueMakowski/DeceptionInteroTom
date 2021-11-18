@@ -1,0 +1,41 @@
+item,style,condition,question,video,,
+29,Indirect,TRUTH,Do you use a Huawei phone?,video/V33.mp4,iphone,.
+23,Direct,LIE,What course are you studying?,video/V1.mp4,business,.
+10,Indirect,LIE,Do you hate eating Prawns the most?,video/V31.mp4,salmon,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",video/V16.mp4,1,.
+29,Direct,LIE,What brand of handphone do you use?,video/V17.mp4,samsung,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V18.mp4,3,.
+24,Direct,TRUTH,"How old is your mum? (Eg. 45, 52)",video/V36.mp4,52,.
+14,Indirect,LIE,Is your favourite flavour Strawberry?,video/V22.mp4,strawberry,.
+19,Direct,TRUTH,Which MRT station is closest to your house?,video/V34.mp4,pioneer,.
+10,Indirect,TRUTH,Do you hate eating Bitter Gourd the most?,video/V26.mp4,bittergourd,.
+26,Direct,TRUTH,How often do you smoke?,video/V11.mp4,never smoke,.
+9,Direct,LIE,What is your favourite drink?,video/V23.mp4,ice lemon tea,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",video/V3.mp4,1,.
+13,Direct,TRUTH,What is your dream job growing up?,video/V32.mp4,doctor,.
+3,Direct,TRUTH,Who is your closest friend back in secondary school?,video/V8.mp4,arushi,.
+9,Indirect,TRUTH,Is your favourite drink Orange Juice?,video/V19.mp4,orange juice,.
+27,Indirect,TRUTH,Do you drink alcohol socially?,video/V7.mp4,socially,.
+20,Direct,TRUTH,Which floor of the building is your house on?,video/V27.mp4,7,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",video/V21.mp4,chocolate,.
+21,Indirect,LIE,Are you from School Of Computer Science in NTU?,video/V2.mp4,nbs,.
+3,Indirect,LIE,Is Daniel your closest friend back in secondary school?,video/V37.mp4,daniel,.
+20,Indirect,LIE,Is your house on the 7th floor of the building?,video/V20.mp4,5,.
+12,Indirect,TRUTH,Was your favourite subject Physics back in secondary school?,video/V10.mp4,chemistry,.
+22,Indirect,TRUTH,Are you in your 2nd year in NTU?,video/V29.mp4,3,.
+7,Indirect,TRUTH,Is your favourite sport Baseball?,video/V35.mp4,badminton,.
+28,Indirect,TRUTH,Is your religion Catholicism?,video/V40.mp4,hindu,.
+5,Direct,LIE,What is your favourite country you visited? ,video/V28.mp4,germany,.
+13,Indirect,LIE,Is your dream job a Doctor when you were growing up?,video/V15.mp4,businesswoman,.
+27,Direct,LIE,How frequently do you drink alcohol?,video/V6.mp4,never drink,.
+24,Direct,LIE,"How old is your mum? (Eg. 45, 52)",video/V5.mp4,47,.
+18,Indirect,TRUTH,Was the last country you visited India?,video/V13.mp4,india,.
+28,Indirect,LIE,Is your religion Hinduism?,video/V4.mp4,islam,.
+23,Direct,TRUTH,What course are you studying?,video/V9.mp4,computer science,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,video/V12.mp4,english literature,.
+21,Indirect,TRUTH,Are you from School of Humanities in NTU?,video/V24.mp4,scse,.
+18,Indirect,LIE,Was the last country you visited Canada?,video/V38.mp4,canada,.
+7,Direct,LIE,What is your favourite sport?,video/V14.mp4,basketball,.
+26,Direct,LIE,How often do you smoke?,video/V39.mp4,socially,.
+19,Indirect,LIE,Is the Serangoon station the closest MRT to your house?,video/V30.mp4,serangoon,.
+5,Indirect,TRUTH,Is your favourite country Austria?,video/V25.mp4,austria,.

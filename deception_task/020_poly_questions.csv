@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+2,Direct,TRUTH,Which secondary school did you attend?,bit/B34.mp4,methodist girls,.
+10,Direct,TRUTH,What food do you hate the most?,bit/B12.mp4,balut,.
+15,Indirect,LIE,Are you from Ngee Ann Polytechnic?,bit/B24.mp4,acjc,X
+18,Indirect,TRUTH,Was the last country you visited Italy?,bit/B30.mp4,italy,.
+22,Indirect,LIE,Are you in your 1st year in NTU?,bit/B29.mp4,2,.
+27,Indirect,TRUTH,Do you drink alcohol rarely?,bit/B8.mp4,rarely,.
+22,Indirect,TRUTH,Are you in your 3rd year in NTU?,bit/B2.mp4,1,.
+12,Indirect,TRUTH,Was your favourite subject Chemistry back in secondary school?,bit/B40.mp4,english,.
+23,Direct,TRUTH,What course are you studying?,bit/B33.mp4,LMS,.
+20,Indirect,TRUTH,Is your house on the 9th floor of the building?,bit/B25.mp4,13,.
+1,Direct,TRUTH,Which primary school are you from?,bit/B15.mp4,methodist girls,.
+5,Direct,LIE,What is your favourite country you visited? ,bit/B6.mp4,japan,.
+12,Direct,LIE,What was your favourite subject back in secondary school?,bit/B3.mp4,chemistry,.
+29,Indirect,TRUTH,Do you use a Huawei phone?,bit/B10.mp4,apple,.
+10,Direct,LIE,What food do you hate the most?,bit/B32.mp4,hokkien mee,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B36.mp4,girls bridage,.
+26,Indirect,LIE,Do you smoke socially?,bit/B31.mp4,socially,.
+20,Indirect,LIE,Is your house on the 13th floor of the building?,bit/B20.mp4,11,.
+2,Indirect,LIE,Are you from Anderson Secondary School?,bit/B23.mp4,anderson,.
+9,Direct,TRUTH,What is your favourite drink?,bit/B17.mp4,teh ping,.
+25,Indirect,LIE,Is your dad 50 years old this year?,bit/B35.mp4,47,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B28.mp4,1,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B14.mp4,drama society,.
+19,Indirect,LIE,Is the Bugis station the closest MRT to your house?,bit/B19.mp4,bugis,.
+26,Direct,TRUTH,How often do you smoke?,bit/B13.mp4,rarely,X?
+21,Indirect,LIE,Are you from School of Humanities in NTU?,bit/B26.mp4,nbs,.
+28,Direct,LIE,What religion do you practice?,bit/B27.mp4,don’t practice any religion,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B37.mp4,3,.
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B5.mp4,acjc,.
+21,Direct,TRUTH,"Which school in NTU are you from? (Eg. NBS, SSS, SOH)",bit/B16.mp4,soh,.
+1,Direct,LIE,Which primary school are you from?,bit/B21.mp4,singapore chinese girls school pri,.
+25,Direct,TRUTH,"How old is your dad? (Eg. 45, 52)",bit/B38.mp4,50,.
+29,Indirect,LIE,Do you use a Apple phone?,bit/B4.mp4,don’t use apple,/
+19,Direct,TRUTH,Which MRT station is closest to your house?,bit/B7.mp4,dover,.
+27,Indirect,LIE,Do you drink alcohol frequently?,bit/B1.mp4,frequently,.
+5,Indirect,TRUTH,Is your favourite country South Africa?,bit/B11.mp4,south africa,.
+9,Direct,LIE,What is your favourite drink?,bit/B18.mp4,coca cola,.
+28,Direct,TRUTH,What religion do you practice?,bit/B39.mp4,christian,.
+23,Indirect,LIE,Are you studying Linguistics and Multilingual Studies course in NTU?,bit/B22.mp4,LMS,X
+18,Direct,LIE,What was the last country you visited?,bit/B9.mp4,australia,.

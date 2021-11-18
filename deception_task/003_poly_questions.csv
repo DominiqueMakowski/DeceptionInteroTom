@@ -1,0 +1,41 @@
+item,style,condition,question,bitalino,,
+2,Indirect,TRUTH,Are you from Anderson Secondary School?,bit/B38.mp4,naval base,.
+29,Indirect,TRUTH,Do you use a Apple phone?,bit/B39.mp4,apple,.
+28,Direct,TRUTH,What religion do you practice?,bit/B21.mp4,buddhist,.
+23,Direct,TRUTH,What course are you studying?,bit/B1.mp4,MSE,.
+14,Direct,LIE,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B40.mp4,vanilla,.
+17,Indirect,LIE,Did you celebrate your 21st birthday at Marina Bay Sands?,bit/B3.mp4,MBS,.
+12,Indirect,LIE,Was your favourite subject Chemistry back in secondary school?,bit/B13.mp4,Chemistry,.
+14,Direct,TRUTH,"What is your favourite flavour?(E.g. chocolate, vanilla, milktea; it can be a complicated flavour)",bit/B20.mp4,chocolate,.
+25,Indirect,TRUTH,Is your dad 53 years old this year?,bit/B29.mp4,53 yepp 54 oops,?
+1,Direct,TRUTH,Which primary school are you from?,bit/B17.mp4,canberra,.
+24,Indirect,TRUTH,Is your mum 51 years old this year?,bit/B34.mp4,52,X
+15,Direct,TRUTH,Which polytechnic or junior college are you from?,bit/B36.mp4,serangoon jc,.
+18,Indirect,LIE,"Was the last country you visited Bei Jing, China?",bit/B25.mp4,tokyo,/
+29,Indirect,LIE,Do you use a Xiaomi phone?,bit/B32.mp4,xiaomi,.
+1,Indirect,LIE,Are you from Woodlands Primary School?,bit/B28.mp4,woodlands,.
+2,Direct,LIE,Which secondary school did you attend?,bit/B33.mp4,chung chung high yishun,.
+26,Direct,LIE,How often do you smoke?,bit/B35.mp4,almost once a week,.
+19,Indirect,TRUTH,Is the Redhill station the closest MRT to your house?,bit/B10.mp4,sengkang,.
+6,Direct,LIE,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B16.mp4,basketball,.
+26,Direct,TRUTH,How often do you smoke?,bit/B8.mp4,don’t smoke at all,.
+22,Direct,LIE,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B4.mp4,4,.
+16,Direct,LIE,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B14.mp4,3,.
+12,Indirect,TRUTH,Was your favourite subject Social Studies back in secondary school?,bit/B12.mp4,social studies,.
+23,Direct,LIE,What course are you studying?,bit/B23.mp4,business,.
+4,Direct,LIE,Who is your favourite teacher in secondary school?,bit/B9.mp4,mrs tan,.
+20,Indirect,LIE,Is your house on the 15th floor of the building?,bit/B11.mp4,15,.
+22,Direct,TRUTH,"Which year in NTU are you currently in? (Eg. 1, 2, 3, 4)",bit/B15.mp4,3,.
+15,Indirect,LIE,Are you from Serangoon Junior College?,bit/B6.mp4,sp,.
+6,Direct,TRUTH,What CCA (Co-curricular Activity) did you join in secondary school?,bit/B30.mp4,npcc,.
+4,Indirect,TRUTH,Is Mr Tan your favourite teacher in secondary school?,bit/B27.mp4,mrs leong,.
+25,Direct,LIE,"How old is your dad? (Eg. 45, 52)",bit/B19.mp4,42,.
+16,Direct,TRUTH,"How many siblings do you have? (Eg. 0, 1, 2, 3)",bit/B26.mp4,0,.
+30,Indirect,LIE,Do you use a Dell laptop?,bit/B24.mp4,macbook,.
+24,Direct,LIE,"How old is your mum? (Eg. 45, 52)",bit/B5.mp4,42,.
+28,Indirect,LIE,Is your religion Catholicism?,bit/B7.mp4,catholic,.
+19,Indirect,LIE,Is the Seng Kang station the closest MRT to your house?,bit/B37.mp4,lakeside,.
+18,Direct,TRUTH,What was the last country you visited?,bit/B2.mp4,beijing,/
+20,Direct,TRUTH,Which floor of the building is your house on?,bit/B18.mp4,6,.
+17,Direct,TRUTH,Where did you celebrate your 21st birthday?,bit/B22.mp4,home,.
+30,Indirect,TRUTH,Do you use a Lenovo laptop?,bit/B31.mp4,dell,.
