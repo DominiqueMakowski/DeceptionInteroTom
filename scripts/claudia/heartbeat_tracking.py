@@ -26,7 +26,7 @@ def extract_taps(data, key, rt):
 
         return tap_times
 
-def align_taps(ecg, start, stop, sampling_rate, taps, task="Guess"):
+def get_time_to_rpeak(ecg, start, stop, sampling_rate, taps, task="Guess"):
     """ecg: ecg signal
     start: onset time of the task
     stop: end time of the task
@@ -36,37 +36,20 @@ def align_taps(ecg, start, stop, sampling_rate, taps, task="Guess"):
 
     # Process ecg signal
     ecg = nk.as_vector(ecg[start:stop])
-    ecg_processed, peaks = nk.ecg_process(ecg, sampling_rate=sampling_rate)
-    df = ecg_processed[["ECG_Clean", "ECG_R_Peaks"]]  # keep only cleaned and R peaks cols
+    _, peaks = nk.ecg_process(ecg, sampling_rate=sampling_rate)
+    rpeaks = peaks["ECG_R_Peaks"]
 
-    # Index periods in which taps are expected
-    intervals = np.diff(peaks["ECG_R_Peaks"])  # get intervals between R peaks
+    # Get time to closest rpeak
+    closest_rpeak = nk.find_closest(taps * sampling_rate, rpeaks)
+    
+    # positive = in systole
+    # negative = in diastole
+    time_to_rpeak = (taps * sampling_rate).astype(int) - closest_rpeak  # in samples
 
-    before_first_peak = np.repeat(0, peaks["ECG_R_Peaks"][0]) # index 0 for period before first R-peak
-    before_last_peak = np.repeat(1, len(ecg) - peaks["ECG_R_Peaks"][-1]) # index 1 for period after last R-peak
-
-    search = np.array([])
-    for i, interval in enumerate(intervals):
-        # 1 to index time periods in which systole signal was present and tap should be expected, 0 where diastole was present and tap not expected
-        if (interval % 2) == 0: # even number
-            index = np.repeat([1, 0], interval/2)
-        else: # odd number
-            index = np.append(np.repeat([1, 0], interval/2), 0)
-        search = np.concatenate([search, index])
-
-    # append indexes of periods to ecg dataframe
-    df["Periods"] = np.concatenate([before_first_peak, search, before_last_peak]).astype(int)
-
-    # Align ecg to taps
-    taps = nk.find_closest(taps * sampling_rate, np.array(df.index))
-    df["Tap"] = 0
-    if isinstance(taps, np.integer):  # if only one tap
-        df.loc[taps, "Tap"] = 1
-    else:
-        for i in taps:
-            df.loc[i, "Tap"] = 1
-    df["Condition"] = task
-
+    df = pd.DataFrame(time_to_rpeak / sampling_rate)
+    df[task] = task
+    df.columns = ['Time_to_Rpeak', 'Condition']
+    
     return df
 
 
@@ -110,36 +93,26 @@ for i, participant in enumerate(list_participants):
     start_noguess, stop_noguess = events_all['onset'][12], events_all['onset'][13]
     start_noguess_perturbed, stop_noguess_perturbed = events_all['onset'][14], events_all['onset'][15]
 
-    # Align taps to ECG peaks
+    # Get time to closest Rpeaks
     if participant == '009':  # no taps for guess and no guess conditions
-        df = align_taps(bio["ECGBIT"], start_noguess_perturbed,
-                        stop_noguess_perturbed, sampling_rate,
-                        taps_noguess_perturbed, task="NoGuess_Perturbed")
+        df = get_time_to_rpeak(bio["ECGBIT"], start_noguess_perturbed, stop_noguess_perturbed,
+                               sampling_rate, taps_noguess_perturbed, task="NoGuess_Perturbed")
     elif participant == '027':  # no taps for noguess_perturbed condition
-        df_guess = align_taps(bio["ECGBIT"], start_guess, stop_guess, sampling_rate,
-                              taps_guess, task="Guess")
-        df_noguess = align_taps(bio["ECGBIT"], start_noguess, stop_noguess, sampling_rate,
-                              taps_noguess, task="NoGuess")
-        df = pd.concat([df_guess, df_noguess])
+        time_guess = get_time_to_rpeak(bio["ECGBIT"], start_guess, stop_guess, sampling_rate, taps_guess,
+                                       task="Guess")
+        time_noguess = get_time_to_rpeak(bio["ECGBIT"], start_noguess, stop_noguess, sampling_rate, taps_noguess,
+                                         task="NoGuess")
+        df = pd.concat([time_guess, time_noguess])
     else:
-        df_guess = align_taps(bio["ECGBIT"], start_guess, stop_guess, sampling_rate,
-                              taps_guess, task="Guess")
-        df_noguess = align_taps(bio["ECGBIT"], start_noguess, stop_noguess, sampling_rate,
-                              taps_noguess, task="NoGuess")
-        df_noguess_perturbed = align_taps(bio["ECGBIT"], start_noguess_perturbed,
-                                          stop_noguess_perturbed, sampling_rate,
-                                          taps_noguess_perturbed, task="NoGuess_Perturbed")
-        df = pd.concat([df_guess, df_noguess, df_noguess_perturbed])
+        time_guess = get_time_to_rpeak(bio["ECGBIT"], start_guess, stop_guess, sampling_rate, taps_guess,
+                                       task="Guess")
+        time_noguess = get_time_to_rpeak(bio["ECGBIT"], start_noguess, stop_noguess, sampling_rate, taps_noguess,
+                                         task="NoGuess")
+        time_noguess_perturbed = get_time_to_rpeak(bio["ECGBIT"], start_noguess_perturbed, stop_noguess_perturbed,
+                                                   sampling_rate, taps_noguess_perturbed, task="NoGuess_Perturbed")
+        df = pd.concat([time_guess, time_noguess, time_noguess_perturbed])
 
     df['ID'] = i + 1  # append participant number
-
-    # Visualize to see where taps align with ecg signal
-    # tap_indices = np.where(df["Tap"] == 1)[0]
-    # peaks = np.where(df["ECG_R_Peaks"] == 1)[0]
-    # signal = nk.as_vector(df["ECG_Clean"])
-    # nk.events_plot(events=[peaks, tap_indices], signal=signal)
-
     df_all = pd.concat([df_all, df])  # combine all participants
 
-# df_all.to_csv("HCT_Part2.csv", na_rep="NA", index=False)  too big file
-nk.write_csv(df_all, "Heartbeat_Tracking", parts=5)  # split into subsets of csvs
+df_all.to_csv("HCT_Tracking.csv", na_rep="NA", index=False)
