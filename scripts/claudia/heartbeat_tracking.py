@@ -65,7 +65,7 @@ for i, participant in enumerate(list_participants):
 #     print(f"{participant} : {n_events} events detected\n======================")
 #     # participants 010: 1 extra
 #     # participants 012, 023: 3 extra
-
+    
     # Directory of where heartbeat data is stored
     subdir = directory + "/../../data/data_experimental/" + participant + "/heartbeat/"
 
@@ -94,15 +94,24 @@ for i, participant in enumerate(list_participants):
     start_noguess_perturbed, stop_noguess_perturbed = events_all['onset'][14], events_all['onset'][15]
 
     # Get time to closest Rpeaks
-    if participant == '009':  # no taps for guess and no guess conditions
+    if participant == '009':
         df = get_time_to_rpeak(bio["ECGBIT"], start_noguess_perturbed, stop_noguess_perturbed,
                                sampling_rate, taps_noguess_perturbed, task="NoGuess_Perturbed")
-    elif participant == '027':  # no taps for noguess_perturbed condition
+    elif participant == '027':
         time_guess = get_time_to_rpeak(bio["ECGBIT"], start_guess, stop_guess, sampling_rate, taps_guess,
                                        task="Guess")
         time_noguess = get_time_to_rpeak(bio["ECGBIT"], start_noguess, stop_noguess, sampling_rate, taps_noguess,
                                          task="NoGuess")
         df = pd.concat([time_guess, time_noguess])
+    elif participant in ['010', '028']:
+        time_guess = get_time_to_rpeak(bio["ECGBIT"], start_guess, stop_guess, sampling_rate, taps_guess,
+                                       task="Guess")
+        time_noguess_perturbed = get_time_to_rpeak(bio["ECGBIT"], start_noguess_perturbed, stop_noguess_perturbed,
+                                                   sampling_rate, taps_noguess_perturbed, task="NoGuess_Perturbed")
+        df = pd.concat([time_guess, time_noguess_perturbed])
+    elif participant == '013':
+        df = get_time_to_rpeak(bio["ECGBIT"], start_guess, stop_guess, sampling_rate, taps_guess,
+                               task="Guess")
     else:
         time_guess = get_time_to_rpeak(bio["ECGBIT"], start_guess, stop_guess, sampling_rate, taps_guess,
                                        task="Guess")
@@ -111,6 +120,12 @@ for i, participant in enumerate(list_participants):
         time_noguess_perturbed = get_time_to_rpeak(bio["ECGBIT"], start_noguess_perturbed, stop_noguess_perturbed,
                                                    sampling_rate, taps_noguess_perturbed, task="NoGuess_Perturbed")
         df = pd.concat([time_guess, time_noguess, time_noguess_perturbed])
+
+    # participant 009: absent guess and no guess condition, 2 taps in noguess_perturbed condition
+    # participant 010: absent noguess condition
+    # participant 028: absent noguess condition
+    # participant 013: absent noguess and noguess_perturbed condition
+    # participant 027: absent noguess_perturbed condition, only 1 tap in noguess condition
 
     df['ID'] = i + 1  # append participant number
     df_all = pd.concat([df_all, df])  # combine all participants
