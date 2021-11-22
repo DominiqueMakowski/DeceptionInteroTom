@@ -7,7 +7,6 @@ editor_options:
 ## Heartbeat Counting {.tabset}
 
 
-
 ### Accuracy
 
 #### Confidence
@@ -127,6 +126,12 @@ p_rt_hct_accuracy /
   p_rt_hct_awareness +
   patchwork::plot_annotation(title = "Interoception", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```
+
+## Heartbeat Tracking {.tabset}
+
+
+
+
 
 
 

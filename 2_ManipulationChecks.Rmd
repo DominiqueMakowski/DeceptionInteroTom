@@ -12,6 +12,7 @@ dfsub <- df |>
          starts_with("YONI_"), 
          starts_with("BES_"),
          starts_with("HCT_"),
+         starts_with("HTT_"),
          starts_with("MAIA_"),
          starts_with("LIE_")) |> 
   group_by(Participant) |> 
@@ -32,8 +33,17 @@ summary(r) |>
 ### Interoception
 
 ```{r message=FALSE, warning=FALSE}
-r <- correlation(select(dfsub, starts_with("MAIA_")),
+r <- correlation(select(dfsub, starts_with("HTT_")),
                  select(dfsub, starts_with("HCT_")), 
+                 p_adjust = "none")
+
+summary(r) |> 
+  plot()
+```
+
+```{r message=FALSE, warning=FALSE}
+r <- correlation(select(dfsub, starts_with("MAIA_")),
+                 select(dfsub, starts_with("HCT_"), starts_with("HTT_")), 
                  p_adjust = "none")
 
 summary(r) |> 
@@ -83,6 +93,19 @@ estimate_means(model, at = c("Answer", "Phrasing")) |>
   plot(show_data = "none") 
 ```
 
+### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(ECG_Rate_MeanRaw ~ Answer * Phrasing + (1|Participant) + (1|Item), data = df) 
+
+parameters::parameters(model)
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Answer", "Phrasing")) |> 
+  plot(show_data = "none") 
+```
+
 
 ## Lies and RT
 
@@ -104,6 +127,22 @@ estimate_relation(model, at = c("RT", "Answer")) |>
   plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
 ```
 
+
+## Lies and Heart Rate
+
+- The faster they answer, the more confident they are in their lies.
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(ECG_Rate_Mean ~ Confidence * Answer + (1|Participant) + (1|Item), 
+                 data = df)
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_relation(model, at = c("Confidence", "Answer")) |> 
+  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
+```
 
 
 ## Effect of Condition
@@ -144,3 +183,25 @@ parameters::parameters(model, effects = "fixed")
 estimate_means(model, at = c("Condition", "Answer")) |> 
   plot(show_data = "none") 
 ```
+
+
+### Heart Rate
+
+
+```{r message=FALSE, warning=FALSE}
+# ECG_Rate_Mean_2.5s
+names(select(df, starts_with("ECG_")))
+model <- glmmTMB(ECG_Rate_Mean_1.5_2.5s ~ Answer * Condition + (1|Participant) + (1|Item), 
+                 data = dplyr::filter(df, abs(ECG_Rate_Mean_1.5_2.5s) < 10))
+
+parameters::parameters(model, effects = "fixed")
+
+modelbased::estimate_contrasts(model, contrast = "Answer", at = "Condition")
+modelbased::estimate_contrasts(model, contrast = "Condition", at = "Answer")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Condition", "Answer")) |> 
+  plot(show_data = "none") 
+```
+

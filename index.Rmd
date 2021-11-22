@@ -90,7 +90,7 @@ summary(report::report(sessionInfo()))
 ```{r warning=FALSE, message=TRUE, results='asis'}
 # setwd("C:/Users/user/Desktop/Sputnik/2019-23/DeceptionInteroTom")
 
-df <- read.csv("data/data_combined.csv") %>% 
+df <- read.csv("data/data_combined_wPhysio.csv") %>% 
   mutate(ID = as.factor(paste0("S", ID)),
          condition = as.factor(condition),
          item = as.factor(item),

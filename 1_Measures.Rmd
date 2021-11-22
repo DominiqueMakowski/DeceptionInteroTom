@@ -64,6 +64,45 @@ df %>%
   facet_wrap(~name, scales = "free")
 ```
 
+
+### Heartbeat Tracking Task (HTT)
+
+
+```{r message=FALSE}
+htt_data <- read.csv("scripts/claudia/HCT_Tracking.csv") |> 
+  mutate(Participant = paste0("S", as.character(ID)),
+         Condition = fct_recode(Condition, "NoGuessPerturbed" = "NoGuess_Perturbed")) |> 
+  rename(Distance = Time_to_Rpeak) 
+
+htt_data |>
+  ggplot(aes(x = Distance, fill = Condition)) +
+  geom_histogram(binwidth = 0.05, alpha = 0.5, position="identity") +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  facet_wrap(~ID) +
+  see::theme_modern() 
+
+
+
+
+
+# model <- rstanarm::stan_lmer(Distance ~ Condition + (1 + Condition | ID), data = hct_data, refresh=0, chains = 2)
+# model <- glmmTMB::glmmTMB(Distance ~ Condition + (1 | ID), data = hct_data)
+
+
+
+
+htt_scores <- htt_data |> 
+  group_by(Participant, Condition) |> 
+  summarise(HTT_Mean = mean(Distance),
+            HTT_n = n()) |> 
+  ungroup() |> 
+  complete(Participant, Condition, fill = list(HTT_Mean = NA, HTT_n = 0)) |> 
+  tidyr::pivot_wider(names_from = "Condition", values_from = c("HTT_Mean", "HTT_n"))
+
+df <- merge(df, htt_scores, by = "Participant")
+```
+
+
 ### MAIA
 
 ```{r message=FALSE}
@@ -103,10 +142,32 @@ df %>%
 
 ### Deception Task
 
+#### Physiological Processing
+
+```{r warning=FALSE}
+df_physio <- read.csv("data/data_physio_DeceptionTask.csv") |> 
+  tidyr::pivot_longer(starts_with("X"), names_to = "Time", values_to = "HeartRate") |> 
+  mutate(Time = as.numeric(str_remove(Time, "X"))-500,
+         group = paste0(ID, condition, instruction),
+         condition = fct_recode(condition, "Interrogation" = "Social"),
+         instruction = fct_relevel(instruction, "TRUTH")) |> 
+  group_by(condition, instruction, Time) |> 
+  summarise(HeartRate = mean(HeartRate)) |> 
+  ungroup()
+  
+df_physio |> 
+  ggplot(aes(x = Time, y = HeartRate)) +
+  geom_rect(aes(xmin=1500, xmax=2500, ymin=-65, ymax=90), alpha=0.1, fill = "green") +
+  geom_line(aes(color = condition, linetype = instruction), size=1) +
+  geom_vline(aes(xintercept=0), linetype = "dotted") +
+  labs(y = "Average Heart Rate (bpm)", x = "Time (ms)") +
+  scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  theme(legend.position = "top", legend.title=element_blank())
+```
+
 #### Summary Table
 
 ```{r warning=FALSE}
-
 df |> 
   group_by(Participant, Answer) |> 
   summarise(Confidence = paste(insight::format_value(mean(Confidence, na.rm = TRUE)),
@@ -123,30 +184,56 @@ df |>
 
 ```{r warning=FALSE}
 df <- df |> 
+  # Remove participants
   dplyr::filter(Participant != "S9",  # Extreme answers
-                !Participant %in% c("S3", "S15", "S19", "S23"))  # No data
+                !Participant %in% c("S3", "S15", "S19", "S23")) |>  # No data
+  group_by(Participant) |> 
+  mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore_robust", threshold = qnorm(0.999))),
+         Outliers_Physio = as.logical(performance::check_outliers(ECG_Rate_Mean_2.5s, method = "zscore_robust", threshold = qnorm(0.999))))
+  ungroup()
 ```
+
+```{r warning=FALSE}
+df |> 
+  group_by(Participant) |> 
+  summarise(Physio = sum(Outliers_RT) / n(),
+            RT = sum(Outliers_Physio) / n()) |> 
+  tidyr::pivot_longer(-Participant, names_to = "Outlier_Type") |> 
+  ggplot(aes(x=Participant, y = value, fill = Outlier_Type)) +
+  geom_bar(stat = "identity") + 
+  scale_y_continuous(labels = scales::percent) + 
+  labs(y = "Percentage of trials") +
+  ggtitle("Number of Trial Dropped Per Participant")
+  
+df$RT[df$Outliers_RT] <- NA
+df$ECG_Rate_Mean_2.5s[df$Outliers_Physio] <- NA
+```
+
 
 #### Distributions
 
-```{r warning=FALSE}
+```{r warning=FALSE, fig.height=figheight*2}
 p1 <- df |> 
-  dplyr::filter(!Participant %in% c("S29")) |>
   ggplot(aes(x = Confidence, fill = Participant)) +
   geom_density(alpha = 0.1) +
   see::scale_fill_material_d(palette = "rainbow", guide = "none") +
-  see::theme_modern() +
   scale_x_continuous(labels = scales::percent, expand=expansion(c(0, .05))) +
   scale_y_continuous(expand=expansion(c(0, .05))) +
   facet_wrap(~Answer)
 p2 <- df |> 
-  dplyr::filter(!Participant %in% c("S29")) |> 
   ggplot(aes(x = RT, fill = Participant)) +
   geom_density(alpha = 0.1) +
   see::scale_fill_material_d(palette = "rainbow", guide = "none") +
   scale_x_continuous(expand=expansion(c(0, .05))) +
   scale_y_continuous(expand=expansion(c(0, .05))) +
   facet_wrap(~Answer)
-p1 / p2
+p3 <- df |> 
+  ggplot(aes(x = ECG_Rate_Mean_2_3s, fill = Participant)) +
+  geom_density(alpha = 0.1) +
+  see::scale_fill_material_d(palette = "rainbow", guide = "none") +
+  scale_x_continuous(expand=expansion(c(0, .05))) +
+  scale_y_continuous(expand=expansion(c(0, .05))) +
+  facet_wrap(~Answer)
+p1 / p2 / p3
 ```
 
