@@ -1,0 +1,155 @@
+---
+title: '**Fractal and Entropic Characteristics of EEG during Resting State**'
+shorttitle        : "Resting-state EEG Complexity"
+author:
+  - name          : "Dominique Makowski"
+    affiliation   : " 1, *"
+    address       : "HSS 04-18, 48 Nanyang Avenue, Singapore"
+    email         : "dmakowski@ntu.edu.sg"
+  - name          : "Zen J. Lau"
+    affiliation   : " 1"
+  - name          : "Tam Pham"
+    affiliation   : " 1"
+  - name          : "S.H. Annabel Chen"
+    affiliation   : " 1, 2, 3, 4"
+    corresponding : yes    # Define only one corresponding author
+    address       : "HSS 04-19, 48 Nanyang Avenue, Singapore"
+    email         : "annabelchen@ntu.edu.sg"
+affiliation:
+  - id            : "1"
+    institution   : "School of Social Sciences, Nanyang Technological University, Singapore"
+  - id            : "2"
+    institution   : "Centre for Research and Development in Learning, Nanyang Technological University, Singapore"
+  - id            : "3"
+    institution   : "Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore"
+  - id            : "4"
+    institution   : "National Institute of Education, Nanyang Technological University, Singapore"
+abstract: |
+output:
+  papaja::apa6_word:
+    keep_tex: yes
+  pdf_document: default
+  papaja::apa6_pdf:
+    keep_tex: yes
+keywords: "EEG, Complexity, Entropy, Fractal Dimension, Resting State"
+wordcount: ''
+bibliography: ["references.bib"]
+floatsintext: yes
+figsintext: yes
+figurelist: no
+tablelist: no
+footnotelist: no
+linenumbers: yes
+mask: no
+draft: no
+documentclass: apa6
+classoption: man
+header-includes:
+- \usepackage[labelfont=bf, font={color=gray,small}]{caption}
+- \usepackage{float}
+- \usepackage[document]{ragged2e}
+csl: utils/apa.csl
+---
+
+\justify
+
+```{r r_setup, include = FALSE, warning=FALSE, message=FALSE}
+library("papaja")
+library("kableExtra")
+options(knitr.kable.NA = 'None')
+```
+
+```{=html}
+<!-- 
+Journals:
+Neuroscience Letters https://www.journals.elsevier.com/neuroscience-letters
+Biological Psychology https://www.journals.elsevier.com/biological-psychology
+Psychophysiology https://onlinelibrary.wiley.com/journal/14698986
+Cognitive Neurodynamics https://www.springer.com/journal/11571
+Neuroscience & Biobehavioral Reviews https://www.journals.elsevier.com/neuroscience-and-biobehavioral-reviews
+-->
+```
+<!-- Resting state -->
+
+<!-- # Defining Complexity -->
+
+Complexity science is an umbrella term encompassing the study and characterization of "complex" systems - systems consisting of multiple interdependent components that operate and interact at different levels [@fernandez2013complexity]. Such complex systems typically exhibit "chaotic" behaviour. Rather than referring to a state of disorder or confusion, a chaotic system is characterized by unpredictability and irregularities, often the result of a multitude of nonlinear interactions [@faure2001there]. As such, small changes in the system can lead to exponential changes (a property popularized as the 'butterfly effect'). For instance, the Earth's atmosphere at any point in time and space is the result of a (virtually infinite) number of variables (e.g., temperature, particle composition, cloud density, etc.) interacting together, rendering any long-term projections challenging. Nevertheless, the overarching idea of complexity science is not necessarily to establish methods for making exact predictions, but rather to provide some insights into the characterization of the long-term trajectory of a given complex system [@faure2001there]. These principles have its roots in a branch of mathematics called *chaos theory* [see @thietart1995chaos, for an overview], which has led several disciplines (e.g., environmental science, meteorology, biology) to adopt the framework of complex dynamical systems [@burggren2005assessing; @kiel1996chaos].
+
+The application of complexity science to nonlinear systems, referred to as "nonlinear dynamics", is an emerging approach gaining traction in the study of human physiology and pathology [@ehlers1995chaos]. The theoretical conceptualization of the human physiological system as complex is warranted given that it is made up of multiple constituent subsystems (be it anatomical components or physiological processes) that are constantly interacting between themselves at different levels (i.e., from molecules to organs), as well as with the external environment to maintain homeostasis [@faure2001there]. The underlying assumptions are that physiological systems are inherently complex [@golbeter1996biochemical], and that pathological states [or 'dynamical diseases', see @mackey1977oscillation] can be characterized by disrupted or abnormal dynamic processes. One of the seminal works that contributed to this perspective was @lipsitz1992loss, who demonstrated that aging and disease are associated with a generalized loss of physiological complexity due to functional and/or structural alteration in the underlying organization of the physiological system [see @vaillancourt2002changing for a schematic illustration of this idea].
+
+<!-- talk about eeg resting state analysis using complexity vs other traditional methods-->
+
+<!-- resting state + personality -->
+
+-   Resting state brain activity as a novel way to identify neurobiological correlates of personality traits
+-   Modulatory effects of trait feature affects brain activity permanently (vs experimentally dependent for modulatory effects of a state condition)
+
+# Methods
+
+## Participants
+
+Data from 80 participants was collected from two separate samples. Specifically, 45 participants from Singapore and 35 participants from France were recruited via posters, flyers, and online social media platforms. For the Singapore sample, participants were reimbursed 60 Singapore Dollars upon study completion, which included acquisition of resting-state EEG data and other tasks as part of a larger study. [**Describe French sample**]. One participant from the Singapore sample was excluded due to technical problems in the study setup and [**any exclusions from french sample here**]. The final sample included [...] participants ($N_{Singapore}$ = 44, $N_{France}$ = ...; Mean age = ..., SD = ..., range = [..., ...]; ...% females) The study was approved by the Institutional Review Board (Reference Number: IRB-2018-10-029) of Nanyang Technological University (NTU) in Singapore and by the [**Review board of French sample**]. Inclusion criteria included absence of current or history of neurological, psychiatric, or cardiovascular disorders.
+
+## Procedure
+
+### Singapore sample
+
+Prior to EEG data acquisition, participants first provided their written informed consent and completed an online questionnaire on demographic information and personality measures. 128-channel EEG was then measured (sampling rate: 4000Hz) from participants for 8 minutes during eyes-closed rest. Participants were instructed to relax and stay still, to refrain from thinking about anything in particular, and to stay awake for the entire duration of the recording. All assessments were conducted at the same experimental location, in an air-conditioned (22 degrees celsius), dark, sound-attenuated room. EEG signals were recorded using Deymed's Truscan EEG system in accordance with the international 10-05 system, with most impedances around 15-20k$\Omega$ and all impedences kept below 50k$\Omega$. For maximal precision, a photosensor attached to the screen marked event timings (i.e., the start and end) of the resting session. After the resting condition, participants answered some questions pertaining to sensations and thoughts that they experienced during the resting state.
+
+<!-- describe French set up??-->
+
+## Measures
+
+### Personality
+
+Personality traits were assessed using the 24-item Mini-IPIP6 based on the HEXACO Personality Model [@ashtonlee2009hexaco; @Sibley_2011]. Sub-scores were computed for the 6 dimensions of personality, namely *Extraversion* (engagement in social behaviors), *Openness* (being open-minded such as displaying imagination and curiosity), *Agreeableness* (being cooperative and tolerant of others), *Conscientiousness* (being diligent, meticulous and organized), *Neuroticism* (the tendency to experience a persisting negative emotionality), and *Honesty-Humility* (being honest, sincere, and fair during social exchanges).
+
+### Resting-State Cognition
+
+Resting-state cognition was assessed using a brief questionnaire consisting of 6 items on a visual analogue scale, where participants were told to rate the percentage of time spent in 6 different states, namely, *Drowsiness* (feelings of drowsiness), *Absorption External* (the extent to which thoughts were directed towards external stimuli i.e., sounds, voices etc.), *Absorption Internal* (the extent to which thoughts were directed internally i.e., imagination, recalling of past events etc.), *Absorption Body* (the extent to which thoughts were directed bodily sensations and changes), *Mind Wandering* (free flowing of thoughts), and *Mind Focus* (the extent to which a particular thought or sensation was the prime focus). The protocol, including the task instructions, execution of the resting session, as well as the post-rest questionnaire, is open-access and available at [\*https://github.com/neuropsychology/RestingState\*\*](https://github.com/neuropsychology/RestingState).
+
+## EEG Complexity Measures
+
+## Data Analysis
+
+For each participant, complexity indices were computed at each electrode for the following frequency bands: gamma (30 - 80 Hz), beta (13 - 30 Hz), alpha (8 - 13 Hz), theta (4 - 8 Hz), and delta (1 - 4 Hz). [**Were these values z-scored?**].
+
+A factor analysis using a varimax rotation was conducted to identify the groupings of electrodes. [**Describe more**]. The final groupings resulted in 5 distinct factors, namely *frontal*, *left*, *right*, *central*, and *posterior*, corresponding to the regions of the brain.
+
+# Results
+
+# Discussion
+
+-   Limitations: lack of validated ASRQ measure
+
+# Funding
+
+The authors did not receive support from any organization for the submitted work.
+
+# Author Contributions
+
+<!-- D.M. conceived the study. Z.J.L. and T.P. coordinated the study and drafted the manuscript. D.M. and S.H.A.C. performed a critical review of the manuscript. All authors have read and agreed to the published version of the manuscript. -->
+
+# Conflict of Interest Statement
+
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+
+# Acknowledgements
+
+\newpage
+
+# References
+
+```{r create_r-references}
+r_refs(file = "references.bib")
+```
+
+```{=tex}
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+```
+::: {#refs}
+:::
+
+\endgroup
