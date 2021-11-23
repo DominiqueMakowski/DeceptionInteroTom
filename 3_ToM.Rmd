@@ -68,7 +68,7 @@ plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidenc
     geom_line(aes(color = Condition)) +
     geom_text(data=annot, aes(x = x, y = y, label = Label, color = Condition), 
               size = 8, show.legend = FALSE) +
-    labs(y = ifelse(outcome == "RT", "Reaction Time (s)", "Confidence"), 
+    labs(y = ifelse(outcome == "RT", "Reaction Time (s)", ifelse(outcome == "HeartRate", "Heart Rate (bpm)", "Confidence")), 
          x = paste0(stringr::str_replace(var, "_", " ("), ")")) +
     scale_color_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) +
     scale_fill_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) + 
@@ -101,6 +101,22 @@ results$marginal_effects
 ```{r message=FALSE, warning=FALSE}
 p_rt_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "RT")
 # p_rt_yoni_total
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Total) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "HeartRate")
+# p_hr_yoni_total
 ```
 
 ### Cognitive Theory of Mind
@@ -137,6 +153,24 @@ p_rt_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outco
 # p_rt_yoni_cognitive
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Cognitive) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outcome = "HeartRate")
+# p_hr_yoni_cognitive
+```
+
+
+
 ### Affective Theory of Mind
 
 #### Confidence
@@ -169,6 +203,22 @@ results$marginal_effects
 ```{r message=FALSE, warning=FALSE}
 p_rt_yoni_affective <- plot_effect(model, results, var = "YONI_Affective", outcome = "RT")
 # p_rt_yoni_affective
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Affective) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_yoni_affective <- plot_effect(model, results, var = "YONI_Affective", outcome = "HeartRate")
+# p_hr_yoni_affective
 ```
 
 
@@ -206,6 +256,23 @@ p_rt_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome
 # p_rt_yoni_physical
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Physical) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome = "HeartRate")
+# p_hr_yoni_physical
+```
+
+
 
 ### Correlation with LIE Scale
 
@@ -240,6 +307,12 @@ p_rt_yoni_total /
   p_rt_yoni_cognitive / 
   p_rt_yoni_affective / 
   p_rt_yoni_physical +
+  patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_hr_yoni_total / 
+  p_hr_yoni_cognitive / 
+  p_hr_yoni_affective / 
+  p_hr_yoni_physical +
   patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```
 
@@ -279,6 +352,22 @@ p_rt_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "RT")
 # p_rt_bes_total
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * BES_Total) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "HeartRate")
+# p_hr_bes_total
+```
+
 
 ### Cognitive Empathy
 
@@ -312,6 +401,22 @@ results$marginal_effects
 ```{r message=FALSE, warning=FALSE}
 p_rt_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "RT")
 # p_rt_bes_cognitive
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * BES_Cognitive) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "HeartRate")
+# p_hr_bes_cognitive
 ```
 
 ### Affective Empathy
@@ -348,6 +453,21 @@ p_rt_bes_affective <- plot_effect(model, results, var = "BES_Affective", outcome
 # p_rt_bes_affective
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * BES_Affective) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_bes_affective <- plot_effect(model, results, var = "BES_Affective", outcome = "HeartRate")
+# p_hr_bes_affective
+```
 
 
 ### Correlation with LIE Scale
@@ -368,5 +488,10 @@ p_conf_bes_total /
 p_rt_bes_total / 
   p_rt_bes_cognitive / 
   p_rt_bes_affective +
+  patchwork::plot_annotation(title = "Empathy", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_hr_bes_total / 
+  p_hr_bes_cognitive / 
+  p_hr_bes_affective +
   patchwork::plot_annotation(title = "Empathy", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```

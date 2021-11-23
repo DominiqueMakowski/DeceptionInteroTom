@@ -126,9 +126,15 @@ df <- read.csv("data/data_combined_wPhysio.csv") %>%
          "LIE_Negativity" = "lie_negativity",
          "LIE_Contextuality" = "lie_contextuality",
          "Confidence" = "DT_confidence",
-         "RT" = "DT_RT") |> 
+         "RT" = "DT_RT",
+         "HeartRate" = "ECG_Rate_MeanRaw_1.5_2.5s") |> 
   mutate(Answer = fct_recode(Answer, Lie = "LIE", Truth = "TRUTH")) |> 
-  select(-HCT_guess, -HCT_noguess, -HCT_onebreath)
+  select(-HCT_guess, -HCT_noguess, -HCT_onebreath) |> 
+  dplyr::filter(!Participant %in% c("S3", "S15", "S19", "S23"))  # No data 
+
+# Adjustments for beta models
+df$Confidence[df$Confidence == 1] <- 0.99999
+df$Confidence[df$Confidence == 0] <- 0.00001
 
 cat(paste("The data consists of",
           report::report_participants(df,

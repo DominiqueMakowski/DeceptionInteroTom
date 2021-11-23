@@ -7,7 +7,7 @@ editor_options:
 ## Heartbeat Counting {.tabset}
 
 
-### Accuracy
+### Interoceptive Accuracy
 
 #### Confidence
 
@@ -37,6 +37,22 @@ results$marginal_effects
 
 ```{r message=FALSE, warning=FALSE}
 p_rt_hct_accuracy <- plot_effect(model, results, var = "HCT_Accuracy", outcome = "RT")
+```
+
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * HCT_Accuracy) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_hct_accuracy <- plot_effect(model, results, var = "HCT_Accuracy", outcome = "HeartRate")
 ```
 
 
@@ -72,6 +88,22 @@ results$marginal_effects
 p_rt_hct_confidence <- plot_effect(model, results, var = "HCT_Confidence", outcome = "RT")
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * HCT_Confidence) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_hct_confidence <- plot_effect(model, results, var = "HCT_Confidence", outcome = "HeartRate")
+```
+
+
 ### Interoceptive Awareness
 
 #### Confidence
@@ -104,6 +136,22 @@ results$marginal_effects
 p_rt_hct_awareness <- plot_effect(model, results, var = "HCT_Awareness", outcome = "RT")
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * HCT_Awareness) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_hct_awareness <- plot_effect(model, results, var = "HCT_Awareness", outcome = "HeartRate")
+```
+
+
 ### Correlation with LIE Scale
 
 ```{r message=FALSE, warning=FALSE}
@@ -119,17 +167,20 @@ r$plot
 p_conf_hct_accuracy / 
   p_conf_hct_confidence / 
   p_conf_hct_awareness +
-  patchwork::plot_annotation(title = "Interoception", theme = theme(plot.title = element_text(hjust = 0.5)))
+  patchwork::plot_annotation(title = "Heartbeat Counting Task", theme = theme(plot.title = element_text(hjust = 0.5)))
 
 p_rt_hct_accuracy / 
   p_rt_hct_confidence / 
   p_rt_hct_awareness +
-  patchwork::plot_annotation(title = "Interoception", theme = theme(plot.title = element_text(hjust = 0.5)))
+  patchwork::plot_annotation(title = "Heartbeat Counting Task", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_hr_hct_accuracy / 
+  p_hr_hct_confidence / 
+  p_hr_hct_awareness +
+  patchwork::plot_annotation(title = "Heartbeat Counting Task", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```
 
 ## Heartbeat Tracking {.tabset}
-
-
 
 
 
@@ -170,6 +221,21 @@ results$marginal_effects
 p_rt_maia_total <- plot_effect(model, results, var = "MAIA_Total", outcome = "RT")
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_Total) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_total <- plot_effect(model, results, var = "MAIA_Total", outcome = "HeartRate")
+```
+
 
 ### Noticing
 
@@ -203,7 +269,20 @@ results$marginal_effects
 p_rt_maia_noticing <- plot_effect(model, results, var = "MAIA_Noticing", outcome = "RT")
 ```
 
+#### Heart Rate
 
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_Noticing) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_noticing <- plot_effect(model, results, var = "MAIA_Noticing", outcome = "HeartRate")
+```
 
 ### Not Distracting
 
@@ -237,6 +316,20 @@ results$marginal_effects
 p_rt_maia_notdistracting <- plot_effect(model, results, var = "MAIA_NotDistracting", outcome = "RT")
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_NotDistracting) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_notdistracting <- plot_effect(model, results, var = "MAIA_NotDistracting", outcome = "HeartRate")
+```
 
 
 ### Body Listening
@@ -271,6 +364,257 @@ results$marginal_effects
 p_rt_maia_bodylistening <- plot_effect(model, results, var = "MAIA_BodyListening", outcome = "RT")
 ```
 
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_BodyListening) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_bodylistening <- plot_effect(model, results, var = "MAIA_BodyListening", outcome = "HeartRate")
+```
+
+### Trusting
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_Trusting) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_maia_trusting <- plot_effect(model, results, var = "MAIA_Trusting", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_Trusting) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_maia_trusting <- plot_effect(model, results, var = "MAIA_Trusting", outcome = "RT")
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_Trusting) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_trusting <- plot_effect(model, results, var = "MAIA_Trusting", outcome = "HeartRate")
+```
+
+### Not Worrying
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_NotWorrying) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_maia_notworrying <- plot_effect(model, results, var = "MAIA_NotWorrying", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_NotWorrying) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_maia_notworrying <- plot_effect(model, results, var = "MAIA_NotWorrying", outcome = "RT")
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_NotWorrying) + (1|Participant), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_notworrying <- plot_effect(model, results, var = "MAIA_NotWorrying", outcome = "HeartRate")
+```
+
+### Emotional Awareness
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_EmotionalAwareness) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_maia_emotionalawareness <- plot_effect(model, results, var = "MAIA_EmotionalAwareness", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_EmotionalAwareness) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_maia_emotionalawareness <- plot_effect(model, results, var = "MAIA_EmotionalAwareness", outcome = "RT")
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_EmotionalAwareness) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_emotionalawareness <- plot_effect(model, results, var = "MAIA_EmotionalAwareness", outcome = "HeartRate")
+```
+
+### Attention Regulation
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_AttentionRegulation) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_maia_attentionregulation <- plot_effect(model, results, var = "MAIA_AttentionRegulation", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_AttentionRegulation) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_maia_attentionregulation <- plot_effect(model, results, var = "MAIA_AttentionRegulation", outcome = "RT")
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_AttentionRegulation) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_attentionregulation <- plot_effect(model, results, var = "MAIA_AttentionRegulation", outcome = "HeartRate")
+```
+
+
+### Self Regulation
+
+#### Confidence
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_SelfRegulation) + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_conf_maia_selfregulation <- plot_effect(model, results, var = "MAIA_SelfRegulation", outcome = "Confidence")
+```
+
+#### RT
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ Answer / (Condition * MAIA_SelfRegulation) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_rt_maia_selfregulation <- plot_effect(model, results, var = "MAIA_SelfRegulation", outcome = "RT")
+```
+
+#### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_SelfRegulation) + (1|Participant) + (1|Item), 
+                 data = df)
+
+results <- get_parameters(model)
+results$params
+results$marginal_effects
+```
+
+```{r message=FALSE, warning=FALSE}
+p_hr_maia_selfregulation <- plot_effect(model, results, var = "MAIA_SelfRegulation", outcome = "HeartRate")
+```
+
 
 ### Correlation with LIE Scale
 
@@ -282,16 +626,37 @@ r$plot +
 
 ### Summary
 
-```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
+```{r message=FALSE, warning=FALSE, fig.height=figheight*4, fig.width=figwidth*1.5}
 p_conf_maia_total / 
   p_conf_maia_noticing / 
   p_conf_maia_notdistracting / 
-  p_conf_maia_bodylistening +
+  p_conf_maia_bodylistening /
+  p_conf_maia_trusting / 
+  p_conf_maia_notworrying / 
+  p_conf_maia_emotionalawareness / 
+  p_conf_maia_attentionregulation / 
+  p_conf_maia_selfregulation +
   patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
 
 p_rt_maia_total / 
   p_rt_maia_noticing / 
   p_rt_maia_notdistracting / 
-  p_rt_maia_bodylistening +
+  p_rt_maia_bodylistening /
+  p_rt_maia_trusting / 
+  p_rt_maia_notworrying / 
+  p_rt_maia_emotionalawareness / 
+  p_rt_maia_attentionregulation / 
+  p_rt_maia_selfregulation +
+  patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+p_hr_maia_total / 
+  p_hr_maia_noticing / 
+  p_hr_maia_notdistracting / 
+  p_hr_maia_bodylistening /
+  p_hr_maia_trusting / 
+  p_hr_maia_notworrying / 
+  p_hr_maia_emotionalawareness / 
+  p_hr_maia_attentionregulation / 
+  p_hr_maia_selfregulation +
   patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```

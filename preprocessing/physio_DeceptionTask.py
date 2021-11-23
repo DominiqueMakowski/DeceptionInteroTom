@@ -38,29 +38,43 @@ for participant in list_participants:
         # Epoching
         events = nk.events_find(bio["LUX"], duration_min=3)
         index = np.arange(1, len(events["onset"]) + 1, 4)
-        for window in [3.5, 3, 2.5, 2]:
-            epochs = nk.epochs_create(
-                signal,
-                events["onset"][index],
-                epochs_start=-0.5,
-                epochs_end=window,
-                sampling_rate=sampling_rate,
-            )
-            if window == 3.5:  # Store rate signal for the longest epoch
-                rate_signal = pd.DataFrame([epochs[i]["ECG_Rate"].values for i in epochs.keys()])
-                data[f"ECG_Rate_MeanRaw_2_3s"] = rate_signal.loc[:, 2500:3500].mean(axis=1)
-                data[f"ECG_Rate_Mean_2_3s"] = data[f"ECG_Rate_MeanRaw_2_3s"] - rate_signal[500]
-                data[f"ECG_Rate_MeanRaw_1.5_2.5s"] = rate_signal.loc[:, 2000:3000].mean(axis=1)
-                data[f"ECG_Rate_Mean_1.5_2.5s"] = (
-                    data[f"ECG_Rate_MeanRaw_1.5_2.5s"] - rate_signal[500]
-                )
-                data[f"ECG_Rate_MeanRaw_1.5_3s"] = rate_signal.loc[:, 2000:3500].mean(axis=1)
-                data[f"ECG_Rate_Mean_1.5_3s"] = data[f"ECG_Rate_MeanRaw_1.5_3s"] - rate_signal[500]
-                rate_signal = pd.concat([data, rate_signal], axis=1)
-                df_signal = pd.concat([df_signal, rate_signal], axis=0)
-            temp = nk.ecg_analyze(epochs, sampling_rate=sampling_rate).reset_index(drop=True)
-            data[f"ECG_Rate_MeanRaw_{window}s"] = temp["ECG_Rate_Mean"] + temp["ECG_Rate_Baseline"]
-            data[f"ECG_Rate_Mean_{window}s"] = temp["ECG_Rate_Mean"]
+        epochs = nk.epochs_create(
+            signal,
+            events["onset"][index],
+            epochs_start=-0.5,
+            epochs_end=3.5,
+            sampling_rate=sampling_rate,
+        )
+        rate_signal = pd.DataFrame([epochs[i]["ECG_Rate"].values for i in epochs.keys()])
+        data[f"ECG_Rate_MeanRaw_1.5_2.5s"] = rate_signal.loc[:, 2000:3000].mean(axis=1)
+        data[f"ECG_Rate_Mean_1.5_2.5s"] = data[f"ECG_Rate_MeanRaw_1.5_2.5s"] - rate_signal[500]
+        rate_signal = pd.concat([data, rate_signal], axis=1)
+        df_signal = pd.concat([df_signal, rate_signal], axis=0)
+        # for window in [3.5, 3, 2.5, 2]:
+        #     epochs = nk.epochs_create(
+        #         signal,
+        #         events["onset"][index],
+        #         epochs_start=-0.5,
+        #         epochs_end=window,
+        #         sampling_rate=sampling_rate,
+        #     )
+        #     if window == 3.5:  # Store rate signal for the longest epoch
+        #         rate_signal = pd.DataFrame([epochs[i]["ECG_Rate"].values for i in epochs.keys()])
+        #         data[f"ECG_Rate_MeanRaw_1_3s"] = rate_signal.loc[:, 1500:3500].mean(axis=1)
+        #         data[f"ECG_Rate_Mean_1_3s"] = data[f"ECG_Rate_MeanRaw_1_3s"] - rate_signal[500]
+        #         data[f"ECG_Rate_MeanRaw_2_3s"] = rate_signal.loc[:, 2500:3500].mean(axis=1)
+        #         data[f"ECG_Rate_Mean_2_3s"] = data[f"ECG_Rate_MeanRaw_2_3s"] - rate_signal[500]
+        #         data[f"ECG_Rate_MeanRaw_1.5_2.5s"] = rate_signal.loc[:, 2000:3000].mean(axis=1)
+        #         data[f"ECG_Rate_Mean_1.5_2.5s"] = (
+        #             data[f"ECG_Rate_MeanRaw_1.5_2.5s"] - rate_signal[500]
+        #         )
+        #         data[f"ECG_Rate_MeanRaw_1.5_3s"] = rate_signal.loc[:, 2000:3500].mean(axis=1)
+        #         data[f"ECG_Rate_Mean_1.5_3s"] = data[f"ECG_Rate_MeanRaw_1.5_3s"] - rate_signal[500]
+        #         rate_signal = pd.concat([data, rate_signal], axis=1)
+        #         df_signal = pd.concat([df_signal, rate_signal], axis=0)
+        #     temp = nk.ecg_analyze(epochs, sampling_rate=sampling_rate).reset_index(drop=True)
+        #     data[f"ECG_Rate_MeanRaw_{window}s"] = temp["ECG_Rate_Mean"] + temp["ECG_Rate_Baseline"]
+        #     data[f"ECG_Rate_Mean_{window}s"] = temp["ECG_Rate_Mean"]
 
     # Concat
     df = pd.concat([df, data], axis=0)

@@ -146,6 +146,7 @@ df %>%
 
 ```{r warning=FALSE}
 df_physio <- read.csv("data/data_physio_DeceptionTask.csv") |> 
+  dplyr::filter(ID != 30) |> 
   tidyr::pivot_longer(starts_with("X"), names_to = "Time", values_to = "HeartRate") |> 
   mutate(Time = as.numeric(str_remove(Time, "X"))-500,
          group = paste0(ID, condition, instruction),
@@ -157,7 +158,7 @@ df_physio <- read.csv("data/data_physio_DeceptionTask.csv") |>
   
 df_physio |> 
   ggplot(aes(x = Time, y = HeartRate)) +
-  geom_rect(aes(xmin=1500, xmax=2500, ymin=-65, ymax=90), alpha=0.1, fill = "green") +
+  annotate("rect", xmin=1500, xmax=2500, ymin=-Inf, ymax=Inf, alpha=0.1, fill = "green") +
   geom_line(aes(color = condition, linetype = instruction), size=1) +
   geom_vline(aes(xintercept=0), linetype = "dotted") +
   labs(y = "Average Heart Rate (bpm)", x = "Time (ms)") +
@@ -182,14 +183,35 @@ df |>
 
 #### Outliers
 
+##### Participants
+
+```{r warning=FALSE}
+df |> 
+  select(Participant, Confidence, RT, HeartRate) |> 
+  tidyr::pivot_longer(-Participant) |> 
+  ggplot(aes(x=Participant, y=value)) +
+  geom_violin(aes(fill=name), color="white", alpha=0.5) +
+  geom_jitter(aes(color=name), width = 0.25, height=0, shape="+", size=2) +
+  facet_wrap(~name, scales="free", nrow=3) +
+  guides(fill="none", color="none")
+
+df$Confidence[df$Participant %in% c("S9", "S29")] <- NA # Extreme responses
+sum(is.na(df$Confidence)) / nrow(df) * 100
+df$HeartRate[df$Participant == "S30"] <- NA # Extreme values
+sum(is.na(df$HeartRate)) / nrow(df) * 100
+df$RT[df$Participant == "S13"] <- NA # Slower than the others
+df$RT[df$RT > 8.25] <- NA # Extreme RT values 
+sum(is.na(df$RT)) / nrow(df) * 100
+```
+
+##### Observations
+
 ```{r warning=FALSE}
 df <- df |> 
   # Remove participants
-  dplyr::filter(Participant != "S9",  # Extreme answers
-                !Participant %in% c("S3", "S15", "S19", "S23")) |>  # No data
   group_by(Participant) |> 
-  mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore_robust", threshold = qnorm(0.999))),
-         Outliers_Physio = as.logical(performance::check_outliers(ECG_Rate_Mean_2.5s, method = "zscore_robust", threshold = qnorm(0.999))))
+  mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore", threshold = qnorm(0.9999))),
+         Outliers_Physio = as.logical(performance::check_outliers(HeartRate, method = "zscore", threshold = qnorm(0.9999)))) |> 
   ungroup()
 ```
 
@@ -206,7 +228,7 @@ df |>
   ggtitle("Number of Trial Dropped Per Participant")
   
 df$RT[df$Outliers_RT] <- NA
-df$ECG_Rate_Mean_2.5s[df$Outliers_Physio] <- NA
+df$HeartRate[df$Outliers_Physio] <- NA
 ```
 
 
@@ -228,7 +250,7 @@ p2 <- df |>
   scale_y_continuous(expand=expansion(c(0, .05))) +
   facet_wrap(~Answer)
 p3 <- df |> 
-  ggplot(aes(x = ECG_Rate_Mean_2_3s, fill = Participant)) +
+  ggplot(aes(x = HeartRate, fill = Participant)) +
   geom_density(alpha = 0.1) +
   see::scale_fill_material_d(palette = "rainbow", guide = "none") +
   scale_x_continuous(expand=expansion(c(0, .05))) +
