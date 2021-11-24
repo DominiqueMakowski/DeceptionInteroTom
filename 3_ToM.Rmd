@@ -54,7 +54,7 @@ plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidenc
   annot$x <- ifelse(annot$Condition == "Polygraph", 
                     annot$x - 0.05 * range_x, 
                     annot$x + 0.05 * range_x)
-  annot$y <- max(data[[outcome]]) - 0.01 * diff(range(data[[outcome]]))
+  annot$y <- max(data[[outcome]], na.rm=TRUE) - 0.01 * diff(range(data[[outcome]], na.rm=TRUE))
     
   
   p <- ggplot(link_data, aes_string(x = var, y = "Predicted")) +
@@ -84,7 +84,6 @@ plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidenc
 }
 
 p_conf_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "Confidence")
-# p_conf_yoni_total
 ```
 
 #### RT

@@ -631,32 +631,39 @@ p_conf_maia_total /
   p_conf_maia_noticing / 
   p_conf_maia_notdistracting / 
   p_conf_maia_bodylistening /
-  p_conf_maia_trusting / 
-  p_conf_maia_notworrying / 
+  p_conf_maia_trusting +
+  patchwork::plot_annotation(title = "Interoception (MAIA) 1/2", theme = theme(plot.title = element_text(hjust = 0.5)))
+  
+p_conf_maia_notworrying / 
   p_conf_maia_emotionalawareness / 
   p_conf_maia_attentionregulation / 
   p_conf_maia_selfregulation +
-  patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
+  patchwork::plot_annotation(title = "Interoception (MAIA) 2/2", theme = theme(plot.title = element_text(hjust = 0.5)))
 
-p_rt_maia_total / 
+
+p_rt_maia_total /
   p_rt_maia_noticing / 
   p_rt_maia_notdistracting / 
   p_rt_maia_bodylistening /
-  p_rt_maia_trusting / 
-  p_rt_maia_notworrying / 
+  p_rt_maia_trusting +
+  patchwork::plot_annotation(title = "Interoception (MAIA) 1/2", theme = theme(plot.title = element_text(hjust = 0.5)))
+
+  p_rt_maia_notworrying + 
   p_rt_maia_emotionalawareness / 
   p_rt_maia_attentionregulation / 
   p_rt_maia_selfregulation +
-  patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
+  patchwork::plot_annotation(title = "Interoception (MAIA) 2/2", theme = theme(plot.title = element_text(hjust = 0.5)))
 
 p_hr_maia_total / 
   p_hr_maia_noticing / 
   p_hr_maia_notdistracting / 
   p_hr_maia_bodylistening /
-  p_hr_maia_trusting / 
-  p_hr_maia_notworrying / 
+  p_hr_maia_trusting +
+  patchwork::plot_annotation(title = "Interoception (MAIA) 1/2", theme = theme(plot.title = element_text(hjust = 0.5)))
+  
+p_hr_maia_notworrying + 
   p_hr_maia_emotionalawareness / 
   p_hr_maia_attentionregulation / 
   p_hr_maia_selfregulation +
-  patchwork::plot_annotation(title = "Interoception (MAIA)", theme = theme(plot.title = element_text(hjust = 0.5)))
+  patchwork::plot_annotation(title = "Interoception (MAIA) 2/2", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```
