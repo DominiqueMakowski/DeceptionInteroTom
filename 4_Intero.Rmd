@@ -648,7 +648,7 @@ p_rt_maia_total /
   p_rt_maia_trusting +
   patchwork::plot_annotation(title = "Interoception (MAIA) 1/2", theme = theme(plot.title = element_text(hjust = 0.5)))
 
-  p_rt_maia_notworrying + 
+  p_rt_maia_notworrying / 
   p_rt_maia_emotionalawareness / 
   p_rt_maia_attentionregulation / 
   p_rt_maia_selfregulation +
@@ -661,7 +661,7 @@ p_hr_maia_total /
   p_hr_maia_trusting +
   patchwork::plot_annotation(title = "Interoception (MAIA) 1/2", theme = theme(plot.title = element_text(hjust = 0.5)))
   
-p_hr_maia_notworrying + 
+p_hr_maia_notworrying / 
   p_hr_maia_emotionalawareness / 
   p_hr_maia_attentionregulation / 
   p_hr_maia_selfregulation +
