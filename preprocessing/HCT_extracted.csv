@@ -1,4 +1,4 @@
-"ID","time","hbcount_reported","HCT_confidence","HCT_confidenceRT","hbcount_real","numerator","denominator","HCT_accuracy","HCT_awareness"
+"ID","time","hbcount_reported","HCT_Confidence","HCT_ConfidenceRT","hbcount_real","numerator","denominator","HCT_Accuracy","HCT_Awareness"
 1,20,23,0.39537037037037,"5.83035126526374",30,7,26.5,0.735849056603774,-0.775236333122807
 1,25,34,0.50462962962963,"4.46479936409742",59,25,46.5,0.462365591397849,-0.775236333122807
 1,30,43,0.350925925925926,"2.28219215525314",44,1,43.5,0.977011494252874,-0.775236333122807

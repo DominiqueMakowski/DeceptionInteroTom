@@ -11,7 +11,7 @@ library(tidyverse)
 rm(list=ls())
 cat("\014")
 
-mydata <- read.csv('../../data/data_questionnaire/Demographics.csv', stringsAsFactors = FALSE)[-c(1:2), -c(1:17, 30, 32, 34, 36)] 
+mydata <- read.csv('../data/data_questionnaire/Demographics.csv', stringsAsFactors = FALSE)[-c(1:2), -c(1:17, 30, 32, 34, 36)] 
 
 mydata <- mydata %>% 
   rename(Name = Q2,
@@ -42,8 +42,8 @@ rm(list=ls())
 cat("\014")
 
 mydata <- data.frame()
-for (participant in list.files("../../data/data_experimental")) {
-  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/yoni/", participant, "_untitled.csv"))[-c(1:3,28,61,104), -c(4,5,7:38,42:47)]
+for (participant in list.files("../data/data_experimental")) {
+  df_sub <- read.csv(paste0("../data/data_experimental/", participant, "/yoni/", participant, "_untitled.csv"))[-c(1:3,28,61,104), -c(4,5,7:38,42:47)]
   mydata <- rbind(mydata, df_sub)
 }
 
@@ -58,10 +58,10 @@ results <- data %>%
   group_by(ID, condition) %>%
   summarise(total = sum(answer)) %>%
   pivot_wider(names_from = condition, values_from = total) %>%
-  mutate(yoni_total = affect+cognitive+physical) %>%
-  rename(yoni_affective = affect,
-         yoni_cognitive = cognitive,
-         yoni_physical = physical)
+  mutate(YONI_Total = affect+cognitive+physical) %>%
+  rename(YONI_Affective = affect,
+         YONI_Cognitive = cognitive,
+         YONI_Physical = physical)
 
 write.csv(data, file = "yoni_extracted.csv", row.names=FALSE)
 write.csv(results, file = "yoni_processed.csv", row.names=FALSE)
@@ -71,7 +71,7 @@ write.csv(results, file = "yoni_processed.csv", row.names=FALSE)
 rm(list=ls())
 cat("\014")
 
-mydata <- read.csv("../../data/data_questionnaire/BES.csv", stringsAsFactors = FALSE)[-c(1, 2), -c(1:17)] 
+mydata <- read.csv("../data/data_questionnaire/BES.csv", stringsAsFactors = FALSE)[-c(1, 2), -c(1:17)] 
 
 results <- mydata %>% 
   rename(Q1 = Q3_1,
@@ -111,9 +111,9 @@ results <- mydata %>%
          Q13 = as.numeric(Q13), Q14 = as.numeric(Q14), Q15 = as.numeric(Q15), Q16 = as.numeric(Q16),
          Q17 = as.numeric(Q17), Q18 = as.numeric(Q18), Q19 = as.numeric(Q19), Q20 = as.numeric(Q20)) %>%
   
-  mutate(BES_cognitive = Q3+Q6+Q9+Q10+Q12+Q14+Q16+Q19+Q20, 
-         BES_affective = Q1+Q2+Q4+Q5+Q7+Q8+Q11+Q13+Q15+Q17+Q18,
-         BES_total = BES_cognitive+BES_affective) %>% 
+  mutate(BES_Cognitive = Q3+Q6+Q9+Q10+Q12+Q14+Q16+Q19+Q20, 
+         BES_Affective = Q1+Q2+Q4+Q5+Q7+Q8+Q11+Q13+Q15+Q17+Q18,
+         BES_Total = BES_Cognitive+BES_Affective) %>% 
   
   arrange(ID)
 
@@ -125,22 +125,22 @@ rm(list=ls())
 cat("\014")
 
 mydata <- data.frame()
-for (participant in list.files("../../data/data_experimental")) {
-  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/heartbeat/", participant, "_heartbeat.csv"))[-c(6:9), -c(1, 3:8, 12:31, 33:38)]  
+for (participant in list.files("../data/data_experimental")) {
+  df_sub <- read.csv(paste0("../data/data_experimental/", participant, "/heartbeat/", participant, "_heartbeat.csv"))[-c(6:9), -c(1, 3:8, 12:31, 33:38)]  
   mydata <- rbind(mydata, df_sub)
 }
 
 data <- mydata %>% 
   rename(hbcount_reported = heartbeatresponse.text,
-       HCT_confidence = confidenceslider.response,
-       HCT_confidenceRT = confidenceslider.rt,
+       HCT_Confidence = confidenceslider.response,
+       HCT_ConfidenceRT = confidenceslider.rt,
        ID = participant) %>% 
   
   select(ID, everything()) %>% # move ID column to front
   
   mutate(hbcount_reported = str_remove_all(hbcount_reported, "Enter Number")) %>% 
   mutate(hbcount_reported = as.numeric(hbcount_reported),
-         HCT_confidence = as.numeric(HCT_confidence)) %>% 
+         HCT_Confidence = as.numeric(HCT_Confidence)) %>% 
   
   arrange(ID, time)
 
@@ -154,48 +154,48 @@ data <- data %>%
   mutate(numerator = hbcount_real - hbcount_reported) %>% 
   mutate(numerator = abs(numerator)) %>% 
   mutate(denominator = (hbcount_real + hbcount_reported)/2) %>% 
-  mutate(HCT_accuracy = 1 - numerator/denominator)
+  mutate(HCT_Accuracy = 1 - numerator/denominator)
 
 df_awareness <- data.frame()
 for(participant in unique(data$ID)) {
-  conf <- data[data$ID == participant, "HCT_confidence"]
-  acc <- data[data$ID == participant, "HCT_accuracy"]
+  conf <- data[data$ID == participant, "HCT_Confidence"]
+  acc <- data[data$ID == participant, "HCT_Accuracy"]
   awa <- cor(conf, acc, use = "pairwise.complete.obs")
   df_awareness <- rbind(df_awareness,
                        data.frame(ID = participant,
-                                  HCT_awareness = awa))
+                                  HCT_Awareness = awa))
 }
 
 data <- merge(data, df_awareness, by = "ID")
 results <- data %>% 
-  select(c(ID, HCT_confidence, HCT_accuracy, HCT_awareness)) %>% 
+  select(c(ID, HCT_Confidence, HCT_Accuracy, HCT_Awareness)) %>% 
   group_by(ID) %>%
   summarise_all(mean, na.rm = TRUE)
 
-parttwo <- data.frame()
-for (participant in list.files("../../data/data_experimental")) {
-  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/heartbeat/", participant, "_heartbeat.csv"))[-c(1:5, 9), -c(1:13, 16:19, 22:25, 28:31, 33:38)]  
-  parttwo <- rbind(parttwo, df_sub)
-}
-  
-parttwo <- parttwo %>% 
-  rename(guess = key_guess.keys,
-         guessRT = key_guess.rt,
-         noguess = key_noguess.keys,
-         noguessRT = key_noguess.rt,
-         onebreath = key_noguess_perturbed.keys,
-         onebreathRT = key_noguess_perturbed.rt,
-         ID = participant) %>% 
-  group_by(ID) %>% 
-  summarise_all(funs(trimws(paste(., collapse = ''))))
-
-parttwo <- parttwo %>% 
-  mutate(HCT_guess = str_count(parttwo$guess, "space"),
-         HCT_noguess = str_count(parttwo$noguess, "space"),
-         HCT_onebreath = str_count(parttwo$onebreath, "space")) %>% 
-  select(c(ID, HCT_guess, HCT_noguess, HCT_onebreath))
-
-results <- left_join(results, parttwo)
+# parttwo <- data.frame()
+# for (participant in list.files("../data/data_experimental")) {
+#   df_sub <- read.csv(paste0("../data/data_experimental/", participant, "/heartbeat/", participant, "_heartbeat.csv"))[-c(1:5, 9), -c(1:13, 16:19, 22:25, 28:31, 33:38)]  
+#   parttwo <- rbind(parttwo, df_sub)
+# }
+#   
+# parttwo <- parttwo %>% 
+#   rename(guess = key_guess.keys,
+#          guessRT = key_guess.rt,
+#          noguess = key_noguess.keys,
+#          noguessRT = key_noguess.rt,
+#          onebreath = key_noguess_perturbed.keys,
+#          onebreathRT = key_noguess_perturbed.rt,
+#          ID = participant) %>% 
+#   group_by(ID) %>% 
+#   summarise_all(funs(trimws(paste(., collapse = ''))))
+# 
+# parttwo <- parttwo %>% 
+#   mutate(HCT_guess = str_count(parttwo$guess, "space"),
+#          HCT_noguess = str_count(parttwo$noguess, "space"),
+#          HCT_onebreath = str_count(parttwo$onebreath, "space")) %>% 
+#   select(c(ID, HCT_guess, HCT_noguess, HCT_onebreath))
+# 
+# results <- left_join(results, parttwo)
 
 write.csv(data, file = "HCT_extracted.csv", row.names=FALSE)
 write.csv(results, file = "HCT_processed.csv", row.names=FALSE)
@@ -205,7 +205,7 @@ write.csv(results, file = "HCT_processed.csv", row.names=FALSE)
 rm(list=ls())
 cat("\014")
 
-mydata <- read.csv('../../data/data_questionnaire/MAIA2.csv', stringsAsFactors = FALSE)[-c(1, 2), -c(1:17)] 
+mydata <- read.csv('../data/data_questionnaire/MAIA2.csv', stringsAsFactors = FALSE)[-c(1, 2), -c(1:17)] 
 
 results <- mydata %>% 
   rename(Q1 = Q3_1,
@@ -270,15 +270,15 @@ results <- mydata %>%
   
   mutate(MAIA1 = (Q1+Q2+Q3+Q4)/4, MAIA2 = (Q5+Q6+Q7+Q8+Q9+Q10)/6, MAIA3 = (Q11+Q12+Q13+Q14+Q15)/5, MAIA4 = (Q16+Q17+Q18+Q19+Q20+Q21+Q22)/7,
         MAIA5 = (Q23+Q24+Q25+Q26+Q27)/5, MAIA6 = (Q28+Q29+Q30+Q31)/4, MAIA7 = (Q32+Q33+Q34)/3, MAIA8 = (Q35+Q36+Q37)/3) %>% 
-  mutate(MAIA_total = (MAIA1+MAIA2+MAIA3+MAIA4+MAIA5+MAIA6+MAIA7+MAIA8)/8) %>%
-  rename(MAIA_noticing = MAIA1,
-         MAIA_not_distracting = MAIA2,
-         MAIA_not_worrying = MAIA3,
-         MAIA_attention_regulation = MAIA4,
-         MAIA_emotional_awareness = MAIA5,
-         MAIA_self_regulation = MAIA6,
-         MAIA_body_listening = MAIA7,
-         MAIA_trusting = MAIA8) %>% 
+  mutate(MAIA_Total = (MAIA1+MAIA2+MAIA3+MAIA4+MAIA5+MAIA6+MAIA7+MAIA8)/8) %>%
+  rename(MAIA_Noticing = MAIA1,
+         MAIA_NotDistracting = MAIA2,
+         MAIA_NotWorrying = MAIA3,
+         MAIA_AttentionRegulation = MAIA4,
+         MAIA_EmotionalAwareness = MAIA5,
+         MAIA_SelfRegulation = MAIA6,
+         MAIA_BodyListening = MAIA7,
+         MAIA_Trusting = MAIA8) %>% 
   
   arrange(ID)
 
@@ -289,7 +289,7 @@ write.csv(results, file = "MAIA2_processed.csv", row.names=FALSE)
 rm(list=ls())
 cat("\014")
 
-mydata <- read.csv('../../data/data_questionnaire/Lie Scale.csv', stringsAsFactors = FALSE)[-c(1, 2), -c(1:17)] 
+mydata <- read.csv('../data/data_questionnaire/Lie Scale.csv', stringsAsFactors = FALSE)[-c(1, 2), -c(1:17)] 
 
 results <- mydata %>% 
   rename(Q1 = Q1_4,
@@ -317,14 +317,14 @@ results <- mydata %>%
          Q13 = as.numeric(Q13), Q14 = as.numeric(Q14), Q15 = as.numeric(Q15), Q16 = as.numeric(Q16),
          Q17 = as.numeric(Q17), Q18 = as.numeric(Q18)) %>% 
   
-  mutate(lie_ability = (Q4+Q5+Q6+Q7)/4, 
-         lie_frequency = (Q1+Q2+Q3+Q8)/4, 
-         lie_negativity = (Q9+Q11+Q13+Q16)/4, 
-         lie_contextuality = (Q10+Q12+Q14+Q15)/4) %>% 
+  mutate(LIE_Ability = (Q4+Q5+Q6+Q7)/4, 
+         LIE_Frequency = (Q1+Q2+Q3+Q8)/4, 
+         LIE_Negativity = (Q9+Q11+Q13+Q16)/4, 
+         LIE_Contextuality = (Q10+Q12+Q14+Q15)/4) %>% 
   
   arrange(ID)
 
-write.csv(results, file = "liescale_processed.csv", row.names=FALSE)
+write.csv(results, file = "lie_processed.csv", row.names=FALSE)
 ```
 
 ```{r deception subj}
@@ -332,51 +332,38 @@ rm(list=ls())
 cat("\014")
 
 mydata <- data.frame()
-for (participant in list.files("../../data/data_experimental")) {
-  df_sub <- read.csv(paste0("../../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), c(1:4, 29, 31, 35, 36, 43, 45, 47)] %>% 
-    mutate(trial = c(1:80),
-           condition = c(rep("Social", 40), rep("Polygraph", 40)))
+for (participant in list.files("../data/data_experimental")) {
+  df_sub <- read.csv(paste0("../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), c(1:4, 29, 31, 35, 36, 43, 45, 47)] %>% 
+    mutate(Trial = c(1:80),
+           Condition = c(rep("Social", 40), rep("Polygraph", 40)))
   mydata <- rbind(mydata, df_sub)
 }
 
-inclusion <- read.csv("../final_processing/Errors.csv") %>%
-  rename(ID = ï..participant,
-         trial = Trial,
-         inclusion = Inclusion,
-         inclusion2 = Inclusion2)
-
 data <- mydata %>% 
-  rename(item = V1,
-       style = V2,
-       instruction = V3,
-       question = V4,
+  rename(Item = V1,
+       Phrasing = V2,
+       Answer = V3,
+       Question = V4,
        social_start = V29,
        social_stop = V31,
-       DT_confidence = V35,
-       DT_confidenceRT = V36,
+       Confidence = V35,
+       ConfidenceRT = V36,
        polyg_start = V43,
        polyg_stop = V45,
        ID = V47) %>% 
   
-  mutate(DT_confidence = as.numeric(DT_confidence),
+  mutate(Confidence = as.numeric(Confidence),
          social_start = as.numeric(social_start),
          social_stop = as.numeric(social_stop),
          polyg_start = as.numeric(polyg_start),
          polyg_stop = as.numeric(polyg_stop),
          ID = as.numeric(ID)) %>%
-  mutate(DT_RT = ifelse(condition == "Social", social_stop - social_start,
-         ifelse(condition == "Polygraph", polyg_stop - polyg_start, NA))) %>%
+  mutate(RT = ifelse(Condition == "Social", social_stop - social_start,
+         ifelse(Condition == "Polygraph", polyg_stop - polyg_start, NA))) %>%
 
-  left_join(inclusion) %>%
-  select(ID, trial, condition, inclusion, inclusion2, everything()) # move columns to front
-
-results <- data %>%
-  group_by(ID, instruction, style) %>%
-  summarise(DT_RT_avg = mean(DT_RT, na.rm = TRUE),
-            DT_confidence_avg = mean(DT_confidence, na.rm = TRUE))
+  select(ID, Trial, Condition, everything()) # move columns to front
 
 write.csv(data, file = "deceptiontask_extracted.csv", row.names=FALSE)
-write.csv(results, file = "deceptiontask_processed.csv", row.names=FALSE)
 ```
 
 ```{r combine data}
@@ -389,11 +376,13 @@ data_combined <- read.csv("deceptiontask_extracted.csv") %>%
   left_join(read.csv("HCT_processed.csv")) %>% 
   left_join(read.csv("MAIA2_processed.csv")) %>% 
   select(-c(contains(paste0("Q", 0:9)))) %>%
-  left_join(read.csv("liescale_processed.csv")) %>% 
+  left_join(read.csv("lie_processed.csv")) %>% 
   select(-c(contains(paste0("Q", 0:9)))) %>%
   left_join(read.csv("demo.csv")) %>% 
-  select(-c(Name, Matric, HP, Email, Birthday, School, Course, LivedinSG))
+  select(-c(Name, Matric, HP, Email, Birthday, School, Course, LivedinSG)) %>% 
+  rename(Participant = ID) %>% 
+  mutate(Answer = fct_recode(Answer, Lie = "LIE", Truth = "TRUTH")) 
 
-write.csv(data_combined, file = "../../data/data_combined.csv", row.names = FALSE)
+write.csv(data_combined, file = "../data/data_combined.csv", row.names = FALSE)
 ```
 

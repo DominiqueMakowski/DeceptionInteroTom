@@ -10,7 +10,7 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 ### Get psychopy data files ---------------------------------------------------
 directory = os.getcwd()
-list_participants = os.listdir(directory + "/../../data/data_experimental")
+list_participants = os.listdir(directory + "/../data/data_experimental")
 
 ### Utilities -----------------------------------------------------------------
 def extract_taps(data, key, rt):
@@ -58,7 +58,7 @@ df_all = pd.DataFrame([])
 
 for i, participant in enumerate(list_participants):
 #     # Check number of photosensor events per participant (16 expected)
-#     subdir = directory + "/../../data/data_experimental/" + participant + "/heartbeat/"
+#     subdir = directory + "/../data/data_experimental/" + participant + "/heartbeat/"
 #     filename = [i for i in os.listdir(subdir) if i.endswith('.txt')][0]
 #     bio, sampling_rate = nk.read_bitalino(subdir + "/" + filename)
 #     n_events = len(nk.events_find(bio["LUX"])['onset'])
@@ -67,7 +67,7 @@ for i, participant in enumerate(list_participants):
 #     # participants 012, 023: 3 extra
     
     # Directory of where heartbeat data is stored
-    subdir = directory + "/../../data/data_experimental/" + participant + "/heartbeat/"
+    subdir = directory + "/../data/data_experimental/" + participant + "/heartbeat/"
 
     # Get psychopy data
     print(f"Reading psychopy data for participant: {participant}\n======================")
@@ -130,4 +130,4 @@ for i, participant in enumerate(list_participants):
     df['ID'] = i + 1  # append participant number
     df_all = pd.concat([df_all, df])  # combine all participants
 
-df_all.to_csv("HCT_Tracking.csv", na_rep="NA", index=False)
+df_all.to_csv("HCT_tracking.csv", na_rep="NA", index=False)

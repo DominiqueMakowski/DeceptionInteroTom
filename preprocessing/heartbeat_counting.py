@@ -8,16 +8,20 @@ import pandas as pd
 
 # Set working directory
 directory = os.getcwd()
-list_participants = os.listdir(directory + "/../../data/data_experimental")
-HCT_real = {"time": np.array([20, 25, 30, 35, 40])}
+list_participants = os.listdir(directory + "/../data/data_experimental")
+HCT_real = {"task": np.array([20, 25, 30, 35, 40])}
 for participant in list_participants:
-    subdir = directory + "/../../data/data_experimental/" + participant + "/heartbeat/"
+    subdir = directory + "/../data/data_experimental/" + participant + "/heartbeat/"
 
 # Load data
     filename = [i for i in os.listdir(subdir) if i.endswith('.txt')][0]
     bio, sampling_rate = nk.read_bitalino(subdir + "/" + filename)
 
-
+# Clean ecg signal
+    ecg_cleaned = nk.ecg_clean(bio["ECGBIT"], sampling_rate=sampling_rate)
+    
+# Epoching
+    events = nk.events_find(bio["LUX"], duration_min = 3, event_conditions=['start', 'stop'] * 8)
     event_conditions = np.array(['start', 'stop'] * 8)
     events_start = np.array(events["onset"])[event_conditions == 'start']
     events_duration = np.array(events["onset"])[event_conditions == 'stop'] - events_start

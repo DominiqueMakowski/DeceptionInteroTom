@@ -92,44 +92,11 @@ summary(report::report(sessionInfo()))
 
 df <- read.csv("data/data_combined_wPhysio.csv") %>% 
   mutate(ID = as.factor(paste0("S", ID)),
-         condition = as.factor(condition),
-         item = as.factor(item),
-         style = as.factor(style),
-         instruction = as.factor(instruction)) |> 
-  #TODO: This renaming should be done at the preprocessing stage
-  rename("Participant" = "ID",
-         "Condition" = "condition",
-         "Item" = "item",
-         "Phrasing" = "style",
-         "Answer" = "instruction",
-         "YONI_Total" = "yoni_total",
-         "YONI_Affective" = "yoni_affective",
-         "YONI_Cognitive" = "yoni_cognitive",
-         "YONI_Physical" = "yoni_physical",
-         "BES_Total" = "BES_total",
-         "BES_Cognitive" = "BES_cognitive",
-         "BES_Affective" = "BES_affective",
-         "HCT_Confidence" = "HCT_confidence",
-         "HCT_Accuracy" = "HCT_accuracy",
-         "HCT_Awareness" = "HCT_awareness",
-         "MAIA_Total" = "MAIA_total",
-         "MAIA_AttentionRegulation" = "MAIA_attention_regulation",
-         "MAIA_BodyListening" = "MAIA_body_listening",
-         "MAIA_EmotionalAwareness" = "MAIA_emotional_awareness",
-         "MAIA_NotDistracting" = "MAIA_not_distracting",
-         "MAIA_NotWorrying" = "MAIA_not_worrying",
-         "MAIA_Noticing" = "MAIA_noticing",
-         "MAIA_SelfRegulation" = "MAIA_self_regulation",
-         "MAIA_Trusting" = "MAIA_trusting",
-         "LIE_Ability" = "lie_ability",
-         "LIE_Frequency" = "lie_frequency",
-         "LIE_Negativity" = "lie_negativity",
-         "LIE_Contextuality" = "lie_contextuality",
-         "Confidence" = "DT_confidence",
-         "RT" = "DT_RT",
-         "HeartRate" = "ECG_Rate_MeanRaw_1.5_2.5s") |> 
-  mutate(Answer = fct_recode(Answer, Lie = "LIE", Truth = "TRUTH")) |> 
-  select(-HCT_guess, -HCT_noguess, -HCT_onebreath) |> 
+         Condition = as.factor(Condition),
+         Item = as.factor(Item),
+         Phrasing = as.factor(Phrasing),
+         Answer = as.factor(Answer)) |> 
+  rename("HeartRate" = "ECG_Rate_MeanRaw_1.5_2.5s") |> 
   dplyr::filter(!Participant %in% c("S3", "S15", "S19", "S23"))  # No data 
 
 # Adjustments for beta models
