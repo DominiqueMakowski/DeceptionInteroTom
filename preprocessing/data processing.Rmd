@@ -201,6 +201,25 @@ write.csv(data, file = "HCT_extracted.csv", row.names=FALSE)
 write.csv(results, file = "HCT_processed.csv", row.names=FALSE)
 ```
 
+```{r int obj htt}
+rm(list=ls())
+cat("\014")
+
+mydata <- read.csv("HTT_extracted.csv") %>% 
+  mutate(Condition = fct_recode(Condition, "NoGuessPerturbed" = "NoGuess_Perturbed")) %>% 
+  rename(Distance = Time_to_Rpeak) 
+
+results <- mydata %>% 
+  group_by(ID, Condition) %>% 
+  summarise(HTT_Mean = mean(Distance),
+            HTT_n = n()) %>%  
+  ungroup() %>% 
+  complete(ID, Condition, fill = list(HTT_Mean = NA, HTT_n = 0)) %>% 
+  tidyr::pivot_wider(names_from = "Condition", values_from = c("HTT_Mean", "HTT_n"))
+
+write.csv(results, file = "HTT_processed.csv", row.names=FALSE)
+```
+
 ```{r int subj maia2}
 rm(list=ls())
 cat("\014")
@@ -334,8 +353,8 @@ cat("\014")
 mydata <- data.frame()
 for (participant in list.files("../data/data_experimental")) {
   df_sub <- read.csv(paste0("../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), c(1:4, 29, 31, 35, 36, 43, 45, 47)] %>% 
-    mutate(Trial = c(1:80),
-           Condition = c(rep("Social", 40), rep("Polygraph", 40)))
+    mutate(trial = c(1:80),
+           condition = c(rep("Social", 40), rep("Polygraph", 40)))
   mydata <- rbind(mydata, df_sub)
 }
 
@@ -358,10 +377,10 @@ data <- mydata %>%
          polyg_start = as.numeric(polyg_start),
          polyg_stop = as.numeric(polyg_stop),
          ID = as.numeric(ID)) %>%
-  mutate(RT = ifelse(Condition == "Social", social_stop - social_start,
-         ifelse(Condition == "Polygraph", polyg_stop - polyg_start, NA))) %>%
+  mutate(RT = ifelse(condition == "Social", social_stop - social_start,
+         ifelse(condition == "Polygraph", polyg_stop - polyg_start, NA))) %>%
 
-  select(ID, Trial, Condition, everything()) # move columns to front
+  select(ID, trial, condition, everything()) # move columns to front
 
 write.csv(data, file = "deceptiontask_extracted.csv", row.names=FALSE)
 ```
@@ -370,17 +389,22 @@ write.csv(data, file = "deceptiontask_extracted.csv", row.names=FALSE)
 qn <- paste0("Q", 1:40)
 data_combined <- read.csv("deceptiontask_extracted.csv") %>% 
   select(-c(contains("start")|contains("stop"))) %>% 
+  left_join(read.csv("deceptiontask_physio_processed.csv")) %>% 
   left_join(read.csv("yoni_processed.csv")) %>% 
   left_join(read.csv("BES_processed.csv")) %>% 
   select(-c(contains(paste0("Q", 0:9)))) %>%
   left_join(read.csv("HCT_processed.csv")) %>% 
+  left_join(read.csv("HTT_processed.csv")) %>% 
   left_join(read.csv("MAIA2_processed.csv")) %>% 
   select(-c(contains(paste0("Q", 0:9)))) %>%
   left_join(read.csv("lie_processed.csv")) %>% 
   select(-c(contains(paste0("Q", 0:9)))) %>%
   left_join(read.csv("demo.csv")) %>% 
   select(-c(Name, Matric, HP, Email, Birthday, School, Course, LivedinSG)) %>% 
-  rename(Participant = ID) %>% 
+  rename(Participant = ID,
+         Trial = trial,
+         Condition = condition,
+         HeartRate = ECG_Rate_MeanRaw_1.5_2.5s) %>%
   mutate(Answer = fct_recode(Answer, Lie = "LIE", Truth = "TRUTH")) 
 
 write.csv(data_combined, file = "../data/data_combined.csv", row.names = FALSE)

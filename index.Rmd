@@ -88,15 +88,12 @@ summary(report::report(sessionInfo()))
 ## Data
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
-# setwd("C:/Users/user/Desktop/Sputnik/2019-23/DeceptionInteroTom")
-
-df <- read.csv("data/data_combined_wPhysio.csv") %>% 
-  mutate(ID = as.factor(paste0("S", ID)),
+df <- read.csv("data/data_combined.csv") %>% 
+  mutate(Participant = as.factor(paste0("S", Participant)),
          Condition = as.factor(Condition),
          Item = as.factor(Item),
          Phrasing = as.factor(Phrasing),
          Answer = as.factor(Answer)) |> 
-  rename("HeartRate" = "ECG_Rate_MeanRaw_1.5_2.5s") |> 
   dplyr::filter(!Participant %in% c("S3", "S15", "S19", "S23"))  # No data 
 
 # Adjustments for beta models

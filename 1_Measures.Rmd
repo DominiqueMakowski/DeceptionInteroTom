@@ -69,9 +69,8 @@ df %>%
 
 
 ```{r message=FALSE}
-htt_data <- read.csv("scripts/claudia/HCT_Tracking.csv") |> 
-  mutate(Participant = paste0("S", as.character(ID)),
-         Condition = fct_recode(Condition, "NoGuessPerturbed" = "NoGuess_Perturbed")) |> 
+htt_data <- read.csv("preprocessing/HTT_extracted.csv") |> 
+  mutate(Condition = fct_recode(Condition, "NoGuessPerturbed" = "NoGuess_Perturbed")) |> 
   rename(Distance = Time_to_Rpeak) 
 
 htt_data |>
@@ -80,26 +79,6 @@ htt_data |>
   geom_vline(xintercept = 0, linetype = "dashed") +
   facet_wrap(~ID) +
   see::theme_modern() 
-
-
-
-
-
-# model <- rstanarm::stan_lmer(Distance ~ Condition + (1 + Condition | ID), data = hct_data, refresh=0, chains = 2)
-# model <- glmmTMB::glmmTMB(Distance ~ Condition + (1 | ID), data = hct_data)
-
-
-
-
-htt_scores <- htt_data |> 
-  group_by(Participant, Condition) |> 
-  summarise(HTT_Mean = mean(Distance),
-            HTT_n = n()) |> 
-  ungroup() |> 
-  complete(Participant, Condition, fill = list(HTT_Mean = NA, HTT_n = 0)) |> 
-  tidyr::pivot_wider(names_from = "Condition", values_from = c("HTT_Mean", "HTT_n"))
-
-df <- merge(df, htt_scores, by = "Participant")
 ```
 
 

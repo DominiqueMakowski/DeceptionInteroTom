@@ -130,4 +130,4 @@ for i, participant in enumerate(list_participants):
     df['ID'] = i + 1  # append participant number
     df_all = pd.concat([df_all, df])  # combine all participants
 
-df_all.to_csv("HCT_tracking.csv", na_rep="NA", index=False)
+df_all.to_csv("HTT_extracted.csv", na_rep="NA", index=False)

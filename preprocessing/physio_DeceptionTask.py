@@ -80,16 +80,14 @@ for participant in list_participants:
     df = pd.concat([df, data], axis=0)
 
 # Load behavioural
-data_beh = pd.read_csv("../data/data_combined.csv")
+data_beh = pd.read_csv("deceptiontask_extracted.csv")
 data_beh["ID"] = data_beh["ID"].astype(str)
 
-# Merge features
-data_all = pd.merge(df, data_beh)
-assert len(data_beh) == len(data_all)
-data_all.to_csv("../data/data_combined_wPhysio.csv", index=False)
+# Export data
+df.to_csv("deceptiontask_physio_processed.csv", index=False)
 
 # Merge signals
 df_signal = pd.merge(df_signal, data_beh)
-df_signal.groupby(["ID", "condition", "instruction"])[np.arange(4000)].mean().to_csv(
-    "../data/data_physio_DeceptionTask.csv"
+df_signal.groupby(["ID", "condition", "Answer"])[np.arange(4000)].mean().to_csv(
+    "deceptiontask_physio_extracted.csv"
 )
