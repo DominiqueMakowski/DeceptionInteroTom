@@ -6,7 +6,7 @@ editor_options:
 
 ## Yoni Task {.tabset}
 
-- When instructed to lie, the decrease in confidence in participants with higher yoni score is less in social than polygraph condition.
+- When instructed to lie, the decrease in confidence in participants with higher yoni score is less in interrogation than polygraph condition.
 
 
 ### Total Score
@@ -33,7 +33,6 @@ results <- get_parameters(model)
 results$params
 results$marginal_effects
 ```
-
 
 ```{r message=FALSE, warning=FALSE}
 plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidence") {
@@ -70,8 +69,8 @@ plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidenc
               size = 8, show.legend = FALSE) +
     labs(y = ifelse(outcome == "RT", "Reaction Time (s)", ifelse(outcome == "HeartRate", "Heart Rate (bpm)", "Confidence")), 
          x = paste0(stringr::str_replace(var, "_", " ("), ")")) +
-    scale_color_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) +
-    scale_fill_manual(values = c("Polygraph" = "#FF5722", "Social" = "#2196F3")) + 
+    scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+    scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) + 
     facet_wrap(~Answer) 
   
   # Narrow y range
@@ -84,6 +83,7 @@ plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidenc
 }
 
 p_conf_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "Confidence")
+# p_conf_yoni_total
 ```
 
 #### RT
@@ -117,6 +117,7 @@ results$marginal_effects
 p_hr_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "HeartRate")
 # p_hr_yoni_total
 ```
+
 
 ### Cognitive Theory of Mind
 
@@ -167,7 +168,6 @@ results$marginal_effects
 p_hr_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outcome = "HeartRate")
 # p_hr_yoni_cognitive
 ```
-
 
 
 ### Affective Theory of Mind
@@ -272,7 +272,6 @@ p_hr_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome
 ```
 
 
-
 ### Correlation with LIE Scale
 
 ```{r message=FALSE, warning=FALSE}
@@ -315,7 +314,9 @@ p_hr_yoni_total /
   patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
 ```
 
+
 ## BES {.tabset}
+
 
 ### Total Score
 
@@ -417,6 +418,7 @@ results$marginal_effects
 p_hr_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "HeartRate")
 # p_hr_bes_cognitive
 ```
+
 
 ### Affective Empathy
 

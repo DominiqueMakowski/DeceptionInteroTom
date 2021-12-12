@@ -1,5 +1,5 @@
 ---
-title: '**The Place of Interoception and Theory of Mind in Deception**'
+title: '**The Role of Interoception and Theory of Mind in Deception**'
 subtitle: A Subtitle
 output:
   html_document:
@@ -89,7 +89,7 @@ summary(report::report(sessionInfo()))
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
 df <- read.csv("data/data_combined.csv") %>% 
-  mutate(Participant = as.factor(paste0("S", Participant)),
+  mutate(Participant = factor(paste0("S", Participant), levels = paste0("S", 1:30)),
          Condition = as.factor(Condition),
          Item = as.factor(Item),
          Phrasing = as.factor(Phrasing),
@@ -108,16 +108,12 @@ cat(paste("The data consists of",
 ```
 
 
-
-
 # Measures {.tabset}
 
 ```{r child='1_Measures.Rmd'}
 ```
 
-
 # Manipulation Checks
-
 
 ```{r child='2_ManipulationChecks.Rmd'}
 ```

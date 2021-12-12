@@ -64,9 +64,7 @@ df %>%
   facet_wrap(~name, scales = "free")
 ```
 
-
 ### Heartbeat Tracking Task (HTT)
-
 
 ```{r message=FALSE}
 htt_data <- read.csv("preprocessing/HTT_extracted.csv") |> 
@@ -80,7 +78,6 @@ htt_data |>
   facet_wrap(~ID) +
   see::theme_modern() 
 ```
-
 
 ### MAIA
 
@@ -124,21 +121,20 @@ df %>%
 #### Physiological Processing
 
 ```{r warning=FALSE}
-df_physio <- read.csv("data/data_physio_DeceptionTask.csv") |> 
+df_physio <- read.csv("preprocessing/deceptiontask_physio_extracted.csv") |> 
   dplyr::filter(ID != 30) |> 
   tidyr::pivot_longer(starts_with("X"), names_to = "Time", values_to = "HeartRate") |> 
   mutate(Time = as.numeric(str_remove(Time, "X"))-500,
-         group = paste0(ID, condition, instruction),
-         condition = fct_recode(condition, "Interrogation" = "Social"),
-         instruction = fct_relevel(instruction, "TRUTH")) |> 
-  group_by(condition, instruction, Time) |> 
+         group = paste0(ID, condition, Answer),
+         instruction = fct_relevel(Answer, "TRUTH")) |> 
+  group_by(condition, Answer, Time) |> 
   summarise(HeartRate = mean(HeartRate)) |> 
   ungroup()
   
 df_physio |> 
   ggplot(aes(x = Time, y = HeartRate)) +
   annotate("rect", xmin=1500, xmax=2500, ymin=-Inf, ymax=Inf, alpha=0.1, fill = "green") +
-  geom_line(aes(color = condition, linetype = instruction), size=1) +
+  geom_line(aes(color = condition, linetype = Answer), size=1) +
   geom_vline(aes(xintercept=0), linetype = "dotted") +
   labs(y = "Average Heart Rate (bpm)", x = "Time (ms)") +
   scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
@@ -175,19 +171,21 @@ df |>
   guides(fill="none", color="none")
 
 df$Confidence[df$Participant %in% c("S9", "S29")] <- NA # Extreme responses
-sum(is.na(df$Confidence)) / nrow(df) * 100
 df$HeartRate[df$Participant == "S30"] <- NA # Extreme values
-sum(is.na(df$HeartRate)) / nrow(df) * 100
 df$RT[df$Participant == "S13"] <- NA # Slower than the others
 df$RT[df$RT > 8.25] <- NA # Extreme RT values 
-sum(is.na(df$RT)) / nrow(df) * 100
 ```
+
+- Percentage of Confidence data removed: `r sum(is.na(df$Confidence)) / nrow(df) * 100`
+- Percentage of RT data removed: `r sum(is.na(df$RT)) / nrow(df) * 100`
+- Percentage of Heart Rate data removed: `r sum(is.na(df$HeartRate)) / nrow(df) * 100`
+
 
 ##### Observations
 
 ```{r warning=FALSE}
 df <- df |> 
-  # Remove participants
+  # Remove outlier trials
   group_by(Participant) |> 
   mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore", threshold = qnorm(0.9999))),
          Outliers_Physio = as.logical(performance::check_outliers(HeartRate, method = "zscore", threshold = qnorm(0.9999)))) |> 
@@ -209,7 +207,6 @@ df |>
 df$RT[df$Outliers_RT] <- NA
 df$HeartRate[df$Outliers_Physio] <- NA
 ```
-
 
 #### Distributions
 

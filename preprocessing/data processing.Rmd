@@ -354,7 +354,7 @@ mydata <- data.frame()
 for (participant in list.files("../data/data_experimental")) {
   df_sub <- read.csv(paste0("../data/data_experimental/", participant, "/deception/", participant, "_deceptiontask.csv"), header = FALSE)[-c(1:11), c(1:4, 29, 31, 35, 36, 43, 45, 47)] %>% 
     mutate(trial = c(1:80),
-           condition = c(rep("Social", 40), rep("Polygraph", 40)))
+           condition = c(rep("Interrogation", 40), rep("Polygraph", 40)))
   mydata <- rbind(mydata, df_sub)
 }
 
@@ -363,8 +363,8 @@ data <- mydata %>%
        Phrasing = V2,
        Answer = V3,
        Question = V4,
-       social_start = V29,
-       social_stop = V31,
+       interro_start = V29,
+       interro_stop = V31,
        Confidence = V35,
        ConfidenceRT = V36,
        polyg_start = V43,
@@ -372,12 +372,12 @@ data <- mydata %>%
        ID = V47) %>% 
   
   mutate(Confidence = as.numeric(Confidence),
-         social_start = as.numeric(social_start),
-         social_stop = as.numeric(social_stop),
+         interro_start = as.numeric(interro_start),
+         interro_stop = as.numeric(interro_stop),
          polyg_start = as.numeric(polyg_start),
          polyg_stop = as.numeric(polyg_stop),
          ID = as.numeric(ID)) %>%
-  mutate(RT = ifelse(condition == "Social", social_stop - social_start,
+  mutate(RT = ifelse(condition == "Interrogation", interro_stop - interro_start,
          ifelse(condition == "Polygraph", polyg_stop - polyg_start, NA))) %>%
 
   select(ID, trial, condition, everything()) # move columns to front

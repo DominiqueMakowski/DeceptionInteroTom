@@ -33,17 +33,19 @@ summary(r) |>
 ### Interoception
 
 ```{r message=FALSE, warning=FALSE}
-r <- correlation(select(dfsub, starts_with("HTT_")),
-                 select(dfsub, starts_with("HCT_")), 
-                 p_adjust = "none")
-
-summary(r) |> 
-  plot()
+# Leave out HTT
+# r <- correlation(select(dfsub, starts_with("HTT_")),
+#                  select(dfsub, starts_with("HCT_")), 
+#                  p_adjust = "none")
+# 
+# summary(r) |> 
+#   plot()
 ```
 
 ```{r message=FALSE, warning=FALSE}
 r <- correlation(select(dfsub, starts_with("MAIA_")),
-                 select(dfsub, starts_with("HCT_"), starts_with("HTT_")), 
+                 select(dfsub, starts_with("HCT_")), 
+                        #starts_with("HTT_")), 
                  p_adjust = "none")
 
 summary(r) |> 
@@ -58,7 +60,8 @@ r <- correlation(select(dfsub, starts_with(c("MAIA_", "HCT_"))),
                  p_adjust = "none")
 
 summary(r) |> 
-  plot()
+  plot() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
 ```
 
 ### Deception Task and LIE Scale
@@ -118,7 +121,6 @@ estimate_relation(model, at = c("HeartRate", "Answer")) |>
   plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
 ```
 
-
 ### RT and Heart Rate
 
 - No relationship.
@@ -135,15 +137,16 @@ estimate_relation(model, at = c("HeartRate", "Answer")) |>
   plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
 ```
 
+
 ## Effect of Phrasing {.tabset}
 
 - Main effect of phrasing on RT only. Indirect questions lead to slower answers.
 
-
 ### RT
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer * Phrasing + (1|Participant), data = df) 
+model <- glmmTMB(RT ~ Answer * Phrasing + (1|Participant) + (1|Item), 
+                 data = df) 
 
 parameters::parameters(model, effects = "fixed")
 ```
@@ -156,9 +159,10 @@ estimate_means(model, at = c("Answer", "Phrasing")) |>
 ### Confidence
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer * Phrasing + (1|Participant), data = df) 
+model <- glmmTMB(Confidence ~ Answer * Phrasing + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family()) 
 
-parameters::parameters(model)
+parameters::parameters(model, effects = "fixed")
 ```
 
 ```{r message=FALSE, warning=FALSE}
@@ -169,9 +173,10 @@ estimate_means(model, at = c("Answer", "Phrasing")) |>
 ### Heart Rate
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer * Phrasing + (1|Participant), data = df) 
+model <- glmmTMB(HeartRate ~ Answer * Phrasing + (1|Participant) + (1|Item), 
+                 data = df) 
 
-parameters::parameters(model)
+parameters::parameters(model, effects = "fixed")
 ```
 
 ```{r message=FALSE, warning=FALSE}
@@ -180,13 +185,11 @@ estimate_means(model, at = c("Answer", "Phrasing")) |>
 ```
 
 
-
-
-## Effect of Condition
+## Effect of Condition {.tabset}
 
 ### Confidence
 
-- Significant interaction between the condition and the answer: the effect of answer (being more confident in truths than in lies) is lower in the social condition.
+- Significant interaction between the condition and the answer: the effect of answer (being more confident in truths than in lies) is lower in the interrogation condition.
 - Effect mostly driven by lower lie confidence in the polygraph condition: less obvious feedback cues?
 
 ```{r message=FALSE, warning=FALSE}
@@ -206,8 +209,6 @@ estimate_means(model, at = c("Condition", "Answer")) |>
   plot(show_data = "none") 
 ```
 
-
-
 ### RT
 
 - Significant main effect of the condition: people are slower in the polygraph condition.
@@ -221,14 +222,18 @@ parameters::parameters(model, effects = "fixed")
 ```
 
 ```{r message=FALSE, warning=FALSE}
+modelbased::estimate_contrasts(model, contrast = "Answer", at = "Condition")
+modelbased::estimate_contrasts(model, contrast = "Condition", at = "Answer")
+```
+
+```{r message=FALSE, warning=FALSE}
 estimate_means(model, at = c("Condition", "Answer")) |> 
   plot(show_data = "none") 
 ```
 
-
 ### Heart Rate
 
-- Higher heart rate in lies vs. truths, and higher heart rate in social condition vs. polygraph.
+- Higher heart rate in lies vs. truths, and higher heart rate in interrogation condition vs. polygraph.
 - No interaction.
 
 ```{r message=FALSE, warning=FALSE}

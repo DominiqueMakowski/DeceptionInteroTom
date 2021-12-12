@@ -15,7 +15,7 @@ for participant in list_participants:
             {
                 "ID": "22",
                 "trial": np.arange(1, 81),
-                "condition": ["Social"] * 40 + ["Polygraph"] * 40,
+                "condition": ["Interrogation"] * 40 + ["Polygraph"] * 40,
                 "ECG_Rate_MeanRaw": np.repeat(np.nan, 80),
                 "ECG_Rate_Mean": np.repeat(np.nan, 80),
             }
@@ -30,7 +30,7 @@ for participant in list_participants:
         # Initialize data
         data = pd.DataFrame(
             {
-                "condition": ["Social"] * 40 + ["Polygraph"] * 40,
+                "condition": ["Interrogation"] * 40 + ["Polygraph"] * 40,
                 "trial": np.arange(1, 81),
                 "ID": [participant.lstrip("0")] * 80,
             }
