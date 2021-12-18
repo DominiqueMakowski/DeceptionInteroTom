@@ -176,9 +176,9 @@ df$RT[df$Participant == "S13"] <- NA # Slower than the others
 df$RT[df$RT > 8.25] <- NA # Extreme RT values 
 ```
 
-- Percentage of Confidence data removed: `r sum(is.na(df$Confidence)) / nrow(df) * 100`
-- Percentage of RT data removed: `r sum(is.na(df$RT)) / nrow(df) * 100`
-- Percentage of Heart Rate data removed: `r sum(is.na(df$HeartRate)) / nrow(df) * 100`
+Percentage of Confidence data removed: `r sum(is.na(df$Confidence)) / nrow(df) * 100` %  
+Percentage of RT data removed: `r sum(is.na(df$RT)) / nrow(df) * 100` %  
+Percentage of Heart Rate data removed: `r sum(is.na(df$HeartRate)) / nrow(df) * 100` %
 
 
 ##### Observations

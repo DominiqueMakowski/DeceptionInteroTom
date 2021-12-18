@@ -6,10 +6,17 @@ editor_options:
 
 ## Heartbeat Counting {.tabset}
 
+- Confidence: effect in all.
+- RT: effect in confidence only.
+- Heart rate: effect in accuracy and awareness.
+
 
 ### Interoceptive Accuracy
 
 #### Confidence
+
+- Higher HCT accuracy score associated with increased lie confidence and decreased truth confidence in polygraph condition only.
+- Significant interaction in truth only.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(Confidence ~ Answer / (Condition * HCT_Accuracy) + (1|Participant) + (1|Item), 
@@ -41,6 +48,11 @@ p_rt_hct_accuracy <- plot_effect(model, results, var = "HCT_Accuracy", outcome =
 
 #### Heart Rate
 
+- Higher HCT accuracy score associated with decreased lie heart rate in interrogation condition only.
+- Significant interaction.
+- Generally, larger effect in interrogation condition for heart rate?
+- Plateau effect in polygraph condition for heart rate?
+
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(HeartRate ~ Answer / (Condition * HCT_Accuracy) + (1|Participant), 
                  data = df)
@@ -59,6 +71,9 @@ p_hr_hct_accuracy <- plot_effect(model, results, var = "HCT_Accuracy", outcome =
 
 #### Confidence
 
+- Higher HCT confidence score associated with increased lie confidence and decreased truth confidence in both conditions, with larger effect in polygraph condition.
+- But no significant interaction.
+
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(Confidence ~ Answer / (Condition * HCT_Confidence) + (1|Participant) + (1|Item), 
                  data = df, family = beta_family())
@@ -73,6 +88,9 @@ p_conf_hct_confidence <- plot_effect(model, results, var = "HCT_Confidence", out
 ```
 
 #### RT
+
+- Higher HCT confidence score associated with faster lie reaction time in polygraph condition and faster truth reaction time in both conditions.
+- No significant interaction.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(RT ~ Answer / (Condition * HCT_Confidence) + (1|Participant) + (1|Item), 
@@ -107,6 +125,9 @@ p_hr_hct_confidence <- plot_effect(model, results, var = "HCT_Confidence", outco
 
 #### Confidence
 
+- Higher HCT awareness score associated with decreased lie confidence in polygraph condition only.
+- Significant interaction.
+
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(Confidence ~ Answer / (Condition * HCT_Awareness) + (1|Participant) + (1|Item), 
                  data = df, family = beta_family())
@@ -136,6 +157,9 @@ p_rt_hct_awareness <- plot_effect(model, results, var = "HCT_Awareness", outcome
 ```
 
 #### Heart Rate
+
+- Higher HCT awareness score associated with decreased lie heart rate in interrogation condition only.
+- Significant interaction.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(HeartRate ~ Answer / (Condition * HCT_Awareness) + (1|Participant), 
@@ -185,10 +209,18 @@ p_hr_hct_accuracy /
 
 ## MAIA {.tabset}
 
+- Confidence: effect in total, noticing, not distracting, body listening, not worrying, attention regulation and self regulation.
+- RT: effect in total, noticing, body listening, attention regulation and self regulation.
+- Heart rate: effect in trusting and emotional awareness only.
+
 
 ### Total Score
 
 #### Confidence
+
+- Higher MAIA score associated with increased lie confidence in both conditions with a larger effect in polygraph condition, and decreased truth confidence in polygraph condition only.
+- Significant interactions.
+- Effect in lie driven by all domains except trusting and emotional awareness, effect in truth driven by noticing, attention regulation and self regulation domains.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(Confidence ~ Answer / (Condition * MAIA_Total) + (1|Participant) + (1|Item), 
@@ -204,6 +236,10 @@ p_conf_maia_total <- plot_effect(model, results, var = "MAIA_Total", outcome = "
 ```
 
 #### RT
+- Higher MAIA score associated with faster truth reaction time in polygraph condition only.
+- Significant interaction.
+- Driven by body listening, attention regulation and self regulation domains.
+- Faster lie reaction time in polygraph condition for noticing, body listening and attention regulation domains.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(RT ~ Answer / (Condition * MAIA_Total) + (1|Participant) + (1|Item), 
@@ -219,6 +255,9 @@ p_rt_maia_total <- plot_effect(model, results, var = "MAIA_Total", outcome = "RT
 ```
 
 #### Heart Rate
+
+- Effect only in trusting and emotional awareness domains: higher score associated with increased lie heart rate in interrogation for both, increased truth heart rate in interrogation for emotional awareness only.
+- No significant interactions.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(HeartRate ~ Answer / (Condition * MAIA_Total) + (1|Participant) + (1|Item), 

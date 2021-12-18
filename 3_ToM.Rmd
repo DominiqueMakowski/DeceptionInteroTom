@@ -6,12 +6,20 @@ editor_options:
 
 ## Yoni Task {.tabset}
 
-- When instructed to lie, the decrease in confidence in participants with higher yoni score is less in interrogation than polygraph condition.
+- Confidence: effect in total, cognitive and physical.
+- RT: effect in cognitive only.
+- Heart rate: no effect.
 
 
 ### Total Score
 
 #### Confidence
+
+- Higher Yoni score associated with decreased lie confidence and increased truth confidence in polygraph condition only.
+- Significant interactions.
+- Driven by cognitive and physical domains.
+- Polygraph condition is harder: participants with better TOM became less confident in absence of another person from which to obtain feedback cues?
+- Plateau effect in interrogation condition, where individual differences do not matter as much?
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Total) + (1|Participant) + (1|Item), 
@@ -87,6 +95,9 @@ p_conf_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "
 ```
 
 #### RT
+
+- Effect only in cognitive domain: higher score associated with slower lie reaction time in polygraph condition and faster truth reaction time in interrogation condition.
+- No significant interaction.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(RT ~ Answer / (Condition * YONI_Total) + (1|Participant) + (1|Item), 
@@ -317,10 +328,19 @@ p_hr_yoni_total /
 
 ## BES {.tabset}
 
+- Confidence: effect in all.
+- RT: no effect.
+- Heart rate: effect in all.
+
 
 ### Total Score
 
 #### Confidence
+
+- Higher BES score associated with decreased lie confidence and increased truth confidence in polygraph condition only.
+- Same as Yoni.
+- Significant interaction in lie only.
+- Effect in lie driven by both cognitive and affective domains, effect in truth driven by affective domain only.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(Confidence ~ Answer / (Condition * BES_Total) + (1|Participant) + (1|Item), 
@@ -353,6 +373,12 @@ p_rt_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "RT")
 ```
 
 #### Heart Rate
+
+- Higher BES score associated with increased lie and truth confidence in both conditions, with larger effect in interrogation condition.
+- Compared to no effect at all in Yoni.
+- Significant interactions.
+- More empathetic person will experience more physiological arousals.
+- Effect in interrogation is driven by both domains, effect in polygraph is driven by cognitive domain only.
 
 ```{r message=FALSE, warning=FALSE}
 model <- glmmTMB(HeartRate ~ Answer / (Condition * BES_Total) + (1|Participant), 

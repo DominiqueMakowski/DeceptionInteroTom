@@ -48,6 +48,13 @@ theme_set(see::theme_modern())
 
 # Introduction
 
+Theory of mind refers to the ability to understand and predict the behaviour of others through making inferences of their mental state.  
+Interoception is the ability to detect, attend and track internal signals and bodily cues. 
+
+<!-- Not done: -->
+<!-- - Incorporation of susceptivity, inclusion? -->
+<!-- - Analysis for HTT, lie scale -->
+
 ```{r badges, echo=FALSE, message=TRUE, warning=FALSE, results='asis'}
 # This chunk is a bit complex so don't worry about it: it's made to add badges to the HTML versions
 # NOTE: You have to replace the links accordingly to have working "buttons" on the HTML versions

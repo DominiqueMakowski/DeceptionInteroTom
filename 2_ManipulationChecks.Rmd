@@ -233,7 +233,8 @@ estimate_means(model, at = c("Condition", "Answer")) |>
 
 ### Heart Rate
 
-- Higher heart rate in lies vs. truths, and higher heart rate in interrogation condition vs. polygraph.
+- Higher heart rate in lies vs. truths.
+- Higher heart rate in interrogation condition vs. polygraph: presence of another person causes heightened physiological arousals.
 - No interaction.
 
 ```{r message=FALSE, warning=FALSE}
