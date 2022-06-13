@@ -1,6 +1,6 @@
 ---
-title: '**Fractal and Entropic Characteristics of EEG during Resting State**'
-shorttitle        : "Resting-state EEG Complexity"
+title: '**TITLE**'
+shorttitle        : "TITLE"
 author:
   - name          : "Dominique Makowski"
     affiliation   : " 1, *"
@@ -31,7 +31,7 @@ output:
   pdf_document: default
   papaja::apa6_pdf:
     keep_tex: yes
-keywords: "EEG, Complexity, Entropy, Fractal Dimension, Resting State"
+keywords: ""
 wordcount: ''
 bibliography: ["references.bib"]
 floatsintext: yes
@@ -152,4 +152,6 @@ r_refs(file = "references.bib")
 ::: {#refs}
 :::
 
+```{=tex}
 \endgroup
+```
