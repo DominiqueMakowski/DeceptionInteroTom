@@ -1,4 +1,4 @@
-"ID","ï..Item","pic","correct","condition","responseRT","response","answer"
+"ID","Item","pic","correct","condition","responseRT","response","answer"
 1,1,"images/4","b","cognitive",2.36151140066795,"b",1
 1,2,"images/5","a","physical",1.73027869989164,"a",1
 1,3,"images/6","a","affect",1.40024214133155,"a",1
