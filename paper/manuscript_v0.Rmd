@@ -117,11 +117,11 @@ Since Theory of Mind and empathy are closely related, *The Basic Empathy Scale (
 
 To measure interoception, participants completed a *Heartbeat Counting Task (HCT)* [@schandry1981heart], where participants count their heart beats without taking their pulse, as well as provide a confidence rating for their estimate. At the same time their true heart rate is recorded and the scores are compared to determine the individual's accuracy. They also completed the *MAIA questionnaire* [@mehling2012multidimensional], where they rated statements such as "I can use my breath to reduce tension" on a Likert scale.
 
-Heartbeat Tracking Task (HTT)
+Heartbeat Tracking Task (HTT) - tap one
 
 ### Deception
 
-LIE Scale ????
+LIE Scale ???? - doms scale structure of deception
 
 #### Deception Task
 
