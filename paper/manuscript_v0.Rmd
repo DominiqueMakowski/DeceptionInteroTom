@@ -71,27 +71,19 @@ Neuroscience & Biobehavioral Reviews https://www.journals.elsevier.com/neuroscie
 ```
 # Introduction
 
-Much of the current research investigating the process and mechanisms involved in lying has considered capabilities such as Theory of Mind, the ability to understand and make inferences about other people's mental states and predict their behaviours [@el2017deception; @lee2021lying] . This ability is highly relevant in the context of deception, as the liar in question may utilize their inferences about the mental states of the other to predict whether the individual accepted as true the invalid information that they have presented to them [@stewart2019deception]. However, there is a growing link between other cognitive and physiological mechanisms that may play a role in both deception detection, and fabricating successful lies. This includes the interplay of mechanisms underlying increased abilities in emotional intelligence, which has been associated with increased accuracy when detecting deception [@ainley2016bodily; @stewart2019deception].
-
-@wielgopolan2021can examined how greater awareness of one's own emotions and the emotional states of others may enhance the ability ability to accurately detect deception. Their research found a positive correlation between emotional awareness and the 'success' of a lie, suggesting that that individuals better at recognizing their own emotional state may be better at manipulating the cues that they output [@wielgopolan2021can].
-
-Interoception is the awareness and ability to monitor the sensations and state of one's internal organs, and is closely tied to emotional and cognitive processes [@garfinkel2015knowing]. @ohira2020predictive suggests that from a predictive coding perspective, awareness of bodily signals and rapid interpretation and learning from these interoceptive signals plays a key role in the ability to regulate one's physical state.
-
--expand on ohira's model
-
-This may partially explain why mindfulness practitioners tend to have greater interoceptive awareness and greater ability to regulate stress and associated physiological indicators [@ardi2021effects; @mcmahon2021mindful].
-
-Some research has examined how higher interoceptive accuracy, measured through heart beat detection, has been associated with vasoconstriction when faced with a liar, indicating that interoception may aid in discriminating high stakes emotional lies and truths [@gunderson2021body]. It is clear that interoception may indicate on an implicit level that one is being lied to, however, there is limited research investigating how interoception may work the other way around, in favour of a liar, as @wielgopolan2021can's work appears to suggest.
-
-The findings by @vabba2022interoceptive indicate that high cardiac interoceptive participants were more likely to be dishonest and to tell higher egoistic lies. Meanwhile, @megias2019emotionally used EEG and heart rate to find that interoceptive awareness facilitated regulation of arousal during cognitive reappraisal. There is limited research examining whether individuals with high interoceptive accuracy may be more confident in managing physiological tells associated with emotions like guilt or anxiety that the lie may be discovered through suppression or reappraisal [@fustos2013embodiment; @megias2019emotionally].
-
-Since fluctuations in key physiological indicators as a means to determine whether the individual is lying is a key principle behind the polygraph test and other lie detection techniques, this paucity strengthens the need for more research examining the relationship between interoception and deception, and theory of mind, and the role it plays in moral behavior and deception. However, while there is a clear link established between interoception and deception playing a role in lie detection, limited research has been conducted examining this phenomena on its head. The act of lying is often accompanied by physiological responses such as increased heart rate, increased respiration and sweating. This research attempts to isolate the effects of theory of mind and interoception, and examine how they interact with deception. Of particular interest is how liars might utilize their interoceptive ability to self regulate in towards a more successful deception, and how this ability may compare or interact with other mechanisms at play such as theory of mind.
-
--   more theory of mind
-
 # Methods
 
 ## Study Design
+
+Much of the current research investigating the process and mechanisms involved in lying has considered capabilities such as Theory of Mind, the ability to understand and make inferences about other people's mental states and predict their behaviours [@el2017deception; @lee2021lying]. This ability is highly relevant in the context of deception, as the liar in question may utilize their inferences about the mental states of the other to predict whether the individual accepted as true the invalid information that they have presented to them [@stewart2019deception]. However, there is a growing link between other cognitive and physiological mechanisms that may play a role in both deception detection, and fabricating successful lies
+
+Interoceptive awareness (IA) is the ability to monitor, interpret, integrate and regulate the sensations and state of one's internal organs, and is closely tied to emotional and cognitive processes [@garfinkel2015knowing, @chen2021emerging]. Greater IA is associated with greater self-regulation [@weiss2014interaction], especially in mindfulness practitioners who tend to have greater interoceptive awareness and greater ability to regulate stress and associated physiological indicators [@ardi2021effects; @mcmahon2021mindful].
+
+Some research has examined how higher interoceptive accuracy, measured through heart beat detection, has been associated with vasoconstriction when faced with a liar, indicating that IA may aid in discriminating high stakes emotional lies and truths [@gunderson2021body]. It is clear that interoception may indicate on an implicit level that one is being lied to, however, there is limited research investigating how interoception may work the other way around, in favour of a liar in regulating their own physiological state that may betray their deception. The findings by @vabba2022interoceptive indicate that high cardiac interoceptive participants were more likely to be dishonest and to tell higher egoistic lies. Meanwhile, @megias2019emotionally used EEG and heart rate to find that interoceptive awareness facilitated regulation of arousal during cognitive reappraisal. There is limited research examining whether individuals with high interoceptive accuracy may be more confident in managing physiological tells associated with emotions like guilt or anxiety that the lie may be discovered through suppression or reappraisal [@fustos2013embodiment, @megias2019emotionally].
+
+Since fluctuations in key physiological indicators as a means to determine whether the individual is lying is a key principle behind the polygraph test and other lie detection techniques, this paucity strengthens the need for more research examining the relationship between interoception and deception, and theory of mind, and the role it plays in moral behavior and deception. However, while there is a clear link established between interoception and deception playing a role in lie detection, limited research has been conducted examining this phenomena on its head. The act of lying is often accompanied by physiological responses such as increased heart rate, increased respiration and sweating. This research attempts to isolate the effects of theory of mind and interoception, and examine how they interact with deception. Of particular interest is how liars might utilize their interoceptive ability to self regulate in towards a more successful deception, and how this ability may compare or interact with other mechanisms at play such as theory of mind.
+
+We hypothesize that participantswith greater theory of mind ability will show higher lie confidence, shorter reaction time, and lower physiological arousal in the interrogation condition, while participants in the polygraph condition will demonstrate lower lie confidence, lower reaction time and higher physiological arousal during the polygraph prediction. (??)
 
 ## Participants
 
@@ -132,8 +124,6 @@ In the Interrogation condition, participants were instructed that following thei
 The Polygraph Condition followed the same routine, however instead of a recieving feedback from an interrogator, following the lie, a video of physiological signals was shown. We hypothesized when made acutely aware of such signals through false feedback, that participants would rely on interoceptive abilities to be more mindful or intentional about modulating the signals that may give them away. The physiological signals in this condition are also false feedback, and pre-recorded and identical for all participants.
 
 During each trial, the time it took for participants to answer is recorded, and their heart rates are measured using an electrocardiogram. Following the trial, participants gave a confidence rating for how successful they believe their lie or truth was.
-
-We hypothesize that participants with greater theory of mind ability will show higher lie confidence, shorter reaction time, and lower physiological arousal in the interrogation condition, while participants in the polygraph condition will demonstrate lower lie confidence, lower reaction time and higher physiological arousal during the polygraph prediction. (??)
 
 During the interrogation condition, participants were exposed to video feedback of an examiner following each question. They were informed that the examiner was live and monitoring their physiological signals remotely to determine the honesty of their answers, however this was false, and the same sequence of videos was show to each participant.
 
@@ -241,6 +231,8 @@ For interoception, HCT accuracy is negatively correlated with heart rate, only i
 
 -   relationship of BES scores with heart rate is also more prominent in the interrogation condition - in general scores show larger effect on heart rate in interrogation? emotional intelligence etc
 -   (confidence and HR) high in truths is associated with higher heart rate. Expected. Also slightly higher in interrogation than polygraph, since presence of another person can cause heightened physiological arousal @hazem2017know. Direct gaze increase bodily self awareness and physiological arousal
+
+@durlik2014enhanced interoceptive awareness positively correlated with negative affect, anxiety, etc before public speaking etc (fear of negative eval + mood) heart beat detection more accurate during anxiety
 
 A higher BES score correlated with a higher heart rate for both lies and truths in both conditions, with a larger effect in the interrogation condition.
 
