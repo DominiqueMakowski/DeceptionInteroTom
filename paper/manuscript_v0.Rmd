@@ -73,7 +73,9 @@ Neuroscience & Biobehavioral Reviews https://www.journals.elsevier.com/neuroscie
 
 # Methods
 
-## Study Design
+The plan for this study was preregistered (OSF???????). The raw data and analysis script can be found at (GITHUB?????).
+
+## 
 
 Much of the current research investigating the process and mechanisms involved in lying has considered capabilities such as Theory of Mind, the ability to understand and make inferences about other people's mental states and predict their behaviours [@el2017deception; @lee2021lying]. This ability is highly relevant in the context of deception, as the liar in question may utilize their inferences about the mental states of the other to predict whether the individual accepted as true the invalid information that they have presented to them [@stewart2019deception]. However, there is a growing link between other cognitive and physiological mechanisms that may play a role in both deception detection, and fabricating successful lies
 
@@ -103,17 +105,17 @@ volunteered for [duration of study] for [compensation provided].
 
 ### Theory of Mind and Empathy
 
-Since Theory of Mind and empathy are closely related, *The Basic Empathy Scale (BES)* [@jolliffe2006development] was used as a subjective measure for theory of mind. *BES* uses a Likert scale to rate statements such as, "I can usually work out when people are cheerful". We also implemented the *Yoni Task,* which assesses the ability to judge mental states based on verbal cues, eye gaze and facial expression [@shamay2007dissociable].
+Since Theory of Mind and empathy are closely related, *The Basic Empathy Scale (BES)* [@jolliffe2006development] was used as a subjective measure for theory of mind. *BES* uses a 40-item Likert scale to rate statements such as, "I can usually work out when people are cheerful" from 1-5. We also implemented the *Yoni Task,* which assesses the ability to judge mental states based on verbal cues, eye gaze and facial expression [@shamay2007dissociable].
 
 ### Interoceptive Ability
 
-To measure interoception, participants completed a *Heartbeat Counting Task (HCT)* [@schandry1981heart], where participants count their heart beats without taking their pulse, as well as provide a confidence rating for their estimate. At the same time their true heart rate is recorded and the scores are compared to determine the individual's accuracy. They also completed the *MAIA questionnaire* [@mehling2012multidimensional], where they rated statements such as "I can use my breath to reduce tension" on a Likert scale.
+To measure interoception, participants completed a *Heartbeat Counting Task (HCT)* [@schandry1981heart], where participants count their heart beats without taking their pulse, as well as provide a confidence rating for their estimate. At the same time their true heart rate is recorded and the scores are compared to determine the individual's accuracy. They also completed the *MAIA questionnaire* [@mehling2012multidimensional], where they rated 32 statements such as "I can use my breath to reduce tension" on a 1-5 Likert scale.
 
-Heartbeat Tracking Task (HTT) - tap one
+Additionally, we implemented the Heartbeat Tracking Task (HTT), in which participants  - tap one
 
 ### Deception
 
-LIE Scale ???? - doms scale structure of deception
+We used the *LIE Scale*, which is a 44-item questionnaire examining deception as a dispositional trait, and measures the participant propensity towards lie frequency, ability, contextuality and negativity [@makowski2021structure]. (!CHECK!)
 
 #### Deception Task
 
@@ -121,7 +123,7 @@ Participants were randomly allocated(??) between two conditions where they under
 
 In the Interrogation condition, participants were instructed that following their lie, a live examiner over video feed would appear briefly to judge whether they were truthful or not. In actuality, the video of the examiner shown was pre-recorded and the same for all participants. We hypothesized that participants would will rely on theory of mind abilities to predict whether their lie to the examiner was successfully accepted as true.
 
-The Polygraph Condition followed the same routine, however instead of a recieving feedback from an interrogator, following the lie, a video of physiological signals was shown. We hypothesized when made acutely aware of such signals through false feedback, that participants would rely on interoceptive abilities to be more mindful or intentional about modulating the signals that may give them away. The physiological signals in this condition are also false feedback, and pre-recorded and identical for all participants.
+The Polygraph Condition followed the same routine, however instead of a receiving feedback from an interrogator, following the lie, a video of physiological signals was shown. We hypothesized when made acutely aware of such signals through false feedback, that participants would rely on interoceptive abilities to be more mindful or intentional about modulating the signals that may give them away. The physiological signals in this condition are also false feedback, and pre-recorded and identical for all participants.
 
 During each trial, the time it took for participants to answer is recorded, and their heart rates are measured using an electrocardiogram. Following the trial, participants gave a confidence rating for how successful they believe their lie or truth was.
 
