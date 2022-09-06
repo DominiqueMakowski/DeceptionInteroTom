@@ -151,17 +151,17 @@ Debriefing was provided following the study.
 
 ## Data Analysis
 
+The data analysis was carried out using R.... [CITE STUFF]. The full reproducible analysis script is available [INSERT LINK].
+
 We adopted a linear mixed-effect model where
 
 From the deception task, there were three dependent variables: confidence, reaction time and heart rate. For each dependent variable, we investigated its relationship with theory of mind and interoception abilities as measured by the tests on the previous slide. Participant and the specific question asked were added in as random effects, as they are not independent factors. For example, certain participants may be more confident in lying unrelated to their theory of mind or interoception abilities, or certain questions may have a longer reaction time
 
 To further build on the model, trials for lies and truths were separated using an embedded model and the interaction between the dependent variable and condition was probed. This reveals instances where the effect is greater in one condition, for example in this case, (mouseover) a higher total yoni score is correlated with decreased lie confidence, but only in the polygraph condition.
 
-INSERT VERY FANCY STATISTICS
+INSERT FANCY STATISTICS
 
 ### Data Pre-Processing and Analyses
-
-??????????????????
 
 # Results
 
@@ -233,6 +233,8 @@ For interoception, HCT accuracy is negatively correlated with heart rate, only i
 @durlik2014enhanced interoceptive awareness positively correlated with negative affect, anxiety, etc before public speaking etc (fear of negative eval + mood) heart beat detection more accurate during anxiety
 
 A higher BES score correlated with a higher heart rate for both lies and truths in both conditions, with a larger effect in the interrogation condition.
+
+[@ohira2020predictive] [@wielgopolan2021can] EI, interoception
 
 The effect in the polygraph condition is driven only by the cognitive domain of BES, while that in the interrogation condition is driven by both domains.
 
