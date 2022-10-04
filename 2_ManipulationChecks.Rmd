@@ -4,185 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Inter-Measures Correlation {.tabset}
 
-```{r message=FALSE, warning=FALSE}
-dfsub <- df |> 
-  select(Participant, 
-         starts_with("YONI_"), 
-         starts_with("BES_"),
-         starts_with("HCT_"),
-         starts_with("HTT_"),
-         starts_with("MAIA_"),
-         starts_with("LIE_")) |> 
-  group_by(Participant) |> 
-  summarise_all(mean)
-```
-
-### Theory of Mind / Empathy
-
-```{r message=FALSE, warning=FALSE}
-r <- correlation(select(dfsub, starts_with("YONI_")),
-                 select(dfsub, starts_with("BES_")), 
-                 p_adjust = "none")
-
-summary(r) |> 
-  plot() 
-```
-
-### Interoception
-
-```{r message=FALSE, warning=FALSE}
-# Leave out HTT
-# r <- correlation(select(dfsub, starts_with("HTT_")),
-#                  select(dfsub, starts_with("HCT_")), 
-#                  p_adjust = "none")
-# 
-# summary(r) |> 
-#   plot()
-```
-
-```{r message=FALSE, warning=FALSE}
-r <- correlation(select(dfsub, starts_with("MAIA_")),
-                 select(dfsub, starts_with("HCT_")), 
-                        #starts_with("HTT_")), 
-                 p_adjust = "none")
-
-summary(r) |> 
-  plot()
-```
-
-### ToM and Interoception
-
-```{r message=FALSE, warning=FALSE}
-r <- correlation(select(dfsub, starts_with(c("MAIA_", "HCT_"))),
-                 select(dfsub, starts_with(c("YONI_", "BES_"))), 
-                 p_adjust = "none")
-
-summary(r) |> 
-  plot() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
-```
-
-### Deception Task and LIE Scale
-
-```{r message=FALSE, warning=FALSE}
-r <- df |> 
-  select(Participant, Answer, Confidence, RT, HeartRate) |> 
-  group_by(Participant, Answer) |> 
-  summarise_all(mean, na.rm=TRUE) |> 
-  tidyr::pivot_wider(names_from = "Answer", values_from = c("Confidence", "RT", "HeartRate")) |> 
-  ungroup() |> 
-  select(-Participant) |> 
-  correlation(select(dfsub, starts_with("LIE_")), p_adjust = "none")
-
-summary(r) |> 
-  plot()
-```
-
-
-### Confidence and RT
-
-- When lying, the faster they answer, the more confident they are.
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ RT * Answer + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
-
-parameters::parameters(model, effects = "fixed")
-```
-
-```{r message=FALSE, warning=FALSE}
-modelbased::estimate_slopes(model, trend = "RT", at = "Answer")
-```
-
-```{r message=FALSE, warning=FALSE}
-estimate_relation(model, at = c("RT", "Answer")) |> 
-  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
-```
-
-### Confidence and Heart Rate
-
-- More confidence in truths is associated with higher heart rate.
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ HeartRate * Answer + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family()) # warning can be ignored
-
-parameters::parameters(model, effects = "fixed")
-```
-
-```{r message=FALSE, warning=FALSE}
-modelbased::estimate_slopes(model, trend = "HeartRate", at = "Answer")
-```
-
-```{r message=FALSE, warning=FALSE}
-estimate_relation(model, at = c("HeartRate", "Answer")) |> 
-  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
-```
-
-### RT and Heart Rate
-
-- No relationship.
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ HeartRate * Answer + (1|Participant) + (1|Item), 
-                 data = df)
-
-parameters::parameters(model, effects = "fixed")
-```
-
-```{r message=FALSE, warning=FALSE}
-estimate_relation(model, at = c("HeartRate", "Answer")) |> 
-  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
-```
-
-
-## Effect of Phrasing {.tabset}
-
-- Main effect of phrasing on RT only. Indirect questions lead to slower answers.
-
-### RT
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer * Phrasing + (1|Participant) + (1|Item), 
-                 data = df) 
-
-parameters::parameters(model, effects = "fixed")
-```
-
-```{r message=FALSE, warning=FALSE}
-estimate_means(model, at = c("Answer", "Phrasing")) |> 
-  plot(show_data = "none") 
-```
-
-### Confidence
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer * Phrasing + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family()) 
-
-parameters::parameters(model, effects = "fixed")
-```
-
-```{r message=FALSE, warning=FALSE}
-estimate_means(model, at = c("Answer", "Phrasing")) |> 
-  plot(show_data = "none") 
-```
-
-### Heart Rate
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer * Phrasing + (1|Participant) + (1|Item), 
-                 data = df) 
-
-parameters::parameters(model, effects = "fixed")
-```
-
-```{r message=FALSE, warning=FALSE}
-estimate_means(model, at = c("Answer", "Phrasing")) |> 
-  plot(show_data = "none") 
-```
 
 
 ## Effect of Condition {.tabset}
@@ -193,10 +15,13 @@ estimate_means(model, at = c("Answer", "Phrasing")) |>
 - Effect mostly driven by lower lie confidence in the polygraph condition: less obvious feedback cues?
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer * Condition + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
+# Prior: plot(seq(-5, 5, length.out=100), dstudent_t(seq(-5, 5, length.out=100), 1, 0, 1), "l")
 
-parameters::parameters(model, effects = "fixed")
+model <- brms::brm(Confidence ~ Answer * Condition + (1|Participant) + (1|Item), 
+                   data = df, family = "beta", seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+
+show_parameters(model)
 ```
 
 ```{r message=FALSE, warning=FALSE}
@@ -215,10 +40,13 @@ estimate_means(model, at = c("Condition", "Answer")) |>
 - Consistent with the "less intuitive cues".
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer * Condition + (1|Participant) + (1|Item), 
-                 data = df)
+# Prior: plot(seq(-10, 10, length.out=100), dstudent_t(seq(-10, 10, length.out=100), 1, 0, 3), "l")
 
-parameters::parameters(model, effects = "fixed")
+model <- brms::brm(RT ~ Answer * Condition + (1|Participant) + (1|Item),
+                   data = df, seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 3)", class = "b"))
+
+show_parameters(model)
 ```
 
 ```{r message=FALSE, warning=FALSE}
@@ -238,10 +66,12 @@ estimate_means(model, at = c("Condition", "Answer")) |>
 - No interaction.
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer * Condition + (1|Participant) + (1|Item), 
-                 data = df)
+# Prior: plot(seq(-30, 30, length.out=100), dstudent_t(seq(-30,30, length.out=100), 1, 0, 8), "l")
+model <- brms::brm(HeartRate ~ Answer * Condition + (1|Participant) + (1|Item),
+                   data = df, seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 8)", class = "b"))
 
-parameters::parameters(model, effects = "fixed")
+show_parameters(model)
 ```
 
 ```{r message=FALSE, warning=FALSE}
@@ -251,6 +81,64 @@ modelbased::estimate_contrasts(model, contrast = "Condition", at = "Answer")
 
 ```{r message=FALSE, warning=FALSE}
 estimate_means(model, at = c("Condition", "Answer")) |> 
+  plot(show_data = "none") 
+```
+
+
+
+## Effect of Phrasing {.tabset}
+
+- Main effect of phrasing on RT only. Indirect questions lead to slower answers.
+
+### Confidence
+
+```{r message=FALSE, warning=FALSE}
+# Prior: plot(seq(-2, 2, length.out=100), dstudent_t(seq(-2, 2, length.out=100), 1, 0, 1), "l")
+
+model <- brms::brm(Confidence ~ Answer * Phrasing + (1|Participant) + (1|Item), 
+                   data = df, family = "beta", seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+
+show_parameters(model)
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Answer", "Phrasing")) |> 
+  plot(show_data = "none") 
+```
+
+### RT
+
+```{r message=FALSE, warning=FALSE}
+# Prior: plot(seq(-10, 10, length.out=100), dstudent_t(seq(-10, 10, length.out=100), 1, 0, 3), "l")
+
+model <- brms::brm(RT ~ Answer * Phrasing + (1|Participant) + (1|Item),
+                   data = df, seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 3)", class = "b"))
+
+show_parameters(model)
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Answer", "Phrasing")) |> 
+  plot(show_data = "none") 
+```
+
+
+
+### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+# Prior: plot(seq(-50, 50, length.out=100), dstudent_t(seq(-50, 50, length.out=100), 1, 0, 8), "l")
+model <- brms::brm(HeartRate ~ Answer * Phrasing + (1|Participant) + (1|Item),
+                   data = df, seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 8)", class = "b"))
+
+show_parameters(model)
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_means(model, at = c("Answer", "Phrasing")) |> 
   plot(show_data = "none") 
 ```
 

@@ -11,319 +11,85 @@ editor_options:
 - Heart rate: no effect.
 
 
-### Total Score
-
-#### Confidence
-
-- Higher Yoni score associated with decreased lie confidence and increased truth confidence in polygraph condition only.
-- Significant interactions.
-- Driven by cognitive and physical domains.
-- Polygraph condition is harder: participants with better TOM became less confident in absence of another person from which to obtain feedback cues?
-- Plateau effect in interrogation condition, where individual differences do not matter as much?
+### Confidence
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Total) + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
-
-get_parameters <- function(model) {
-  # Parameters
-  params <- parameters::parameters(model, effects = "fixed") 
-  # Marginal effects
-  at <- c("Answer", "Condition")
-  trend <- insight::find_predictors(model)$conditional
-  trend <- trend[!trend %in% at]
-  marg <- modelbased::estimate_slopes(model, trend = trend, at = at)
-  # Output
-  list(params = params, marginal_effects = marg)
+results <- data.frame()
+for (var in c("YONI_Total", "YONI_Cognitive", "YONI_Affective", "YONI_Physical")) {
+  model <- glmmTMB(as.formula(paste0("Confidence ~ Answer / (Condition / ", 
+                                     var, 
+                                     ") + (1|Participant) + (1|Item)")), 
+                   data = df, 
+                   family = beta_family())
+  
+  results <- parameters::parameters(model, effects = "fixed", keep=var) |> 
+    mutate(Parameter = str_remove(Parameter, "Answer|Condition")) |> 
+    separate(Parameter, sep=":", into = c("Answer", "Condition", "Variable")) |> 
+    data_relocate(select="Variable", before=1) |> 
+    rbind(results)
 }
 
-results <- get_parameters(model)
-results$params
-results$marginal_effects
+display(results, stars=TRUE)
 ```
 
+### RT
+
+
 ```{r message=FALSE, warning=FALSE}
-plot_effect <- function(model, results, var = "YONI_Total", outcome = "Confidence") {
-  data <- df |> 
-    group_by(Participant, Answer, Condition) |> 
-    summarise({{var}} := mean(.data[[var]], na.rm = TRUE),
-              SD = sd(.data[[outcome]], na.rm = TRUE),
-              {{outcome}} := mean(.data[[outcome]], na.rm = TRUE),
-              CI_low = .data[[outcome]] - SD / 2,
-              CI_high = .data[[outcome]] + SD / 2) 
-
-  link_data <- estimate_relation(model, at = c("Condition", var, "Answer"), length = 30)
-  range_x <- diff(range(data[[var]]))
-
-  annot <- results$marginal_effects  
-  annot$Label <- insight::format_p(annot$p, stars_only = TRUE)
-  annot$x <- mean(range(data[[var]]))
-  annot$x <- ifelse(annot$Condition == "Polygraph", 
-                    annot$x - 0.05 * range_x, 
-                    annot$x + 0.05 * range_x)
-  annot$y <- max(data[[outcome]], na.rm=TRUE) - 0.01 * diff(range(data[[outcome]], na.rm=TRUE))
-    
+results <- data.frame()
+for (var in c("YONI_Total", "YONI_Cognitive", "YONI_Affective", "YONI_Physical")) {
+  model <- glmmTMB(as.formula(paste0("RT ~ Answer / (Condition / ", 
+                                     var, 
+                                     ") + (1|Participant) + (1|Item)")), 
+                   data = df)
   
-  p <- ggplot(link_data, aes_string(x = var, y = "Predicted")) +
-    geom_pointrange(data = data, 
-                    aes_string(y = outcome, 
-                               color = "Condition", 
-                               ymin = "CI_low", 
-                               ymax = "CI_high"), 
-                    position = position_dodge(width = 0.02 * range_x)) +
-    geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 0.33) + 
-    geom_line(aes(color = Condition)) +
-    geom_text(data=annot, aes(x = x, y = y, label = Label, color = Condition), 
-              size = 8, show.legend = FALSE) +
-    labs(y = ifelse(outcome == "RT", "Reaction Time (s)", ifelse(outcome == "HeartRate", "Heart Rate (bpm)", "Confidence")), 
-         x = paste0(stringr::str_replace(var, "_", " ("), ")")) +
-    scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
-    scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) + 
-    facet_wrap(~Answer) 
-  
-  # Narrow y range
-  if(outcome == "Confidence") {
-    p <- p +
-      coord_cartesian(ylim = c(0, 1)) +
-      scale_y_continuous(expand=expansion(c(0, 0))) 
-  }
-  p
+  results <- parameters::parameters(model, effects = "fixed", keep=var) |> 
+    mutate(Parameter = str_remove(Parameter, "Answer|Condition")) |> 
+    separate(Parameter, sep=":", into = c("Answer", "Condition", "Variable")) |> 
+    data_relocate(select="Variable", before=1) |> 
+    rbind(results)
 }
 
-p_conf_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "Confidence")
-# p_conf_yoni_total
+display(results, stars=TRUE)
 ```
 
-#### RT
 
-- Effect only in cognitive domain: higher score associated with slower lie reaction time in polygraph condition and faster truth reaction time in interrogation condition.
-- No significant interaction.
+### Heart Rate
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer / (Condition * YONI_Total) + (1|Participant) + (1|Item), 
-                 data = df)
+results <- data.frame()
+for (var in c("YONI_Total", "YONI_Cognitive", "YONI_Affective", "YONI_Physical")) {
+  model <- glmmTMB(as.formula(paste0("HeartRate ~ Answer / (Condition / ", 
+                                     var, 
+                                     ") + (1|Participant) + (1|Item)")), 
+                   data = df)
+  
+  results <- parameters::parameters(model, effects = "fixed", keep=var) |> 
+    mutate(Parameter = str_remove(Parameter, "Answer|Condition")) |> 
+    separate(Parameter, sep=":", into = c("Answer", "Condition", "Variable")) |> 
+    data_relocate(select="Variable", before=1) |> 
+    rbind(results)
+}
 
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_rt_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "RT")
-# p_rt_yoni_total
-```
-
-#### Heart Rate
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Total) + (1|Participant), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_hr_yoni_total <- plot_effect(model, results, var = "YONI_Total", outcome = "HeartRate")
-# p_hr_yoni_total
+display(results, stars=TRUE)
 ```
 
 
-### Cognitive Theory of Mind
-
-#### Confidence
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Cognitive) + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_conf_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outcome = "Confidence")
-# p_conf_yoni_cognitive
-```
-
-#### RT
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer / (Condition * YONI_Cognitive) + (1|Participant) + (1|Item), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_rt_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outcome = "RT")
-# p_rt_yoni_cognitive
-```
-
-#### Heart Rate
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Cognitive) + (1|Participant), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_hr_yoni_cognitive <- plot_effect(model, results, var = "YONI_Cognitive", outcome = "HeartRate")
-# p_hr_yoni_cognitive
-```
-
-
-### Affective Theory of Mind
-
-#### Confidence
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Affective) + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_conf_yoni_affective <- plot_effect(model, results, var = "YONI_Affective", outcome = "Confidence")
-# p_conf_yoni_affective
-```
-
-#### RT
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer / (Condition * YONI_Affective) + (1|Participant) + (1|Item), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_rt_yoni_affective <- plot_effect(model, results, var = "YONI_Affective", outcome = "RT")
-# p_rt_yoni_affective
-```
-
-#### Heart Rate
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Affective) + (1|Participant), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_hr_yoni_affective <- plot_effect(model, results, var = "YONI_Affective", outcome = "HeartRate")
-# p_hr_yoni_affective
-```
-
-
-### Physical Theory of Mind
-
-#### Confidence
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer / (Condition * YONI_Physical) + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_conf_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome = "Confidence")
-# p_conf_yoni_physical
-```
-
-#### RT
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer / (Condition * YONI_Physical) + (1|Participant) + (1|Item), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_rt_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome = "RT")
-# p_rt_yoni_physical
-```
-
-#### Heart Rate
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer / (Condition * YONI_Physical) + (1|Participant), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_hr_yoni_physical <- plot_effect(model, results, var = "YONI_Physical", outcome = "HeartRate")
-# p_hr_yoni_physical
-```
 
 
 ### Correlation with LIE Scale
 
 ```{r message=FALSE, warning=FALSE}
-get_correlation <- function(var = "YONI_", var2 = "LIE_") {
-  r <- correlation(select(dfsub, starts_with(var2)),
-                 select(dfsub, starts_with(var)), 
-                 p_adjust = "none") |> 
-  mutate(Parameter1 = paste0(str_replace(Parameter1, "_", " ("), ")"),
-         Parameter2 = paste0(str_replace(Parameter2, "_", " ("), ")"))
+dfsub <- df |> 
+  select(Participant, 
+         starts_with("LIE_"), 
+         starts_with("YONI_")) |> 
+  group_by(Participant) |> 
+  summarise_all(mean)
 
-  p <- summary(r) |> 
-    plot() +
-    theme_minimal()
-  list(r = r, plot = p)
-}
-
-r <- get_correlation(var = "YONI_")
-r$plot
+correlation(select(dfsub, starts_with("LIE_")), select(dfsub, starts_with("YONI_")), p_adjust = "none")
 ```
 
-### Summary
-
-```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
-p_conf_yoni_total / 
-  p_conf_yoni_cognitive / 
-  p_conf_yoni_affective / 
-  p_conf_yoni_physical +
-  patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
-
-p_rt_yoni_total / 
-  p_rt_yoni_cognitive / 
-  p_rt_yoni_affective / 
-  p_rt_yoni_physical +
-  patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
-
-p_hr_yoni_total / 
-  p_hr_yoni_cognitive / 
-  p_hr_yoni_affective / 
-  p_hr_yoni_physical +
-  patchwork::plot_annotation(title = "Theory of Mind", theme = theme(plot.title = element_text(hjust = 0.5)))
-```
 
 
 ## BES {.tabset}
@@ -332,193 +98,81 @@ p_hr_yoni_total /
 - RT: no effect.
 - Heart rate: effect in all.
 
-
-### Total Score
-
-#### Confidence
-
-- Higher BES score associated with decreased lie confidence and increased truth confidence in polygraph condition only.
-- Same as Yoni.
-- Significant interaction in lie only.
-- Effect in lie driven by both cognitive and affective domains, effect in truth driven by affective domain only.
+### Confidence
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer / (Condition * BES_Total) + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
+results <- data.frame()
+for (var in c("BES_Total", "BES_Cognitive", "BES_Affective")) {
+  model <- glmmTMB(as.formula(paste0("Confidence ~ Answer / (Condition / ", 
+                                     var, 
+                                     ") + (1|Participant) + (1|Item)")), 
+                   data = df, 
+                   family = beta_family())
+  
+  results <- parameters::parameters(model, effects = "fixed", keep=var) |> 
+    mutate(Parameter = str_remove(Parameter, "Answer|Condition")) |> 
+    separate(Parameter, sep=":", into = c("Answer", "Condition", "Variable")) |> 
+    data_relocate(select="Variable", before=1) |> 
+    rbind(results)
+}
 
-results <- get_parameters(model)
-results$params
-results$marginal_effects
+display(results, stars=TRUE)
 ```
 
-```{r message=FALSE, warning=FALSE}
-p_conf_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "Confidence")
-# p_conf_bes_total
-```
+### RT
 
-#### RT
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer / (Condition * BES_Total) + (1|Participant) + (1|Item), 
-                 data = df)
+results <- data.frame()
+for (var in c("BES_Total", "BES_Cognitive", "BES_Affective")) {
+  model <- glmmTMB(as.formula(paste0("RT ~ Answer / (Condition / ", 
+                                     var, 
+                                     ") + (1|Participant) + (1|Item)")), 
+                   data = df)
+  
+  results <- parameters::parameters(model, effects = "fixed", keep=var) |> 
+    mutate(Parameter = str_remove(Parameter, "Answer|Condition")) |> 
+    separate(Parameter, sep=":", into = c("Answer", "Condition", "Variable")) |> 
+    data_relocate(select="Variable", before=1) |> 
+    rbind(results)
+}
 
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_rt_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "RT")
-# p_rt_bes_total
-```
-
-#### Heart Rate
-
-- Higher BES score associated with increased lie and truth confidence in both conditions, with larger effect in interrogation condition.
-- Compared to no effect at all in Yoni.
-- Significant interactions.
-- More empathetic person will experience more physiological arousals.
-- Effect in interrogation is driven by both domains, effect in polygraph is driven by cognitive domain only.
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer / (Condition * BES_Total) + (1|Participant), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_hr_bes_total <- plot_effect(model, results, var = "BES_Total", outcome = "HeartRate")
-# p_hr_bes_total
+display(results, stars=TRUE)
 ```
 
 
-### Cognitive Empathy
-
-#### Confidence
+### Heart Rate
 
 ```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer / (Condition * BES_Cognitive) + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
+results <- data.frame()
+for (var in c("BES_Total", "BES_Cognitive", "BES_Affective")) {
+  model <- glmmTMB(as.formula(paste0("HeartRate ~ Answer / (Condition / ", 
+                                     var, 
+                                     ") + (1|Participant) + (1|Item)")), 
+                   data = df)
+  
+  results <- parameters::parameters(model, effects = "fixed", keep=var) |> 
+    mutate(Parameter = str_remove(Parameter, "Answer|Condition")) |> 
+    separate(Parameter, sep=":", into = c("Answer", "Condition", "Variable")) |> 
+    data_relocate(select="Variable", before=1) |> 
+    rbind(results)
+}
 
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_conf_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "Confidence")
-# p_conf_bes_cognitive
-```
-
-#### RT
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer / (Condition * BES_Cognitive) + (1|Participant) + (1|Item), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_rt_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "RT")
-# p_rt_bes_cognitive
-```
-
-#### Heart Rate
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer / (Condition * BES_Cognitive) + (1|Participant), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_hr_bes_cognitive <- plot_effect(model, results, var = "BES_Cognitive", outcome = "HeartRate")
-# p_hr_bes_cognitive
+display(results, stars=TRUE)
 ```
 
 
-### Affective Empathy
-
-#### Confidence
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(Confidence ~ Answer / (Condition * BES_Affective) + (1|Participant) + (1|Item), 
-                 data = df, family = beta_family())
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_conf_bes_affective <- plot_effect(model, results, var = "BES_Affective", outcome = "Confidence")
-# p_conf_bes_affective
-```
-
-#### RT
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(RT ~ Answer / (Condition * BES_Affective) + (1|Participant) + (1|Item), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_rt_bes_affective <- plot_effect(model, results, var = "BES_Affective", outcome = "RT")
-# p_rt_bes_affective
-```
-
-#### Heart Rate
-
-```{r message=FALSE, warning=FALSE}
-model <- glmmTMB(HeartRate ~ Answer / (Condition * BES_Affective) + (1|Participant), 
-                 data = df)
-
-results <- get_parameters(model)
-results$params
-results$marginal_effects
-```
-
-```{r message=FALSE, warning=FALSE}
-p_hr_bes_affective <- plot_effect(model, results, var = "BES_Affective", outcome = "HeartRate")
-# p_hr_bes_affective
-```
 
 
 ### Correlation with LIE Scale
 
 ```{r message=FALSE, warning=FALSE}
-r <- get_correlation(var = "BES_")
-r$plot
-```
+dfsub <- df |> 
+  select(Participant, 
+         starts_with("LIE_"), 
+         starts_with("BES_")) |> 
+  group_by(Participant) |> 
+  summarise_all(mean)
 
-### Summary
-
-```{r message=FALSE, warning=FALSE, fig.height=figheight*3, fig.width=figwidth*1.5}
-p_conf_bes_total / 
-  p_conf_bes_cognitive / 
-  p_conf_bes_affective +
-  patchwork::plot_annotation(title = "Empathy", theme = theme(plot.title = element_text(hjust = 0.5)))
-
-p_rt_bes_total / 
-  p_rt_bes_cognitive / 
-  p_rt_bes_affective +
-  patchwork::plot_annotation(title = "Empathy", theme = theme(plot.title = element_text(hjust = 0.5)))
-
-p_hr_bes_total / 
-  p_hr_bes_cognitive / 
-  p_hr_bes_affective +
-  patchwork::plot_annotation(title = "Empathy", theme = theme(plot.title = element_text(hjust = 0.5)))
+correlation(select(dfsub, starts_with("LIE_")), select(dfsub, starts_with("BES_")), p_adjust = "none")
 ```

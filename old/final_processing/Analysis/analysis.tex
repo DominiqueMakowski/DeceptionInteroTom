@@ -1,0 +1,2188 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Analysis},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Analysis}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{libraries}{%
+\section{Libraries}\label{libraries}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"~/Dropbox/FYP_Jia Rong/R Processing/FINAL PROCESSING/Analysis"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(lme4)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(glmmTMB)}
+\KeywordTok{library}\NormalTok{(correlation)}
+\KeywordTok{library}\NormalTok{(sjPlot)}
+\KeywordTok{library}\NormalTok{(easystats)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # Attaching packages
+## ✔ insight     0.13.1.1   ✔ bayestestR  0.8.3.1 
+## ✔ performance 0.7.0.1    ✔ parameters  0.12.0.1
+## ✔ see         0.6.2      ✔ effectsize  0.4.4   
+## ✔ modelbased  0.5.9      ✔ report      0.2.0   
+## 
+## Warnings or errors in CRAN checks for package(s) 'insight', 'bayestestR', 'parameters', 'effectsize', 'modelbased', 'correlation'.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#library(ggpubr)}
+
+\NormalTok{descriptive_statistics <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(df, begins_with)\{}
+\NormalTok{  df }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{select}\NormalTok{(dplyr}\OperatorTok{::}\KeywordTok{starts_with}\NormalTok{(begins_with)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{report}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{as.data.frame}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\KeywordTok{one_of}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"n_Obs"}\NormalTok{, }\StringTok{"Median"}\NormalTok{, }\StringTok{"MAD"}\NormalTok{, }\StringTok{"n_Missing"}\NormalTok{))) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{print}\NormalTok{()}
+  
+  \KeywordTok{plot}\NormalTok{(df }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{select}\NormalTok{(dplyr}\OperatorTok{::}\KeywordTok{starts_with}\NormalTok{(begins_with)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\NormalTok{bayestestR}\OperatorTok{::}\KeywordTok{estimate_density}\NormalTok{(}\DataTypeTok{method =} \StringTok{"KernSmooth"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{plot}\NormalTok{() }\OperatorTok{+}\StringTok{ }
+\StringTok{    }\NormalTok{see}\OperatorTok{::}\KeywordTok{theme_modern}\NormalTok{())}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{read-data}{%
+\section{Read data}\label{read-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Behav <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'BehaviouraldataNEW.csv'}\NormalTok{, }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{)[}\OperatorTok{-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)] }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{participant =}\NormalTok{ ID,}
+         \DataTypeTok{truthfulness =}\NormalTok{ condition) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{ConditionSP =} \KeywordTok{rep}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"social"}\NormalTok{,}\StringTok{"polygraph"}\NormalTok{), }\DataTypeTok{each =} \DecValTok{40}\NormalTok{, }\DataTypeTok{times =} \DecValTok{30}\NormalTok{))}
+
+\NormalTok{Behav[stringr}\OperatorTok{::}\KeywordTok{str_detect}\NormalTok{(}\KeywordTok{names}\NormalTok{(Behav), }\StringTok{"subresp"}\NormalTok{)] <-}\StringTok{ }\NormalTok{effectsize}\OperatorTok{::}\KeywordTok{change_scale}\NormalTok{(Behav[stringr}\OperatorTok{::}\KeywordTok{str_detect}\NormalTok{(}\KeywordTok{names}\NormalTok{(Behav), }\StringTok{"subresp"}\NormalTok{)], }\DataTypeTok{from =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{-10}\NormalTok{))}
+
+
+\NormalTok{Phy <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'DT.csv'}\NormalTok{, }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{) [}\OperatorTok{-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{),] }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{participant =}\NormalTok{ Participant.number,) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Trial =} \KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{80}\NormalTok{, }\DataTypeTok{each =} \DecValTok{4}\NormalTok{, }\DataTypeTok{times =} \DecValTok{30}\NormalTok{)) }
+
+\CommentTok{#Phy <- Phy[!(Phy$Participant == 1 & Phy$Label == 3),]}
+
+\NormalTok{data <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(Behav, Phy, }\DataTypeTok{by =} \KeywordTok{c}\NormalTok{(}\StringTok{"participant"}\NormalTok{ ,}\StringTok{"Trial"}\NormalTok{), }\DataTypeTok{all =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(participant,Trial) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant),}
+         \DataTypeTok{ConditionSP =} \KeywordTok{as.factor}\NormalTok{(ConditionSP))}
+
+\NormalTok{Demo <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'demo_30.csv'}\NormalTok{, }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{)[}\OperatorTok{-}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\OperatorTok{:}\DecValTok{6}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{18}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{cleaning-data}{%
+\section{Cleaning data}\label{cleaning-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Inclusion }\OperatorTok{!=}\StringTok{ "0"}\NormalTok{)}
+\CommentTok{#  filter(Inclusion2 != "0")}
+\CommentTok{# filter(participant != "22", "30")}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{descriptive-statistics}{%
+\section{Descriptive Statistics}\label{descriptive-statistics}}
+
+\hypertarget{participants-demographics-information}{%
+\subsection{Participants Demographics
+Information}\label{participants-demographics-information}}
+
+Summary of participants Gender, Age, and handedness
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#General Descriptive Stats}
+\KeywordTok{report}\NormalTok{(Demo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## The data contains 30 observations of the following variables:
+##   - X: n = 30, Mean = 15.50, SD = 8.80, Median = 15.50, MAD = 11.12, range: [1, 30], Skewness = 0.00, Kurtosis = -1.20, 0 missing
+##   - Gender: 2 entries, such as Female (n = 19); Male (n = 11); NA (0 missing)
+##   - Age: n = 30, Mean = 21.10, SD = 2.09, Median = 20.50, MAD = 2.22, range: [18, 25], Skewness = 0.73, Kurtosis = -0.67, 0 missing
+##   - handedness: 2 entries, such as Right handed (n = 28); Left handed (n = 2); NA (0 missing)
+##   - Polyjc: 5 entries, such as Junior College (n = 18); Polytechnic (n = 9); Equivalent of Junior College in India (n = 1) and 2 others (0 missing)
+##   - Ethnicity: 6 entries, such as Chinese (n = 25); Burmese (n = 1); Caucasian (n = 1) and 3 others (0 missing)
+##   - Religion: 7 entries, such as Buddhism (n = 10); Not religious (n = 9); Christianity (n = 7) and 4 others (0 missing)
+##   - Nationality: 5 entries, such as Singaporean (n = 25); China (n = 2); Indian (n = 1) and 2 others (0 missing)
+##   - RaisedinSG: 2 entries, such as Yes (n = 21); No (n = 9); NA (0 missing)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{report_participants}\NormalTok{(Demo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "30 participants (Mean age = 21.1, SD = 2.1, range: [18, 25]; 63.3% females)"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Gender <-}\StringTok{ }\NormalTok{Demo }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Gender) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{(),}
+            \DataTypeTok{Ratio =} \KeywordTok{n}\NormalTok{() }\OperatorTok{/}\StringTok{ }\KeywordTok{nrow}\NormalTok{(Demo))}
+
+\NormalTok{Age <-}\StringTok{ }\NormalTok{Demo [}\OperatorTok{-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{),] }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\KeywordTok{mean}\NormalTok{(Age),}\KeywordTok{sd}\NormalTok{(Age))}
+\KeywordTok{report}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{Age)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## x: n = 30, Mean = 21.10, SD = 2.09, Median = 20.50, MAD = 2.22, range: [18, 25], Skewness = 0.73, Kurtosis = -0.67, 0 missing
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Handedness <-}\StringTok{ }\NormalTok{Demo }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(handedness) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{n =} \KeywordTok{n}\NormalTok{(),}
+            \DataTypeTok{Ratio =} \KeywordTok{n}\NormalTok{() }\OperatorTok{/}\StringTok{ }\KeywordTok{nrow}\NormalTok{(Demo))}
+\KeywordTok{report}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{handedness)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## x: 2 entries, such as Right handed (n = 28); Left handed (n = 2); NA (0 missing)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Gender}
+\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{table}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{Gender)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{, }\DataTypeTok{y =}\NormalTok{Freq, }\DataTypeTok{fill =} \KeywordTok{reorder}\NormalTok{(Var1, }\OperatorTok{-}\NormalTok{Freq))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{width =} \DecValTok{1}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"Gender"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_polar}\NormalTok{(}\StringTok{"y"}\NormalTok{, }\DataTypeTok{start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{direction =} \DecValTok{-1}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_fill_brewer}\NormalTok{(}\DataTypeTok{palette=}\StringTok{"Blues"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{12}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{face =} \StringTok{"bold"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Age}
+\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{table}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{Age)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{, }\DataTypeTok{y =}\NormalTok{Freq, }\DataTypeTok{fill =} \KeywordTok{reorder}\NormalTok{(Var1, }\OperatorTok{-}\NormalTok{Freq))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{width =} \DecValTok{1}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"Age"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_polar}\NormalTok{(}\StringTok{"y"}\NormalTok{, }\DataTypeTok{start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{direction =} \DecValTok{1}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_fill_brewer}\NormalTok{(}\DataTypeTok{palette=}\StringTok{"Oranges"}\NormalTok{, }\DataTypeTok{breaks=}\KeywordTok{c}\NormalTok{(}\StringTok{"18"}\NormalTok{,}\StringTok{"19"}\NormalTok{,}\StringTok{"20"}\NormalTok{,}\StringTok{"21"}\NormalTok{,}\StringTok{"22"}\NormalTok{,}\StringTok{"24"}\NormalTok{,}\StringTok{"25"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{15}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{face =} \StringTok{"bold"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Handedness}
+\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{table}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{handedness)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{, }\DataTypeTok{y =}\NormalTok{Freq, }\DataTypeTok{fill =} \KeywordTok{reorder}\NormalTok{(Var1, Freq))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{width =} \DecValTok{1}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"Handedness"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_polar}\NormalTok{(}\StringTok{"y"}\NormalTok{, }\DataTypeTok{start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{direction =} \DecValTok{-1}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_fill_brewer}\NormalTok{(}\DataTypeTok{palette=}\StringTok{"greens"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{12}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{face =} \StringTok{"bold"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Ethnicity}
+\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{table}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{Ethnicity)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{, }\DataTypeTok{y =}\NormalTok{Freq, }\DataTypeTok{fill =} \KeywordTok{reorder}\NormalTok{(Var1, }\OperatorTok{-}\NormalTok{Freq))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{width =} \DecValTok{1}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"Ethnicity"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_polar}\NormalTok{(}\StringTok{"y"}\NormalTok{, }\DataTypeTok{start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{direction =} \DecValTok{-1}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_fill_brewer}\NormalTok{(}\DataTypeTok{palette=}\StringTok{"Pastel1"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{12}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{face =} \StringTok{"bold"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Religion}
+\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{table}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{Religion)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{, }\DataTypeTok{y =}\NormalTok{Freq, }\DataTypeTok{fill =} \KeywordTok{reorder}\NormalTok{(Var1, }\OperatorTok{-}\NormalTok{Freq))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{width =} \DecValTok{1}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"Religion"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_polar}\NormalTok{(}\StringTok{"y"}\NormalTok{, }\DataTypeTok{start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{direction =} \DecValTok{-1}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_fill_brewer}\NormalTok{(}\DataTypeTok{palette=}\StringTok{"Set2"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{12}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{face =} \StringTok{"bold"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Nationality}
+\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{table}\NormalTok{(Demo}\OperatorTok{$}\NormalTok{Nationality)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{, }\DataTypeTok{y =}\NormalTok{Freq, }\DataTypeTok{fill =} \KeywordTok{reorder}\NormalTok{(Var1, }\OperatorTok{-}\NormalTok{Freq))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{width =} \DecValTok{1}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{fill =} \StringTok{"Nationality"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_polar}\NormalTok{(}\StringTok{"y"}\NormalTok{, }\DataTypeTok{start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{direction =} \DecValTok{-1}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_fill_brewer}\NormalTok{(}\DataTypeTok{palette=}\StringTok{"Set2"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{12}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{face =} \StringTok{"bold"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{des_stat <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\KeywordTok{group_by}\NormalTok{(participant) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise_all}\NormalTok{(mean) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\KeywordTok{ends_with}\NormalTok{(}\StringTok{"Total"}\NormalTok{),}
+          \OperatorTok{-}\KeywordTok{ends_with}\NormalTok{(}\StringTok{"TotalAvg"}\NormalTok{))}
+
+\KeywordTok{descriptive_statistics}\NormalTok{(des_stat, }\StringTok{"BES_"}\NormalTok{)          }\CommentTok{#Basic Empathy/ToM}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Variable      |  Mean |   SD |   Min |   Max | Skewness | Kurtosis
+## ------------------------------------------------------------------
+## BES_Cognitive | 35.40 | 4.28 | 26.00 | 44.00 |    -0.40 |     0.12
+## BES_Affective | 38.03 | 7.13 | 25.00 | 53.00 |     0.19 |    -0.50
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-7.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descriptive_statistics}\NormalTok{(des_stat, }\StringTok{"Lie_"}\NormalTok{)          }\CommentTok{#Deceptive Tendency}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Variable    |  Mean |   SD |   Min |  Max | Skewness | Kurtosis
+## ---------------------------------------------------------------
+## Lie_Freq    |  1.18 | 2.08 | -3.04 | 4.30 |    -0.52 |    -0.61
+## Lie_Ability | -0.90 | 2.03 | -4.84 | 3.23 |    -0.20 |    -0.25
+## Lie_Neg     | -0.43 | 1.36 | -3.51 | 2.43 |    -0.05 |    -0.14
+## Lie_Content | -0.77 | 0.90 | -2.16 | 1.41 |     0.60 |    -0.32
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-8.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descriptive_statistics}\NormalTok{(des_stat, }\StringTok{"MAIA"}\NormalTok{)          }\CommentTok{#Interoceptive Awareness}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Variable | Mean |   SD |  Min |  Max | Skewness | Kurtosis
+## ----------------------------------------------------------
+## MAIA1    | 2.98 | 0.70 | 0.75 | 4.25 |    -0.94 |     2.43
+## MAIA2    | 1.76 | 0.90 | 0.17 | 3.67 |     0.08 |    -0.12
+## MAIA3    | 2.14 | 0.77 | 0.60 | 3.80 |     0.25 |    -0.58
+## MAIA4    | 2.72 | 0.91 | 0.71 | 4.14 |    -0.37 |    -0.34
+## MAIA5    | 3.33 | 0.77 | 1.40 | 4.80 |    -0.51 |     0.02
+## MAIA6    | 2.83 | 0.81 | 1.50 | 4.25 |     0.07 |    -1.33
+## MAIA7    | 2.56 | 1.13 | 0.33 | 5.00 |     0.04 |    -0.67
+## MAIA8    | 3.36 | 1.06 | 0.33 | 5.00 |    -0.99 |     0.95
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-9.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descriptive_statistics}\NormalTok{(des_stat, }\StringTok{"SRP3_"}\NormalTok{)         }\CommentTok{#Psychopathic Traits}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Variable |  Mean |    SD |   Min |    Max | Skewness | Kurtosis
+## ---------------------------------------------------------------
+## SRP3_IPM | 42.30 |  9.35 | 25.00 |  63.00 |    -0.04 |    -0.25
+## SRP3_CA  | 37.87 |  9.62 | 22.00 |  55.00 |     0.21 |    -1.21
+## SRP3_ELS | 40.40 |  7.33 | 25.00 |  55.00 |    -0.36 |    -0.14
+## SRP3_ASB | 22.50 |  6.61 | 16.00 |  42.00 |     1.46 |     2.10
+## SRP3_PRI | 80.17 | 16.73 | 51.00 | 113.00 |    -0.02 |    -0.64
+## SRP3_SEC | 62.90 | 11.83 | 42.00 |  90.00 |     0.22 |    -0.16
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-10.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descriptive_statistics}\NormalTok{(des_stat, }\StringTok{"HCT"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\NormalTok{Parameter, }\DataTypeTok{scales=}\StringTok{"free"}\NormalTok{)         }\CommentTok{#Heartbeat Counting Task (Interoception)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Variable       | Mean |   SD |   Min |  Max | Skewness | Kurtosis
+## -----------------------------------------------------------------
+## HCT_Confidence | 0.46 | 0.30 |  0.00 | 0.89 |    -0.16 |    -1.41
+## HCT_Accuracy   | 0.93 | 0.06 |  0.76 | 0.99 |    -1.34 |     1.11
+## HCT_Awareness  | 0.10 | 0.55 | -0.93 | 0.98 |     0.03 |    -0.75
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-11.pdf}
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-12.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descriptive_statistics}\NormalTok{(des_stat, }\StringTok{"yoni_"}\NormalTok{)         }\CommentTok{#Yoni Task (ToM)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Variable       |  Mean |   SD |   Min |   Max | Skewness | Kurtosis
+## -------------------------------------------------------------------
+## yoni_affective | 41.83 | 4.07 | 33.00 | 47.00 |    -0.79 |    -0.39
+## yoni_cognitive | 31.03 | 3.06 | 24.00 | 36.00 |    -0.50 |     0.04
+## yoni_physical  | 12.20 | 2.51 |  4.00 | 14.00 |    -1.85 |     3.11
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-1-13.pdf}
+
+The final sample included 30 participants (Mean age = 21.1, SD = 2.1,
+range: {[}18, 25{]}; 63.3\% females).
+
+\hypertarget{participants-individual-summary-results-for-behavioural-tasks-deception-hct-yoni-task}{%
+\subsection{Participants Individual Summary Results for Behavioural
+Tasks (Deception, HCT \& Yoni
+Task)}\label{participants-individual-summary-results-for-behavioural-tasks-deception-hct-yoni-task}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df_descriptive <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{!=}\StringTok{ "TRUTH"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(participant, ConditionSP) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise_all}\NormalTok{(mean)}
+
+\NormalTok{df_descriptive <-}\StringTok{ }\NormalTok{df_descriptive }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{36}\OperatorTok{:}\DecValTok{42}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{pivot_wider}\NormalTok{(}\DataTypeTok{names_from =}\NormalTok{ ConditionSP, }\DataTypeTok{values_from =}\NormalTok{ subresp) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{PolyCon_subresp =}\NormalTok{ polygraph,}
+         \DataTypeTok{SociCon_subresp =}\NormalTok{ social)}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#Plot of Average Subjective Response of Lies for Each Participant
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot_desriptive <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{!=}\StringTok{ "TRUTH"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(participant, ConditionSP) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise_all}\NormalTok{(mean) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{9}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(participant }\OperatorTok{!=}\StringTok{ "3"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "15"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "19"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "23"}\NormalTok{)}
+
+\NormalTok{pd <-}\StringTok{ }\KeywordTok{position_dodge}\NormalTok{(}\FloatTok{0.1}\NormalTok{)}
+\NormalTok{plot_desriptive }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ ConditionSP, }\DataTypeTok{y =}\NormalTok{ subresp, }\DataTypeTok{color =}\NormalTok{ participant, }\DataTypeTok{group=}\NormalTok{participant)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Condition"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Subjective Response"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Plot of Average Subjective Responses for Lies"}\NormalTok{)  }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\NormalTok{see}\OperatorTok{::}\KeywordTok{theme_modern}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\hypertarget{summary-of-tasks}{%
+\subsection{Summary of Tasks}\label{summary-of-tasks}}
+
+average and SD of each task
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Summary_of_task <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}
+  \DataTypeTok{Mean =} \KeywordTok{sapply}\NormalTok{(df_descriptive[}\DecValTok{2}\OperatorTok{:}\KeywordTok{ncol}\NormalTok{(df_descriptive)], mean, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{),}
+  \DataTypeTok{SD =} \KeywordTok{sapply}\NormalTok{(df_descriptive[}\DecValTok{2}\OperatorTok{:}\KeywordTok{ncol}\NormalTok{(df_descriptive)], sd, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+\#\#Inferential (TO REMOVE) Plot of various average Physio scores in 2
+conditions
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Corr <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{!=}\StringTok{ "TRUTH"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Condition }\OperatorTok{==}\StringTok{ "R"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(participant, ConditionSP) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise_all}\NormalTok{(mean) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{58}\NormalTok{,}\DecValTok{72}\NormalTok{,}\DecValTok{80}\NormalTok{))}
+
+\CommentTok{#Plot of Average Physio Response of lies in 2 conditions}
+\CommentTok{##ECG_Rate_Mean}
+\NormalTok{pd <-}\StringTok{ }\KeywordTok{position_dodge}\NormalTok{(}\FloatTok{0.1}\NormalTok{)}
+\NormalTok{Corr }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ ConditionSP, }\DataTypeTok{y =}\NormalTok{ ECG_Rate_Mean, }\DataTypeTok{color =}\NormalTok{ participant, }\DataTypeTok{group=}\NormalTok{participant)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Condition"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Subjective Response"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Plot of ECG Rate Mean for Lies"}\NormalTok{)  }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\NormalTok{see}\OperatorTok{::}\KeywordTok{theme_modern}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{##RSP_Rate_Mean}
+\NormalTok{Corr }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ ConditionSP, }\DataTypeTok{y =}\NormalTok{ RSP_Rate_Mean, }\DataTypeTok{color =}\NormalTok{ participant, }\DataTypeTok{group=}\NormalTok{participant)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Condition"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Subjective Response"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Plot of RSP Rate Mean for Lies"}\NormalTok{)  }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\NormalTok{see}\OperatorTok{::}\KeywordTok{theme_modern}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-5-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{##RSP_Amplitude_Mean}
+\NormalTok{Corr }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ ConditionSP, }\DataTypeTok{y =}\NormalTok{ RSP_Amplitude_Mean, }\DataTypeTok{color =}\NormalTok{ participant, }\DataTypeTok{group=}\NormalTok{participant)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{position =}\NormalTok{ pd) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Condition"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Subjective Response"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Plot of RSP Amplitude Mean for Lies"}\NormalTok{)  }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\NormalTok{see}\OperatorTok{::}\KeywordTok{theme_modern}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-5-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Correlation of Average subjective response vs Physio + Scatterplots}
+\CommentTok{#http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r}
+\end{Highlighting}
+\end{Shaded}
+
+\#Correlation Matrix of all Variables
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df_correlation <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{!=}\StringTok{ "TRUTH"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Condition }\OperatorTok{==}\StringTok{ "R"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{55}\OperatorTok{:}\DecValTok{90}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant),}
+         \DataTypeTok{ConditionSP =} \KeywordTok{as.factor}\NormalTok{(ConditionSP))}
+
+\NormalTok{Corr_Matrix <-}\StringTok{ }\NormalTok{correlation}\OperatorTok{::}\KeywordTok{correlation}\NormalTok{(}
+  \KeywordTok{select}\NormalTok{(df_correlation,}
+\NormalTok{         participant, }
+\NormalTok{         ConditionSP, }
+\NormalTok{         subresp, }
+         \KeywordTok{starts_with}\NormalTok{(}\StringTok{"ECG"}\NormalTok{), }
+         \KeywordTok{starts_with}\NormalTok{(}\StringTok{"RSP"}\NormalTok{),}
+         \KeywordTok{starts_with}\NormalTok{(}\StringTok{"EDA"}\NormalTok{)),}
+  \DataTypeTok{multilevel =}\NormalTok{ F, }\DataTypeTok{p_adjust =} \StringTok{"none"}\NormalTok{) }
+
+\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{filter}\NormalTok{(Corr_Matrix, Parameter1 }\OperatorTok{==}\StringTok{ "subresp"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(}\KeywordTok{abs}\NormalTok{(r)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # Correlation table (pearson-method)
+## 
+## Parameter1 |                       Parameter2 |         r |         95% CI | t(1173) |         p
+## ------------------------------------------------------------------------------------------------
+## subresp    |                     ECG_Rate_Max |     -0.17 | [-0.22, -0.11] |   -5.82 | < .001***
+## subresp    |                ECG_Rate_Max_Time |     -0.16 | [-0.22, -0.11] |   -5.65 | < .001***
+## subresp    |                ECG_Rate_Trend_R2 |     -0.15 | [-0.20, -0.09] |   -5.13 | < .001***
+## subresp    |                ECG_Rate_Min_Time |      0.11 | [ 0.05,  0.17] |    3.83 | < .001***
+## subresp    |               RSP_Amplitude_Mean |     -0.11 | [-0.17, -0.05] |   -3.79 | < .001***
+## subresp    |                RSP_Amplitude_Max |     -0.09 | [-0.15, -0.04] |   -3.18 | 0.002**  
+## subresp    |                     ECG_Rate_Min |      0.07 | [ 0.02,  0.13] |    2.57 | 0.010*   
+## subresp    |                RSP_Rate_Baseline |     -0.06 | [-0.12, -0.01] |   -2.17 | 0.030*   
+## subresp    |      ECG_Phase_Completion_Atrial |      0.05 | [-0.01,  0.11] |    1.77 | 0.077    
+## subresp    |                          EDA_SCR |      0.05 | [-0.01,  0.11] |    1.77 | 0.078    
+## subresp    |         ECG_Rate_Trend_Quadratic |     -0.04 | [-0.10,  0.01] |   -1.50 | 0.133    
+## subresp    |                RSP_Rate_Trend_R2 |     -0.04 | [-0.10,  0.02] |   -1.44 | 0.150    
+## subresp    |                RSP_Amplitude_Min |     -0.03 | [-0.09,  0.02] |   -1.19 | 0.232    
+## subresp    |            ECG_Phase_Ventricular |     -0.03 | [-0.09,  0.02] |   -1.16 | 0.247    
+## subresp    |                     RSP_Rate_Min |      0.03 | [-0.02,  0.09] |    1.14 | 0.256    
+## subresp    |            RSP_Rate_Trend_Linear |      0.03 | [-0.03,  0.09] |    0.98 | 0.326    
+## subresp    |         RSP_Rate_Trend_Quadratic |     -0.02 | [-0.08,  0.03] |   -0.81 | 0.420    
+## subresp    |                    ECG_Rate_Mean |     -0.02 | [-0.08,  0.04] |   -0.74 | 0.460    
+## subresp    | ECG_Phase_Completion_Ventricular |     -0.02 | [-0.08,  0.04] |   -0.68 | 0.498    
+## subresp    |                    RSP_Rate_Mean |      0.02 | [-0.04,  0.08] |    0.63 | 0.528    
+## subresp    |                RSP_Rate_Min_Time |     -0.02 | [-0.07,  0.04] |   -0.57 | 0.572    
+## subresp    |                        RSP_Phase |     -0.01 | [-0.07,  0.04] |   -0.51 | 0.611    
+## subresp    |             RSP_Phase_Completion |      0.01 | [-0.04,  0.07] |    0.43 | 0.664    
+## subresp    |                     RSP_Rate_Max |     -0.01 | [-0.07,  0.05] |   -0.42 | 0.676    
+## subresp    |                RSP_Rate_Max_Time |     -0.01 | [-0.07,  0.05] |   -0.40 | 0.687    
+## subresp    |                ECG_Rate_Baseline |      0.01 | [-0.05,  0.07] |    0.40 | 0.688    
+## subresp    |                 ECG_Quality_Mean |      0.01 | [-0.05,  0.07] |    0.35 | 0.723    
+## subresp    |               EDA_Peak_Amplitude | -4.29e-03 | [-0.06,  0.05] |   -0.15 | 0.883    
+## subresp    |            ECG_Rate_Trend_Linear |  2.34e-03 | [-0.05,  0.06] |    0.08 | 0.936    
+## subresp    |                 ECG_Phase_Atrial |  7.04e-04 | [-0.06,  0.06] |    0.02 | 0.981    
+## 
+## p-value adjustment method: none
+## Observations: 1175
+\end{verbatim}
+
+\#Hypothesis Nested Regression Analysis
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Regression models}
+\CommentTok{##Subjective Response Comparison}
+\NormalTok{df <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant),}
+         \DataTypeTok{ConditionSP =} \KeywordTok{as.factor}\NormalTok{(ConditionSP)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{==}\StringTok{ "LIE"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Inclusion2 }\OperatorTok{!=}\StringTok{ "0"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(participant }\OperatorTok{!=}\StringTok{ "3"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "15"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "19"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "23"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Condition }\OperatorTok{==}\StringTok{ "C"}\NormalTok{) }
+  \CommentTok{# mutate(yoni_new = yoni_affective + yoni_cognitive) }
+
+
+\CommentTok{#TOM Hypothesis 1A: SUBRESP -> YONI/BES}
+\NormalTok{model_sub1 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |          95% CI | t(948) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                       |       -6.82 | 9.37 | [-25.18, 11.53] |  -0.73 | 0.466
+## ConditionSP [social]              |        9.27 | 3.79 | [  1.83, 16.70] |   2.44 | 0.015
+## yoni_total                        |        0.10 | 0.11 | [ -0.11,  0.31] |   0.91 | 0.362
+## ConditionSP [social] * yoni_total |       -0.11 | 0.04 | [ -0.20, -0.03] |  -2.54 | 0.011
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub1, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"Yoni Task"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by Yoni Task"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_sub2 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_cognitive }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                             | Coefficient |   SE |          95% CI | t(948) |      p
+## ----------------------------------------------------------------------------------------------
+## (Intercept)                           |      -11.70 | 8.39 | [-28.13,  4.74] |  -1.40 | 0.163 
+## ConditionSP [social]                  |       12.23 | 3.40 | [  5.57, 18.90] |   3.60 | < .001
+## yoni_cognitive                        |        0.43 | 0.27 | [ -0.10,  0.96] |   1.60 | 0.109 
+## ConditionSP [social] * yoni_cognitive |       -0.41 | 0.11 | [ -0.62, -0.19] |  -3.70 | < .001
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub2, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_cognitive"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"Yoni Task (Affective)"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by Yoni Task (Affective)"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_sub3 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                        | Coefficient |   SE |          95% CI | t(948) |     p
+## ----------------------------------------------------------------------------------------
+## (Intercept)                      |       -4.11 | 7.01 | [-17.85,  9.62] |  -0.59 | 0.557
+## ConditionSP [social]             |        7.49 | 2.84 | [  1.94, 13.05] |   2.64 | 0.008
+## BES_Total                        |        0.08 | 0.10 | [ -0.11,  0.27] |   0.83 | 0.404
+## ConditionSP [social] * BES_Total |       -0.11 | 0.04 | [ -0.18, -0.03] |  -2.77 | 0.006
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub3, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"BES_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"BES Questionnaire"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by BES Questionnaire"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_sub4 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total) }\OperatorTok{+}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |    SE |          95% CI | t(947) |     p
+## ------------------------------------------------------------------------------------------
+## (Intercept)                       |       -7.47 | 10.51 | [-28.07, 13.14] |  -0.71 | 0.477
+## ConditionSP [social]              |        9.26 |  3.79 | [  1.83, 16.70] |   2.44 | 0.015
+## yoni_total                        |        0.10 |  0.12 | [ -0.13,  0.32] |   0.81 | 0.416
+## BES_Total                         |        0.01 |  0.10 | [ -0.18,  0.21] |   0.15 | 0.883
+## ConditionSP [social] * yoni_total |       -0.11 |  0.04 | [ -0.20, -0.03] |  -2.54 | 0.011
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub4, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{, }\StringTok{"BES_Total"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#TOM Hypothesis 1C: SUBRESP -> SRP3}
+\NormalTok{model_sub5 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |         95% CI | t(948) |     p
+## ----------------------------------------------------------------------------------------
+## (Intercept)                       |       -3.06 | 4.51 | [-11.89, 5.78] |  -0.68 | 0.498
+## ConditionSP [social]              |       -0.97 | 1.85 | [ -4.59, 2.64] |  -0.53 | 0.597
+## SRP3_Total                        |        0.03 | 0.03 | [ -0.03, 0.10] |   1.07 | 0.286
+## ConditionSP [social] * SRP3_Total |    4.74e-03 | 0.01 | [ -0.02, 0.03] |   0.37 | 0.713
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub5, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 Inventory"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by SRP3 Inventory"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_sub6 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_ELS }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub6)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |   SE |         95% CI | t(948) |     p
+## --------------------------------------------------------------------------------------
+## (Intercept)                     |       -1.35 | 4.87 | [-10.88, 8.19] |  -0.28 | 0.782
+## ConditionSP [social]            |       -1.16 | 1.96 | [ -4.99, 2.68] |  -0.59 | 0.555
+## SRP3_ELS                        |        0.07 | 0.12 | [ -0.16, 0.31] |   0.63 | 0.528
+## ConditionSP [social] * SRP3_ELS |        0.02 | 0.05 | [ -0.07, 0.11] |   0.44 | 0.661
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub6, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_ELS"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 (Erratic Life Style)"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by SRP3 - ELS"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2A: SUBRESP -> HCT/MAIA}
+\NormalTok{model_sub7 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub7)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |    SE |          95% CI | t(948) |     p
+## --------------------------------------------------------------------------------------------
+## (Intercept)                         |       18.49 | 11.85 | [ -4.74, 41.72] |   1.56 | 0.119
+## ConditionSP [social]                |      -12.41 |  4.82 | [-21.87, -2.96] |  -2.57 | 0.010
+## HCT_Accuracy                        |      -18.22 | 12.82 | [-43.35,  6.90] |  -1.42 | 0.155
+## ConditionSP [social] * HCT_Accuracy |       13.13 |  5.22 | [  2.90, 23.36] |   2.52 | 0.012
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub7, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT Accuracy"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by HCT Accuracy"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-7.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_sub8 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub8)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |         95% CI | t(948) |     p
+## ----------------------------------------------------------------------------------------
+## (Intercept)                       |        8.58 | 4.05 | [ 0.64, 16.52] |   2.12 | 0.034
+## ConditionSP [social]              |       -3.25 | 1.69 | [-6.55,  0.06] |  -1.93 | 0.054
+## MAIA_Total                        |       -0.32 | 0.19 | [-0.69,  0.04] |  -1.74 | 0.082
+## ConditionSP [social] * MAIA_Total |        0.14 | 0.08 | [-0.01,  0.29] |   1.78 | 0.075
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub8, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"MAIA_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"MAIA2"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by MAIA2"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-8.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_sub9 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy) }\OperatorTok{+}\StringTok{ }\NormalTok{HCT_Confidence }\OperatorTok{+}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)                                                                                       }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub9)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |    SE |          95% CI | t(946) |     p
+## --------------------------------------------------------------------------------------------
+## (Intercept)                         |       21.30 | 12.76 | [ -3.72, 46.31] |   1.67 | 0.095
+## ConditionSP [social]                |      -12.39 |  4.82 | [-21.85, -2.94] |  -2.57 | 0.010
+## HCT_Accuracy                        |      -16.04 | 13.15 | [-41.82,  9.74] |  -1.22 | 0.223
+## HCT_Confidence                      |       -0.53 |  4.63 | [ -9.61,  8.55] |  -0.11 | 0.909
+## MAIA_Total                          |       -0.21 |  0.28 | [ -0.75,  0.33] |  -0.77 | 0.441
+## ConditionSP [social] * HCT_Accuracy |       13.10 |  5.22 | [  2.87, 23.33] |   2.51 | 0.012
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub9, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-9.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2C: SUBRESP -> SRP3_PRI}
+\NormalTok{model_sub10 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(subresp }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_PRI }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_sub10)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |   SE |         95% CI | t(948) |     p
+## --------------------------------------------------------------------------------------
+## (Intercept)                     |       -3.28 | 3.97 | [-11.05, 4.50] |  -0.83 | 0.409
+## ConditionSP [social]            |       -0.55 | 1.64 | [ -3.76, 2.65] |  -0.34 | 0.735
+## SRP3_PRI                        |        0.06 | 0.05 | [ -0.03, 0.16] |   1.28 | 0.202
+## ConditionSP [social] * SRP3_PRI |    3.15e-03 | 0.02 | [ -0.04, 0.04] |   0.15 | 0.878
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_sub10, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_PRI"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 (PRI) Inventory"}\NormalTok{, }\StringTok{"Subjective Response"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of Subjective Response by SRP3 (PRI)"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-10.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#ECG Physio scores comparison}
+\NormalTok{df2 <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant),}
+         \DataTypeTok{ConditionSP =} \KeywordTok{as.factor}\NormalTok{(ConditionSP)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{==}\StringTok{ "LIE"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Inclusion2 }\OperatorTok{!=}\StringTok{ "0"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(participant }\OperatorTok{!=}\StringTok{ "22"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\CommentTok{#  filter(participant != "23") %>%         #try keep 12 and 15}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(participant }\OperatorTok{!=}\StringTok{ "30"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{filter}\NormalTok{(Condition }\OperatorTok{==}\StringTok{ "C"}\NormalTok{) }
+  \CommentTok{# filter(participant != "12",}
+  \CommentTok{#        participant != "15") %>%}
+
+\CommentTok{#ECG_RATE_MAX}
+\CommentTok{#TOM Hypothesis 1A: ECG_Rate_Max -> YONI/BES}
+\NormalTok{model_ecg1 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |         95% CI | t(1017) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                       |       13.99 | 6.34 | [ 1.56, 26.42] |    2.21 | 0.027
+## ConditionSP [social]              |        2.08 | 3.26 | [-4.31,  8.47] |    0.64 | 0.524
+## yoni_total                        |       -0.09 | 0.07 | [-0.24,  0.05] |   -1.23 | 0.218
+## ConditionSP [social] * yoni_total |   -3.91e-03 | 0.04 | [-0.08,  0.07] |   -0.10 | 0.918
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg1, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"Yoni Task"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by Yoni Task"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-11.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg2 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_affective }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                             | Coefficient |   SE |         95% CI | t(1017) |      p
+## ----------------------------------------------------------------------------------------------
+## (Intercept)                           |       19.40 | 5.72 | [ 8.19, 30.61] |    3.39 | < .001
+## ConditionSP [social]                  |        1.98 | 3.10 | [-4.10,  8.06] |    0.64 | 0.523 
+## yoni_affective                        |       -0.32 | 0.14 | [-0.58, -0.05] |   -2.32 | 0.021 
+## ConditionSP [social] * yoni_affective |   -5.63e-03 | 0.07 | [-0.15,  0.14] |   -0.08 | 0.939
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg2, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_affective"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"Yoni Task (Affective)"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by Yoni Task (Affective)"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-12.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg3 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                        | Coefficient |   SE |        95% CI |   t(1017) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                      |       -0.03 | 4.90 | [-9.63, 9.56] | -7.06e-03 | 0.994
+## ConditionSP [social]             |        2.19 | 2.51 | [-2.73, 7.11] |      0.87 | 0.384
+## BES_Total                        |        0.08 | 0.07 | [-0.04, 0.21] |      1.29 | 0.198
+## ConditionSP [social] * BES_Total |   -6.03e-03 | 0.03 | [-0.07, 0.06] |     -0.18 | 0.859
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg3, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"BES_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"BES Questionnaire"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by BES Questionnaire"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-13.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg4 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total) }\OperatorTok{+}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |         95% CI | t(1016) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                       |        8.17 | 7.40 | [-6.33, 22.66] |    1.10 | 0.269
+## ConditionSP [social]              |        2.09 | 3.26 | [-4.30,  8.48] |    0.64 | 0.522
+## yoni_total                        |       -0.10 | 0.07 | [-0.25,  0.04] |   -1.39 | 0.164
+## BES_Total                         |        0.09 | 0.06 | [-0.03,  0.21] |    1.46 | 0.145
+## ConditionSP [social] * yoni_total |   -4.01e-03 | 0.04 | [-0.08,  0.07] |   -0.10 | 0.916
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg4, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{, }\StringTok{"BES_Total"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-14.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#TOM Hypothesis 1C: ECG_Rate_Max -> SRP3}
+\NormalTok{model_ecg5 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |         95% CI | t(1017) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                       |        5.76 | 3.55 | [-1.19, 12.71] |    1.62 | 0.105
+## ConditionSP [social]              |        2.65 | 1.75 | [-0.78,  6.07] |    1.51 | 0.130
+## SRP3_Total                        |    3.20e-03 | 0.02 | [-0.04,  0.05] |    0.13 | 0.896
+## ConditionSP [social] * SRP3_Total |   -6.34e-03 | 0.01 | [-0.03,  0.02] |   -0.52 | 0.601
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg5, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 Inventory"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by SRP3 Inventory"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-15.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg6 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_ELS }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg6)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |   SE |         95% CI | t(1017) |     p
+## ---------------------------------------------------------------------------------------
+## (Intercept)                     |        4.48 | 3.77 | [-2.91, 11.87] |    1.19 | 0.235
+## ConditionSP [social]            |        5.79 | 1.83 | [ 2.21,  9.37] |    3.17 | 0.002
+## SRP3_ELS                        |        0.04 | 0.09 | [-0.14,  0.22] |    0.47 | 0.639
+## ConditionSP [social] * SRP3_ELS |       -0.10 | 0.04 | [-0.19, -0.01] |   -2.24 | 0.025
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg6, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_ELS"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 (Erratic Life Style)"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by SRP3 - ELS"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-16.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2A: ECG_Rate_Max -> HCT/MAIA}
+\NormalTok{model_ecg7 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg7)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |   SE |          95% CI | t(1017) |     p
+## --------------------------------------------------------------------------------------------
+## (Intercept)                         |       11.69 | 9.24 | [ -6.43, 29.80] |    1.26 | 0.206
+## ConditionSP [social]                |       -3.51 | 4.57 | [-12.47,  5.45] |   -0.77 | 0.442
+## HCT_Accuracy                        |       -5.92 | 9.98 | [-25.48, 13.63] |   -0.59 | 0.553
+## ConditionSP [social] * HCT_Accuracy |        5.69 | 4.94 | [ -3.99, 15.37] |    1.15 | 0.249
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg7, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT Accuracy"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by HCT Accuracy"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-17.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg8 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg8)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |        95% CI | t(1017) |     p
+## ----------------------------------------------------------------------------------------
+## (Intercept)                       |       -0.53 | 3.14 | [-6.69, 5.63] |   -0.17 | 0.866
+## ConditionSP [social]              |        3.97 | 1.65 | [ 0.73, 7.21] |    2.40 | 0.016
+## MAIA_Total                        |        0.32 | 0.15 | [ 0.03, 0.60] |    2.18 | 0.029
+## ConditionSP [social] * MAIA_Total |       -0.10 | 0.08 | [-0.25, 0.05] |   -1.37 | 0.171
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg8, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"MAIA_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"MAIA2"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by MAIA2"}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-18.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg9 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy) }\OperatorTok{+}\StringTok{ }\NormalTok{HCT_Confidence }\OperatorTok{+}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg9)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |   SE |          95% CI | t(1015) |     p
+## --------------------------------------------------------------------------------------------
+## (Intercept)                         |        8.62 | 9.21 | [ -9.43, 26.67] |    0.94 | 0.349
+## ConditionSP [social]                |       -3.56 | 4.57 | [-12.52,  5.40] |   -0.78 | 0.436
+## HCT_Accuracy                        |       -8.46 | 9.74 | [-27.56, 10.64] |   -0.87 | 0.385
+## HCT_Confidence                      |        1.21 | 2.42 | [ -3.54,  5.95] |    0.50 | 0.617
+## MAIA_Total                          |        0.23 | 0.17 | [ -0.11,  0.57] |    1.32 | 0.188
+## ConditionSP [social] * HCT_Accuracy |        5.74 | 4.94 | [ -3.94, 15.42] |    1.16 | 0.245
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg9, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-19.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2C: ECG_Rate_Max -> SRP3_PRI}
+\NormalTok{model_ecg10 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_CA }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg10)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                      | Coefficient |   SE |         95% CI | t(1017) |     p
+## --------------------------------------------------------------------------------------
+## (Intercept)                    |        7.53 | 2.57 | [ 2.49, 12.57] |    2.93 | 0.003
+## ConditionSP [social]           |        1.84 | 1.28 | [-0.67,  4.34] |    1.44 | 0.151
+## SRP3_CA                        |       -0.03 | 0.07 | [-0.16,  0.09] |   -0.53 | 0.599
+## ConditionSP [social] * SRP3_CA |   -2.45e-03 | 0.03 | [-0.07,  0.06] |   -0.07 | 0.941
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg10, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_CA"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{), }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 (PRI) Inventory"}\NormalTok{, }\StringTok{"ECG_Rate_Max"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Predicted Values of ECG_Rate_Max by SRP3 (PRI) "}\NormalTok{, }\DataTypeTok{legend.title =} \StringTok{"Condition"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-20.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#ONLY CA was showing good results}
+
+
+
+\CommentTok{#ECG_RATE_MIN}
+\CommentTok{#TOM Hypothesis 1A: ECG_Rate_Min -> YONI/BES}
+\NormalTok{model_ecg1a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg1a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |          95% CI | t(1017) |     p
+## ------------------------------------------------------------------------------------------
+## (Intercept)                       |      -10.13 | 4.34 | [-18.65, -1.61] |   -2.33 | 0.020
+## ConditionSP [social]              |       -3.46 | 3.65 | [-10.62,  3.69] |   -0.95 | 0.342
+## yoni_total                        |        0.05 | 0.05 | [ -0.05,  0.15] |    1.03 | 0.305
+## ConditionSP [social] * yoni_total |        0.05 | 0.04 | [ -0.03,  0.14] |    1.21 | 0.225
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg1a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-21.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg2a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_affective }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg2a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                             | Coefficient |   SE |         95% CI | t(1017) |     p
+## ---------------------------------------------------------------------------------------------
+## (Intercept)                           |       -7.05 | 4.32 | [-15.51, 1.41] |   -1.63 | 0.102
+## ConditionSP [social]                  |       -2.06 | 3.47 | [ -8.87, 4.75] |   -0.59 | 0.552
+## yoni_affective                        |        0.03 | 0.10 | [ -0.17, 0.23] |    0.32 | 0.751
+## ConditionSP [social] * yoni_affective |        0.07 | 0.08 | [ -0.09, 0.23] |    0.87 | 0.384
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg2a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_affective"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-22.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg3a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg3a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                        | Coefficient |   SE |         95% CI | t(1017) |     p
+## ----------------------------------------------------------------------------------------
+## (Intercept)                      |       -6.57 | 3.50 | [-13.44, 0.29] |   -1.88 | 0.061
+## ConditionSP [social]             |        2.26 | 2.81 | [ -3.25, 7.77] |    0.80 | 0.421
+## BES_Total                        |        0.01 | 0.05 | [ -0.08, 0.10] |    0.26 | 0.798
+## ConditionSP [social] * BES_Total |       -0.02 | 0.04 | [ -0.09, 0.06] |   -0.47 | 0.637
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg3a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"BES_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-23.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg4a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total) }\OperatorTok{+}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg4a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |         95% CI | t(1016) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                       |       -9.85 | 5.16 | [-19.97, 0.26] |   -1.91 | 0.056
+## ConditionSP [social]              |       -3.46 | 3.65 | [-10.61, 3.69] |   -0.95 | 0.343
+## yoni_total                        |        0.05 | 0.05 | [ -0.05, 0.15] |    1.02 | 0.309
+## BES_Total                         |   -4.45e-03 | 0.04 | [ -0.09, 0.08] |   -0.11 | 0.916
+## ConditionSP [social] * yoni_total |        0.05 | 0.04 | [ -0.03, 0.14] |    1.21 | 0.225
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg4a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{, }\StringTok{"BES_Total"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-24.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#TOM Hypothesis 1C: ECG_Rate_Min -> SRP3}
+\NormalTok{model_ecg5a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg5a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |          95% CI | t(1017) |     p
+## ------------------------------------------------------------------------------------------
+## (Intercept)                       |       -7.05 | 2.41 | [-11.78, -2.33] |   -2.92 | 0.003
+## ConditionSP [social]              |       -1.05 | 1.96 | [ -4.89,  2.78] |   -0.54 | 0.590
+## SRP3_Total                        |    9.57e-03 | 0.02 | [ -0.02,  0.04] |    0.57 | 0.566
+## ConditionSP [social] * SRP3_Total |        0.01 | 0.01 | [ -0.01,  0.04] |    1.04 | 0.299
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg5a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-25.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg6a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_ELS }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg6a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |   SE |          95% CI | t(1017) |     p
+## ----------------------------------------------------------------------------------------
+## (Intercept)                     |       -6.45 | 2.60 | [-11.55, -1.35] |   -2.48 | 0.013
+## ConditionSP [social]            |        1.82 | 2.05 | [ -2.20,  5.84] |    0.89 | 0.375
+## SRP3_ELS                        |        0.02 | 0.06 | [ -0.11,  0.14] |    0.30 | 0.765
+## ConditionSP [social] * SRP3_ELS |       -0.02 | 0.05 | [ -0.12,  0.08] |   -0.43 | 0.666
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg6a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_ELS"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-26.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2A: ECG_Rate_Min -> HCT/MAIA}
+\NormalTok{model_ecg7a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg7a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |   SE |          95% CI | t(1017) |     p
+## --------------------------------------------------------------------------------------------
+## (Intercept)                         |      -13.08 | 6.02 | [-24.88, -1.28] |   -2.17 | 0.030
+## ConditionSP [social]                |       -6.86 | 5.12 | [-16.89,  3.17] |   -1.34 | 0.180
+## HCT_Accuracy                        |        8.00 | 6.50 | [ -4.74, 20.74] |    1.23 | 0.218
+## ConditionSP [social] * HCT_Accuracy |        8.45 | 5.53 | [ -2.38, 19.28] |    1.53 | 0.126
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg7a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-27.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg8a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg8a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |   SE |         95% CI | t(1017) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                       |       -5.36 | 2.31 | [-9.89, -0.83] |   -2.32 | 0.020
+## ConditionSP [social]              |       -0.06 | 1.85 | [-3.70,  3.57] |   -0.04 | 0.972
+## MAIA_Total                        |       -0.02 | 0.11 | [-0.23,  0.19] |   -0.15 | 0.884
+## ConditionSP [social] * MAIA_Total |        0.05 | 0.09 | [-0.12,  0.22] |    0.55 | 0.579
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg8, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"MAIA_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-28.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_ecg9a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy) }\OperatorTok{+}\StringTok{ }\NormalTok{HCT_Confidence }\OperatorTok{+}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg9a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |   SE |          95% CI | t(1015) |     p
+## --------------------------------------------------------------------------------------------
+## (Intercept)                         |      -14.32 | 5.96 | [-26.02, -2.63] |   -2.40 | 0.016
+## ConditionSP [social]                |       -6.80 | 5.12 | [-16.82,  3.23] |   -1.33 | 0.184
+## HCT_Accuracy                        |        8.39 | 6.33 | [ -4.02, 20.81] |    1.33 | 0.185
+## HCT_Confidence                      |       -3.04 | 1.46 | [ -5.91, -0.18] |   -2.08 | 0.037
+## MAIA_Total                          |        0.10 | 0.11 | [ -0.10,  0.31] |    0.99 | 0.322
+## ConditionSP [social] * HCT_Accuracy |        8.38 | 5.53 | [ -2.45, 19.21] |    1.52 | 0.129
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg9, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-29.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2C: ECG_Rate_Min -> SRP3_PRI}
+\NormalTok{model_ecg10a <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(ECG_Rate_Min }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_PRI }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df2)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_ecg10a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |   SE |          95% CI | t(1017) |     p
+## ----------------------------------------------------------------------------------------
+## (Intercept)                     |       -6.86 | 2.08 | [-10.94, -2.77] |   -3.29 | 0.001
+## ConditionSP [social]            |       -0.84 | 1.69 | [ -4.16,  2.48] |   -0.50 | 0.620
+## SRP3_PRI                        |        0.01 | 0.03 | [ -0.04,  0.07] |    0.57 | 0.567
+## ConditionSP [social] * SRP3_PRI |        0.02 | 0.02 | [ -0.02,  0.06] |    1.08 | 0.282
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_ecg10a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_PRI"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-30.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#RESPIRATION PHYSIO ANALYSIS}
+  
+\NormalTok{df3 <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant),}
+         \DataTypeTok{ConditionSP =} \KeywordTok{as.factor}\NormalTok{(ConditionSP)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{==}\StringTok{ "LIE"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Inclusion2 }\OperatorTok{!=}\StringTok{ "0"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(participant }\OperatorTok{!=}\StringTok{ "22"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{filter}\NormalTok{(Condition }\OperatorTok{==}\StringTok{ "C"}\NormalTok{)}
+\CommentTok{#  filter(participant != "23") %>% }
+  \CommentTok{# filter(participant != "30") %>% }
+  \CommentTok{# filter(#participant != "12",            #try keep 15}
+  \CommentTok{#        participant != "15") %>% }
+  
+\CommentTok{#RSP_Amplitude_Max}
+\CommentTok{#TOM Hypothesis 1A: RSP_Amplitude_Max -> YONI/BES}
+\NormalTok{model_rsp1 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |    SE |            95% CI | t(1054) |     p
+## ---------------------------------------------------------------------------------------------
+## (Intercept)                       |      175.33 | 91.45 | [  -3.90, 354.57] |    1.92 | 0.055
+## ConditionSP [social]              |       30.10 | 69.56 | [-106.23, 166.44] |    0.43 | 0.665
+## yoni_total                        |       -0.93 |  1.07 | [  -3.02,   1.17] |   -0.86 | 0.388
+## ConditionSP [social] * yoni_total |       -0.59 |  0.82 | [  -2.19,   1.01] |   -0.73 | 0.467
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp1, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-31.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_rsp2 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_affective }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                             | Coefficient |    SE |            95% CI | t(1054) |     p
+## -------------------------------------------------------------------------------------------------
+## (Intercept)                           |      196.30 | 87.87 | [  24.07, 368.53] |    2.23 | 0.025
+## ConditionSP [social]                  |       -5.99 | 66.43 | [-136.19, 124.21] |   -0.09 | 0.928
+## yoni_affective                        |       -2.38 |  2.09 | [  -6.48,   1.71] |   -1.14 | 0.254
+## ConditionSP [social] * yoni_affective |       -0.34 |  1.58 | [  -3.44,   2.76] |   -0.22 | 0.829
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp2, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_affective"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-32.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_rsp3 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                        | Coefficient |    SE |            95% CI | t(1054) |     p
+## --------------------------------------------------------------------------------------------
+## (Intercept)                      |      145.27 | 71.70 | [   4.74, 285.80] |    2.03 | 0.043
+## ConditionSP [social]             |       -2.13 | 53.75 | [-107.48, 103.22] |   -0.04 | 0.968
+## BES_Total                        |       -0.66 |  0.97 | [  -2.55,   1.23] |   -0.68 | 0.494
+## ConditionSP [social] * BES_Total |       -0.25 |  0.72 | [  -1.67,   1.17] |   -0.34 | 0.734
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp3, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"BES_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-33.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_rsp4 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total) }\OperatorTok{+}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |     SE |            95% CI | t(1053) |     p
+## ----------------------------------------------------------------------------------------------
+## (Intercept)                       |      219.28 | 108.36 | [   6.90, 431.67] |    2.02 | 0.043
+## ConditionSP [social]              |       29.97 |  69.56 | [-106.37, 166.31] |    0.43 | 0.667
+## yoni_total                        |       -0.85 |   1.08 | [  -2.97,   1.27] |   -0.79 | 0.432
+## BES_Total                         |       -0.68 |   0.89 | [  -2.43,   1.06] |   -0.77 | 0.443
+## ConditionSP [social] * yoni_total |       -0.59 |   0.82 | [  -2.19,   1.01] |   -0.73 | 0.468
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp4, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{, }\StringTok{"BES_Total"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-34.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#TOM Hypothesis 1C: RSP_Amplitude_Max -> SRP3}
+\NormalTok{model_rsp5 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |    SE |            95% CI | t(1054) |     p
+## ---------------------------------------------------------------------------------------------
+## (Intercept)                       |      116.70 | 49.56 | [  19.56, 213.84] |    2.35 | 0.019
+## ConditionSP [social]              |      -39.62 | 36.48 | [-111.11,  31.88] |   -1.09 | 0.277
+## SRP3_Total                        |       -0.14 |  0.34 | [  -0.82,   0.53] |   -0.41 | 0.680
+## ConditionSP [social] * SRP3_Total |        0.14 |  0.25 | [  -0.36,   0.64] |    0.54 | 0.591
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp5, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-35.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_rsp6 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_ELS }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp6)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |    SE |           95% CI | t(1054) |     p
+## ------------------------------------------------------------------------------------------
+## (Intercept)                     |       97.36 | 49.30 | [  0.72, 193.99] |    1.97 | 0.048
+## ConditionSP [social]            |       29.61 | 36.10 | [-41.14, 100.36] |    0.82 | 0.412
+## SRP3_ELS                        |       -0.02 |  1.21 | [ -2.39,   2.36] |   -0.01 | 0.989
+## ConditionSP [social] * SRP3_ELS |       -1.25 |  0.89 | [ -2.99,   0.49] |   -1.40 | 0.160
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp6, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_ELS"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-36.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2A: RSP_Amplitude_Max -> HCT/MAIA}
+\NormalTok{model_rsp7 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp7)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |     SE |            95% CI | t(1054) |     p
+## ------------------------------------------------------------------------------------------------
+## (Intercept)                         |      128.58 | 133.18 | [-132.46, 389.61] |    0.97 | 0.334
+## ConditionSP [social]                |      -82.66 |  97.94 | [-274.61, 109.29] |   -0.84 | 0.399
+## HCT_Accuracy                        |      -34.61 | 143.82 | [-316.50, 247.28] |   -0.24 | 0.810
+## ConditionSP [social] * HCT_Accuracy |       67.52 | 105.79 | [-139.84, 274.87] |    0.64 | 0.523
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp7, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-37.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_rsp8 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp8)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |    SE |            95% CI | t(1054) |     p
+## ---------------------------------------------------------------------------------------------
+## (Intercept)                       |       66.92 | 43.72 | [ -18.77, 152.60] |    1.53 | 0.126
+## ConditionSP [social]              |      -36.44 | 32.79 | [-100.71,  27.82] |   -1.11 | 0.266
+## MAIA_Total                        |        1.38 |  1.99 | [  -2.52,   5.27] |    0.69 | 0.489
+## ConditionSP [social] * MAIA_Total |        0.75 |  1.49 | [  -2.17,   3.67] |    0.50 | 0.615
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp8, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"MAIA_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-38.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_rsp9 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy) }\OperatorTok{+}\StringTok{ }\NormalTok{HCT_Confidence }\OperatorTok{+}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp9)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |     SE |            95% CI | t(1052) |     p
+## ------------------------------------------------------------------------------------------------
+## (Intercept)                         |      116.25 | 137.99 | [-154.19, 386.70] |    0.84 | 0.400
+## ConditionSP [social]                |      -83.47 |  97.94 | [-275.43, 108.49] |   -0.85 | 0.394
+## HCT_Accuracy                        |      -51.98 | 146.34 | [-338.80, 234.84] |   -0.36 | 0.722
+## HCT_Confidence                      |       24.61 |  35.10 | [ -44.18,  93.39] |    0.70 | 0.483
+## MAIA_Total                          |        0.80 |   2.37 | [  -3.85,   5.44] |    0.34 | 0.736
+## ConditionSP [social] * HCT_Accuracy |       68.40 | 105.80 | [-138.96, 275.76] |    0.65 | 0.518
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp9, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-39.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2C: RSP_Amplitude_Max -> SRP3_PRI}
+\NormalTok{model_rsp10 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(RSP_Amplitude_Max }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_PRI }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df3)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_rsp10)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |    SE |            95% CI | t(1054) |     p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                     |      118.83 | 43.81 | [  32.96, 204.69] |    2.71 | 0.007
+## ConditionSP [social]            |      -65.16 | 32.19 | [-128.25,  -2.07] |   -2.02 | 0.043
+## SRP3_PRI                        |       -0.28 |  0.54 | [  -1.34,   0.78] |   -0.52 | 0.604
+## ConditionSP [social] * SRP3_PRI |        0.57 |  0.40 | [  -0.21,   1.35] |    1.42 | 0.155
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_rsp10, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_PRI"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-40.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  df4 <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{participant =} \KeywordTok{as.factor}\NormalTok{(participant),}
+         \DataTypeTok{ConditionSP =} \KeywordTok{as.factor}\NormalTok{(ConditionSP)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(truthfulness }\OperatorTok{==}\StringTok{ "LIE"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Inclusion2 }\OperatorTok{!=}\StringTok{ "0"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(participant }\OperatorTok{!=}\StringTok{ "22"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(participant }\OperatorTok{!=}\StringTok{ "4"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "5"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "10"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "12"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "16"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "23"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "27"}\NormalTok{,}
+\NormalTok{         participant }\OperatorTok{!=}\StringTok{ "29"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Condition }\OperatorTok{==}\StringTok{ "C"}\NormalTok{)}
+
+\CommentTok{#  filter(participant != "23") %>% }
+\CommentTok{#  filter(participant != "30") %>% }
+
+\CommentTok{#EDA_SCR}
+\CommentTok{#TOM Hypothesis 1A: EDA_SCR -> YONI/BES}
+\NormalTok{model_eda1 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |       SE |        95% CI | t(766) |     p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                       |       -0.29 |     0.65 | [-1.56, 0.97] |  -0.45 | 0.651
+## ConditionSP [social]              |        0.65 |     0.36 | [-0.06, 1.37] |   1.79 | 0.074
+## yoni_total                        |    6.42e-03 | 7.54e-03 | [-0.01, 0.02] |   0.85 | 0.394
+## ConditionSP [social] * yoni_total |   -4.31e-03 | 4.26e-03 | [-0.01, 0.00] |  -1.01 | 0.312
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda1, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-41.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_eda2 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_affective }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                             | Coefficient |       SE |        95% CI | t(766) |     p
+## -----------------------------------------------------------------------------------------------
+## (Intercept)                           |       -0.33 |     0.57 | [-1.44, 0.79] |  -0.58 | 0.562
+## ConditionSP [social]                  |        0.89 |     0.32 | [ 0.27, 1.51] |   2.79 | 0.005
+## yoni_affective                        |        0.01 |     0.01 | [-0.01, 0.04] |   1.03 | 0.301
+## ConditionSP [social] * yoni_affective |       -0.01 | 7.57e-03 | [-0.03, 0.00] |  -1.91 | 0.056
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda2, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_affective"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-42.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_eda3 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                        | Coefficient |       SE |        95% CI | t(766) |     p
+## ------------------------------------------------------------------------------------------
+## (Intercept)                      |        0.35 |     0.42 | [-0.47, 1.16] |   0.83 | 0.406
+## ConditionSP [social]             |        0.05 |     0.23 | [-0.41, 0.51] |   0.22 | 0.823
+## BES_Total                        |   -1.20e-03 | 5.51e-03 | [-0.01, 0.01] |  -0.22 | 0.827
+## ConditionSP [social] * BES_Total |    3.12e-03 | 3.11e-03 | [ 0.00, 0.01] |   1.00 | 0.316
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda3, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"BES_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-43.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_eda4 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{yoni_total) }\OperatorTok{+}\StringTok{ }\NormalTok{BES_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |       SE |        95% CI | t(765) |     p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                       |       -0.29 |     0.73 | [-1.71, 1.14] |  -0.39 | 0.694
+## ConditionSP [social]              |        0.65 |     0.36 | [-0.06, 1.37] |   1.79 | 0.074
+## yoni_total                        |    6.45e-03 | 7.84e-03 | [-0.01, 0.02] |   0.82 | 0.410
+## BES_Total                         |   -1.32e-04 | 5.44e-03 | [-0.01, 0.01] |  -0.02 | 0.981
+## ConditionSP [social] * yoni_total |   -4.31e-03 | 4.26e-03 | [-0.01, 0.00] |  -1.01 | 0.312
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda4, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"yoni_total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{, }\StringTok{"BES_Total"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-44.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#TOM Hypothesis 1C: EDA_SCR -> SRP3}
+\NormalTok{model_eda5 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |       SE |        95% CI | t(766) |     p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                       |        0.09 |     0.31 | [-0.51, 0.69] |   0.28 | 0.776
+## ConditionSP [social]              |        0.26 |     0.17 | [-0.08, 0.60] |   1.52 | 0.128
+## SRP3_Total                        |    1.22e-03 | 2.18e-03 | [ 0.00, 0.01] |   0.56 | 0.576
+## ConditionSP [social] * SRP3_Total |    1.65e-04 | 1.23e-03 | [ 0.00, 0.00] |   0.13 | 0.893
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda5, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-45.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_eda6 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_ELS }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)  }\CommentTok{#explorative}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda6)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |       SE |        95% CI | t(766) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                     |        0.37 |     0.29 | [-0.20, 0.94] |   1.26 | 0.206
+## ConditionSP [social]            |        0.17 |     0.16 | [-0.15, 0.49] |   1.05 | 0.293
+## SRP3_ELS                        |   -2.90e-03 | 7.28e-03 | [-0.02, 0.01] |  -0.40 | 0.690
+## ConditionSP [social] * SRP3_ELS |    2.89e-03 | 4.07e-03 | [-0.01, 0.01] |   0.71 | 0.477
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda6, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_ELS"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-46.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2A: EDA_SCR -> HCT/MAIA}
+\NormalTok{model_eda7 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda7)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |   SE |         95% CI | t(766) |      p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                         |       -0.06 | 0.83 | [-1.70,  1.57] |  -0.07 | 0.942 
+## ConditionSP [social]                |        1.78 | 0.47 | [ 0.86,  2.71] |   3.78 | < .001
+## HCT_Accuracy                        |        0.34 | 0.90 | [-1.43,  2.11] |   0.38 | 0.705 
+## ConditionSP [social] * HCT_Accuracy |       -1.63 | 0.51 | [-2.63, -0.63] |  -3.18 | 0.001
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda7, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-47.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_eda8 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda8)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                         | Coefficient |       SE |         95% CI | t(766) |      p
+## ---------------------------------------------------------------------------------------------
+## (Intercept)                       |       -0.04 |     0.25 | [-0.53,  0.45] |  -0.14 | 0.885 
+## ConditionSP [social]              |        0.64 |     0.14 | [ 0.36,  0.91] |   4.48 | < .001
+## MAIA_Total                        |        0.01 |     0.01 | [-0.01,  0.04] |   1.20 | 0.232 
+## ConditionSP [social] * MAIA_Total |       -0.02 | 6.58e-03 | [-0.03,  0.00] |  -2.53 | 0.011
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda8, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"MAIA_Total"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-48.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_eda9 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{(ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{HCT_Accuracy) }\OperatorTok{+}\StringTok{ }\NormalTok{HCT_Confidence }\OperatorTok{+}\StringTok{ }\NormalTok{MAIA_Total }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda9)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                           | Coefficient |   SE |         95% CI | t(764) |      p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                         |       -0.21 | 0.89 | [-1.96,  1.53] |  -0.24 | 0.810 
+## ConditionSP [social]                |        1.78 | 0.47 | [ 0.86,  2.71] |   3.78 | < .001
+## HCT_Accuracy                        |        0.42 | 0.95 | [-1.44,  2.27] |   0.44 | 0.660 
+## HCT_Confidence                      |        0.15 | 0.23 | [-0.29,  0.59] |   0.67 | 0.504 
+## MAIA_Total                          |    1.09e-03 | 0.01 | [-0.03,  0.03] |   0.08 | 0.935 
+## ConditionSP [social] * HCT_Accuracy |       -1.62 | 0.51 | [-2.62, -0.62] |  -3.18 | 0.001
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda9, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"HCT_Accuracy"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-49.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Interoception Hypothesis 2C: EDA_SCR -> SRP3_PRI}
+\NormalTok{model_eda10 <-}\StringTok{ }\NormalTok{lme4}\OperatorTok{::}\KeywordTok{lmer}\NormalTok{(EDA_SCR }\OperatorTok{~}\StringTok{ }\NormalTok{ConditionSP }\OperatorTok{*}\StringTok{ }\NormalTok{SRP3_PRI }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{|}\NormalTok{participant), }\DataTypeTok{data =}\NormalTok{ df4)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_eda10)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter                       | Coefficient |       SE |        95% CI | t(766) |     p
+## -----------------------------------------------------------------------------------------
+## (Intercept)                     |       -0.03 |     0.27 | [-0.56, 0.50] |  -0.10 | 0.923
+## ConditionSP [social]            |        0.31 |     0.15 | [ 0.00, 0.61] |   1.99 | 0.047
+## SRP3_PRI                        |    3.64e-03 | 3.43e-03 | [ 0.00, 0.01] |   1.06 | 0.287
+## ConditionSP [social] * SRP3_PRI |   -2.85e-04 | 1.96e-03 | [ 0.00, 0.00] |  -0.15 | 0.884
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_eda10, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{terms =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3_PRI"}\NormalTok{, }\StringTok{"ConditionSP"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-50.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df5 <-}\StringTok{ }\NormalTok{data }\OperatorTok{%>%}\StringTok{ }
+\KeywordTok{group_by}\NormalTok{(participant) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise_all}\NormalTok{(mean)}
+  
+\NormalTok{model_H1 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(yoni_affective }\OperatorTok{~}\StringTok{  }\NormalTok{SRP3_Total, }\DataTypeTok{data =}\NormalTok{ df5)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_H1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter   | Coefficient |   SE |         95% CI | t(28) |      p
+## ------------------------------------------------------------------
+## (Intercept) |       42.21 | 4.23 | [33.54, 50.89] |  9.97 | < .001
+## SRP3_Total  |   -2.65e-03 | 0.03 | [-0.06,  0.06] | -0.09 | 0.928
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_H1, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 Inventory"}\NormalTok{, }\StringTok{"Yoni Task (Affective)"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Relationship Between Yoni Task (Affective) and SRP3"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $SRP3_Total
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-51.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_H1a <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(BES_Affective }\OperatorTok{~}\StringTok{  }\NormalTok{SRP3_Total, }\DataTypeTok{data =}\NormalTok{ df5)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_H1a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter   | Coefficient |   SE |         95% CI | t(28) |      p
+## ------------------------------------------------------------------
+## (Intercept) |       59.07 | 6.22 | [46.33, 71.81] |  9.50 | < .001
+## SRP3_Total  |       -0.15 | 0.04 | [-0.23, -0.06] | -3.44 | 0.002
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_H1a, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 Inventory"}\NormalTok{, }\StringTok{"BES (Affective)"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Relationship Between BES (Affective) Score and SRP3"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $SRP3_Total
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-52.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_H2 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(HCT_Accuracy }\OperatorTok{~}\StringTok{  }\NormalTok{SRP3_PRI, }\DataTypeTok{data =}\NormalTok{ df5)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_H2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter   | Coefficient |       SE |        95% CI | t(28) |      p
+## ---------------------------------------------------------------------
+## (Intercept) |        0.86 |     0.06 | [ 0.74, 0.97] | 15.56 | < .001
+## SRP3_PRI    |    8.60e-04 | 6.72e-04 | [ 0.00, 0.00] |  1.28 | 0.211
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_H2, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 (PRI) Inventory"}\NormalTok{, }\StringTok{"HCT Accuracy"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Relationship Between HCT Accuracy and SRP3 (PRI)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $SRP3_PRI
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-53.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model_H2 <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(MAIA_Total }\OperatorTok{~}\StringTok{  }\NormalTok{SRP3_PRI, }\DataTypeTok{data =}\NormalTok{ df5)}
+\NormalTok{parameters}\OperatorTok{::}\KeywordTok{parameters}\NormalTok{(model_H2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parameter   | Coefficient |   SE |         95% CI | t(28) |      p
+## ------------------------------------------------------------------
+## (Intercept) |       25.40 | 3.96 | [17.29, 33.51] |  6.42 | < .001
+## SRP3_PRI    |       -0.05 | 0.05 | [-0.15,  0.05] | -0.96 | 0.343
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot_model}\NormalTok{(model_H2, }\DataTypeTok{type =} \StringTok{"pred"}\NormalTok{, }\DataTypeTok{axis.title =} \KeywordTok{c}\NormalTok{(}\StringTok{"SRP3 (PRI) Inventory"}\NormalTok{, }\StringTok{"MAIA2"}\NormalTok{), }\DataTypeTok{title =} \StringTok{"Relationship Between MAIA2 and SRP3 (PRI)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $SRP3_PRI
+\end{verbatim}
+
+\includegraphics{analysis_files/figure-latex/unnamed-chunk-7-54.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{correlation}\OperatorTok{::}\KeywordTok{correlation}\NormalTok{(}\KeywordTok{select}\NormalTok{(df5,}
+\NormalTok{         MAIA_Total,}
+\NormalTok{         SRP3_PRI),}
+  \DataTypeTok{multilevel =}\NormalTok{ F, }\DataTypeTok{p_adjust =} \StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # Correlation table (pearson-method)
+## 
+## Parameter1 | Parameter2 |     r |        95% CI | t(28) |     p
+## ---------------------------------------------------------------
+## MAIA_Total |   SRP3_PRI | -0.18 | [-0.51, 0.19] | -0.96 | 0.343
+## 
+## p-value adjustment method: none
+## Observations: 30
+\end{verbatim}
+
+An interaction is present when the effects of one IV on DV change at the
+different levels of the second IV. the +ve effect of the HCT\_Accuracy
+on the subjective response varies on the different level of the
+ConditionSP. The rate of change of HCT\_Accuracy on the subjective
+response in the polygraph condition is larger than the rate of change of
+HCT\_Accuracy on the subjective response in the social condition.
+
+Interaction EXPLANATION - ConditionSP - differences between social and
+poly condition when HCTACCuracy is 0 - HCTAccuracy (poly condition as 0)
+- only in polygraph condition, there is a positive effect of
+HCT\_Accuracy on sub resp but not significant - interaction -
+participants who have a better HCTAccur (interoceptive ability) have
+better confidence on their lies in the poly condition compared to social
+condition
+
+\#1a: DV: Subjective rating, IV: TOM
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Hone.a4 <- lme4::lmer(subresp ~  yoni_total * BES_Total + (1|participant), data = df3)}
+\CommentTok{# parameters::parameters(Hone.a4)}
+\CommentTok{# plot_model(Hone.a4, type = "pred", terms = c("yoni_total", "BES_Total"))}
+\CommentTok{# }
+\CommentTok{# Hone.b4 <- lme4::lmer(subresp ~ yoni_cognitive + yoni_affective + yoni_physical + (1|participant), data = df3)}
+\CommentTok{# parameters::parameters(Hone.b4)}
+\CommentTok{# plot_model(Hone.b4, type = "pred", terms = c("yoni_cognitive"  + "yoni_affective", "yoni_physical"))}
+\CommentTok{# }
+\CommentTok{# Hone.c4 <- lme4::lmer(subresp ~  BES_Affective + BES_Cognitive + (1|participant), data = df3)}
+\CommentTok{# parameters::parameters(Hone.c4)}
+\CommentTok{# plot_model(Hone.c4, type = "pred")}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Hypothesis 1b  }
+\CommentTok{# Hone.d <- lm(yoni_physical ~  SRP3_Total, data = des_stat)}
+\CommentTok{# parameters::parameters(Hone.d)}
+\CommentTok{# plot_model(Hone.d, type = "pred")}
+\CommentTok{# }
+\CommentTok{# Hone.da <- lm::lmer(BES_Affective ~  SRP3_Total + (1|participant), data = df3)}
+\CommentTok{# parameters::parameters(Hone.da)}
+\CommentTok{# plot_model(Hone.da, type = "pred")}
+\end{Highlighting}
+\end{Shaded}
+
+\#Hypothesis 2 ECG\_Rate\_Max, ECG\_Rate\_Min, RSP\_Amplitude\_Max,
+EDA\_SCR
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# #Hypothesis 2b  }
+\CommentTok{# Htwo.d <- lme4::lmer(HCT_Accuracy ~  SRP3_PRI + (1|participant), data = df3)}
+\CommentTok{# parameters::parameters(Htwo.d)}
+\CommentTok{# plot_model(Htwo.d, type = "pred")}
+\CommentTok{# }
+\CommentTok{# Htwo.d <- lm(HCT_Accuracy ~  SRP3_PRI, data = des_stat)}
+\CommentTok{# parameters::parameters(Htwo.d)}
+\CommentTok{# plot_model(Htwo.d, type = "pred")}
+\CommentTok{# }
+\CommentTok{# Htwo.da <- lme4::lmer(MAIA3 ~  SRP3_PRI + (1|participant), data = df3)}
+\CommentTok{# parameters::parameters(Htwo.da)}
+\CommentTok{# plot_model(Htwo.da, type = "pred")}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{other-analysis}{%
+\section{Other Analysis}\label{other-analysis}}
+
+\end{document}

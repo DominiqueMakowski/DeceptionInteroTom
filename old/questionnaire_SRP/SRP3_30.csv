@@ -1,0 +1,321 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,Q2,Q3_1,Q3_2,Q3_3,Q3_4,Q3_5,Q3_6,Q3_7,Q3_8,Q3_9,Q3_10,Q3_11,Q3_12,Q3_13,Q3_14,Q3_15,Q3_16,Q3_17,Q3_18,Q3_19,Q3_20,Q3_21,Q3_22,Q3_23,Q3_24,Q3_25,Q3_26,Q3_27,Q3_28,Q3_29,Q3_30,Q3_31,Q3_32,Q4_1,Q4_2,Q4_3,Q4_4,Q4_5,Q4_6,Q4_7,Q4_8,Q4_9,Q4_10,Q4_11,Q4_12,Q4_13,Q4_14,Q4_15,Q4_16,Q4_17,Q4_18,Q4_19,Q4_20,Q4_21,Q4_22,Q4_23,Q4_24,Q4_25,Q4_26,Q4_27,Q4_28,Q4_29,Q4_30,Q4_31,Q4_32
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Please indicate your subject ID:,"Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 1.	I’m a rebellious person.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 2.	I’m more tough-minded than other people.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 3.	I think I could ""beat"" a lie detector.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 4.	I have taken illegal drugs (e.g., marijuana, ecstasy).","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 5.	I have never been involved in delinquent gang activity.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 6.	I have never stolen a truck, car or motorcycle.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 7.	Most people are wimps.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 8.	I purposely flatter people to get them on my side.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 9.	I’ve often done something dangerous just for the thrill of it.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 10.	I have tricked someone into giving me money.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 11.	It tortures me to see an injured animal.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 12.	I have assaulted a law enforcement official or social worker.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 13.	I have pretended to be someone else in order to get something.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 14.	I always plan out my weekly activities.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 15.	I like to see fist-fights.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 16.	I’m not tricky or sly.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 17.	I’d be good at a dangerous job because I make fast decisions.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 18.	I have never tried to force someone to have sex.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 19.	My friends would say that I am a warm person.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 20.	I would get a kick out of ‘scamming’ someone.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 21.	I have never attacked someone with the idea of injuring them.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 22.	I never miss appointments.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 23.	I avoid horror movies.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 24.	I trust other people to be honest.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 25.	I hate high speed driving.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 26.	I feel so sorry when I see a homeless person.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 27.	It's fun to see how far you can push people before they get upset.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 28.	I enjoy doing wild things.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 29.	I have broken into a building or vehicle in order to steal something or vandalize.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 30.	I don’t bother to keep in touch with my family any more.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 31.	I find it difficult to manipulate people.","Please
+rate the degree to which you agree with the following statements.
+
+ 
+
+(1 –
+Strongly Disagree, 2 –
+Disagree, 3 –
+Neutral, 4 – Agree, 5 –
+Strongly Agree) - 32. I rarely follow the rules.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 33.	I never cry at movies.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 34.	I have never been arrested.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 35.	You should take advantage of other people before they do it to you.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 36.	I don’t enjoy gambling for real money.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 37.	People sometimes say that I’m cold-hearted.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 38.	People can usually tell if I am lying.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 39.	I like to have sex with people I barely know.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 40.	I love violent sports and movies.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 41. Sometimes you have to pretend you like people to get something out of them.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 42.	I am an impulsive person.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 43.	I have taken hard drugs (e.g., heroin, cocaine).","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 44.	I'm a soft-hearted person.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 45.	I can talk people into anything.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 46.	I never shoplifted from a store.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 47.	I don’t enjoy taking risks.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 48.	 People are too sensitive when I tell them the truth about themselves.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 49.	I was convicted of a serious crime.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 50.	Most people tell lies everyday.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 51.	I keep getting in trouble for the same things over and over.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 52.	Every now and then I carry a weapon (knife or gun) for protection.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 53.	People cry way too much at funerals.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 54.	You can get what you want by telling people what they want to hear.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 55.	I easily get bored.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 56.	I never feel guilty over hurting others.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 57.	I have threatened people into giving me money, clothes, or makeup.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 58.	A lot of people are “suckers” and can easily be fooled.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 59.	I admit that I often “mouth off” without thinking.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 60.	I sometimes dump friends that I don’t need any more.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 61.	I would never step on others to get what I want.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 62.	I have close friends who served time in prison.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 63.	I purposely tried to hit someone with the vehicle I was driving.","Please rate the degree to which you agree with the following statements. (1 – Strongly Disagree, 2 – Disagree, 3 – Neutral, 4 – Agree, 5 – Strongly Agree) - 64. I have violated my probation from prison."
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID2_TEXT""}","{""ImportId"":""QID3_1""}","{""ImportId"":""QID3_2""}","{""ImportId"":""QID3_3""}","{""ImportId"":""QID3_4""}","{""ImportId"":""QID3_5""}","{""ImportId"":""QID3_6""}","{""ImportId"":""QID3_7""}","{""ImportId"":""QID3_8""}","{""ImportId"":""QID3_9""}","{""ImportId"":""QID3_10""}","{""ImportId"":""QID3_11""}","{""ImportId"":""QID3_12""}","{""ImportId"":""QID3_13""}","{""ImportId"":""QID3_14""}","{""ImportId"":""QID3_15""}","{""ImportId"":""QID3_16""}","{""ImportId"":""QID3_17""}","{""ImportId"":""QID3_18""}","{""ImportId"":""QID3_19""}","{""ImportId"":""QID3_20""}","{""ImportId"":""QID3_21""}","{""ImportId"":""QID3_22""}","{""ImportId"":""QID3_23""}","{""ImportId"":""QID3_24""}","{""ImportId"":""QID3_25""}","{""ImportId"":""QID3_26""}","{""ImportId"":""QID3_27""}","{""ImportId"":""QID3_28""}","{""ImportId"":""QID3_29""}","{""ImportId"":""QID3_30""}","{""ImportId"":""QID3_31""}","{""ImportId"":""QID3_32""}","{""ImportId"":""QID4_1""}","{""ImportId"":""QID4_2""}","{""ImportId"":""QID4_3""}","{""ImportId"":""QID4_4""}","{""ImportId"":""QID4_5""}","{""ImportId"":""QID4_6""}","{""ImportId"":""QID4_7""}","{""ImportId"":""QID4_8""}","{""ImportId"":""QID4_9""}","{""ImportId"":""QID4_10""}","{""ImportId"":""QID4_11""}","{""ImportId"":""QID4_12""}","{""ImportId"":""QID4_13""}","{""ImportId"":""QID4_14""}","{""ImportId"":""QID4_15""}","{""ImportId"":""QID4_16""}","{""ImportId"":""QID4_17""}","{""ImportId"":""QID4_18""}","{""ImportId"":""QID4_19""}","{""ImportId"":""QID4_20""}","{""ImportId"":""QID4_21""}","{""ImportId"":""QID4_22""}","{""ImportId"":""QID4_23""}","{""ImportId"":""QID4_24""}","{""ImportId"":""QID4_25""}","{""ImportId"":""QID4_26""}","{""ImportId"":""QID4_27""}","{""ImportId"":""QID4_28""}","{""ImportId"":""QID4_29""}","{""ImportId"":""QID4_30""}","{""ImportId"":""QID4_31""}","{""ImportId"":""QID4_32""}"
+2021-02-02 01:29:39,2021-02-02 01:35:23,IP Address,155.69.190.53,100,343,True,2021-02-02 01:35:23,R_2pKT1K9jzgiKuko,,,,,1.3029022216796875,103.85699462890625,anonymous,EN,001,2,1,2,1,5,5,4,2,2,1,4,1,4,3,4,4,1,5,3,2,2,3,5,4,2,4,2,3,1,1,3,2,2,5,3,4,4,3,1,2,4,4,1,4,2,4,3,4,1,4,1,1,1,4,5,4,1,1,2,3,3,1,1,1
+2021-02-04 01:55:12,2021-02-04 02:06:13,IP Address,155.69.190.53,100,661,True,2021-02-04 02:06:13,R_PGSSmXYBHcXwTWp,,,,,1.2928924560546875,103.854705810546875,anonymous,EN,002,4,4,1,1,1,1,2,1,4,2,2,1,1,3,1,2,2,5,2,4,5,5,1,2,1,4,1,4,1,1,2,2,5,5,1,1,5,4,1,5,4,2,1,5,2,5,2,5,1,4,1,1,2,4,2,5,1,1,3,4,4,1,1,1
+2021-02-09 21:45:49,2021-02-10 00:02:56,IP Address,155.69.192.53,100,8227,True,2021-02-10 00:02:57,R_8uc8z5Prbmz2Kl3,,,,,1.316497802734375,103.923187255859375,anonymous,EN,005,2,3,1,1,5,5,1,3,3,4,4,2,1,5,3,3,3,5,5,1,1,3,4,4,4,5,3,3,3,1,5,3,2,5,3,2,2,2,1,3,1,2,1,5,1,5,1,3,1,5,1,1,1,4,5,1,1,3,1,1,5,1,1,1
+2021-02-10 00:14:34,2021-02-10 01:47:32,IP Address,155.69.192.53,100,5578,True,2021-02-10 01:47:33,R_3jVZcbDMHNHFaJ0,,,,,1.316497802734375,103.923187255859375,anonymous,EN,004,4,4,3,2,2,5,2,4,5,2,1,1,1,4,4,4,2,5,4,2,5,4,1,2,4,2,1,5,2,2,4,4,2,5,2,5,2,2,2,4,4,4,1,4,2,1,1,3,1,4,4,1,5,5,5,2,1,2,4,4,5,4,1,1
+2021-02-14 20:14:06,2021-02-14 23:02:08,IP Address,155.69.192.53,100,10082,True,2021-02-14 23:02:08,R_27D0wgLdMVxoD2Z,,,,,1.316497802734375,103.923187255859375,anonymous,EN,003,2,4,5,1,5,5,1,3,2,4,5,1,4,5,3,3,4,5,5,3,5,2,4,4,4,5,2,4,1,1,2,3,1,5,2,2,3,2,1,4,4,4,1,5,4,2,2,4,1,5,3,1,1,1,3,1,2,1,2,3,3,4,1,1
+2021-02-15 17:44:25,2021-02-15 19:02:22,IP Address,155.69.192.53,100,4676,True,2021-02-15 19:02:22,R_1QmeSSJUu0L7MSz,,,,,1.316497802734375,103.923187255859375,anonymous,EN,007,2,4,4,2,4,4,3,2,4,3,3,2,3,4,2,4,3,4,3,4,2,3,2,3,2,3,3,4,2,3,4,4,3,2,2,4,4,4,2,4,4,4,2,4,3,2,3,3,2,4,4,2,4,4,4,3,2,4,4,3,3,2,2,2
+2021-02-15 19:37:22,2021-02-15 22:19:28,IP Address,155.69.192.53,100,9726,True,2021-02-15 22:19:29,R_3QXGzBtVjUfISRZ,,,,,1.316497802734375,103.923187255859375,anonymous,EN,010,4,4,4,1,5,5,2,2,1,1,5,1,1,4,1,5,1,5,5,1,5,4,3,4,4,4,1,4,1,1,4,3,2,5,1,3,2,4,1,4,1,2,1,3,2,2,3,3,1,3,1,1,1,1,4,1,1,1,3,1,5,1,1,1
+2021-02-15 22:47:20,2021-02-16 00:16:25,IP Address,155.69.192.53,100,5344,True,2021-02-16 00:16:25,R_pFPQ0uYJC7anQvn,,,,,1.316497802734375,103.923187255859375,anonymous,EN,011,3,4,2,1,1,1,3,2,2,2,4,1,2,4,2,2,3,5,2,1,4,4,5,3,4,4,1,2,1,1,4,2,2,5,3,4,4,2,3,2,2,2,1,2,2,5,4,4,1,5,1,1,3,4,2,2,1,2,1,2,5,1,1,1
+2021-02-16 00:25:19,2021-02-16 01:52:24,IP Address,155.69.192.53,100,5225,True,2021-02-16 01:52:25,R_cA7IJ1k2zyjbB29,,,,,1.316497802734375,103.923187255859375,anonymous,EN,022,2,1,4,1,5,5,4,3,5,3,3,1,5,5,5,1,1,5,5,1,1,1,2,5,5,2,5,5,3,2,5,1,1,5,3,5,5,5,3,5,5,5,1,5,3,5,3,5,1,5,5,4,3,5,5,3,3,5,5,3,5,2,1,1
+2021-02-16 17:50:38,2021-02-16 20:48:47,IP Address,155.69.192.53,100,10688,True,2021-02-16 20:48:48,R_1K2zwwgrOhtfRIo,,,,,1.316497802734375,103.923187255859375,anonymous,EN,015,3,4,2,2,4,4,2,2,2,2,4,1,2,4,2,2,3,5,4,2,2,2,2,4,4,2,2,3,2,2,3,3,3,5,2,3,2,3,3,3,2,3,1,3,2,4,4,3,1,4,4,1,2,2,4,2,2,2,3,2,4,1,1,1
+2021-02-16 20:54:48,2021-02-16 22:50:21,IP Address,155.69.192.53,100,6933,True,2021-02-16 22:50:22,R_bDF9g3CGiRf3nup,,,,,1.316497802734375,103.923187255859375,anonymous,EN,009,3,3,4,1,5,5,3,3,3,4,3,1,2,5,3,3,1,5,3,2,3,2,5,1,1,1,3,4,1,3,2,1,1,2,3,4,1,1,2,5,4,3,1,1,3,2,3,3,1,5,2,3,3,5,3,5,4,4,3,4,3,1,1,1
+2021-02-16 22:58:19,2021-02-17 00:12:36,IP Address,155.69.192.53,100,4456,True,2021-02-17 00:12:36,R_3dFxSZRtllf20Ff,,,,,1.316497802734375,103.923187255859375,anonymous,EN,006,4,5,4,1,5,5,2,1,5,1,5,1,4,5,2,4,4,5,5,1,5,4,5,5,4,5,1,5,1,1,2,2,1,5,1,5,4,5,1,1,1,4,1,5,4,5,3,1,1,5,3,1,1,2,5,1,1,1,2,1,5,1,1,1
+2021-02-17 00:21:33,2021-02-17 01:58:28,IP Address,155.69.192.53,100,5814,True,2021-02-17 01:58:28,R_1DnZEi8RUKjfc5D,,,,,1.316497802734375,103.923187255859375,anonymous,EN,008,4,4,4,1,5,5,2,1,1,1,4,1,4,2,1,4,3,5,4,2,4,2,2,2,2,4,2,3,1,1,3,2,2,5,2,5,2,4,1,3,2,2,1,4,2,5,2,2,1,4,1,1,2,2,5,1,1,3,2,1,4,1,1,1
+2021-02-17 17:52:34,2021-02-17 18:59:55,IP Address,155.69.192.53,100,4040,True,2021-02-17 18:59:55,R_265sZX50ZA5GBnn,,,,,1.316497802734375,103.923187255859375,anonymous,EN,029,4,4,2,1,5,5,4,4,4,1,4,1,1,2,2,2,4,5,2,4,5,4,3,4,3,3,4,4,1,1,2,2,2,5,2,3,3,2,1,2,4,3,5,3,3,5,2,4,1,4,2,1,1,4,4,2,1,4,4,2,4,1,1,1
+2021-02-17 19:05:45,2021-02-17 20:47:44,IP Address,155.69.192.53,100,6118,True,2021-02-17 20:47:44,R_6szwIgdJQkdCk25,,,,,1.316497802734375,103.923187255859375,anonymous,EN,016,1,2,2,1,5,5,2,3,2,3,4,1,4,2,2,3,2,5,4,3,4,4,4,3,4,3,2,3,1,3,3,2,2,5,3,4,4,2,1,2,4,2,1,3,2,4,3,3,1,3,3,2,3,2,4,3,1,3,4,3,3,1,1,1
+2021-02-17 20:54:31,2021-02-17 22:02:41,IP Address,155.69.192.53,100,4089,True,2021-02-17 22:02:41,R_3MPyYywpuZ3yLS8,,,,,1.316497802734375,103.923187255859375,anonymous,EN,023,4,5,1,4,1,4,2,5,2,2,5,2,5,5,3,2,3,5,1,2,1,4,5,1,5,4,2,2,4,2,3,3,2,3,5,1,5,3,1,3,5,1,2,4,3,1,5,5,2,5,1,2,5,5,5,2,2,5,2,5,1,3,1,1
+2021-02-17 22:07:35,2021-02-18 00:26:30,IP Address,155.69.192.53,100,8334,True,2021-02-18 00:26:30,R_240Hyf3kCQnGONe,,,,,1.316497802734375,103.923187255859375,anonymous,EN,021,2,1,3,1,5,5,3,4,3,4,5,1,4,2,1,3,1,5,5,1,2,2,5,3,5,4,2,2,1,4,3,2,2,5,2,4,2,2,3,1,3,5,1,4,3,4,5,3,1,4,5,1,1,4,5,2,1,4,4,3,3,1,1,1
+2021-02-18 00:32:11,2021-02-18 01:49:30,IP Address,155.69.192.53,100,4638,True,2021-02-18 01:49:30,R_2qggzoN7jAUjG8g,,,,,1.316497802734375,103.923187255859375,anonymous,EN,019,2,5,4,1,5,5,4,1,2,1,2,1,1,5,3,4,2,1,4,4,5,5,3,5,4,5,2,2,1,2,3,1,3,5,2,5,2,4,1,5,3,1,1,5,4,5,5,3,1,4,1,1,1,4,5,1,1,5,1,2,1,1,1,1
+2021-02-18 19:07:27,2021-02-18 19:32:43,IP Address,155.69.192.53,100,1515,True,2021-02-18 19:32:44,R_2vcAkPSAgxzu4bz,,,,,1.316497802734375,103.923187255859375,anonymous,EN,013,1,2,1,1,5,5,3,4,2,4,2,1,2,2,3,2,2,2,2,2,4,2,4,3,2,3,2,2,1,4,4,2,2,5,4,2,3,5,3,4,4,3,1,4,1,5,5,3,1,4,4,1,4,4,4,4,1,2,4,4,2,1,1,1
+2021-02-18 17:50:52,2021-02-18 20:43:25,IP Address,155.69.192.53,100,10352,True,2021-02-18 20:43:25,R_1isuCVd7duuo2Yj,,,,,1.316497802734375,103.923187255859375,anonymous,EN,017,3,4,2,1,5,5,2,2,2,2,5,1,2,4,1,4,1,5,4,3,5,2,2,3,5,5,2,3,1,2,4,3,2,5,2,3,4,2,1,1,2,4,1,4,2,1,3,3,1,3,3,1,1,3,4,2,2,1,3,3,4,1,1,1
+2021-02-18 20:49:23,2021-02-18 22:06:48,IP Address,155.69.192.53,100,4645,True,2021-02-18 22:06:48,R_265c46lECkuKRoa,,,,,1.316497802734375,103.923187255859375,anonymous,EN,018,5,4,3,1,5,5,2,2,2,4,5,1,2,4,2,2,2,5,4,5,5,4,4,2,5,3,5,2,1,1,4,4,1,5,2,5,1,1,1,1,2,4,1,4,5,5,4,4,1,5,3,1,1,2,5,1,1,2,2,1,5,1,1,1
+2021-02-18 22:13:39,2021-02-19 00:00:18,IP Address,155.69.192.53,100,6399,True,2021-02-19 00:00:18,R_3Eg9fv06formWSV,,,,,1.316497802734375,103.923187255859375,anonymous,EN,012,2,3,4,1,5,5,3,3,2,2,3,1,2,4,3,2,2,2,3,1,3,2,3,4,3,4,3,3,1,2,3,2,2,5,3,4,3,3,2,2,4,3,1,2,2,5,3,4,1,4,2,1,3,4,4,2,1,3,2,3,2,1,1,1
+2021-02-19 02:01:52,2021-02-19 02:05:32,IP Address,155.69.192.53,100,220,True,2021-02-19 02:05:32,R_eh7eNJEvfJF5NDP,,,,,1.316497802734375,103.923187255859375,anonymous,EN,014,3,4,4,1,5,5,4,4,4,1,5,1,1,2,1,2,4,5,5,1,3,4,2,4,3,5,1,3,1,1,3,1,1,5,2,5,4,2,1,1,4,4,1,5,3,5,2,2,1,5,4,1,2,4,5,1,1,1,2,2,4,1,1,1
+2021-02-21 17:54:15,2021-02-21 19:21:38,IP Address,155.69.192.53,100,5242,True,2021-02-21 19:21:38,R_123yMPr3GV1csOY,,,,,1.316497802734375,103.923187255859375,anonymous,EN,026,2,4,2,1,5,5,2,2,1,1,3,1,1,5,1,4,2,5,5,1,5,5,1,4,2,3,1,3,1,1,5,1,2,5,2,5,1,5,2,3,3,2,1,5,4,5,3,2,1,3,1,1,1,3,2,1,1,2,1,2,5,1,1,1
+2021-02-21 19:29:04,2021-02-21 20:52:29,IP Address,155.69.192.53,100,5005,True,2021-02-21 20:52:29,R_CemRkQbud5Rnecp,,,,,1.316497802734375,103.923187255859375,anonymous,EN,027,3,4,2,1,5,5,3,3,2,1,3,1,1,4,1,3,2,5,4,2,4,4,4,4,4,4,2,3,1,1,5,2,1,5,3,3,2,5,1,2,4,3,1,3,2,5,3,2,1,5,2,1,1,2,3,2,1,1,1,1,1,1,1,1
+2021-02-21 21:00:44,2021-02-21 22:10:48,IP Address,155.69.192.53,100,4203,True,2021-02-21 22:10:48,R_2VjXuO8HFycgieC,,,,,1.316497802734375,103.923187255859375,anonymous,EN,024,3,4,2,1,5,5,2,1,4,1,4,1,1,3,1,4,1,5,3,1,5,4,2,4,3,5,1,5,1,3,4,3,2,5,2,4,3,3,1,3,4,4,1,3,2,5,3,3,1,4,2,2,1,3,5,2,1,2,3,3,3,1,1,1
+2021-02-21 22:16:15,2021-02-22 00:21:54,IP Address,155.69.192.53,100,7539,True,2021-02-22 00:21:55,R_2e5sn70L2lUAMMn,,,,,1.316497802734375,103.923187255859375,anonymous,EN,020,1,4,2,1,5,5,2,2,4,1,5,1,1,5,1,2,2,5,5,1,5,5,5,4,5,5,1,4,1,1,3,1,2,5,1,5,1,4,1,1,1,4,1,5,3,4,3,2,1,5,1,1,1,1,3,1,1,1,1,1,5,1,1,1
+2021-02-22 20:24:58,2021-02-22 22:13:20,IP Address,155.69.192.53,100,6502,True,2021-02-22 22:13:20,R_2PtG7x1hZVAyq3j,,,,,1.316497802734375,103.923187255859375,anonymous,EN,028,2,2,1,1,5,5,1,1,2,1,5,1,2,4,2,5,1,5,5,1,5,4,1,5,2,5,1,3,1,1,3,2,1,5,1,4,2,3,1,1,1,3,1,4,1,5,4,3,1,3,1,1,1,4,3,1,1,1,1,1,5,1,1,1
+2021-02-22 22:22:41,2021-02-23 00:11:24,IP Address,155.69.192.53,100,6523,True,2021-02-23 00:11:24,R_300m8vnq3FlpOjF,,,,,1.316497802734375,103.923187255859375,anonymous,EN,030,1,2,4,1,5,5,2,4,2,1,5,1,1,5,2,4,4,5,5,1,5,4,2,5,5,5,2,2,1,1,2,1,2,5,5,5,2,2,1,2,3,1,1,5,5,5,2,4,1,4,1,1,1,3,2,1,1,1,1,1,5,1,1,1
+2021-02-23 21:25:20,2021-02-23 23:22:40,IP Address,155.69.192.53,100,7039,True,2021-02-23 23:22:40,R_1rOgR2CV7b0D6O0,,,,,1.316497802734375,103.923187255859375,anonymous,EN,025,2,2,3,1,5,5,2,2,2,2,5,1,1,4,1,3,2,5,4,1,5,2,3,5,3,4,1,3,1,1,5,1,2,5,1,3,1,4,1,1,1,5,1,4,1,5,3,3,1,4,1,1,1,1,3,1,1,1,1,1,5,1,1,1

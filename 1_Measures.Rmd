@@ -4,7 +4,35 @@ editor_options:
   chunk_output_type: console
 ---
 
+## Outcomes
 
+```{r message=FALSE}
+p1 <- estimate_density(df$Confidence, at=df$Participant, method = "kernSmooth") |> 
+  ggplot(aes(x=x, y=y)) +
+  geom_line(aes(color = Group)) + 
+  scale_x_continuous(labels = scales::percent, expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Confidence", y = "") +
+  scale_colour_flat_d(guide="none")
+
+p2 <- estimate_density(df$RT, at=df$Participant, method = "kernSmooth") |> 
+  ggplot(aes(x=x, y=y)) +
+  geom_line(aes(color = Group)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "RT (s)", y = "") +
+  scale_colour_viridis_d(guide="none")
+
+p3 <- estimate_density(filter(df, !is.na(HeartRate)), select="HeartRate", at="Participant", method = "kernSmooth") |> 
+  ggplot(aes(x=x, y=y)) +
+  geom_line(aes(color = Participant)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  labs(x = "Heart Rate (bpm)", y = "") +
+  scale_colour_pizza_d(guide="none")
+
+p1 / p2 / p3 + plot_annotation(title = "Distribution of each participant")
+```
 ## Theory of Mind / Empathy
 
 ### Yoni Task
@@ -169,28 +197,12 @@ df |>
   geom_jitter(aes(color=name), width = 0.25, height=0, shape="+", size=2) +
   facet_wrap(~name, scales="free", nrow=3) +
   guides(fill="none", color="none")
-
-df$Confidence[df$Participant %in% c("S9", "S29")] <- NA # Extreme responses
-df$HeartRate[df$Participant == "S30"] <- NA # Extreme values
-df$RT[df$Participant == "S13"] <- NA # Slower than the others
-df$RT[df$RT > 8.25] <- NA # Extreme RT values 
 ```
 
-Percentage of Confidence data removed: `r sum(is.na(df$Confidence)) / nrow(df) * 100` %  
-Percentage of RT data removed: `r sum(is.na(df$RT)) / nrow(df) * 100` %  
-Percentage of Heart Rate data removed: `r sum(is.na(df$HeartRate)) / nrow(df) * 100` %
 
 
 ##### Observations
 
-```{r warning=FALSE}
-df <- df |> 
-  # Remove outlier trials
-  group_by(Participant) |> 
-  mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore", threshold = qnorm(0.9999))),
-         Outliers_Physio = as.logical(performance::check_outliers(HeartRate, method = "zscore", threshold = qnorm(0.9999)))) |> 
-  ungroup()
-```
 
 ```{r warning=FALSE}
 df |> 
@@ -235,3 +247,136 @@ p3 <- df |>
 p1 / p2 / p3
 ```
 
+
+## Inter-Measures Correlation {.tabset}
+
+```{r message=FALSE, warning=FALSE}
+dfsub <- df |> 
+  select(Participant, 
+         starts_with("YONI_"), 
+         starts_with("BES_"),
+         starts_with("HCT_"),
+         starts_with("HTT_"),
+         starts_with("MAIA_"),
+         starts_with("LIE_")) |> 
+  group_by(Participant) |> 
+  summarise_all(mean)
+```
+
+### Theory of Mind / Empathy
+
+```{r message=FALSE, warning=FALSE}
+r <- correlation(select(dfsub, starts_with("YONI_")),
+                 select(dfsub, starts_with("BES_")), 
+                 p_adjust = "none")
+
+summary(r) |> 
+  plot() 
+```
+
+### Interoception
+
+```{r message=FALSE, warning=FALSE}
+# Leave out HTT
+# r <- correlation(select(dfsub, starts_with("HTT_")),
+#                  select(dfsub, starts_with("HCT_")), 
+#                  p_adjust = "none")
+# 
+# summary(r) |> 
+#   plot()
+```
+
+```{r message=FALSE, warning=FALSE}
+r <- correlation(select(dfsub, starts_with("MAIA_")),
+                 select(dfsub, starts_with("HCT_")), 
+                        #starts_with("HTT_")), 
+                 p_adjust = "none")
+
+summary(r) |> 
+  plot()
+```
+
+### ToM and Interoception
+
+```{r message=FALSE, warning=FALSE}
+r <- correlation(select(dfsub, starts_with(c("MAIA_", "HCT_"))),
+                 select(dfsub, starts_with(c("YONI_", "BES_"))), 
+                 p_adjust = "none")
+
+summary(r) |> 
+  plot() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+```
+
+### Deception Task and LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+r <- df |> 
+  select(Participant, Answer, Confidence, RT, HeartRate) |> 
+  group_by(Participant, Answer) |> 
+  summarise_all(mean, na.rm=TRUE) |> 
+  tidyr::pivot_wider(names_from = "Answer", values_from = c("Confidence", "RT", "HeartRate")) |> 
+  ungroup() |> 
+  select(-Participant) |> 
+  correlation(select(dfsub, starts_with("LIE_")), p_adjust = "none")
+
+summary(r) |> 
+  plot()
+```
+
+
+### Confidence and RT
+
+- When lying, the faster they answer, the more confident they are.
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ RT * Answer + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family())
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+modelbased::estimate_slopes(model, trend = "RT", at = "Answer")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_relation(model, at = c("RT", "Answer")) |> 
+  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
+```
+
+### Confidence and Heart Rate
+
+- More confidence in truths is associated with higher heart rate.
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(Confidence ~ HeartRate * Answer + (1|Participant) + (1|Item), 
+                 data = df, family = beta_family()) # warning can be ignored
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+modelbased::estimate_slopes(model, trend = "HeartRate", at = "Answer")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_relation(model, at = c("HeartRate", "Answer")) |> 
+  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
+```
+
+### RT and Heart Rate
+
+- No relationship.
+
+```{r message=FALSE, warning=FALSE}
+model <- glmmTMB(RT ~ HeartRate * Answer + (1|Participant) + (1|Item), 
+                 data = df)
+
+parameters::parameters(model, effects = "fixed")
+```
+
+```{r message=FALSE, warning=FALSE}
+estimate_relation(model, at = c("HeartRate", "Answer")) |> 
+  plot(length = 50, point = list(alpha = 0.3, size = 3.5)) 
+```

@@ -1,35 +1,17 @@
 ---
 title: '**The Role of Interoception and Theory of Mind in Deception**'
-subtitle: A Subtitle
+author: "Dominique Makowski et al."
+date: "`r Sys.Date()`"
 output:
   html_document:
-    theme: cerulean
-    highlight: pygments
+    theme: paper
     toc: yes
     toc_depth: 3
-    toc_float: yes
-    number_sections: no
     df_print: default
     code_folding: hide
     code_download: yes
-  word_document:
-    reference_docx: utils/Template_Word.docx
-    highlight: pygments
-    toc: no
-    toc_depth: 3
-    df_print: kable
-    number_sections: yes
-  rmarkdown::html_vignette:
-    toc: yes
-    toc_depth: 3
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
-    latex_engine: xelatex
 editor_options:
   chunk_output_type: console
-bibliography: utils/bibliography.bib
-csl: utils/apa.csl
 ---
 
 
@@ -40,59 +22,40 @@ csl: utils/apa.csl
 ```{r setup, warning=FALSE, message=TRUE, include=FALSE}
 # Set up the environment (or use local alternative `source("utils/config.R")`)
 source("https://raw.githubusercontent.com/RealityBending/TemplateResults/main/utils/config.R")
-options(dplyr.summarise.inform = FALSE) 
+
+options(
+  digits = 3,
+  mc.cores = 4,
+  brms.algorithm = "sampling",
+  brms.backend = "cmdstanr",
+  dplyr.summarise.inform = FALSE
+)
+
 knitr::opts_chunk$set(echo = TRUE)
+
 library(ggplot2)
 theme_set(see::theme_modern())
 ```
 
-# Introduction
-
-Theory of mind refers to the ability to understand and predict the behaviour of others through making inferences of their mental state.  
-Interoception is the ability to detect, attend and track internal signals and bodily cues. 
-
-<!-- Not done: -->
-<!-- - Incorporation of susceptivity, inclusion? -->
-<!-- - Analysis for HTT, lie scale -->
-
-```{r badges, echo=FALSE, message=TRUE, warning=FALSE, results='asis'}
-# This chunk is a bit complex so don't worry about it: it's made to add badges to the HTML versions
-# NOTE: You have to replace the links accordingly to have working "buttons" on the HTML versions
-if (!knitr::is_latex_output() && knitr::is_html_output()) {
-  cat("![Build](https://github.com/RealityBending/TemplateResults/workflows/Build/badge.svg)
-      [![Website](https://img.shields.io/badge/repo-Readme-2196F3)](https://github.com/RealityBending/TemplateResults)
-      [![Website](https://img.shields.io/badge/visit-website-E91E63)](https://realitybending.github.io/TemplateResults/)
-      [![Website](https://img.shields.io/badge/download-.docx-FF5722)](https://github.com/RealityBending/TemplateResults/raw/main/word_and_pdf/SupplementaryMaterials.docx)
-      [![Website](https://img.shields.io/badge/see-.pdf-FF9800)](https://github.com/RealityBending/TemplateResults/blob/main/word_and_pdf/SupplementaryMaterials.pdf)")
-}
-```
-
-
-<!-- Title ideas:-->
-<!-- Theory of Body and Others -->
-
-# Packages & Data
-
-## Packages
-
-This document was prepared on `r format(Sys.Date())`. 
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
 library(tidyverse)
 library(patchwork)
 library(glmmTMB)
-library(report)
-library(parameters)
-library(correlation)
-library(modelbased)
-library(performance)
-library(see)
+library(brms)
+library(easystats)
 
+show_parameters <- function(model) {
+  p <- parameters::parameters(model, effects = "fixed", component="conditional", test=c("pd")) |>
+    data_relocate("pd", after=-1)
+  display(p, stars=TRUE)
+}
+```
+
+```{r warning=FALSE, message=TRUE, results='asis'}
 summary(report::report(sessionInfo()))
 ```
 
-
-## Data
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
 df <- read.csv("data/data_combined.csv") %>% 
@@ -101,7 +64,20 @@ df <- read.csv("data/data_combined.csv") %>%
          Item = as.factor(Item),
          Phrasing = as.factor(Phrasing),
          Answer = as.factor(Answer)) |> 
-  dplyr::filter(!Participant %in% c("S3", "S15", "S19", "S23"))  # No data 
+  dplyr::filter(!Participant %in% c("S3", "S15", "S19", "S23"))  # No data
+
+# Outliers
+df$HeartRate[df$Participant == "S30"] <- NA # Extreme values
+# df$Confidence[df$Participant %in% c("S9", "S29")] <- NA # Extreme responses
+df$RT[df$Participant == "S13"] <- NA # Slower than the others
+
+
+# Remove outlier trials
+df <- df |>
+  group_by(Participant) |>
+  mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore", threshold = qnorm(0.99999))),
+         Outliers_Physio = as.logical(performance::check_outliers(HeartRate, method = "zscore", threshold = qnorm(0.99999)))) |>
+  ungroup()
 
 # Adjustments for beta models
 df$Confidence[df$Confidence == 1] <- 0.99999
@@ -114,11 +90,57 @@ cat(paste("The data consists of",
                                       age = "Age")))
 ```
 
+Percentage of Confidence data removed: `r sum(is.na(df$Confidence)) / nrow(df) * 100` %  
+Percentage of RT data removed: `r sum(is.na(df$RT)) / nrow(df) * 100` %  
+Percentage of Heart Rate data removed: `r sum(is.na(df$HeartRate)) / nrow(df) * 100` %
+
 
 # Measures {.tabset}
 
 ```{r child='1_Measures.Rmd'}
 ```
+
+
+# Dimension Reduction 
+
+## Theory of Mind
+
+```{r message=FALSE, warning=FALSE}
+dfsub <- df |> 
+  select(Participant, 
+         starts_with("YONI_"), 
+         starts_with("BES_")) |> 
+  select(-ends_with("Total")) |> 
+  group_by(Participant) |> 
+  summarise_all(mean) |> 
+  select(-Participant)
+
+parameters::n_factors(dfsub)
+efa <- parameters::factor_analysis(dfsub, n=1, sort=TRUE, rotation = "oblimin")
+efa
+
+df <- cbind(df, predict(efa, newdata=df, names="ToM"))
+```
+
+
+## Interoception
+
+```{r message=FALSE, warning=FALSE}
+dfsub <- df |> 
+  select(Participant, 
+         starts_with("HCT_"), 
+         starts_with("MAIA_")) |> 
+  select(-ends_with("Total")) |> 
+  group_by(Participant) |> 
+  summarise_all(mean) |> 
+  select(-Participant)
+
+parameters::n_components(dfsub)
+efa <- parameters::factor_analysis(dfsub, n=4, sort=TRUE, rotation = "oblimin")
+efa
+df <- cbind(df, predict(efa, newdata=df, names=c("Intero_Meta", "Intero_Listening", "Intero_Focus", "Intero_Regulation")))
+```
+
 
 # Manipulation Checks
 
@@ -127,27 +149,447 @@ cat(paste("The data consists of",
 
 # Theory of Mind / Empathy
 
+
+
+## Theory of Mind Score {.tabset}
+
+
+### Confidence
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("ToM")) {
+  model <- brms::brm(as.formula(paste0("Confidence ~ Answer / (Condition / ",
+                                     var,
+                                     ") + (1|Participant) + (1|Item)")),
+                   data = df, family = "beta", refresh=0, seed=3, iter=4000,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$ToM, stars = TRUE))
+```
+
+### RT
+
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("ToM")) {
+  model <- brms::brm(as.formula(paste0("RT ~ Answer / (Condition / ",
+                                     var,
+                                     ") + (1|Participant) + (1|Item)")),
+                   data = df, refresh=0, seed=3, iter=4000,
+                   prior = set_prior("student_t(1, 0, 3)", class = "b"))
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$ToM, stars = TRUE))
+```
+
+
+### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("ToM")) {
+  model <- brms::brm(as.formula(paste0("HeartRate ~ Answer / (Condition / ",
+                                     var,
+                                     ") + (1|Participant) + (1|Item)")),
+                   data = df, refresh=0, seed=3, iter=4000,
+                   prior = set_prior("student_t(1, 0, 8)", class = "b"))
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$ToM, stars = TRUE))
+```
+
+
+
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+dfsub <- df |>
+  select(Participant,
+         starts_with("LIE_"),
+         starts_with("ToM")) |>
+  group_by(Participant) |>
+  summarise_all(mean)
+
+correlation(select(dfsub, starts_with("LIE_")), select(dfsub, starts_with("ToM")), bayesian=TRUE)
+```
+
+
+
+
 ```{r child='3_ToM.Rmd'}
 ```
 
 # Interoception
 
+
+## Interoception Scores {.tabset}
+
+
+### Confidence
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("Intero_Meta", "Intero_Listening", "Intero_Focus", "Intero_Regulation")) {
+  model <- brms::brm(as.formula(paste0(
+    "Confidence ~ Answer / (Condition / ",
+    var,
+    ") + (1|Participant) + (1|Item)"
+  )),
+  data = df, family = "beta", refresh = 0, seed=3, iter = 4000,
+  prior = set_prior("student_t(1, 0, 1)", class = "b")
+  )
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$Intero_Meta, stars = TRUE))
+display(format_table(results$Intero_Listening, stars = TRUE))
+display(format_table(results$Intero_Focus, stars = TRUE))
+display(format_table(results$Intero_Regulation, stars = TRUE))
+```
+
+
+### RT
+
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("Intero_Meta", "Intero_Listening", "Intero_Focus", "Intero_Regulation")) {
+  model <- brms::brm(as.formula(paste0(
+    "RT ~ Answer / (Condition / ",
+    var,
+    ") + (1|Participant) + (1|Item)"
+  )),
+  data = df, refresh = 0, seed=3, iter = 4000,
+  prior = set_prior("student_t(1, 0, 3)", class = "b")
+  )
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$Intero_Meta, stars = TRUE))
+display(format_table(results$Intero_Listening, stars = TRUE))
+display(format_table(results$Intero_Focus, stars = TRUE))
+display(format_table(results$Intero_Regulation, stars = TRUE))
+```
+
+
+### Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("Intero_Meta", "Intero_Listening", "Intero_Focus", "Intero_Regulation")) {
+  model <- brms::brm(as.formula(paste0(
+    "HeartRate ~ Answer / (Condition / ",
+    var,
+    ") + (1|Participant) + (1|Item)"
+  )),
+  data = df, refresh = 0, seed=3, iter = 4000,
+  prior = set_prior("student_t(1, 0, 8)", class = "b")
+  )
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$Intero_Meta, stars = TRUE))
+display(format_table(results$Intero_Listening, stars = TRUE))
+display(format_table(results$Intero_Focus, stars = TRUE))
+display(format_table(results$Intero_Regulation, stars = TRUE))
+```
+
+
+
+
+### Correlation with LIE Scale
+
+```{r message=FALSE, warning=FALSE}
+dfsub <- df |>
+  select(
+    Participant,
+    starts_with("LIE_"),
+    starts_with("Intero_")
+  ) |>
+  group_by(Participant) |>
+  summarise_all(mean)
+
+correlation(select(dfsub, starts_with("LIE_")), select(dfsub, starts_with("Intero_")), bayesian = TRUE)
+```
+
+
+
+
 ```{r child='4_Intero.Rmd'}
 ```
 
 
-# Full Code
 
-The full script of executive code contained in this document is reproduced here.
+# Figure
 
-```{r full_code, ref.label=knitr::all_labels(), eval=FALSE}
+```{r warning=FALSE, message=FALSE, eval=FALSE}
+data <- df |>
+  group_by(Participant, Answer, Condition) |> 
+  select(Confidence, RT, HeartRate, ToM, Intero_Regulation, Intero_Focus, Intero_Meta, Intero_Listening) |> 
+  summarise_all(.funs = list(Mean = function(x) mean(x, na.rm = TRUE), 
+                             low = function(x) (mean(x, na.rm=TRUE) - sd(x, na.rm=TRUE) / 2),
+                             high = function(x) (mean(x, na.rm=TRUE) + sd(x, na.rm=TRUE) / 2))) |> 
+  mutate(ToM_Mean = ifelse(Condition == "Polygraph", ToM_Mean-0.01, ToM_Mean+0.01),
+         Intero_Regulation_Mean = ifelse(Condition == "Polygraph", Intero_Regulation_Mean-0.01, Intero_Regulation_Mean+0.01),
+         Intero_Focus_Mean = ifelse(Condition == "Polygraph", Intero_Focus_Mean-0.01, Intero_Focus_Mean+0.01),
+         Intero_Meta_Mean = ifelse(Condition == "Polygraph", Intero_Meta_Mean-0.01, Intero_Meta_Mean+0.01),
+         Intero_Listening_Mean = ifelse(Condition == "Polygraph", Intero_Listening_Mean-0.01, Intero_Listening_Mean+0.01))
+
+model <- glmmTMB(Confidence ~ Answer / Condition / ToM + (1|Participant) + (1|Item), 
+                 data = df, 
+                 family = beta_family())
+
+model <- brms::brm(Confidence ~ Answer / Condition / ToM + (1|Participant) + (1|Item), 
+                   data = df, family = "beta", seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+
+link_data <- estimate_relation(model, at = c("Condition", "Answer", "ToM"), length = 30)
+
+p1 <- ggplot(link_data, aes(x = ToM, y = Predicted)) +
+  geom_segment(data = data,
+                  aes(x = ToM_Mean,
+                      xend = ToM_Mean,
+                      y = Confidence_low,
+                      yend = Confidence_high,
+                      color = Condition),
+                  alpha=1/3) +
+  geom_point2(data = data,
+                  aes(x = ToM_Mean,
+                      y = Confidence_Mean,
+                      color = Condition),
+              size=2) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
+  geom_line(aes(color = Condition), size=1) +
+  geom_text(data=data.frame(ToM = -0.3, Predicted = 0.45, Condition = "Polygraph", Answer = "Lie"),
+            label = "***",
+            color = "#FF5722",
+            size = 10, show.legend = FALSE, fontface = "bold") +
+  labs(y = "Confidence",
+       x = "Theory of Mind") +
+  scale_y_continuous(labels = scales::percent) + 
+  scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  facet_wrap(~Answer) +
+  theme_modern(axis.title.space = 10) +
+  theme(strip.text = element_text(size = 10),
+        strip.background = element_rect(fill = c("grey"), color = "white"))
+p1
+  
+
+model <- brms::brm(Confidence ~ Answer / Condition / Intero_Meta + (1|Participant) + (1|Item), 
+                   data = df, family = "beta", seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+
+link_data <- estimate_relation(model, at = c("Condition", "Answer", "Intero_Meta"), length = 30)
+
+p2 <- ggplot(link_data, aes(x = Intero_Meta, y = Predicted)) +
+  geom_segment(data = data,
+                  aes(x = Intero_Meta_Mean,
+                      xend = Intero_Meta_Mean,
+                      y = Confidence_low,
+                      yend = Confidence_high,
+                      color = Condition),
+                  alpha=1/3) +
+  geom_point2(data = data,
+                  aes(x = Intero_Meta_Mean,
+                      y = Confidence_Mean,
+                      color = Condition),
+              size=2) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
+  geom_line(aes(color = Condition), size=1) +
+  geom_text(data=data.frame(Intero_Meta = -0.15, Predicted = 0.25, Condition = "Polygraph", Answer = "Lie"),
+            label = "***",
+            color = "#FF5722",
+            size = 10, show.legend = FALSE, fontface = "bold") +
+  labs(y = "Confidence",
+       x = expression(Interoception["  (.97 MAIA Attention regulation, .63 MAIA Self-regulation, .60 MAIA Emotional Awareness)"])) +
+  scale_y_continuous(labels = scales::percent) + 
+  scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  facet_wrap(~Answer) +
+  theme_modern(axis.title.space = 10) +
+  theme(strip.text = element_text(size = 10),
+        strip.background = element_rect(fill = c("grey"), color = "white"))
+p2
+
+
+
+model <- brms::brm(Confidence ~ Answer / Condition / Intero_Listening + (1|Participant) + (1|Item), 
+                   data = df, family = "beta", seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+link_data <- estimate_relation(model, at = c("Condition", "Answer", "Intero_Listening"), length = 30)
+
+p3 <- ggplot(link_data, aes(x = Intero_Listening, y = Predicted)) +
+  geom_segment(data = data,
+                  aes(x = Intero_Listening_Mean,
+                      xend = Intero_Listening_Mean,
+                      y = Confidence_low,
+                      yend = Confidence_high,
+                      color = Condition),
+                  alpha=1/3) +
+  geom_point2(data = data,
+                  aes(x = Intero_Listening_Mean,
+                      y = Confidence_Mean,
+                      color = Condition),
+              size=2) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
+  geom_line(aes(color = Condition), size=1) +
+  geom_text(data=data.frame(Intero_Listening = 0.2, Predicted = 0.45, Condition = "Polygraph", Answer = "Lie"),
+            label = "***",
+            color = "#FF5722",
+            size = 10, show.legend = FALSE, fontface = "bold") +
+  labs(y = "Confidence",
+       x = expression(Interoception["  (.92 MAIA Body listening, -.60 HCT Awareness, .53 HCT Trusting)"])) +
+  scale_y_continuous(labels = scales::percent) + 
+  scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  facet_wrap(~Answer) +
+  theme_modern(axis.title.space = 10) +
+  theme(strip.text = element_text(size = 10),
+        strip.background = element_rect(fill = c("grey"), color = "white")) 
+  
+p3
+
+
+model <- brms::brm(Confidence ~ Answer / Condition / Intero_Focus + (1|Participant) + (1|Item), 
+                   data = df, family = "beta", seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+link_data <- estimate_relation(model, at = c("Condition", "Answer", "Intero_Focus"), length = 30)
+
+p4 <- ggplot(link_data, aes(x = Intero_Focus, y = Predicted)) +
+  geom_segment(data = data,
+                  aes(x = Intero_Focus_Mean,
+                      xend = Intero_Focus_Mean,
+                      y = Confidence_low,
+                      yend = Confidence_high,
+                      color = Condition),
+                  alpha=1/3) +
+  geom_point2(data = data,
+                  aes(x = Intero_Focus_Mean,
+                      y = Confidence_Mean,
+                      color = Condition),
+              size=2) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
+  geom_line(aes(color = Condition), size=1) +
+  geom_text(data=data.frame(Intero_Focus = -0.2,
+                            Predicted = c(0.55, 0.75),
+                            Condition = c("Polygraph", "Interrogation"),
+                            Answer = c("Truth", "Truth")),
+            label = c("*", "*"),
+            color = c("#2196F3", "#FF5722"),
+            size = 10, show.legend = FALSE, fontface = "bold") +
+  labs(y = "Confidence",
+       x = expression(Interoception["  (.87 MAIA Not-distracting, -.40 MAIA Emotional Awareness, .33 HCT Accuracy)"])) +
+  scale_y_continuous(labels = scales::percent) + 
+  scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  facet_wrap(~Answer) +
+  theme_modern(axis.title.space = 10) +
+  theme(strip.text = element_text(size = 10),
+        strip.background = element_rect(fill = c("grey"), color = "white"))
+p4
+
+
+
+model <- brms::brm(Confidence ~ Answer / Condition / Intero_Regulation + (1|Participant) + (1|Item), 
+                   data = df, family = "beta", seed=3, refresh=0,
+                   prior = set_prior("student_t(1, 0, 1)", class = "b"))
+
+link_data <- estimate_relation(model, at = c("Condition", "Answer", "Intero_Regulation"), length = 30)
+
+p5 <- ggplot(link_data, aes(x = Intero_Regulation, y = Predicted)) +
+  geom_segment(data = data,
+                  aes(x = Intero_Regulation_Mean,
+                      xend = Intero_Regulation_Mean,
+                      y = Confidence_low,
+                      yend = Confidence_high,
+                      color = Condition),
+                  alpha=1/3) +
+  geom_point2(data = data,
+                  aes(x = Intero_Regulation_Mean,
+                      y = Confidence_Mean,
+                      color = Condition),
+              size=2) +
+  geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
+  geom_line(aes(color = Condition), size=1) +
+  geom_text(data=data.frame(Intero_Regulation = -0.15, 
+                            Predicted = c(0.25, 0.45, 0.75),
+                            Condition = c("Polygraph", "Interrogation", "Polygraph"), 
+                            Answer = c("Lie", "Lie", "Truth")),
+            label = c("***", "*", "*"),
+            color = c("#FF5722", "#2196F3", "#FF5722"),
+            size = 10, show.legend = FALSE, fontface = "bold") +
+  labs(y = "Confidence",
+       x = expression(Interoception["  (.71 MAIA Not-worrying, .61 HCT Accuracy, .40 MAIA Trusting)"])) +
+  scale_y_continuous(labels = scales::percent) + 
+  scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
+  facet_wrap(~Answer) +
+  theme_modern(axis.title.space = 10) +
+  theme(strip.text = element_text(size = 10),
+        strip.background = element_rect(fill = c("grey"), color = "white")) 
+p5
+
+
+p <- (p1 / p2 / p3 / p4 / p5) + plot_layout(guides = "collect") + plot_annotation(title = "Interindividual correlates of the confidence\nthat one tells a convincing lie", theme = list(plot.title = element_text(face = "bold", hjust = 0.5)))
+p
+ggsave("figures/Figure1.png", width=12, height=15)
 ```
 
-# Package References
+
+# References
 
 ```{r warning=FALSE, message=FALSE, results='asis'}
 report::cite_packages(sessionInfo())
 ```
 
 
-# References
