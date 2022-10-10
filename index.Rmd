@@ -369,6 +369,100 @@ correlation(select(dfsub, starts_with("LIE_")), select(dfsub, starts_with("Inter
 
 
 
+# Deception Trait {.tabset}
+
+## Confidence
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("LIE_Ability", "LIE_Frequency", "LIE_Contextuality", "LIE_Negativity")) {
+  model <- brms::brm(as.formula(paste0(
+    "Confidence ~ Answer / (Condition / ",
+    var,
+    ") + (1|Participant) + (1|Item)"
+  )),
+  data = df, family = "beta", refresh = 0, seed=3, iter = 4000,
+  prior = set_prior("student_t(1, 0, 1)", class = "b")
+  )
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$LIE_Ability, stars = TRUE))
+display(format_table(results$LIE_Frequency, stars = TRUE))
+display(format_table(results$LIE_Contextuality, stars = TRUE))
+display(format_table(results$LIE_Negativity, stars = TRUE))
+```
+
+
+## RT
+
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("LIE_Ability", "LIE_Frequency", "LIE_Contextuality", "LIE_Negativity")) {
+  model <- brms::brm(as.formula(paste0(
+    "RT ~ Answer / (Condition / ",
+    var,
+    ") + (1|Participant) + (1|Item)"
+  )),
+  data = df, refresh = 0, seed=3, iter = 4000,
+  prior = set_prior("student_t(1, 0, 3)", class = "b")
+  )
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$LIE_Ability, stars = TRUE))
+display(format_table(results$LIE_Frequency, stars = TRUE))
+display(format_table(results$LIE_Contextuality, stars = TRUE))
+display(format_table(results$LIE_Negativity, stars = TRUE))
+```
+
+
+## Heart Rate
+
+```{r message=FALSE, warning=FALSE}
+results <- list()
+for (var in c("LIE_Ability", "LIE_Frequency", "LIE_Contextuality", "LIE_Negativity")) {
+  model <- brms::brm(as.formula(paste0(
+    "HeartRate ~ Answer / (Condition / ",
+    var,
+    ") + (1|Participant) + (1|Item)"
+  )),
+  data = df, refresh = 0, seed=3, iter = 4000,
+  prior = set_prior("student_t(1, 0, 8)", class = "b")
+  )
+
+  results[[var]] <- parameters::parameters(model, effects = "fixed", component = "conditional", test = c("pd"), keep = var) |>
+      as.data.frame() |> 
+      separate(Parameter, sep = ":", into = c("Answer", "Condition", "Variable")) |>
+      mutate(
+        Answer = str_remove(Answer, "b_Answer"),
+        Condition = str_remove(Condition, "Condition")
+      )
+}
+
+display(format_table(results$LIE_Ability, stars = TRUE))
+display(format_table(results$LIE_Frequency, stars = TRUE))
+display(format_table(results$LIE_Contextuality, stars = TRUE))
+display(format_table(results$LIE_Negativity, stars = TRUE))
+```
+
+
+
 # Figure
 
 ```{r warning=FALSE, message=FALSE, eval=FALSE}
