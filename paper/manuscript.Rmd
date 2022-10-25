@@ -75,39 +75,43 @@ Neuroscience & Biobehavioral Reviews https://www.journals.elsevier.com/neuroscie
 
 The fabrication and delivery of false information is a sophisticated, and cognitively taxing activity [@abe2007deceiving; @leal2008time ], resulting in physiological arousal [@eskritt2021did] which may require effortful self-regulation to conceal[@krokoszinski2016emotion].
 
+interoceptive deception detection etc
+
+**EXPAND**
+
 <!-- ToM-->
 
-Much of the current research investigating the process and mechanisms involved in lying has considered capabilities such as Theory of Mind (ToM), the ability to understand and make inferences about other people's mental states and predict their behaviours [@el2017deception; @lee2021lying]. ToM is a critical component of deception, since the liar in question must be able to use their inferences to predict whether the individual accepted as true the false information presented to them [@stewart2019deception]. Children begin using deception during the same period of development in which executive function and ToM develops [@sai2021theory], and children trained in ToM saw an increase in lying behaviour [@ding2015theory]. However, there is a growing link between other cognitive and physiological mechanisms that may play a role in both deception detection, and fabricating successful lies
+Much of the current research investigating the process and mechanisms involved in lying has considered capabilities such as Theory of Mind (ToM), the ability to understand and make inferences about other people's mental states and predict their behaviours [@el2017deception; @lee2021lying]. ToM is a critical component of deception, since the liar in question must be able to use their inferences to predict whether their target has accepted as true the false information presented to them [@stewart2019deception]. Children begin using deception during the same period of development in which executive function and ToM develops [@sai2021theory], and youth who have been trained in ToM saw an increase in lying behaviour [@ding2015theory]. However, there is a growing link between other cognitive and physiological mechanisms that may play a role in both deception detection, and fabricating successful lies
 
-<!-- Intero in deception research-->
+<!-- Define Intero and connect to deception -->
 
-Interoceptive awareness (IA) is the ability to monitor, interpret, integrate, and regulate the sensations and state of one's internal organs, and is closely tied to emotional and cognitive processes [@chen2021emerging; @garfinkel2015knowing]. Greater is IA associated with greater self-regulation [@weiss2014interaction], especially mindfulness practitioners who tend to have greater interoceptive awareness and greater ability to regulate stress and associated physiological indicators [@ardi2021effects; @mcmahon2021mindful].
+**Interoceptive sensibility? \< check if should use this term**
 
-The growing literature examining the relationship between interoception and deception is rapidly growing area of inquiry. Some research has examined how higher interoceptive accuracy, measured through heart beat detection, has been associated with vasoconstriction when faced with a liar, indicating that IA may aid in discriminating high stakes emotional lies and truths [@gunderson2021body]. It is clear that interoception may indicate on an implicit level that one is being lied to [@ten2019different; @van2014registered], however, there is limited research investigating how interoception may work the other way around, in favour of a liar in regulating their own physiological state that may betray their deception.
+Interoceptive ability (IA) refers to a cluster of skills involved in monitoring, interpreting, integrating, and regulating one's visceral states[@chen2021emerging; @garfinkel2015knowing; @weiss2014interaction], and is closely tied to emotional and cognitive processes [@barrett2015interoceptive]. Much of the existing literature examining the link between interoceptive abilities has focused on how it may implicitly flag that one is being lied to through an elevated cardiac response [@gunderson2021body], and skin temperature [@van2014registered], or play a role in increasing body ownership. While research indicates that attending to ones interoceptive cues improves success in unmasking detection[@ten2019different], there is limited information how IA function the other way around, in the case of the liar.
 
-Attending to interoceptive cues has been associated with greater willingness to engage in cheating [@williams2016valjean], risk-taking behaviours [@ditto2006visceral; @lenggenhager2013listening]. The findings by @vabba2022interoceptive indicate that high cardiac interoceptive participants were more likely to be dishonest, and to tell higher egoistic lies. There is limited research examining whether individuals with high interoceptive accuracy may be more confident in managing physiological tells associated with emotions like guilt or anxiety that the lie may be discovered through suppression or reappraisal [@fustos2013embodiment; @megias2019emotionally].
+<!-- Define Intero and and moral behaviour -->
+
+Attending to interoceptive cues has been associated with greater willingness to engage in cheating [@williams2016valjean], risk-taking behaviours [@ditto2006visceral; @lenggenhager2013listening], and deception [@scattolin2021morality]. The work by @vabba2022interoceptive indicates that higher cardiac interoception is positively associated with the tendency to be dishonest, and tell higher egoistic lies. While this phenomena has been attributed to an increased sense of bodily ownership which accompanies focused awareness of one's viscera, other factors at play have also yet to be examined.
+
+Given that the success of a lie depends more on the qualities of the deceiver versus the lie-detector [@verigin2019lie], fully understanding the link between IA and deception and other risk taking behaviours
+
+It has been well established that some individuals, such as mindfulness practitioners with particularly high IA may be more confident in down-regulation of stress and associated physiological responses [@ardi2021effects; @fustos2013embodiment; @mcmahon2021mindful]. Since many of these cues, such as cardiac arousal and skin conductance are socially recognized as 'tells' that one is lying, and are used as primary indicators during the polygraph test, could those who are better at managing such responses lie more confidently?
+
+<!-- Intero/and/or/metacognition -->
 
 <!-- Hypothesis -->
 
-The act of lying is often accompanied by physiological responses such as increased heart rate, increased respiration and sweating. Since fluctuations in key physiological indicators as a means to determine whether the individual is lying is a key principle behind the polygraph test and other lie detection techniques, there is a need for more research examining the relationship between IA, theory of mind, and deception. This research attempts to isolate the effects of theory of mind and interoception, and examine how they interact with deception. Of particular interest is how liars might utilize their interoceptive ability to self regulate in towards a more successful deception, and how this ability may compare or interact with other mechanisms at play such as theory of mind. We hypothesize that participants with greater theory of mind ability will show higher lie confidence, shorter reaction time, and lower physiological arousal in the interrogation condition, while participants in the polygraph condition will demonstrate lower lie confidence, lower reaction time and higher physiological arousal during the polygraph prediction.
+The act of lying is often accompanied by physiological responses such as increased heart rate, increased respiration and sweating. Since fluctuations in key physiological indicators as a means to determine whether the individual is lying is a key principle behind the polygraph test and other lie detection techniques, there is a need for more research examining the relationship between IA, theory of mind, and deception. This research attempts to isolate the effects of theory of mind and interoception, and examine how they interact with deception. Of particular interest is how liars might utilize their interoceptive ability to self regulate in towards a more successful deception, and how this ability may compare or interact with other mechanisms at play such as theory of mind. We hypothesize that participants with greater theory of mind ability will show higher lie confidence, shorter reaction time, and lower physiological arousal in the interrogation condition, while participants in the polygraph condition will demonstrate lower lie confidence, lower reaction time and higher physiological arousal.
 
 # Methods
 
-The plan for this study was preregistered (OSF?). The raw data and analysis script can be found at (GITHUB?).
+Along with open science standards, the material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, preregistration, etc.) for this research is available at: **[LINK].**
+
+The plan for this study was preregistered **(OSF?)**.
 
 ## Participants
 
-*26* participants (65.4% Females, M~*age*~ = 20.9, *SD* = 2.0) were
-
-recruited VIA HOW
-
-for HUAT
-
--exclusion criteria
-
-This research was approved by the Institutional Review Board (Reference Number: IRB-) of Nanyang Technological University (NTU).
-
-volunteered for [duration of study] for [compensation provided].
+*26* participants (65.4% Females, M~*age*~ = 20.9, *SD* = 2.0) were recruited advertising using univerisy mailing lists and posters. Participants were awarded with academic credit for their participation. This research was approved by the **Institutional Review Board (Reference Number: IRB-)** of Nanyang Technological University (NTU).
 
 ## Measures
 
@@ -119,23 +123,11 @@ Since Theory of Mind and empathy are closely related, *The Basic Empathy Scale (
 
 To measure interoception, participants completed a *Heartbeat Counting Task (HCT)* [@schandry1981heart], where participants count their heart beats without taking their pulse, as well as provide a confidence rating for their estimate. At the same time their true heart rate is recorded and the scores are compared to determine the individual's accuracy. They also completed the *MAIA questionnaire* [@mehling2012multidimensional], where they rated 32 statements such as "I can use my breath to reduce tension" on a 1-5 Likert scale.
 
-Additionally, we implemented the Heartbeat Tracking Task (HTT), in which participants - tap one
+Additionally, we implemented the Heartbeat Tracking Task (HTT) this is where they tap - **but not mentioned in the results??**
 
 ### Deception
 
 We used the *LIE Scale*, which is a 44-item questionnaire examining deception as a dispositional trait, and measures the participant propensity towards lie frequency, ability, contextuality and negativity [@makowski2021structure].
-
-#### Deception Task
-
-Participants were randomly allocated(??) between two conditions where they underwent 40 trials of a directed lying task. During the task, participants would be instructed to lie for 20 of the trials to questions such as, "What secondary school did you go to?". Prior to beginning the experiment, researchers collected the answers via questionnaire. In each condition, participants received false feedback through different mediums according to the condition that they were assigned, intended to examine the relationship between theory of mind or interoception and the dependent variables (see fig. X?). Participants were randomized between two conditions which we titled the Interrogation Condition and the Polygraph Condition.
-
-In the Interrogation condition, participants were instructed that following their lie, a live examiner over video feed would appear briefly to judge whether they were truthful or not. In actuality, the video of the examiner shown was pre-recorded and the same for all participants. We hypothesized that participants would will rely on theory of mind abilities to predict whether their lie to the examiner was successfully accepted as true.
-
-The Polygraph Condition followed the same routine, however instead of a receiving feedback from an interrogator, following the lie, a video of physiological signals was shown. We hypothesized when made acutely aware of such signals through false feedback, that participants would rely on interoceptive abilities to be more mindful or intentional about modulating the signals that may give them away. The physiological signals in this condition are also false feedback, and pre-recorded and identical for all participants.
-
-During each trial, the time it took for participants to answer is recorded, and their heart rates are measured using an electrocardiogram. Following the trial, participants gave a confidence rating for how successful they believe their lie or truth was.
-
-During the interrogation condition, participants were exposed to video feedback of an examiner following each question. They were informed that the examiner was live and monitoring their physiological signals remotely to determine the honesty of their answers, however this was false, and the same sequence of videos was show to each participant.
 
 ### Demographic Information
 
@@ -143,29 +135,25 @@ The demographic information we collected was age, ethnicity, nationality, domina
 
 ## Procedure
 
-Each subject was briefed on the experimental procedure and study aims and signed an informed consent document prior to the study commencing.
+Each subject was briefed on the experimental procedure and study aims, and signed an informed consent document prior to the study commencing. During the first phase of the experiment, demographic measures were taken, followed by measures of Theory of Mind and interoceptive abilities, as described above. Participants were then connected to an electrocardiogram before proceeding with the deception task.
 
-questionnaire to obtain truthful answers to directed lying task,
+#### Deception Task
 
-when were the measures like yoni etc taken?
+During the task, participants underwent 40 trails of a directed lying task (20 per condition), where they were asked questions such as, "What secondary school did you go to?". Participants provided their answer verbally and pressed a button when they were finished, at which point they would be connected for 10 seconds to the condition-unique stimulus.
 
-sound attenuated room
+In the Interrogation condition, participants were instructed that following their lie, a live examiner over video feed would appear briefly to judge whether they were truthful or not. In actuality, the video of the examiner shown was pre-recorded and the same for all participants. We hypothesized that participants would will rely on theory of mind abilities to predict whether their lie to the examiner was successfully accepted as true.
 
-Physio recording devices (equipment by huat and who)
+The Polygraph Condition followed the same routine, however instead of a receiving feedback from an interrogator, following the lie, a video of physiological signals was shown. We hypothesized when made acutely aware of such signals through false feedback, that participants would rely on interoceptive abilities to be more mindful or intentional about modulating the signals that may give them away. The physiological signals in this condition are also false feedback, and pre-recorded and identical for all participants.
 
-Where/how did they provide their answer during directed lying task
+During each trial, the time it took for participants to answer is recorded, and their heart rates are measured using an electrocardiogram. Following the trial, participants gave a confidence rating for how successful they believe their lie or truth was.
 
-Deception task
-
-During the experiment, all participants were connected to an electrocardiogram to monitor their heart would be asked a question, [HOW WAS ANSWER GIVEN?] and then connected for 10 seconds to the condition-unique stimulus. Following the exposure to the stimulus, they would be asked to rate their confidence on a sliding scale before repeating the trial 40 times.
-
-Debriefing was provided following the study.
+Debriefing was provided following the study. At this time the truthful answers to the directed lie questions were collected via questionnaire.
 
 ## Data Analysis
 
-The manipulation checks consist of testing whether there is an effect of question phrasing (direct vs. indirect), and condition (polygraph *vs.* interrogation), on our 3 outcome variables: the participants' ratings of confidence that their answers (lies *vs.* truths) were convincing, the response time (RT), and the heart rate change associated with the response. This analysis was performed using mixed models with the participants and questions both entered as random factors. Marginal contrasts analysis was also performed to clarify the differences between conditions. To allow for a better quantification of the uncertainty associated with the effects, as well increase the robustness to outliers and artifactual findings, all statistics were undertaken under the Bayesian framework [**ref makowski2019existence**], using informative priors centred around 0 ($t_{Confidence}(1, 0, 1)$, $t_{RT}(1, 0, 3)$, $t_{Heartrate}(1, 0, 8)$). 
+The manipulation checks consist of testing whether there is an effect of question phrasing (direct vs. indirect), and condition (polygraph *vs.* interrogation), on our 3 outcome variables: the participants' ratings of confidence that their answers (lies *vs.* truths) were convincing, the response time (RT), and the heart rate change associated with the response. This analysis was performed using mixed models with the participants and questions both entered as random factors. Marginal contrasts analysis was also performed to clarify the differences between conditions. To allow for a better quantification of the uncertainty associated with the effects, as well increase the robustness to outliers and artifactual findings, all statistics were undertaken under the Bayesian framework [**ref makowski2019existence**], using informative priors centred around 0 ($t_{Confidence}(1, 0, 1)$, $t_{RT}(1, 0, 3)$, $t_{Heartrate}(1, 0, 8)$).
 
-To further counterbalance the low number of participants and maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, theory of mind and interoception). We used factor analysis (using the method agreement procedure to estimate the optimal number of dimensions, **REF PARAMETERS PKG**), rather PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modelled the relationship between these inter-individual composite scores (the analysis for all the variables is included in Supplementary Materials) and the 3 outcome variables in interaction with the condition (polygraph *vs.* interrogation). Finally, we also investigated the relationship between the deception scale traits, and the theory of mind and interoception scores using Bayesian correlations.  
+To further counterbalance the low number of participants and maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, theory of mind and interoception). We used factor analysis (using the method agreement procedure to estimate the optimal number of dimensions, **REF PARAMETERS PKG**), rather PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modeled the relationship between these inter-individual composite scores (the analysis for all the variables is included in Supplementary Materials) and the 3 outcome variables in interaction with the condition (polygraph *vs.* interrogation). Finally, we also investigated the relationship between the deception scale traits, and the theory of mind and interoception scores using Bayesian correlations.
 
 The data analysis was carried out using R, the *brms* package [*REF*] and the *easystats* ecosystem **[REFS]**. As the full reproducible analysis script and statistical results are available at **[INSERT LINK]**, we will only focus on significant results in the manuscript.
 
@@ -173,19 +161,15 @@ The data analysis was carried out using R, the *brms* package [*REF*] and the *e
 
 ## Manipulation Check
 
-Compared to truth, lies were rated with less confidence ($\beta=-1.09,~95\%~CI~[-0.94, -1.25],~pd = 100\%$). Moreover, lies told in the polygraph condition were rated with less confidence ($\delta=-0.24,~95\%~CI~[-0.10, -0.39],~pd > 99\%$).
-The RT did not differ between truth and lies, but was significantly slower in the polygraph condition ($\beta=0.14,~95\%~CI~[0.03, 0.25],~pd > 99\%$) for both conditions.
-The heart rate was significantly more elevated during lies as compared to truth ($\beta=1.31,~95\%~CI~[2.14, 0.50],~pd > 99.9\%$), and during interrogation as compared to the polygraph condition ($\beta=4.99	,~95\%~CI~[5.82, 4.19],~pd = 100\%$).
+Compared to truth, lies were rated with less confidence ($\beta=-1.09,~95\%~CI~[-0.94, -1.25],~pd = 100\%$). Moreover, lies told in the polygraph condition were rated with less confidence ($\delta=-0.24,~95\%~CI~[-0.10, -0.39],~pd > 99\%$). The RT did not differ between truth and lies, but was significantly slower in the polygraph condition ($\beta=0.14,~95\%~CI~[0.03, 0.25],~pd > 99\%$) for both conditions. The heart rate was significantly more elevated during lies as compared to truth ($\beta=1.31,~95\%~CI~[2.14, 0.50],~pd > 99.9\%$), and during interrogation as compared to the polygraph condition ($\beta=4.99 ,~95\%~CI~[5.82, 4.19],~pd = 100\%$).
 
 The indirect phrasing of the question only had a significant effect on RT ($\beta=0.34,~95\%~CI~[0.23, 0.44],~pd = 100\%$), leading to slower answers, regardless of whether they were lies or truths.
 
-
 ## Feature Reduction
 
-The 3 YONI-task dimensions and the 2 BES traits were combined into a unique factor, labelled *Theory of Mind* (explaining 35.76\% of variance). It was loaded by the cognitive (.89), affective (.77), physical (.45) YONI dimension, and the affective (.41) and cognitive (.17) traits of the BES. 
+The 3 YONI-task dimensions and the 2 BES traits were combined into a unique factor, labelled *Theory of Mind* (explaining 35.76% of variance). It was loaded by the cognitive (.89), affective (.77), physical (.45) YONI dimension, and the affective (.41) and cognitive (.17) traits of the BES.
 
-The 8 MAIA dimensions and the 3 HCT components were reduced to 4 factors (explaining 65.17\% of variance). The first factor, labelled *Interoception - Meta* (23.59\%), was loaded primarily by Attention Regulation (.97), Self-regulation (.63), Emotional awareness (.60), and noticing (.49) dimensions of the MAIA and the HCT confidence score (.40). The second factor, labelled *Interoception - Listening* (18.54\%), was primarily loaded by the body listening (.92) and trusting (.53) MAIA dimensions, and the awareness (-.60) and confidence (.46) HCT scores. The third factor, labelled *Interoception - Focus* (12.07\%), was primarily loaded by MAIA not-distracting (.87), emotional awareness (-.40) and HCT accuracy (.33). The fourth factor, labelled *Interoception - Regulation* (10.97\%), was primarily loaded by MAIA not-worrying (.71), HCT accuracy (.61) and MAIA trusting (.40). However, due to the interpretation difficulty, we will refer to these dimensions with their main correlates in **Figure 1**. 
-
+The 8 MAIA dimensions and the 3 HCT components were reduced to 4 factors (explaining 65.17% of variance). The first factor, labelled *Interoception - Meta* (23.59%), was loaded primarily by Attention Regulation (.97), Self-regulation (.63), Emotional awareness (.60), and noticing (.49) dimensions of the MAIA and the HCT confidence score (.40). The second factor, labelled *Interoception - Listening* (18.54%), was primarily loaded by the body listening (.92) and trusting (.53) MAIA dimensions, and the awareness (-.60) and confidence (.46) HCT scores. The third factor, labelled *Interoception - Focus* (12.07%), was primarily loaded by MAIA not-distracting (.87), emotional awareness (-.40) and HCT accuracy (.33). The fourth factor, labelled *Interoception - Regulation* (10.97%), was primarily loaded by MAIA not-worrying (.71), HCT accuracy (.61) and MAIA trusting (.40). However, due to the interpretation difficulty, we will refer to these dimensions with their main correlates in **Figure 1**.
 
 ## Theory of Mind
 
@@ -195,33 +179,59 @@ The composite *ToM* score was significantly associated with less confident ($\be
 
 The *Meta* interoception score was significantly associated with an increased confidence in lies, specifically in the polygraph condition ($\beta=0.20,~95\%~CI~[0.03, 0.35],~pd = 98.98\%$). It was also associated with faster answers for both lies ($\beta=-0.54,~95\%~CI~[-0.93, -0.15],~pd = 99.67\%$) and truths ($\beta=-0.29,~95\%~CI~[-0.63, 0.03],~pd = 96.10%\%$), specifically in the polygraph condition. No significant association was found with heart rate.
 
-The *Listening* interoception score was significantly associated with an increased confidence in lies, in the polygraph ($\beta=0.43,~95\%~CI~[0.27, 0.59],~pd = 100\%$) and interrogation condition ($\beta=0.16,~95\%~CI~[0.01, 0.32],~pd = 98.04\%$). It was also associated with faster answers, particilarly for lies ($\beta=-0.42,~95\%~CI~[-0.82, -0.03],~pd = 98.19\%$) and truths ($\beta=-0.36,~95\%~CI~[-0.76, 0.03],~pd = 96.49\%$) in the polygraph condition. No significant association was found with heart rate. This score also correlated with the deception *Contextuality* trait ($r = 0.50,~95\%~CI~[0.04, 0.64],~BF_{10} = 3.48\%$).
+The *Listening* interoception score was significantly associated with an increased confidence in lies, in the polygraph ($\beta=0.43,~95\%~CI~[0.27, 0.59],~pd = 100\%$) and interrogation condition ($\beta=0.16,~95\%~CI~[0.01, 0.32],~pd = 98.04\%$). It was also associated with faster answers, particularly for lies ($\beta=-0.42,~95\%~CI~[-0.82, -0.03],~pd = 98.19\%$) and truths ($\beta=-0.36,~95\%~CI~[-0.76, 0.03],~pd = 96.49\%$) in the polygraph condition. No significant association was found with heart rate. This score also correlated with the deception *Contextuality* trait ($r = 0.50,~95\%~CI~[0.04, 0.64],~BF_{10} = 3.48\%$).
 
 The *Focus* interoception score was significantly associated with an increased confidence in truthful responses in the polygraph ($\beta=0.17,~95\%~CI~[-0.01, 0.34],~pd = 97.16\%$) and interrogation condition ($\beta=0.15,~95\%~CI~[-0.02, 0.32],~pd = 95.76%\%$). No significant association was found with RT or heart rate, but the score correlated with the deception *Ability* trait ($r = 0.50,~95\%~CI~[0.22, 0.74],~BF_{10} = 34.37\%$).
 
 The *Regulation* interoception score was significantly associated with an increased confidence in lies in the polygraph ($\beta=0.32,~95\%~CI~[0.14, 0.51],~pd = 99.99\%$) and the interrogation conditions ($\beta=0.18,~95\%~CI~[0.00, 0.36],~pd = 97.42\%$), and with a decreased confidence in truth only in the polygraph condition ($\beta=-0.1,~95\%~CI~[-0.36, 0.01],~pd = 97.16\%$). No significant association was found with RT or heart rate.
 
-
-
 # Discussion
 
-This study aimed to examine the relationship between Theory of Mind and interoception on lie confidence, reaction time and physiological arousal during deception. This was achieved through a directed lying task in which participants were randomized between two two conditions of false feedback where they were intended to rely on either interoceptive or ToM abilities. Across both conditions, the scores show a larger effect on confidence in the polygraph condition, which was both expected and unexpected. This may be due to the polygraph condition may be harder due to the less intuitive feedback cues. Those better at interoception or perceiving their internal signals would hence be more confident in their lies, as we expected. On the other hand, those with better theory of mind become less confident in the absence of another person from which to obtain feedback cues.
+This study aimed to examine the relationship between Theory of Mind and interoception on lie confidence, reaction time and physiological arousal during deception. This was achieved through a directed lying task in which participants underwent two conditions of false feedback where they were intended to rely on either interoceptive or ToM abilities. Our most notable result is the link between interoception and lying ability,
 
-There was no significant relationship between reaction time and heart rate, however lie confidence is negatively correlated with reaction time, which is expected. Generally, participants were less confident in lies than truth, however is effect was greater in the polygraph condition, which is possibly due to less intuitive feedback cues. This effect carries over into reaction time, where participants were also slower to respond in the polygraph condition, which is consistent with less intuitive cues.
+That the relationship was found largely in the polygraph condition indicates that our manipulation was successful, and further indicates a potential metacognitive element to this link.
 
-To our knowledge, this is the first study that has found a significant correlation between interoceptive awareness and lie confidence. Both interoceptive measures, HCT and MAIA, were strongly correlated. Participants with greater IA, also had greater lie confidence and lower truth confidence in the polygraph condition. The three sub-scales of MAIA which had a significant interaction were *Noticing, Body Listening* and *Attention Regulation*. Since participants were made aware of their cardiac activation through false feedback, we anticipated that those with greater accuracy would demonstrate greater lie confidence. Since research has shown deception is more likely when individuals judge a lower risk of confrontation or being caught [@sip2012if; @sip2013pinocchio], these results may offer support to the literature that implicates IA with immoral behaviour. Thus our research may be in support of the findings from @vabba2022interoceptive, where IA was found to be a significant moderator in participant's propensity toward deception and high egoist lies. Similar findings have also linked increased bodily awareness was linked to a greater likelihood of engaging in immoral behavior such as cheating [@williams2016valjean], and risk-taking behaviours [@ditto2006visceral; @lenggenhager2013listening]. However, more research is required to examine this potential link.
+<!-- Confidence-->
 
-A greater HCT score was associated with decreased lie confidence in the polygraph condition. Since HCT awareness is understood to be the correlation between HCT accuracy and HCT confidence, there are two potential explanations for this. First, a low level of awareness could mean that the participant accurately counted their heartbeats, but were not confidence; or vice versa, where they were inaccurate counting but expressed high confidence. The dual interpretations of this data may indicate its lack of reliability. More research is needed to understand the relationship between lie confidence, interoception and potential implications on lying behaviour.
+See the relationship in confidence ratings - subjective nature/variables and noise/reliability
 
-HCT accuracy is negatively correlated with heart rate, but only in the interrogation condition. While it is expected that those with greater interoceptive ability would be better at perceiving and regulating physiological arousal [@megias2019emotionally], we expected to see this result in the polygraph condition which emphasizes interoceptive abilities. A potential explanation for this is that the presence of another person, whom they believe is observing them is understood to increase an individual's interoceptive accuracy [@hazem2017know; @isomura2020direct], which may in turn, cause the participant to attempt to regulate their cardiac response.
+Regarding interoception and confidence, all factors show a significant effect in the polygraph condition, however, the individual interoceptive factors showed unique associations.
+
+Meta Interoception associated with increased confidence in lies in polygraph
+
+<!-- Reaction Time-->
+
+Meta associated with faster answers for lies and truths in polygraph
+
+Listening interoception faster lies and truths in poly
+
+Focus and regulation no RT
+
+<!-- Heart Rate-->
+
+Since we expected heart rate to be associated with theory of mind abilities and condition, our finding of no such relationship was unexpected.
+
+Manipulation checks show elevated cardiac response in lie conditions, so indicative of TOM or Interoception
+
+A potential explanation for this is that the presence of another person, whom they believe is observing them is understood to increase an individual's interoceptive accuracy [@hazem2017know; @isomura2020direct], which may in turn, cause the participant to attempt to regulate their cardiac response.
 
 Greater ToM abilities negatively correlated with lie confidence, and saw an increase in truth confidence, but only in the polygraph condition. In the Yoni Task, this effect is driven by the cognitive and physical domains. BES saw the effect driven by both the cognitive and affective domain for lie confidence, meanwhile, truth confidence is only driven by the affective domain.
 
-We anticipated that ToM measures would negatively correlate with physiological arousal, however while the Yoni Task had no association with heart rate, we found that BES scores were positively correlated with heart rate for both lies and truths, with a larger effect in the interrogation condition. Although initially unexpected, this finding is makes sense when interpreted in line with past research which finds a close positive correlation between empathy and increased cardiac response [@jauniaux2020emotion; @lischke2018inter]. The lack of correlation between heart rate and the Yoni task, indicates that the elevated cardiac response may be due exclusively to empathy, and attributable to ToM.
+<!-- (mostly irrelevant) Scraps -->
+
+Since research has shown deception is more likely when individuals judge a lower risk of confrontation or being caught [@sip2012if; @sip2013pinocchio], these results may offer support to the literature that implicates IA with immoral behaviour. Thus our research may be in support of the findings from @vabba2022interoceptive, where IA was found to be a significant moderator in participant's propensity toward deception and high egoist lies. Similar findings have also linked increased bodily awareness was linked to a greater likelihood of engaging in immoral behavior such as cheating [@williams2016valjean], and risk-taking behaviours [@ditto2006visceral; @lenggenhager2013listening]. However, more research is required to examine this potential link.
+
+Focus interoception associated with increase confidence in truthful response in both conditions
+
+Regulation Interoception associated with increased confidence in lies in both conditions and decreased confidence in truth in the polygraph only
+
+those with greater interoceptive ability would be better at perceiving and regulating physiological arousal [@megias2019emotionally], we expected to see this result in the polygraph condition which emphasizes interoceptive abilities.
 
 ## Limitations and Future Research
 
-Potential limitations worth noting in this research is that the interrogation and polygraph conditions may not bring out Theory of Mind and interoceptive abilities to the greatest degree. This must be considered as a potential limitation since the participants were still connected to the ECG in the interrogation condition, which may amplify their interoceptive awareness beyond what they may normally experience during a real-world act of deception. Furthermore, it is possible that there could be an interplay between Theory of Mind and interoception. More research is needed to investigate this relationship in the context of deception.
+future research see if interoceptive better at fabricating false emotions
+
+-   limitation that the lying task is very subjective, and the quality of the lie was not measured
 
 # Funding
 
