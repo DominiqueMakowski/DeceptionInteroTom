@@ -135,7 +135,7 @@ We further collected demographic information including age, ethnicity, nationali
 
 ### Deception Task Paradigm
 
-A novel and computerized directed-lying experimental paradigm was designed to assess participants' lying ability in different scenarios. Each *Deception Task* trial is comprised of a question presented on a computer screen with an accompanying instruction that either asked participants to verbally lie or tell the truth. The instructions for each trial were displayed briefly, for a maximum of 10 seconds, or until the participants responded accordingly. Notably, these questions were either phrased directly (*"What is your favourite sport?*) or indirectly (*"Is your favourite sport Hockey?"*). The *Deception Task* paradigm consists of 2 conditions - namely, the *Interrogation Condition* and the *Polygraph Condition*.
+We designed a computerized directed-lying experimental paradigm (the *Deception Task*) to assess participants' lying ability in different scenarios. Each *Deception Task* trial is comprised of a question presented on a computer screen with an accompanying instruction that either asked participants to verbally lie or tell the truth. The instructions for each trial were displayed for a maximum of 10 seconds, or until the participants responded. Notably, these questions were either phrased directly (*"What is your favourite sport?*) or indirectly (*"Is your favourite sport Hockey?"*). The *Deception Task* paradigm consists of 2 conditions - namely, the *Interrogation Condition* and the *Polygraph Condition*.
 
 In the **Interrogation Condition**, social feedback in the form of a video stream with an examiner was presented to participants during each trial. Participants were informed that the examiner would be evaluating the truthfulness of their responses by observing through the live video feed, when in actuality, the video was a pre-recorded video clip of a confederate. This was done to heighten the salience of social cues so as to facilitate participants' TOM abilities.
 
@@ -187,7 +187,8 @@ The *Regulation* interoception score was significantly associated with an increa
 
 # Discussion
 
-This study aimed to examine the relationship between theory of mind and interoception on lie confidence, reaction time and physiological arousal during deception. This was achieved through a directed lying task in which participants underwent two conditions of false feedback where they were intended to rely on either interoceptive or theory of mind abilities. To our knowledge, this is the first study which has shown a clear link between interoceptive abilities and cardiac regulation during the act of deception. As this relationship was largely found in the polygraph condition that was designed to draw out the interoceptive abilities within the individual, we can conclude that our manipulation was successful. This taken with high confidence ratings in participant's lying abilities, also indicates other potential factors at play.
+This study aimed to examine the relationship between TOM and interoception on deceptive ability. Whereas there lies an abundance of deception literature associated with social cognition and emotion regulation, most of the research had been focused on deception detection, leaving a paucity in the studies pertaining to lying ability. Through our bimodal feedback *Deception Task* paradigm, our results found a significant positive correlation between interoception and confidence in one's own lies. This is not only in line with @murphy2019classifying's findings on interoceptive awareness and interoceptive sensibility, but also extends their influence to other high order cognitve processes such as lying 
+
 
 <!-- Participants relied on interoception -->
 
