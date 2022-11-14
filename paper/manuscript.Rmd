@@ -1,20 +1,61 @@
 ---
-title: '**The Heart Lies: The Role of Interoception and Theory of Mind in Deception**'
+title: '**Does the Heart Lies: The Role of Interoception and Theory of Mind in Deception**'
 shorttitle        : "TITLE"
 author:
+  
   - name          : "Dominique Makowski"
-    affiliation   : " 1, *"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
     address       : "HSS 04-18, 48 Nanyang Avenue, Singapore"
-    email         : "dmakowski@ntu.edu.sg"
+    email         : "dom.makowski@gmail.com"
+    orcid         : 0000-0001-5375-9967
+    role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+      - "Conceptualization"
+      - "Data curation"
+      - "Formal Analysis"
+      - "Funding acquisition"
+      - "Investigation"
+      - "Methodology"
+      - "Project administration"
+      - "Resources"
+      - "Software"
+      - "Supervision"
+      - "Validation"
+      - "Visualization"
+      - "Writing – original draft"
   - name          : "Zen J. Lau"
     affiliation   : " 1"
   - name          : "Tam Pham"
     affiliation   : " 1"
+  - name          : "An Shu Te"
+    affiliation   : "1"
+    orcid         : 0000-0001-8008-2824
+    role:
+      - "Project administration"
+      - "Resources"
+      - "Investigation"
+      - "Writing – original draft"
+  - name          : "Stephanie Kirk"
+    affiliation   : "1"
+    orcid         : 0000-0002-9312-5552
+    role:
+      - "Project administration"
+      - "Resources"
+      - "Writing – original draft"
+  - name          : "Ngoi Zi Liang"
+    affiliation   : "1"
+    role:
+      - "Project administration"
+      - "Resources"
+      - "Writing – review & editing"
   - name          : "S.H. Annabel Chen"
-    affiliation   : " 1, 2, 3, 4"
-    corresponding : yes    # Define only one corresponding author
-    address       : "HSS 04-19, 48 Nanyang Avenue, Singapore"
-    email         : "annabelchen@ntu.edu.sg"
+    affiliation   : "1, 2, 3, 4"
+    orcid         : 0000-0002-1540-5516
+    role:
+      - "Project administration"
+      - "Supervision"
+      - "Writing – review & editing"
+      
 affiliation:
   - id            : "1"
     institution   : "School of Social Sciences, Nanyang Technological University, Singapore"
@@ -59,7 +100,6 @@ library("kableExtra")
 options(knitr.kable.NA = 'None')
 ```
 
-```{=html}
 <!-- 
 Journals:
 Neuroscience Letters https://www.journals.elsevier.com/neuroscience-letters
@@ -68,33 +108,33 @@ Psychophysiology https://onlinelibrary.wiley.com/journal/14698986
 Cognitive Neurodynamics https://www.springer.com/journal/11571
 Neuroscience & Biobehavioral Reviews https://www.journals.elsevier.com/neuroscience-and-biobehavioral-reviews
 -->
-```
-# Introduction
+
+
 
 <!-- Little intro-->
 
-In this post-truth era, deception has become increasingly prevalent in our everyday lives [@lewandowsky2017beyond]. Although the act of deceiving is regarded as complex and often requires effortful self-regulation to conceal [@abe2007deceiving; @krokoszinski2016emotion], research shows that people tend to under-estimate their ability to successfully lie [@elaad2003effects]. However, relative to the abundant literature regarding deception detection [@viji2022history; @sternglanz2019review; @masip2017deception], surprisingly little attention has been conferred to investigating the inter-individual differences in people's lying ability. Given meta-analytic findings wherein the deceptive ability of the liar is suggested to be more important than the lie detector in deceptive interactions [@verigin2019lie; @bond2008individual; @levine2011sender], it is perhaps more pertinent to investigate what makes someone a more convincing liar.
+Lying - the intentional attempt at ... [**Insert definition**] - is a prevalent phenomenon carrying potentially important consequences. Interestingly, evidence suggests that the successful detection of a lying attempt depends more on the ability of the liar, than on the performance of the lie detector [@verigin2019lie; @bond2008individual; @levine2011sender]. However, the factors contributing to one's deception abilities remain unclear, most of the deception literature focusing instead on deception detection [@viji2022history; @sternglanz2019review; @masip2017deception].
+
+<!-- research shows that people tend to under-estimate their ability to successfully lie [@elaad2003effects] -->
+
 
 <!-- TOM  -->
 
-As deception requires the liar to intentionally manipulate the beliefs of others [@burgoon1994interpersonal; @sip2012if], most research on lying capability has been focused on higher order cognitive processes, particularly in theory of mind (TOM). TOM refers to the ability to infer that others have mental states, such as beliefs, emotions and intentions, distinct from ourselves [@lee2021lying; @wellman2001meta; @baron1997mindblindness]. Indeed, the capacity to tell lies, as well as the complexity of lies told, have previously been found to be related to higher TOM abilities [@talwar2007lying; @evans2011verbal; @talwar2017role]. Furthermore, the deceptive capabilities of children is often used as a measure of their skills in TOM. However, studies investigating the links between TOM and lying ability have predominantly been focused on children and individuals with neurocognitive deficits [@beaudoin2020systematic; @bora2017meta; @roheger2022progression]; likely a result of the view of TOM as the foundation of other higher order cognitive processes [@ketelaars2010dynamics; @isaksson2021s]. As such, little is known regarding the role TOM plays in the lying ability of healthy adults.   
+As deception requires the liar to intentionally manipulate the beliefs of others [@burgoon1994interpersonal; @sip2012if], a significant line of research has been focused on the role of theory of mind (ToM) in lying ability. ToM refers to the ability to infer that others have mental states, such as beliefs, emotions and intentions, distinct from ourselves [@lee2021lying; @wellman2001meta; @baron1997mindblindness]. The ability to tell lies, as well as their complexity, have previously been found to be related to higher TOM abilities [@talwar2007lying; @evans2011verbal; @talwar2017role]. However, studies investigating the link between ToM and deception have predominantly been focused on children and neuroatypical individuals [@beaudoin2020systematic; @bora2017meta; @roheger2022progression], and its importance in healthy adults remains to be clarified.
 
 
 <!-- Intero in Deception research -->
 
-Alternatively, interoceptive abilities could also influence inter-individual differences in lying. Broadly defined as one's sensitivity to their own internal signals and bodily states [@murphy2019classifying; @chen2021emerging; @weiss2014interaction], @garfinkel2015knowing's conceptualizes interoception as a three-dimensional framework comprising three distinct facets, namely - *interoceptive accuracy*, the objective ability to monitor internal bodily signals; *interoceptive sensibility*, the subjective confidence in one's interoceptive accuracy; and *interoceptive awareness*, one's ability to identify and appropriately respond to their perceived interoceptive states. Interoception has increasingly been tied to subjective perceptual experiences [@connell2018interoception; @seth2012interoceptive], as well as individual differences in executive functions, emotional processing and decision-making [@barrett2015interoceptive; @petzschner2021computational; @murphy2019classifying]. Although little research interest has been conferred to investigating the relationship between interoception and deceptive ability *per se*, previous decision-making studies have demonstrated a negative correlation between interoceptive awareness, a metacognitive dimension of interoception, and one's likelihood to make risky decisions [@dunn2010listening; @furman2013interoceptive]. In fact, this is consistent with the somatic marker hypothesis, which posits interoception is associated with a propensity towards making rational decisions [@damasio1996somatic].
+Besides paying to attention to the person we lie to, trying to gauge whether they believe us, it is also possible that some attention is directed inwards: monitoring our own body and its reactions (e.g., cardiac activity and its related changes such as blushing), susceptible to be used as cues to infer our real intent. This begs the question of the potential role of interoceptive abilities in deception ability. Broadly defined as one's sensitivity to their own internal signals and bodily states [@murphy2019classifying; @chen2021emerging; @weiss2014interaction], @garfinkel2015knowing's conceptualizes interoception as a three-dimensional framework comprising three distinct facets, namely, *interoceptive accuracy* - the objective ability to monitor internal bodily signals; *interoceptive sensibility* - the subjective confidence in one's interoceptive accuracy; and *interoceptive awareness* - one's ability to identify and appropriately respond to their perceived interoceptive states. Interoception has increasingly been tied to subjective perceptual experiences [@connell2018interoception; @seth2012interoceptive], as well as individual differences in executive functions, emotional processing and decision-making [@barrett2015interoceptive; @petzschner2021computational; @murphy2019classifying]. Although little research interest has been conferred to investigating the relationship between interoception and deceptive ability *per se*, previous decision-making studies have demonstrated a negative correlation between interoceptive awareness, a metacognitive dimension of interoception, and one's likelihood to make risky decisions [@dunn2010listening; @furman2013interoceptive]. In fact, this is consistent with the somatic marker hypothesis, which posits an association between interoception and a propensity towards making rational decisions [@damasio1996somatic].
 
-In contrast, some studies have instead found heightened interoceptive attention, one's self-focus towards internal bodily signals, to predict apathetic, immoral behaviour, such as cheating [@ditto2006visceral; @williams2016valjean; @lenggenhager2013listening]. Extending these findings to social cognition, @vabba2022interoceptive further reports individuals with lower interoception told significantly less egoistic lies when the social reputational stakes were high (relative to low), whereas individuals with higher interoception did not exhibit a significant difference in the number of lies told. Taking these mixed findings to perspective with the paucity in research linking deceptive ability with interoception, more studies are warranted to comprehensively examine the relationship between interoception and deception.      
-
+In contrast, some studies have instead found heightened interoceptive attention, one's self-focus towards internal bodily signals, to predict apathetic, immoral behaviour, such as cheating [@ditto2006visceral; @williams2016valjean; @lenggenhager2013listening]. Extending these findings to social cognition, @vabba2022interoceptive further reports individuals with lower interoception told significantly less egoistic lies when the social reputational stakes were high, whereas individuals with higher interoception did not exhibit a significant difference in the number of lies told. In a context of scarce research on interoception and deception, more studies are needed to clarify these these mixed findings.
 
 <!-- Hypothesis -->
 
-The aim of the present study was to explore the interplay effects of TOM and interoception on individuals' deceptive ability, as indicated by their lie confidence, physiological arousal and response time. To this end, we designed a directed-lying bi-modal feedback paradigm comprising 2 conditions ( *Interrogation* vs *Polygraph*) with distinct feedback cues. In particular, salient social feedback cues were conferred during the *Interrogation condition*, whereas visual biofeedback cues were given during the *Polygraph condition*. We expected interoception to positively predict lying ability in the *Polygraph condition*; participants with better interoception would exhibit higher lie confidence, shorter response time and lower physiological arousal. Alternatively, we hypothesized TOM would positively predict individuals' capability in lying in the *Interrogation condition*.  
+The aim of the present study was to explore the contribution of ToM and interoception abilities on individuals' deceptive skills, as indicated by their lying confidence, physiological arousal and response time. To this end, we designed a directed-lying paradigm with 2 conditions differing in the nature of their feedback cues. The *Interrogation* condition was designed to emphasize (and preferentially mobilize) ToM-related mechanims, whereas the *Polygraph* condition was designed to emphasize interoceptive mechanisms. We expected ToM and interoception to positively predict lying ability (i.e., higher lie confidence, shorter response time and lower physiological arousal), in particular in the *Polygraph* and the *Interrogation* condition, respectively.  
 
 
 # Methods
-
-Along with open science standards, the material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, preregistration, etc.) for this research is available at [**https://github.com/DominiqueMakowski/DeceptionInteroTom**](https://github.com/DominiqueMakowski/DeceptionInteroTom){uri.}.
 
 
 ## Participants
@@ -195,12 +235,19 @@ Our results show a significant association between individuals' composite TOM sc
 <!-- Limitations and Future Research -->
 Despite longstanding research interest in deception, little attention has been conferred to understanding the inter-individual differences in lying ability. In this study, we found a significant effect of interoception, particularly pertaining to its metacognitive dimensions, on one's ability to lie convincingly. However, future research is needed to address a few limitations. Namely, objective interoceptive accuracy was only assessed using the HCT. While the HCT is one of the most commonly used measure of objective interoceptive accuracy [@desmedt2022does], concerns regarding its validity has been highlighted in several studies [@desmedt2018heartbeat; @desmedt2022does; @brener2016towards; @legrand2022heart]. Given increasing research efforts invested in the development of novel interoception tasks [@plans2021measuring; @legrand2022heart; @ponzo2021measuring], future works should further examine the relationship between interoception and lying ability using measures with better psychometric properties. Additionally, in order to account for the small sample size, we used factor analysis to reduce the number of dimensions assessing our variables of interest, which could have over-simplified the effect of interoception observed. Taking into perspective that the various facets of interoception are widely regarded as dissociable [@suksasilp2022towards; @mehling2012multidimensional], future studies could thus investigate their effects separately, to better delineate how interoceptive processes influence lying ability.     
 
+# Data Availability
+
+The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, preregistration, etc.) for this research is available at [**https://github.com/DominiqueMakowski/DeceptionInteroTom**](https://github.com/DominiqueMakowski/DeceptionInteroTom){uri.}.
+
+
 
 # Funding
 
 # Author Contributions
 
 # Conflict of Interest Statement
+
+
 
 # Acknowledgements
 
