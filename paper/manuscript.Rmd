@@ -175,27 +175,24 @@ In the *Interrogation* condition, participants had to answer each trial while re
  
 In the *Polygraph* condition, participants had to answer each trial while receiving biofeedback in the form of physiological signals (ECG, EDA and Respiration) being recorded. Participants were informed that they were being shown live feedback of their own physiological activity. In actuality, we displayed pre-recorded video clips of a confederate's signals. Note that after debriefing, all participants reported believing that it was indeed their own signals being shown.
 
-Finally, on top of the deception task, we also measured the self-reported tendency to lie in their everyday life using the *Lie Scale* [@makowski2021structure], a 16-item questionnaire that assesses 4 dispositional lying dimensions (Ability, Negativity, Contextuality and Frequency) with visual analog scales.
+Finally, on top of the deception task, we also measured the self-reported tendency to lie in their everyday life using the *Lie Scale* [@makowski2021structure], a 16-item questionnaire that assesses 4 dispositional lying dimensions (Ability, Negativity, Contextuality and Frequency).
 
 <!-- ### Demographic Information -->
 
 <!-- We further collected demographic information including age, ethnicity, nationality, handedness (for application of EDA electrodes), religion, duration lived in Singapore as well as highest education qualification achieved (or in the midst of achieving).  -->
 
-
-
 ## Procedure
 
-In the first phase of the study, participants answered a brief demographic survey before being administered a battery of questionnaires (*BES*, *MAIA-2*, *Lie Scale*) and cognitive-behavioural tasks (*HCT*, *Yoni Task*). This series of tasks and questionnaires were administered in a randomized order in order to control for order effects. In the second phase of the study, the *Deception Task* was administered. 
+In the first phase of the study, participants answered a brief demographic survey before being administered the questionnaires and cognitive-behavioural tasks in a randomized order. Then, the physiological recording devices were set up. Cardiac activity (ECG) was recorded with 3 electrodes placed according to a modified Lead II configuration [@takuma1995alternative], electrodermal activity (EDA) and respiration (using a respiration belt) were also recorded, but not analyzed for the study (unfortunately, most participants did not yield any skin conductance responses - which we believe was partly caused by the strong air-conditioning of the experimental room). All signals were recorded at 1000 Hz via the BioPac MP160 system (BioPac Systems Inc., USA). The deception task was finally run, followed by a debriefing. Three outcome variables were recorded for each trial of the deception task, namely the participants' confidence ratings that their answers (lies *vs.* truths) were convincing, the response time (RT) between the question onset and the participant's key press (indicating the end of their verbal answer), and the heart rate change associated with the response (within a window of **4 sec** [TO-CHECK]).
 
-Physiological recording devices were prepared prior to beginning the experimental paradigm. Using three ECG electrodes placed according to a modified Lead II configuration [@takuma1995alternative], cardiovascular activity, sampled at 1000 Hz, was recorded via the BioPac MP160 system (BioPac Systems Inc., USA).  
 
 ## Data Analysis
 
-The manipulation checks consist of testing whether there is an effect of question phrasing (direct vs. indirect), and condition (polygraph *vs.* interrogation), on our 3 outcome variables: the participants' confidence ratings that their answers (lies *vs.* truths) were convincing, the response time (RT), and the heart rate change associated with the response. This analysis was performed using mixed models with the participants and questions both entered as random factors. Marginal contrasts analysis was also performed to clarify the differences between conditions. To allow for a better quantification of the uncertainty associated with the effects, as well as increase the robustness to outliers and artifactual findings, all statistics were undertaken under the Bayesian framework [@makowski2019bayestestr], using informative priors centred around 0 ($t_{Confidence}(1, 0, 1)$, $t_{RT}(1, 0, 3)$, $t_{Heartrate}(1, 0, 8)$).
+To ensure that our outcome variables were sensitive to the experimental manipulations, we first tested the effect of the question phrasing (direct *vs.* indirect) and condition (polygraph *vs.* interrogation) on the outcome variables. This analysis was performed using mixed models with the participants and questions both entered as random factors. Marginal contrasts analysis was also performed to clarify the differences between conditions. To allow for a better quantification of the uncertainty associated with the effects, as well as increase the robustness to outliers and artifactual findings, all statistics were undertaken under the Bayesian framework [@makowski2019bayestestr], using informative priors centred around 0 ($t_{Confidence}(1, 0, 1)$, $t_{RT}(1, 0, 3)$, $t_{Heartrate}(1, 0, 8)$).
 
-To further counterbalance the low number of participants and maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, TOM and interoception). We favoured the use of factor analysis (using the method agreement procedure to estimate the optimal number of dimensions, @parametersArticle), over PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modeled the relationship between these inter-individual composite scores (the analysis for all the variables is included in Supplementary Materials) and the 3 outcome variables in interaction with the condition (polygraph *vs.* interrogation). Finally, we also investigated the relationship between the deception scale traits, and the theory of mind and interoception scores using Bayesian correlations.
+To further counterbalance the low number of participants and maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, ToM and interoception) using factor analysis over PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modelled the relationship between these inter-individual composite scores (note that the analysis for all individual variables is nonetheless included in the analysis report) and the 3 outcome variables in interaction with the condition (polygraph *vs.* interrogation). Finally, we investigated the relationship between the deception scale traits, and the theory of mind and interoception scores using Bayesian correlations.
 
-The data analysis was carried out using*R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@bayestestRArticle; @correlationArticle; @performanceArticle; @insightArticle]. As the full reproducible analysis script and statistical results are available at [**https://github.com/DominiqueMakowski/DeceptionInteroTom**](https://github.com/DominiqueMakowski/DeceptionInteroTom){.uri}, we will only focus on significant results in the manuscript.
+The data analysis was carried out using*R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@bayestestRArticle; @correlationArticle; @performanceArticle; @insightArticle]. As the full reproducible analysis script and statistical results report are available at [**https://github.com/DominiqueMakowski/DeceptionInteroTom**](https://github.com/DominiqueMakowski/DeceptionInteroTom){.uri}, we will only focus on significant results in the manuscript.
 
 # Results
 
@@ -227,7 +224,9 @@ The *Regulation* interoception score was significantly associated with an increa
 
 # Discussion
 
-While there is an extensive body of literature associating deception with social cognition and emotion regulation, most research had been focused on their roles in deception detection, leaving a paucity in studies pertaining to their influence on lying ability. The present study hence seeks to address this research gap, further aiming to examine the interplay effect of TOM and interoception on our ability to lie convincingly. Notably, we found a significant difference in participants' lying ability (as measured by response time, heart rate and confidence ratings) between the *Polygraph* and *Interrogation* conditions. This hence confers support for the manipulation used in our experimental paradigm, demonstrating that increasing the attentional focus towards visual interoceptive cues, even if they are fake, can elicit interoceptive awareness and enhance the precision of internal signals if such external cues of interoceptive signals are perceived to be real. Extending previous research pertaining to the application of interoceptive training for improving emotion regulation [@sugawara2020effects; @quadt2021interoceptive; @wu2022enhanced], our study thus provides evidence that interoceptive awareness can be manipulated and thereby modified to guide our emotional responses.
+<!-- While there is an extensive body of literature associating deception with social cognition and emotion regulation, most research had been focused on their roles in deception detection, leaving a paucity in studies pertaining to their influence on lying ability.  -->
+
+The present study examined the contribution of ToM and interoception on our ability to lie using a directed lie paradigm with two conditions ("Polygraph" and "Interrogation") hypothesizingly enhancing each of the two mechanisms. Interestingly, we found a significant difference in participants' lying ability (as measured by response time, heart rate and confidence ratings) between the *Polygraph* and *Interrogation* conditions. This hence confers support for the manipulation used in our experimental paradigm, demonstrating that increasing the attentional focus towards visual interoceptive cues, even if they are fake, can elicit interoceptive awareness and enhance the precision of internal signals if such external cues of interoceptive signals are perceived to be real. Extending previous research pertaining to the application of interoceptive training for improving emotion regulation [@sugawara2020effects; @quadt2021interoceptive; @wu2022enhanced], our study thus provides evidence that interoceptive awareness can be manipulated and thereby modified to guide our emotional responses.
 
 <!-- Interoceptive vs Social Cues -->
 Using a bi-modal feedback deception task, we found partial support for our hypothesis. Specifically, participants reported lower lie confidence and took a longer time to respond, but were less physiologically aroused in the *Polygraph* condition, relative to the *Interrogation* condition. While this mixed finding is challenging to interpret, it is possible that one's interoceptive sensitivity, enhanced by the perceived interoceptive cues, interacted with the stress experienced in such deceptive interactions and led to a depletion of cognitive resources [@ten2015physically; @porter2012secrets]. Indeed, the experience of excessive stress has been shown to impair interoceptive accuracy, leading to a hyper-focus on internal bodily signals [@schulz2015interoception]. Furthermore, this is also in line with the established attentional switching hypothesis, which posits that an increase in attention towards internal signals and managing one's emotional reaction would confer less cognitive resources available for the actual act of telling a lie, thereby resulting in individuals taking a longer time to respond, and rating their lies with less confidence [@arnold2019interoception; @hanania2010selective]. This interplay of interoception and maladaptive stress response, and their effect on lying ability hence underscores the complexity underlying successful deceptive behaviour.
@@ -251,13 +250,17 @@ The material (stimuli generation code, experiment code, raw data, analysis scrip
 
 # Funding
 
-# Author Contributions
+**no funding**
+
 
 # Conflict of Interest Statement
 
-
+The authors declare no conflict of interest.
 
 # Acknowledgements
+
+We would like to thank Jia Rong **what's his full name?** for his help in data collection and **...** for data analysis.
+
 
 \newpage
 
