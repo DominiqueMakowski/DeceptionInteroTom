@@ -26,6 +26,7 @@ show_parameters(model)
 
 ```{r message=FALSE, warning=FALSE}
 modelbased::estimate_contrasts(model, contrast = "Answer", at = "Condition")
+modelbased::estimate_contrasts(model, contrast = "Answer")
 modelbased::estimate_contrasts(model, contrast = "Condition", at = "Answer")
 ```
 
@@ -52,6 +53,7 @@ show_parameters(model)
 ```{r message=FALSE, warning=FALSE}
 modelbased::estimate_contrasts(model, contrast = "Answer", at = "Condition")
 modelbased::estimate_contrasts(model, contrast = "Condition", at = "Answer")
+modelbased::estimate_contrasts(model, contrast = "Condition")
 ```
 
 ```{r message=FALSE, warning=FALSE}
@@ -76,7 +78,9 @@ show_parameters(model)
 
 ```{r message=FALSE, warning=FALSE}
 modelbased::estimate_contrasts(model, contrast = "Answer", at = "Condition")
+modelbased::estimate_contrasts(model, contrast = "Answer")
 modelbased::estimate_contrasts(model, contrast = "Condition", at = "Answer")
+modelbased::estimate_contrasts(model, contrast = "Condition")
 ```
 
 ```{r message=FALSE, warning=FALSE}

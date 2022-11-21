@@ -58,13 +58,7 @@ summary(report::report(sessionInfo()))
 
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
-df <- read.csv("data/data_combined.csv") %>% 
-  mutate(Participant = factor(paste0("S", Participant), levels = paste0("S", 1:30)),
-         Condition = as.factor(Condition),
-         Item = as.factor(Item),
-         Phrasing = as.factor(Phrasing),
-         Answer = as.factor(Answer)) |> 
-  dplyr::filter(!Participant %in% c("S3", "S15", "S19", "S23"))  # No data
+df <- read.csv("data/data.csv")
 
 # Outliers
 df$HeartRate[df$Participant == "S30"] <- NA # Extreme values
@@ -508,7 +502,7 @@ p1 <- ggplot(link_data, aes(x = ToM, y = Predicted)) +
             color = "#FF5722",
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
-       x = "Theory of Mind") +
+       x = expression(Theory~of~Mind~"'Composite'"["  (.89 YONI Cognitive, .77 YONI Affective, .45 YONI Physical)"])) +
   scale_y_continuous(labels = scales::percent) + 
   scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
   scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
@@ -545,7 +539,7 @@ p2 <- ggplot(link_data, aes(x = Intero_Meta, y = Predicted)) +
             color = "#FF5722",
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
-       x = expression(Interoception["  (.97 MAIA Attention regulation, .63 MAIA Self-regulation, .60 MAIA Emotional Awareness)"])) +
+       x = expression(Interoception~"'Meta'"["  (.97 MAIA Attention regulation, .63 MAIA Self-regulation, .60 MAIA Emotional Awareness)"])) +
   scale_y_continuous(labels = scales::percent) + 
   scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
   scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
@@ -582,7 +576,7 @@ p3 <- ggplot(link_data, aes(x = Intero_Listening, y = Predicted)) +
             color = "#FF5722",
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
-       x = expression(Interoception["  (.92 MAIA Body listening, -.60 HCT Awareness, .53 HCT Trusting)"])) +
+       x = expression(Interoception~"'Listening'"["  (.92 MAIA Body listening, -.60 HCT Awareness, .53 HCT Trusting)"])) +
   scale_y_continuous(labels = scales::percent) + 
   scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
   scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
@@ -622,7 +616,7 @@ p4 <- ggplot(link_data, aes(x = Intero_Focus, y = Predicted)) +
             color = c("#2196F3", "#FF5722"),
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
-       x = expression(Interoception["  (.87 MAIA Not-distracting, -.40 MAIA Emotional Awareness, .33 HCT Accuracy)"])) +
+       x = expression(Interoception~"'Focus'"["  (.87 MAIA Not-distracting, -.40 MAIA Emotional Awareness, .33 HCT Accuracy)"])) +
   scale_y_continuous(labels = scales::percent) + 
   scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
   scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
@@ -663,7 +657,7 @@ p5 <- ggplot(link_data, aes(x = Intero_Regulation, y = Predicted)) +
             color = c("#FF5722", "#2196F3", "#FF5722"),
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
-       x = expression(Interoception["  (.71 MAIA Not-worrying, .61 HCT Accuracy, .40 MAIA Trusting)"])) +
+       x = expression(Interoception~"'Regulation'"["  (.71 MAIA Not-worrying, .61 HCT Accuracy, .40 MAIA Trusting)"])) +
   scale_y_continuous(labels = scales::percent) + 
   scale_color_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
   scale_fill_manual(values = c("Polygraph" = "#FF5722", "Interrogation" = "#2196F3")) +
