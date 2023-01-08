@@ -42,12 +42,11 @@ author:
       - "Project administration"
       - "Resources"
       - "Writing – original draft"
-  - name          : "Ngoi Zi Liang"
+  - name          : "Claudia Liauw"
     affiliation   : "1"
     role:
-      - "Project administration"
-      - "Resources"
-      - "Writing – review & editing"
+      - "Data curation"
+      - "Formal Analysis"
   - name          : "S.H. Annabel Chen"
     affiliation   : "1, 2, 3, 4"
     orcid         : 0000-0002-1540-5516
@@ -67,13 +66,10 @@ affiliation:
     institution   : "National Institute of Education, Nanyang Technological University, Singapore"
 abstract: |
 output:
-  papaja::apa6_word:
-    keep_tex: yes
-  pdf_document: default
   papaja::apa6_pdf:
     keep_tex: yes
-keywords: ""
-wordcount: ''
+keywords: "Deception, Interoception, Theory of Mind, Poygraph"
+wordcount: '3526'
 bibliography: ["references.bib"]
 floatsintext: yes
 figsintext: yes
@@ -120,18 +116,18 @@ Lying - the intentional attempt at instilling a false belief in others [@sip2012
 
 <!-- TOM  -->
 
-As deception requires the liar to intentionally manipulate the beliefs of others [@burgoon1994interpersonal; @sip2012if], a significant line of research has been focused on the role of theory of mind (ToM) in lying ability. ToM refers to the ability to infer that others have mental states, such as beliefs, emotions and intentions, distinct from ourselves [@lee2021lying; @wellman2001meta; @baron1997mindblindness]. The ability to tell lies, as well as their complexity, have previously been found to be related to higher TOM abilities [@talwar2007lying; @evans2011verbal; @talwar2017role]. However, studies investigating the link between ToM and deception have predominantly been focused on children and neuroatypical individuals [@beaudoin2020systematic; @bora2017meta; @roheger2022progression], and its importance in healthy adults remains to be clarified.
+As deception requires the liar to intentionally manipulate the beliefs of others [@burgoon1994interpersonal; @sip2012if], a significant line of research has been focused on the role of theory of mind (ToM) in lying ability. ToM refers to the ability to infer that others have mental states, such as beliefs, emotions and intentions, distinct from ourselves [@lee2021lying; @wellman2001meta; @baron1997mindblindness]. The ability to tell lies, as well as their complexity, have previously been found to be related to higher ToM abilities [@talwar2007lying; @evans2011verbal; @talwar2017role]. However, studies investigating the link between ToM and deception have predominantly been focused on children and neuroatypical individuals [@beaudoin2020systematic; @bora2017meta; @roheger2022progression], and its importance in healthy adults remains to be clarified.
 
 
 <!-- Intero in Deception research -->
 
-Besides paying attention to the person we lie to, trying to gauge whether they believe us, it is also possible that some attention is directed inwards: monitoring our own body and its reactions (e.g., cardiac activity and its related changes such as blushing), preventing them from being used as cues to infer our real intent. This begs the question of the potential role of interoceptive abilities in deception ability. Broadly defined as one's sensitivity to their own internal signals and bodily states [@murphy2019classifying; @chen2021emerging; @weiss2014interaction], @garfinkel2015knowing's conceptualizes interoception as a three-dimensional framework comprising three distinct facets, namely, interoceptive accuracy - the objective ability to monitor internal bodily signals; interoceptive sensibility - the subjective confidence in one's interoceptive accuracy; and interoceptive awareness - one's ability to identify and appropriately respond to their perceived interoceptive states. Interoception has increasingly been tied to subjective perceptual experiences [@connell2018interoception; @seth2012interoceptive], as well as individual differences in executive functions, emotional processing and decision-making [@barrett2015interoceptive; @petzschner2021computational; @murphy2019classifying]. Although little research interest has been conferred to investigating the relationship between interoception and deceptive ability *per se*, previous decision-making studies have demonstrated a negative correlation between interoceptive awareness, a metacognitive dimension of interoception, and one's likelihood to make risky decisions [@dunn2010listening; @furman2013interoceptive]. In fact, this is consistent with the somatic marker hypothesis, which posits an association between interoception and a propensity towards making rational decisions [@damasio1996somatic].
+Besides paying attention to the person we lie to, to try to gauge whether they believe us, some attention is also directed inwards: monitoring our own body and its reactions (e.g., cardiac activity and its related changes such as blushing), which could be used as cues to infer our real intent. This begs the question of the potential role of interoceptive abilities in deception ability. Broadly defined as one's sensitivity to their own internal signals and bodily states [@murphy2019classifying; @chen2021emerging; @weiss2014interaction], @garfinkel2015knowing's conceptualizes interoception as a three-dimensional construct comprising three distinct facets, namely, interoceptive accuracy - the objective ability to monitor internal bodily signals; interoceptive sensibility - the subjective confidence in one's interoceptive accuracy; and interoceptive awareness - one's ability to identify and appropriately respond to their perceived interoceptive states. Interoception has increasingly been tied to subjective perceptual experiences [@connell2018interoception; @seth2012interoceptive], as well as individual differences in executive functions, emotional processing, and decision-making [@barrett2015interoceptive; @petzschner2021computational; @murphy2019classifying]. Although few studies exist that investigate the relationship between interoception and deceptive ability *per se*, previous decision-making studies have demonstrated a negative correlation between interoceptive awareness, a metacognitive dimension of interoception, and one's likelihood to make risky decisions [@dunn2010listening; @furman2013interoceptive]. In fact, this is consistent with the somatic marker hypothesis, which posits an association between interoception and a propensity towards making rational decisions [@damasio1996somatic].
 
-In contrast, some studies have instead found heightened interoceptive attention, one's self-focus towards internal bodily signals, to predict apathetic, immoral behaviour, such as cheating [@ditto2006visceral; @williams2016valjean; @lenggenhager2013listening]. Extending these findings to social cognition, @vabba2022interoceptive further reports individuals with lower interoception told significantly less egoistic lies when the social reputational stakes were high, whereas individuals with higher interoception did not exhibit a significant difference in the number of lies told. Given the scarce research on interoception and deception, more studies are herein needed to clarify these mixed findings.
+In contrast, however, some studies have instead found heightened interoceptive attention (one's self-focus towards internal bodily signals), to predict apathetic, immoral behaviour, such as cheating [@ditto2006visceral; @williams2016valjean; @lenggenhager2013listening]. Extending these findings to social cognition, @vabba2022interoceptive further reports individuals with lower interoception told significantly less egoistic lies when the social reputational stakes were high, whereas individuals with higher interoception did not exhibit a significant difference in the number of lies told. Given the scarce research on interoception and deception, more studies are herein needed to clarify these mixed findings.
 
 <!-- Hypothesis -->
 
-The aim of the present study was to explore the contribution of ToM and interoception abilities on individuals' deceptive skills, as indicated by their lying confidence, physiological arousal and response time. To this end, we designed a directed-lying paradigm with 2 conditions differing in the nature of their feedback cues. The *Interrogation* condition was designed to emphasize (and preferentially mobilize) ToM-related mechanisms, whereas the *Polygraph* condition was designed to emphasize interoceptive mechanisms. We expected ToM and interoception to positively predict lying ability (i.e., higher lie confidence, shorter response time and lower physiological arousal), in particular in the *Polygraph* and the *Interrogation* condition, respectively.  
+The aim of the present study was to explore the contribution of ToM and interoception abilities on individuals' deception skills, as indicated by their lying confidence, physiological arousal and response time. To this end, we designed a directed-lying paradigm with 2 conditions differing in the nature of their feedback cues. The *Interrogation* condition was designed to emphasize (and preferentially mobilize) ToM-related mechanisms, whereas the *Polygraph* condition was designed to emphasize interoceptive mechanisms. We expected ToM and interoception to positively predict lying ability (i.e., higher lie confidence, shorter response time and lower physiological arousal), in particular in the *Polygraph* and the *Interrogation* condition, respectively.  
 
 
 # Methods
@@ -139,11 +135,12 @@ The aim of the present study was to explore the contribution of ToM and interoce
 
 ## Participants
 
-30 university students were recruited through posters, flyers, and online social media platforms. Inclusion criteria included residing in Singapore, and an absence of current or history of neurological, psychiatric, or cardiovascular disorders. Four participants were excluded as their data was not recorded due to technical issues. The final sample consists 26 participants (Mean age = 20.9, SD = 2.0, range:[18, 25], Sex: 65.4% women, 34.6% men). The heart rate of one participant and response time of one participant were excluded from further analysis due to extreme outlying values. 
+30 university students from Singapore were recruited through posters, flyers, and online social media platforms. 
+<!-- Inclusion criteria included residing in Singapore, and an absence of current or history of neurological, psychiatric, or cardiovascular disorders.  -->
+Four participants were excluded as their data was not recorded due to technical issues. The final sample consists 26 participants (Mean age = 20.9, SD = 2.0, range:[18, 25], Sex: 65.4% women, 34.6% men). The heart rate of one participant and response time of one participant were excluded from further analysis due to extreme outlying values. 
 
-This pre-registered study (**OSF?** **Dom: I think so but not sure were to find the prereg**) was approved by the NTU Institutional Review Board (NTU-IRB-2020-09-007) and all procedures performed were in accordance with the ethical standards of the institutional board and with the 1964 Helsinki Declaration. All participants provided their informed consent prior to participation and were awarded with academic credits upon completion of the study. 
+This study was approved by the NTU Institutional Review Board (NTU-IRB-2020-09-007). All participants provided their informed consent prior to participation and were awarded with academic credits upon completion of the study. 
 
- 
 
 ## Measures
 
@@ -164,10 +161,9 @@ The MAIA-2 [@mehling2012multidimensional], a 32-item questionnaire which measure
 
 ### Deception
 
-**TODO: create a procedure figure**
+<!-- **TODO: create a procedure figure** -->
 
-
-We designed and implemented in PsychoPy [@peirce2019psychopy2] a directed-lying task in which participants were instructed to answer 80 questions by either lying or telling the truth (depending on whether they see "lie" or "truth" written on the screen). Importantly, they were told that for half of the trials, they would have to convince another participant that would be observing them form a separate room via a webcam connection (*Interrogation* condition). For the remaining trials, participants were tasked to convince a "lie detection machine" that would be assessing their behaviour through their physiological signals (*Polygraph* condition). The two conditions were presented in a counter-balanced order, and each comprised of 40 trials (20 truth; 20 lies). 
+Using PsychoPy [@peirce2019psychopy2], we implemented a directed-lying task in which participants were instructed to answer 80 questions by either lying or telling the truth (depending on whether they see "lie" or "truth" written on the screen). Importantly, they were told that for half of the trials, they would have to convince another participant that would be observing them form a separate room via a webcam connection (*Interrogation* condition). For the remaining trials, participants were tasked to convince a "lie detection machine" that would be assessing their behaviour through their physiological signals (*Polygraph* condition). The two conditions were presented in a counter-balanced order, and each comprised of 40 trials (20 truth; 20 lies). 
 
 The sequence of each trial was the same for both conditions. A question was shown on a computer screen, either phrased directly (e.g., "What is your favourite sport?"), or indirectly (e.g., "Is your favourite sport Hockey?"), with accompanying instructions below that either asked participants to verbally lie or tell the truth (half of  the trials in each condition, i.e., n = 20, were directed lies). Following a short interval (0.7 - 1.5s) for response preparation (during which "Connecting..." was displayed on the screen), participants were presented with either a social-feedback or biofeedback cue (for the *Interrogation* and *Polygraph* conditions, respectively), displayed for a maximum of 10s. After the feedback cue, participants had to provide their answer to the question verbally (out loud) and press the 'space' key to mark the end of their response. Following another short interval (1.5 - 2.5s) during which was written "Disconnecting..." on the screen, participants were asked to rate, using an analog scale, their confidence in how convincing (i.e., likely to get judged as truthful) they perceived their response to be.
 
@@ -183,7 +179,7 @@ Finally, on top of the deception task, we also measured the self-reported tenden
 
 ## Procedure
 
-In the first phase of the study, participants answered a brief demographic survey before being administered the questionnaires and cognitive-behavioural tasks in a randomized order. Then, the physiological recording devices were set up. Cardiac activity (ECG) was recorded with 3 electrodes placed according to a modified Lead II configuration [@takuma1995alternative], electrodermal activity (EDA) and respiration (using a respiration belt) were also recorded, but not analyzed for the study (unfortunately, most participants did not yield any skin conductance responses - which we believe was partly caused by the low temperature (22 degrees Celsius) of the experimental room). All signals were recorded at 1000 Hz via the BioPac MP160 system (BioPac Systems Inc., USA). The deception task was finally run, followed by a debriefing. Three outcome variables were recorded for each trial of the deception task, namely the participants' confidence ratings that their answers (lies *vs.* truths) were convincing, the response time (RT) between the question onset and the participant's key press (indicating the end of their verbal answer), and the heart rate change associated with the response (within a window of **4 sec** [TO-CHECK]).
+In the first phase of the study, participants answered a brief demographic survey before being administered the questionnaires and cognitive-behavioural tasks in a randomized order. Then, the physiological recording devices were set up. Cardiac activity (ECG) was recorded with 3 electrodes placed according to a modified Lead II configuration [@takuma1995alternative], electrodermal activity (EDA) and respiration (using a respiration belt) were also recorded, but not analyzed for the study (unfortunately, most participants did not yield any skin conductance responses - which we believe was partly caused by the low temperature (22 degrees Celsius) of the experimental room). All signals were recorded at 1000 Hz via the BioPac MP160 system (BioPac Systems Inc., USA). The deception task was finally run, followed by a debriefing. Three outcome variables were recorded for each trial of the deception task, namely the participants' confidence ratings that their answers (lies *vs.* truths) were convincing, the response time (RT) between the question onset and the participant's key press (indicating the end of their verbal answer), and the heart rate change associated with the response (within a window of 3.5 sec).
 
 
 ## Data Analysis
@@ -192,7 +188,9 @@ To ensure that our outcome variables were sensitive to the experimental manipula
 
 To further counterbalance the low number of participants and maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, ToM and interoception) using factor analysis over PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modelled the relationship between these inter-individual composite scores (note that the analysis for all individual variables is nonetheless included in the analysis report) and the 3 outcome variables in interaction with the condition (polygraph *vs.* interrogation). Finally, we investigated the relationship between the deception scale traits, and the theory of mind and interoception scores using Bayesian correlations.
 
-The data analysis was carried out using*R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@bayestestRArticle; @correlationArticle; @performanceArticle; @insightArticle]. As the full reproducible analysis script and statistical results report are available at [**https://github.com/DominiqueMakowski/DeceptionInteroTom**](https://github.com/DominiqueMakowski/DeceptionInteroTom){.uri}, we will only focus on significant results in the manuscript.
+The data analysis was carried out using *R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@makowski2019bayestestr; @correlationArticle; @performanceArticle; @insightArticle], and the physiological signal processing was done using the default routines avaialble in *NeuroKit2* [@makowski2021neurokit2]. As the full reproducible analysis script and statistical results report are available at 
+https://github.com/DominiqueMakowski/DeceptionInteroTom
+, we will only focus on significant results in the manuscript.
 
 # Results
 
@@ -210,26 +208,25 @@ The 8 MAIA dimensions and the 3 HCT components were reduced to 4 factors (explai
 <!-- However, due to the interpretation difficulty, we will refer to these dimensions with their main correlates in **Figure 1** [**Note to fix caption for Figure 1 from HCT Trusting to MAIA trusting**]. -->
 
 
-
 ## Theory of Mind
 
-The composite *TOM* score was significantly associated with less confident ($\beta=-0.19,~95\%~CI~[-0.36, -0.02],~pd = 98.47\%$) and slower lies ($\beta=0.42,~95\%~CI~[0.01, 0.83],~pd = 97.67%\%$), specifically in the polygraph condition. No significant effect was found with regards to heart rate, and no correlation was observed with dispositional lying traits (**Figure 1**).
+The composite *TOM* score was significantly associated with less confident ($\beta=-0.19,~95\%~CI~[-0.36, -0.02],~pd = 98.47\%$) and slower lies ($\beta=0.42,~95\%~CI~[0.01, 0.83],~pd = 97.67\%$), specifically in the polygraph condition. No significant effect was found with regards to heart rate, and no correlation was observed with dispositional lying traits (**Figure 1**).
 
-```{r message=FALSE, warning=FALSE, out.width="100%", fig.cap="TODO: Caption."}
+```{r message=FALSE, warning=FALSE, out.width="100%", fig.cap="Interindividual corrrelates of lying confidence. Shows the correlation between the participants' interoceptive and theory of mind composite scores and their average lying confidence, withing the two experimental conditions."}
 knitr::include_graphics("../figures/figure1.png")
 ```
 
 ## Interoception
 
-The *Meta* interoception score was significantly associated with an increased confidence in lies, specifically in the polygraph condition ($\beta=0.20,~95\%~CI~[0.03, 0.35],~pd = 98.98\%$). It was also associated with faster answers for both lies ($\beta=-0.54,~95\%~CI~[-0.93, -0.15],~pd = 99.67\%$) and truths ($\beta=-0.29,~95\%~CI~[-0.63, 0.03],~pd = 96.10%\%$), specifically in the polygraph condition. No significant association was found with heart rate.
+The *Meta* interoception score was significantly associated with an increased confidence in lies, specifically in the polygraph condition ($\beta=0.20,~95\%~CI~[0.03, 0.35],~pd = 98.98\%$). It was also associated with faster answers for both lies ($\beta=-0.54,~95\%~CI~[-0.93, -0.15],~pd = 99.67\%$) and truths ($\beta=-0.29,~95\%~CI~[-0.63, 0.03],~pd = 96.10\%$), specifically in the polygraph condition. No significant association was found with heart rate.
 
 The *Listening* interoception score was significantly associated with an increased confidence in lies, in the polygraph ($\beta=0.43,~95\%~CI~[0.27, 0.59],~pd = 100\%$) and interrogation condition ($\beta=0.16,~95\%~CI~[0.01, 0.32],~pd = 98.04\%$). It was also associated with faster answers, particularly for lies ($\beta=-0.42,~95\%~CI~[-0.82, -0.03],~pd = 98.19\%$) and truths ($\beta=-0.36,~95\%~CI~[-0.76, 0.03],~pd = 96.49\%$) in the polygraph condition. No significant association was found with heart rate. This score also correlated with the dispositional lying *Contextuality* trait ($r = 0.50,~95\%~CI~[0.04, 0.64],~BF_{10} = 3.48\%$).
 
-The *Focus* interoception score was significantly associated with an increased confidence in truthful responses in the polygraph ($\beta=0.17,~95\%~CI~[-0.01, 0.34],~pd = 97.16\%$) and interrogation condition ($\beta=0.15,~95\%~CI~[-0.02, 0.32],~pd = 95.76%\%$). No significant association was found with RT or heart rate, but the score correlated with the dispositional lying *Ability* trait ($r = 0.50,~95\%~CI~[0.22, 0.74],~BF_{10} = 34.37\%$).
+The *Focus* interoception score was significantly associated with an increased confidence in truthful responses in the polygraph ($\beta=0.17,~95\%~CI~[-0.01, 0.34],~pd = 97.16\%$) and interrogation condition ($\beta=0.15,~95\%~CI~[-0.02, 0.32],~pd = 95.76\%$). No significant association was found with RT or heart rate, but the score correlated with the dispositional lying *Ability* trait ($r = 0.50,~95\%~CI~[0.22, 0.74],~BF_{10} = 34.37\%$).
 
 The *Regulation* interoception score was significantly associated with an increased confidence in lies in the polygraph ($\beta=0.32,~95\%~CI~[0.14, 0.51],~pd = 99.99\%$) and the interrogation conditions ($\beta=0.18,~95\%~CI~[0.00, 0.36],~pd = 97.42\%$), and with a decreased confidence in truth only in the polygraph condition ($\beta=-0.1,~95\%~CI~[-0.36, 0.01],~pd = 97.16\%$). No significant association was found with RT or heart rate (**Figure 2**).
 
-```{r message=FALSE, warning=FALSE, out.width="100%", fig.cap="TODO: Caption."}
+```{r message=FALSE, warning=FALSE, out.width="100%", fig.cap="Summary of findings showing the positive (green) and negative (red) associations between interoception and theory of mind abilities and deception skills, depending on the experimental condition."}
 knitr::include_graphics("../figures/figure2.png")
 ```
 
@@ -237,7 +234,7 @@ knitr::include_graphics("../figures/figure2.png")
 
 <!-- While there is an extensive body of literature associating deception with social cognition and emotion regulation, most research had been focused on their roles in deception detection, leaving a paucity in studies pertaining to their influence on lying ability.  -->
 
-The present study examined the contribution of ToM and interoception on our ability to lie using a directed lie paradigm with two conditions ("Interrogation" and "Polygraph") designed to enhance each of the two mechanisms. Interestingly, we found that when participants were presented with (fake) physiological feedback (the polygraph condition), instead of a face of a person they had to lie to (the interrogation condition), their response time for both lies and truths increased, as did their heart rate. Although the condition did not impact the subjective confidence that participants had in their answers, it suggests that believing oneself to be submitted to a machine that is supposedly able to detect deception by interpreting physiological signals is a harder and/or more stressful condition than lying to a person. While research linking interoception and deception is limited, our results are in line with studies that show an association between interoceptive awareness and anxiety [@yoris2015roles; @garfinkel2013interoception; @domschke2010interoceptive]. Specifically, enhancing one's attention towards their internal bodily signals could have resulted in a hyper-vigilance towards physiological sensations that is perceived negatively. Additionally, our study also extends past deception research and further confirms the validity concerns in solely relying on physiological measures as an indicator of deception [@rosky2013f; @oviatt2018handbook]. 
+The present study examined the contribution of ToM and interoception on our ability to lie using a directed lie paradigm with two conditions ("Interrogation" and "Polygraph") designed to enhance each of the two mechanisms. Interestingly, we found that when participants were presented with (fake) physiological feedback (the polygraph condition), instead of a face of a person they had to lie to (the interrogation condition), their response time for both lies and truths increased, as did their heart rate. Although the condition did not impact the subjective confidence that participants had in their answers, it suggests that believing oneself to be submitted to a machine that is supposedly able to detect deception by interpreting physiological signals is a harder and/or more stressful condition than lying to a person. While research linking interoception and deception is limited, our results are in line with studies that show an association between interoceptive awareness and anxiety [@yoris2015roles; @garfinkel2013interoception; @domschke2010interoceptive]. Specifically, enhancing one's attention towards their internal bodily signals could have resulted in a hyper-vigilance towards physiological sensations that is perceived negatively. Additionally, our study also extends past deception research and further confirms the validity concerns in solely relying on physiological measures as an indicator of deception [@rosky2013f; @oviatt2018handbook].
 
 
 
@@ -250,7 +247,8 @@ The present study examined the contribution of ToM and interoception on our abil
 Our results suggest that higher ToM abilities were related to a slower and less confident lies, but only in the polygraph condition. One possible interpretation is that people with stronger ToM abilities rely by default more on it when lying (i.e., they focus on - and try to read - the other person). When that mechanism is cut off (i.e., when there is no person to lie to - but in our case a "machine"), their lying ability decreases.
 
 <!-- Interoception -->
-We also showed that interoceptive abilities are correlated with a higher confidence in one's lies in the polygraph condition, a condition in which the attention towards internal reactions is fostered. However, in contrast to previous studies [@pinna2020systematic; @fustos2013embodiment; @owens2018investigating; @pollatos2007heart], we did not find any significant relationship between individuals' interoception scores and the heart rate changes during their answers. This points toward a predominantly meta-cognitive effect without necessarily an actual bodily regulation (i.e., participants with good interoception feel that their lies are more convincing, but do not actively attenuate their bodily reactions). [**also consistent with research demonstrating distinctions between interoceptive awareness and accuracy; extends pevious research in which individuals with greater interoceptive sensibility and accuracy were not better at detecting lies.**]
+We also showed that interoceptive abilities are correlated with a higher confidence in one's lies in the polygraph condition, a condition in which the attention towards internal reactions is fostered. However, in contrast to previous studies [@pinna2020systematic; @fustos2013embodiment; @owens2018investigating; @pollatos2007heart], we did not find any significant relationship between individuals' interoception scores and the heart rate changes during their answers. This points toward a predominantly meta-cognitive effect without necessarily an actual bodily regulation (i.e., participants with good interoception feel that their lies are more convincing, but do not actively attenuate their bodily reactions). 
+<!-- [**also consistent with research demonstrating distinctions between interoceptive awareness and accuracy; extends pevious research in which individuals with greater interoceptive sensibility and accuracy were not better at detecting lies.**] -->
 
 <!-- Our results show a significant association between individuals' composite TOM score with lower lie confidence and longer response time when interoceptive cues were highly salient. Under the free energy principle [@friston2010free], interoception is regarded as integral in TOM [@shah2017heart; @palmer2018going; @ondobaka2017role]. Specifically, during social inference, interoceptive signals are integrated with exteroceptive (e.g., visual and auditory) and proprioceptive information (i.e., motor) to guide one's social behaviour [@ondobaka2017role]. Given recent work in which TOM is associated with one having more precise interoceptive states [@tsakiris2017multisensory; @palmer2018going; @arnold2019interoception], it is possible that individuals with greater TOM abilities have higher interoceptive awareness, more stable self-other representations and less malleable percepts of self [@tsakiris2017multisensory; @arnold2019interoception]. As such, external cues of their interoceptive signals may be perceived as incongruent, hence generating a sense of uncertainty in their responses and leading to their lower lie confidence and longer response times.   -->
 
@@ -262,9 +260,10 @@ We also showed that interoceptive abilities are correlated with a higher confide
 <!-- Limitations and Future Research -->
 Although yielding promising results, this exploratory study is limited by the sample size. Although we tried to mitigate it by 1) extracting more robust variables (by combining multiple ones by means of feature reduction) and 2) using a suited analysis approach (Bayesian statistics with informative priors), future replication studies with larger samples are warranted to confirm this first investigation. Nonetheless, we believe our results to be credible as we find consistent patterns across various facets and measures (for instance, all interoceptive dimensions, although distinct, share a similar trend) in line with theoretical expectations. The statistical power could also explain the overall lack of results with heart rate, which has a higher signal-to-noise ratio as compared to subjective reports (such as confidence scales).
 
-Another aspect to note is the strong reliance on self-reported measures as outcome variables of lie ability (in particular, the measure of answer confidence, but also the auto-questionnaires). This might conflate meta-cognitive abilities as well as dishonest answers. Although we tried to include more objective measures, such as RT (although it too was tied to the participants' conscious decision to press a key) and heart rate, future studies should attempt at measuring objectively the answer (lie or truth) quality, for instance by means of external examiners. Note that this is not limitation *per se*, as it answers a slightly different question  - what are the correlates of *objective* lying skills - than deception self-confidence. [**look for lit linking to what are commonly considered cues for lying**]
+Another aspect to note is the strong reliance on self-reported measures as outcome variables of lie ability (in particular, the measure of answer confidence, but also the auto-questionnaires). This might conflate meta-cognitive abilities as well as dishonest answers. Although we tried to include more objective measures, such as RT (although it too was tied to the participants' conscious decision to press a key) and heart rate, future studies should attempt at measuring objectively the answer (lie or truth) quality, for instance by means of external examiners. Note that this is not limitation *per se*, as it answers a slightly different question - what are the correlates of *objective* lying skills - than deception self-confidence. 
+<!-- [**look for lit linking to what are commonly considered cues for lying**] -->
 
-Additionally to limitations pertaining to the measure of lying ability, care has to be given to the measure of the predictor constructs, namely ToM and interoception. While we tried to include an behavioral task as well as a subjective questionnaire for each, it has to be underlined that they are notoriously difficult concepts to measure. In particular, objective interoceptive accuracy was assessed using the Heartbeat Counting Task. While the HCT used to be considered as a gold standard and is one of the most commonly used measure [@desmedt2022does], concerns regarding its validity has been highlighted in several studies [@desmedt2018heartbeat; @desmedt2022does; @brener2016towards; @legrand2022heart]. Given increasing research efforts invested in the development of novel interoception tasks [@plans2021measuring; @legrand2022heart; @ponzo2021measuring], future works should further examine the relationship between interoception and lying ability using measures with better psychometric properties. Additionally, our application of feature reduction as a noise-elimination measure could have over-simplified the data. A more complex pattern of relationships, with different contributions of various subdimensions of ToM and interoception, could emerge provided a sufficient statistical power and valid measures.
+Additionally to limitations pertaining to the measure of lying ability, care has to be given to the measure of the predictor constructs, namely ToM and interoception. While we tried to include an behavioral task as well as a subjective questionnaire for each, it has to be underlined that they are notoriously difficult concepts to measure. In particular, objective interoceptive accuracy was assessed using the Heartbeat Counting Task (HCT). While the HCT used to be considered as a gold standard and is one of the most commonly used measure [@desmedt2022does], concerns regarding its validity has been highlighted in several studies [@desmedt2018heartbeat; @desmedt2022does; @brener2016towards; @legrand2022heart]. Given increasing research efforts invested in the development of novel interoception tasks [@plans2021measuring; @legrand2022heart; @ponzo2021measuring], future works should further examine the relationship between interoception and lying ability using measures with better psychometric properties. Additionally, our application of feature reduction as a noise-elimination measure could have over-simplified the data. A more complex pattern of relationships, with different contributions of various subdimensions of ToM and interoception, could emerge provided a sufficient statistical power and valid measures.
 
 <!-- Taking into perspective that the various facets of interoception are widely regarded as dissociable [@suksasilp2022towards; @mehling2012multidimensional], future studies could thus investigate their effects separately, to better delineate how interoceptive processes influence lying ability.    -->
 
@@ -273,13 +272,13 @@ In conclusion, this study study is a first step towards assessing the contributi
 
 # Data Availability
 
-The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, preregistration, etc.) for this research is available at [**https://github.com/DominiqueMakowski/DeceptionInteroTom**](https://github.com/DominiqueMakowski/DeceptionInteroTom){uri.}.
+The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, preregistration, etc.) for this research is available at **https://github.com/DominiqueMakowski/DeceptionInteroTom**.
 
 
 
-# Funding
+<!-- # Funding -->
 
-**no funding**
+<!-- **no funding** -->
 
 
 # Conflict of Interest Statement
@@ -288,7 +287,7 @@ The authors declare no conflict of interest.
 
 # Acknowledgements
 
-We would like to thank Jia Rong **what's his full name?**, Max (**full name**, partial RA) for his help in data collection and **...** for data analysis.
+We would like to thank Jia Rong Low and Maximilian Yong for his help in data collection.
 
 
 \newpage

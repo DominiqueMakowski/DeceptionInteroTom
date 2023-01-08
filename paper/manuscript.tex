@@ -1,0 +1,553 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  man,floatsintext]{apa6}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% Manuscript styling
+\usepackage{upgreek}
+\captionsetup{font=singlespacing,justification=justified}
+
+% Table formatting
+\usepackage{longtable}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
+
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
+
+% \setlength{\parindent}{0.5in}
+% \setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
+% \usepackage{etoolbox}
+\makeatletter
+\patchcmd{\HyOrg@maketitle}
+  {\section{\normalfont\normalsize\abstractname}}
+  {\section*{\normalfont\normalsize\abstractname}}
+  {}{\typeout{Failed to patch abstract.}}
+\patchcmd{\HyOrg@maketitle}
+  {\section{\protect\normalfont{\@title}}}
+  {\section*{\protect\normalfont{\@title}}}
+  {}{\typeout{Failed to patch title.}}
+\makeatother
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
+\keywords{Deception, Interoception, Theory of Mind, Poygraph\newline\indent Word count: 3526}
+\usepackage{lineno}
+
+\linenumbers
+\usepackage{csquotes}
+\usepackage[labelfont=bf, font={color=gray,small}]{caption}
+\usepackage{float}
+\usepackage[document]{ragged2e}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={The Heart can Lie: The Role of Interoception and Theory of Mind in Deception},
+  pdfauthor={Dominique Makowski1, Zen J. Lau1, Tam Pham1, An Shu Te1, Stephanie Kirk1, Claudia Liauw1, \& S.H. Annabel Chen1, 2, 3, 4},
+  pdflang={en-EN},
+  pdfkeywords={Deception, Interoception, Theory of Mind, Poygraph},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{\textbf{The Heart can Lie: The Role of Interoception and Theory of Mind in Deception}}
+\author{Dominique Makowski\textsuperscript{1}, Zen J. Lau\textsuperscript{1}, Tam Pham\textsuperscript{1}, An Shu Te\textsuperscript{1}, Stephanie Kirk\textsuperscript{1}, Claudia Liauw\textsuperscript{1}, \& S.H. Annabel Chen\textsuperscript{1, 2, 3, 4}}
+\date{}
+
+
+\shorttitle{Deception, Interoception, and ToM}
+
+\authornote{
+
+The authors made the following contributions. Dominique Makowski: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing -- original draft; An Shu Te: Project administration, Resources, Investigation, Writing -- original draft; Stephanie Kirk: Project administration, Resources, Writing -- original draft; Claudia Liauw: Data curation, Formal Analysis; S.H. Annabel Chen: Project administration, Supervision, Writing -- review \& editing.
+
+Correspondence concerning this article should be addressed to Dominique Makowski, HSS 04-18, 48 Nanyang Avenue, Singapore. E-mail: \href{mailto:dom.makowski@gmail.com}{\nolinkurl{dom.makowski@gmail.com}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} School of Social Sciences, Nanyang Technological University, Singapore\\\textsuperscript{2} Centre for Research and Development in Learning, Nanyang Technological University, Singapore\\\textsuperscript{3} Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore\\\textsuperscript{4} National Institute of Education, Nanyang Technological University, Singapore}
+
+\begin{document}
+\maketitle
+
+\justify
+
+Lying - the intentional attempt at instilling a false belief in others (Sip et al., 2012) - is a prevalent phenomenon carrying potentially important consequences. Interestingly, evidence suggests that the successful detection of a lying attempt depends more on the ability of the liar, than on the performance of the lie detector (Bond Jr \& DePaulo, 2008; Levine et al., 2011; Verigin et al., 2019). However, with most of the deception literature focused on deception detection (Masip, 2017; Sternglanz et al., 2019; Viji et al., 2022), the factors contributing to one's deception abilities remain unclear.
+
+As deception requires the liar to intentionally manipulate the beliefs of others (Burgoon \& Buller, 1994; Sip et al., 2012), a significant line of research has been focused on the role of theory of mind (ToM) in lying ability. ToM refers to the ability to infer that others have mental states, such as beliefs, emotions and intentions, distinct from ourselves (Baron-Cohen, 1997; Lee \& Imuta, 2021; Wellman et al., 2001). The ability to tell lies, as well as their complexity, have previously been found to be related to higher ToM abilities (Evans \& Lee, 2011; Talwar et al., 2007, 2017). However, studies investigating the link between ToM and deception have predominantly been focused on children and neuroatypical individuals (Beaudoin et al., 2020; Bora \& Yener, 2017; Roheger et al., 2022), and its importance in healthy adults remains to be clarified.
+
+Besides paying attention to the person we lie to, to try to gauge whether they believe us, some attention is also directed inwards: monitoring our own body and its reactions (e.g., cardiac activity and its related changes such as blushing), which could be used as cues to infer our real intent. This begs the question of the potential role of interoceptive abilities in deception ability. Broadly defined as one's sensitivity to their own internal signals and bodily states (Chen et al., 2021; Murphy et al., 2019; Weiss et al., 2014), Garfinkel et al. (2015)'s conceptualizes interoception as a three-dimensional construct comprising three distinct facets, namely, interoceptive accuracy - the objective ability to monitor internal bodily signals; interoceptive sensibility - the subjective confidence in one's interoceptive accuracy; and interoceptive awareness - one's ability to identify and appropriately respond to their perceived interoceptive states. Interoception has increasingly been tied to subjective perceptual experiences (Connell et al., 2018; Seth et al., 2012), as well as individual differences in executive functions, emotional processing, and decision-making (Barrett \& Simmons, 2015; Murphy et al., 2019; Petzschner et al., 2021). Although few studies exist that investigate the relationship between interoception and deceptive ability \emph{per se}, previous decision-making studies have demonstrated a negative correlation between interoceptive awareness, a metacognitive dimension of interoception, and one's likelihood to make risky decisions (Dunn et al., 2010; Furman et al., 2013). In fact, this is consistent with the somatic marker hypothesis, which posits an association between interoception and a propensity towards making rational decisions (Damasio, 1996).
+
+In contrast, however, some studies have instead found heightened interoceptive attention (one's self-focus towards internal bodily signals), to predict apathetic, immoral behaviour, such as cheating (Ditto et al., 2006; Lenggenhager et al., 2013; Williams et al., 2016). Extending these findings to social cognition, Vabba et al. (2022) further reports individuals with lower interoception told significantly less egoistic lies when the social reputational stakes were high, whereas individuals with higher interoception did not exhibit a significant difference in the number of lies told. Given the scarce research on interoception and deception, more studies are herein needed to clarify these mixed findings.
+
+The aim of the present study was to explore the contribution of ToM and interoception abilities on individuals' deception skills, as indicated by their lying confidence, physiological arousal and response time. To this end, we designed a directed-lying paradigm with 2 conditions differing in the nature of their feedback cues. The \emph{Interrogation} condition was designed to emphasize (and preferentially mobilize) ToM-related mechanisms, whereas the \emph{Polygraph} condition was designed to emphasize interoceptive mechanisms. We expected ToM and interoception to positively predict lying ability (i.e., higher lie confidence, shorter response time and lower physiological arousal), in particular in the \emph{Polygraph} and the \emph{Interrogation} condition, respectively.
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+\hypertarget{participants}{%
+\subsection{Participants}\label{participants}}
+
+30 university students from Singapore were recruited through posters, flyers, and online social media platforms.
+Four participants were excluded as their data was not recorded due to technical issues. The final sample consists 26 participants (Mean age = 20.9, SD = 2.0, range:{[}18, 25{]}, Sex: 65.4\% women, 34.6\% men). The heart rate of one participant and response time of one participant were excluded from further analysis due to extreme outlying values.
+
+This study was approved by the NTU Institutional Review Board (NTU-IRB-2020-09-007). All participants provided their informed consent prior to participation and were awarded with academic credits upon completion of the study.
+
+\hypertarget{measures}{%
+\subsection{Measures}\label{measures}}
+
+\hypertarget{theory-of-mind}{%
+\subsubsection{Theory of Mind}\label{theory-of-mind}}
+
+Two measures of ToM and related constructs were administered. The Yoni Task (Shamay-Tsoory \& Aharon-Peretz, 2007) is a behavioral task in which participants are presented with the face of a character named ``Yoni'', surrounded by 4 colored pictures of objects or faces. In total, each participant completed 101 trials - 49 trials assessing their affective TOM abilities, 37 trials assessing their cognitive TOM abilities and 15 control trial. During each trial, participants were shown a question and asked to make responses based on specific cues such as directions of eye gaze, facial expressions etc., In the control trials, participants made judgements based on Yoni's physical context (physical TOM).
+
+The Basic Empathy Scale (BES, Jolliffe \& Farrington, 2006), a 20-item questionnaire measuring two dimensions of empathy (cognitive and affective) using a 5-point Likert scale was administered. Although ToM and empathy are regarded as distinct psychological constructs, previous research findings point to them being closely related (Gallant et al., 2020; Sebastian et al., 2012).
+
+\hypertarget{interoception}{%
+\subsubsection{Interoception}\label{interoception}}
+
+To assess participants' interoceptive ability, participants completed a Heartbeat Counting Task (HCT, Schandry, 1981) while having their actual heartbeats recorded. During the HCT task, participants were instructed to count the number of heartbeats over 5 trials with varying time intervals (20s, 25s, 30s, 35s, 40s), the order of which was randomized. Interoceptive accuracy was computed from the difference between the estimated number and the real number of heart beats. Interoceptive sensibility was estimated as the average of the confidence ratings presented at the end of each trial. Interoceptive awareness was indexed by the correlation between the objective accuracy and the subjective confidence.
+
+The MAIA-2 (Mehling et al., 2012), a 32-item questionnaire which measures 8 dimensions of interoception (Noticing, Not-Distracting, Not-Worrying, Attention, Regulation, Emotional Awareness, Self-Regulation, Body Listening, and Trust) using 5-point Likert scales, was also administered.
+
+\hypertarget{deception}{%
+\subsubsection{Deception}\label{deception}}
+
+\textbf{TODO: create a procedure figure}
+
+Using PsychoPy (Peirce et al., 2019), we implemented a directed-lying task in which participants were instructed to answer 80 questions by either lying or telling the truth (depending on whether they see ``lie'' or ``truth'' written on the screen). Importantly, they were told that for half of the trials, they would have to convince another participant that would be observing them form a separate room via a webcam connection (\emph{Interrogation} condition). For the remaining trials, participants were tasked to convince a ``lie detection machine'' that would be assessing their behaviour through their physiological signals (\emph{Polygraph} condition). The two conditions were presented in a counter-balanced order, and each comprised of 40 trials (20 truth; 20 lies).
+
+The sequence of each trial was the same for both conditions. A question was shown on a computer screen, either phrased directly (e.g., ``What is your favourite sport?''), or indirectly (e.g., ``Is your favourite sport Hockey?''), with accompanying instructions below that either asked participants to verbally lie or tell the truth (half of the trials in each condition, i.e., n = 20, were directed lies). Following a short interval (0.7 - 1.5s) for response preparation (during which ``Connecting\ldots{}'' was displayed on the screen), participants were presented with either a social-feedback or biofeedback cue (for the \emph{Interrogation} and \emph{Polygraph} conditions, respectively), displayed for a maximum of 10s. After the feedback cue, participants had to provide their answer to the question verbally (out loud) and press the `space' key to mark the end of their response. Following another short interval (1.5 - 2.5s) during which was written ``Disconnecting\ldots{}'' on the screen, participants were asked to rate, using an analog scale, their confidence in how convincing (i.e., likely to get judged as truthful) they perceived their response to be.
+
+In the \emph{Interrogation} condition, participants had to answer each trial while receiving social feedback in the form of a video stream of an examiner, and were informed that the examiner would be evaluating the truthfulness of their responses by observing them through the live video feed. In actuality, the video was a pre-recorded video clips of a confederate's face (staying still with minimal reactions, and with a medical mask, as the experiment was run during COVID restrictions), and the same video-clips were used with all participants. Note that after debriefing, all participants reported believing that the stream was real and that the examiner was really there.
+
+In the \emph{Polygraph} condition, participants had to answer each trial while receiving biofeedback in the form of physiological signals (ECG, EDA and Respiration) being recorded. Participants were informed that they were being shown live feedback of their own physiological activity. In actuality, we displayed pre-recorded video clips of a confederate's signals. Note that after debriefing, all participants reported believing that it was indeed their own signals being shown.
+
+Finally, on top of the deception task, we also measured the self-reported tendency to lie in their everyday life using the \emph{Lie Scale} (Makowski, Pham, Lau, Raine, et al., 2021), a 16-item questionnaire that assesses 4 dispositional lying dimensions (Ability, Negativity, Contextuality and Frequency).
+
+\hypertarget{procedure}{%
+\subsection{Procedure}\label{procedure}}
+
+In the first phase of the study, participants answered a brief demographic survey before being administered the questionnaires and cognitive-behavioural tasks in a randomized order. Then, the physiological recording devices were set up. Cardiac activity (ECG) was recorded with 3 electrodes placed according to a modified Lead II configuration (Takuma et al., 1995), electrodermal activity (EDA) and respiration (using a respiration belt) were also recorded, but not analyzed for the study (unfortunately, most participants did not yield any skin conductance responses - which we believe was partly caused by the low temperature (22 degrees Celsius) of the experimental room). All signals were recorded at 1000 Hz via the BioPac MP160 system (BioPac Systems Inc., USA). The deception task was finally run, followed by a debriefing. Three outcome variables were recorded for each trial of the deception task, namely the participants' confidence ratings that their answers (lies \emph{vs.} truths) were convincing, the response time (RT) between the question onset and the participant's key press (indicating the end of their verbal answer), and the heart rate change associated with the response (within a window of 3.5 sec).
+
+\hypertarget{data-analysis}{%
+\subsection{Data Analysis}\label{data-analysis}}
+
+To ensure that our outcome variables were sensitive to the experimental manipulations, we first tested the effect of the question phrasing (direct \emph{vs.} indirect) and condition (polygraph \emph{vs.} interrogation) on the outcome variables. This analysis was performed using mixed models with the participants and questions both entered as random factors. Marginal contrasts analysis (denoted by \(\Delta\)) was also performed to clarify the differences between conditions. To allow for a better quantification of the uncertainty associated with the effects, as well as increase the robustness to outliers and artifactual findings, all statistics were undertaken under the Bayesian framework (Makowski et al., 2019), using informative priors centred around 0 (\(t_{Confidence}(1, 0, 1)\), \(t_{RT}(1, 0, 3)\), \(t_{Heartrate}(1, 0, 8)\)).
+
+To further counterbalance the low number of participants and maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, ToM and interoception) using factor analysis over PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modelled the relationship between these inter-individual composite scores (note that the analysis for all individual variables is nonetheless included in the analysis report) and the 3 outcome variables in interaction with the condition (polygraph \emph{vs.} interrogation). Finally, we investigated the relationship between the deception scale traits, and the theory of mind and interoception scores using Bayesian correlations.
+
+The data analysis was carried out using \emph{R 4.2} (R Core Team, 2022), \emph{brms} (Bürkner, 2017), and the \emph{easystats} collection of packages (Lüdecke et al., 2021, 2019; Makowski et al., 2020, 2019), and the physiological signal processing was done using the default routines avaialble in \emph{NeuroKit2} (Makowski, Pham, Lau, Brammer, et al., 2021). As the full reproducible analysis script and statistical results report are available at
+\url{https://github.com/DominiqueMakowski/DeceptionInteroTom}
+, we will only focus on significant results in the manuscript.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{manipulation-check}{%
+\subsection{Manipulation Check}\label{manipulation-check}}
+
+Compared to truth, lies were rated with less confidence (\(\Delta=-1.35,~95\%~CI~[-1.46, -1.23],~pd = 100\%\)), but no difference between the conditions was found. On the other hand, the RT did not differ between truth and lies, but was significantly slower in the polygraph condition for both conditions (\(\Delta=0.25,~95\%~CI~[0.62, 0.41],~pd = 100\%\)). The heart rate was significantly more elevated during lies as compared to truth (\(\Delta=1.16,~95\%~CI~[0.57, 1.73],~pd = 100\%\)), and during interrogation as compared to the polygraph condition (\(\Delta=4.84 ,~95\%~CI~[4.23, 5.44],~pd = 100\%\)).
+
+The indirect phrasing of the question only had a significant effect on RT (\(\beta=0.36,~95\%~CI~[0.21, 0.51],~pd = 100\%\)), leading to slower answers, regardless of whether they were lies or truths.
+
+\hypertarget{feature-reduction}{%
+\subsection{Feature Reduction}\label{feature-reduction}}
+
+The 3 YONI-task dimensions and the 2 BES traits were combined into a unique factor, labelled \emph{TOM} (explaining 35.76\% of variance). It was loaded by the cognitive (.89), affective (.77), physical (.45) YONI dimension, and the affective (.41) and cognitive (.17) traits of the BES.
+
+The 8 MAIA dimensions and the 3 HCT components were reduced to 4 factors (explaining 65.17\% of variance). The first factor, labelled \emph{Interoception - Meta} (23.59\%), was loaded primarily by Attention Regulation (.97), Self-regulation (.63), Emotional awareness (.60), and Noticing (.49) dimensions of the MAIA and the HCT confidence score (.40). The second factor, labelled \emph{Interoception - Listening} (18.54\%), was primarily loaded by the Body Listening (.92) and Trusting (.53) MAIA dimensions, and the Awareness (-.60) and Confidence (.46) HCT scores. The third factor, labelled \emph{Interoception - Focus} (12.07\%), was primarily loaded by MAIA Not-Distracting (.87), Emotional Awareness (-.40) and HCT Accuracy (.33). The fourth factor, labelled \emph{Interoception - Regulation} (10.97\%), was primarily loaded by MAIA not-worrying (.71), HCT Accuracy (.61) and MAIA Trusting (.40).
+
+\hypertarget{theory-of-mind-1}{%
+\subsection{Theory of Mind}\label{theory-of-mind-1}}
+
+The composite \emph{TOM} score was significantly associated with less confident (\(\beta=-0.19,~95\%~CI~[-0.36, -0.02],~pd = 98.47\%\)) and slower lies (\(\beta=0.42,~95\%~CI~[0.01, 0.83],~pd = 97.67\%\)), specifically in the polygraph condition. No significant effect was found with regards to heart rate, and no correlation was observed with dispositional lying traits (\textbf{Figure 1}).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/figure1} \caption{Interindividual corrrelates of lying confidence. Shows the correlation between the participants' interoceptive and theory of mind composite scores and their average lying confidence, withing the two experimental conditions.}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+\hypertarget{interoception-1}{%
+\subsection{Interoception}\label{interoception-1}}
+
+The \emph{Meta} interoception score was significantly associated with an increased confidence in lies, specifically in the polygraph condition (\(\beta=0.20,~95\%~CI~[0.03, 0.35],~pd = 98.98\%\)). It was also associated with faster answers for both lies (\(\beta=-0.54,~95\%~CI~[-0.93, -0.15],~pd = 99.67\%\)) and truths (\(\beta=-0.29,~95\%~CI~[-0.63, 0.03],~pd = 96.10\%\)), specifically in the polygraph condition. No significant association was found with heart rate.
+
+The \emph{Listening} interoception score was significantly associated with an increased confidence in lies, in the polygraph (\(\beta=0.43,~95\%~CI~[0.27, 0.59],~pd = 100\%\)) and interrogation condition (\(\beta=0.16,~95\%~CI~[0.01, 0.32],~pd = 98.04\%\)). It was also associated with faster answers, particularly for lies (\(\beta=-0.42,~95\%~CI~[-0.82, -0.03],~pd = 98.19\%\)) and truths (\(\beta=-0.36,~95\%~CI~[-0.76, 0.03],~pd = 96.49\%\)) in the polygraph condition. No significant association was found with heart rate. This score also correlated with the dispositional lying \emph{Contextuality} trait (\(r = 0.50,~95\%~CI~[0.04, 0.64],~BF_{10} = 3.48\%\)).
+
+The \emph{Focus} interoception score was significantly associated with an increased confidence in truthful responses in the polygraph (\(\beta=0.17,~95\%~CI~[-0.01, 0.34],~pd = 97.16\%\)) and interrogation condition (\(\beta=0.15,~95\%~CI~[-0.02, 0.32],~pd = 95.76\%\)). No significant association was found with RT or heart rate, but the score correlated with the dispositional lying \emph{Ability} trait (\(r = 0.50,~95\%~CI~[0.22, 0.74],~BF_{10} = 34.37\%\)).
+
+The \emph{Regulation} interoception score was significantly associated with an increased confidence in lies in the polygraph (\(\beta=0.32,~95\%~CI~[0.14, 0.51],~pd = 99.99\%\)) and the interrogation conditions (\(\beta=0.18,~95\%~CI~[0.00, 0.36],~pd = 97.42\%\)), and with a decreased confidence in truth only in the polygraph condition (\(\beta=-0.1,~95\%~CI~[-0.36, 0.01],~pd = 97.16\%\)). No significant association was found with RT or heart rate (\textbf{Figure 2}).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/figure2} \caption{Summary of findings showing the positive (green) and negative (red) associations between interoception and theory of mind abilities and deception skills, depending on the experimental condition.}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+The present study examined the contribution of ToM and interoception on our ability to lie using a directed lie paradigm with two conditions (``Interrogation'' and ``Polygraph'') designed to enhance each of the two mechanisms. Interestingly, we found that when participants were presented with (fake) physiological feedback (the polygraph condition), instead of a face of a person they had to lie to (the interrogation condition), their response time for both lies and truths increased, as did their heart rate. Although the condition did not impact the subjective confidence that participants had in their answers, it suggests that believing oneself to be submitted to a machine that is supposedly able to detect deception by interpreting physiological signals is a harder and/or more stressful condition than lying to a person. While research linking interoception and deception is limited, our results are in line with studies that show an association between interoceptive awareness and anxiety (Domschke et al., 2010; Garfinkel \& Critchley, 2013; Yoris et al., 2015). Specifically, enhancing one's attention towards their internal bodily signals could have resulted in a hyper-vigilance towards physiological sensations that is perceived negatively. Additionally, our study also extends past deception research and further confirms the validity concerns in solely relying on physiological measures as an indicator of deception (Oviatt et al., 2018; Rosky, 2013).
+
+Our results suggest that higher ToM abilities were related to a slower and less confident lies, but only in the polygraph condition. One possible interpretation is that people with stronger ToM abilities rely by default more on it when lying (i.e., they focus on - and try to read - the other person). When that mechanism is cut off (i.e., when there is no person to lie to - but in our case a ``machine''), their lying ability decreases.
+
+We also showed that interoceptive abilities are correlated with a higher confidence in one's lies in the polygraph condition, a condition in which the attention towards internal reactions is fostered. However, in contrast to previous studies (Füstös et al., 2013; Owens et al., 2018; Pinna \& Edwards, 2020; Pollatos et al., 2007), we did not find any significant relationship between individuals' interoception scores and the heart rate changes during their answers. This points toward a predominantly meta-cognitive effect without necessarily an actual bodily regulation (i.e., participants with good interoception feel that their lies are more convincing, but do not actively attenuate their bodily reactions).
+
+Although yielding promising results, this exploratory study is limited by the sample size. Although we tried to mitigate it by 1) extracting more robust variables (by combining multiple ones by means of feature reduction) and 2) using a suited analysis approach (Bayesian statistics with informative priors), future replication studies with larger samples are warranted to confirm this first investigation. Nonetheless, we believe our results to be credible as we find consistent patterns across various facets and measures (for instance, all interoceptive dimensions, although distinct, share a similar trend) in line with theoretical expectations. The statistical power could also explain the overall lack of results with heart rate, which has a higher signal-to-noise ratio as compared to subjective reports (such as confidence scales).
+
+Another aspect to note is the strong reliance on self-reported measures as outcome variables of lie ability (in particular, the measure of answer confidence, but also the auto-questionnaires). This might conflate meta-cognitive abilities as well as dishonest answers. Although we tried to include more objective measures, such as RT (although it too was tied to the participants' conscious decision to press a key) and heart rate, future studies should attempt at measuring objectively the answer (lie or truth) quality, for instance by means of external examiners. Note that this is not limitation \emph{per se}, as it answers a slightly different question - what are the correlates of \emph{objective} lying skills - than deception self-confidence.
+
+Additionally to limitations pertaining to the measure of lying ability, care has to be given to the measure of the predictor constructs, namely ToM and interoception. While we tried to include an behavioral task as well as a subjective questionnaire for each, it has to be underlined that they are notoriously difficult concepts to measure. In particular, objective interoceptive accuracy was assessed using the Heartbeat Counting Task (HCT). While the HCT used to be considered as a gold standard and is one of the most commonly used measure (Desmedt et al., 2022), concerns regarding its validity has been highlighted in several studies (Brener \& Ring, 2016; Desmedt et al., 2018, 2022; Legrand et al., 2022). Given increasing research efforts invested in the development of novel interoception tasks (Legrand et al., 2022; Plans et al., 2021; Ponzo et al., 2021), future works should further examine the relationship between interoception and lying ability using measures with better psychometric properties. Additionally, our application of feature reduction as a noise-elimination measure could have over-simplified the data. A more complex pattern of relationships, with different contributions of various subdimensions of ToM and interoception, could emerge provided a sufficient statistical power and valid measures.
+
+In conclusion, this study study is a first step towards assessing the contribution of ToM and interoception abilities in deception in one's ability to lie convincingly. We introduced a new paradigm that is able to modulate the contribution of these mechanisms while remaining relevant to applied fields of lie detection and criminology (in which the experimental conditions find echoing practices). Our results provide princeps evidence that interoception could be a key - and overlooked - mechanism in deception.
+
+\hypertarget{data-availability}{%
+\section{Data Availability}\label{data-availability}}
+
+The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, preregistration, etc.) for this research is available at \textbf{\url{https://github.com/DominiqueMakowski/DeceptionInteroTom}}.
+
+\hypertarget{conflict-of-interest-statement}{%
+\section{Conflict of Interest Statement}\label{conflict-of-interest-statement}}
+
+The authors declare no conflict of interest.
+
+\hypertarget{acknowledgements}{%
+\section{Acknowledgements}\label{acknowledgements}}
+
+We would like to thank Jia Rong Low and Maximilian Yong for his help in data collection.
+
+\newpage
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\begin{verbatim}
+## Warning in readLines(file): incomplete final line found on 'references.bib'
+\end{verbatim}
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-baron1997mindblindness}{}}%
+Baron-Cohen, S. (1997). \emph{Mindblindness: An essay on autism and theory of mind}. MIT press.
+
+\leavevmode\vadjust pre{\hypertarget{ref-barrett2015interoceptive}{}}%
+Barrett, L. F., \& Simmons, W. K. (2015). Interoceptive predictions in the brain. \emph{Nature Reviews Neuroscience}, \emph{16}(7), 419--429.
+
+\leavevmode\vadjust pre{\hypertarget{ref-beaudoin2020systematic}{}}%
+Beaudoin, C., Leblanc, É., Gagner, C., \& Beauchamp, M. H. (2020). Systematic review and inventory of theory of mind measures for young children. \emph{Frontiers in Psychology}, \emph{10}, 2905.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bond2008individual}{}}%
+Bond Jr, C. F., \& DePaulo, B. M. (2008). Individual differences in judging deception: Accuracy and bias. \emph{Psychological Bulletin}, \emph{134}(4), 477.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bora2017meta}{}}%
+Bora, E., \& Yener, G. G. (2017). Meta-analysis of social cognition in mild cognitive impairment. \emph{Journal of Geriatric Psychiatry and Neurology}, \emph{30}(4), 206--213.
+
+\leavevmode\vadjust pre{\hypertarget{ref-brener2016towards}{}}%
+Brener, J., \& Ring, C. (2016). Towards a psychophysics of interoceptive processes: The measurement of heartbeat detection. \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}, \emph{371}(1708), 20160015.
+
+\leavevmode\vadjust pre{\hypertarget{ref-burgoon1994interpersonal}{}}%
+Burgoon, J. K., \& Buller, D. B. (1994). Interpersonal deception: III. Effects of deceit on perceived communication and nonverbal behavior dynamics. \emph{Journal of Nonverbal Behavior}, \emph{18}(2), 155--184.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Burkner2017}{}}%
+Bürkner, P.-C. (2017). {brms}: An {R} package for {Bayesian} multilevel models using {Stan}. \emph{Journal of Statistical Software}, \emph{80}(1), 1--28. \url{https://doi.org/10.18637/jss.v080.i01}
+
+\leavevmode\vadjust pre{\hypertarget{ref-chen2021emerging}{}}%
+Chen, W. G., Schloesser, D., Arensdorf, A. M., Simmons, J. M., Cui, C., Valentino, R., Gnadt, J. W., Nielsen, L., Hillaire-Clarke, C. S., Spruance, V., et al. (2021). The emerging science of interoception: Sensing, integrating, interpreting, and regulating signals within the self. \emph{Trends in Neurosciences}, \emph{44}(1), 3--16.
+
+\leavevmode\vadjust pre{\hypertarget{ref-connell2018interoception}{}}%
+Connell, L., Lynott, D., \& Banks, B. (2018). Interoception: The forgotten modality in perceptual grounding of abstract and concrete concepts. \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}, \emph{373}(1752), 20170143.
+
+\leavevmode\vadjust pre{\hypertarget{ref-damasio1996somatic}{}}%
+Damasio, A. R. (1996). The somatic marker hypothesis and the possible functions of the prefrontal cortex. \emph{Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences}, \emph{351}(1346), 1413--1420.
+
+\leavevmode\vadjust pre{\hypertarget{ref-desmedt2018heartbeat}{}}%
+Desmedt, O., Luminet, O., \& Corneille, O. (2018). The heartbeat counting task largely involves non-interoceptive processes: Evidence from both the original and an adapted counting task. \emph{Biological Psychology}, \emph{138}, 185--188.
+
+\leavevmode\vadjust pre{\hypertarget{ref-desmedt2022does}{}}%
+Desmedt, O., Van Den Houte, M., Walentynowicz, M., Dekeyser, S., Luminet, O., \& Corneille, O. (2022). How does heartbeat counting task performance relate to theoretically-relevant mental health outcomes? A meta-analysis. \emph{Collabra: Psychology}, \emph{8}(1), 33271.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ditto2006visceral}{}}%
+Ditto, P. H., Pizarro, D. A., Epstein, E. B., Jacobson, J. A., \& MacDonald, T. K. (2006). Visceral influences on risk-taking behavior. \emph{Journal of Behavioral Decision Making}, \emph{19}(2), 99--113.
+
+\leavevmode\vadjust pre{\hypertarget{ref-domschke2010interoceptive}{}}%
+Domschke, K., Stevens, S., Pfleiderer, B., \& Gerlach, A. L. (2010). Interoceptive sensitivity in anxiety and anxiety disorders: An overview and integration of neurobiological findings. \emph{Clinical Psychology Review}, \emph{30}(1), 1--11.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dunn2010listening}{}}%
+Dunn, B. D., Galton, H. C., Morgan, R., Evans, D., Oliver, C., Meyer, M., Cusack, R., Lawrence, A. D., \& Dalgleish, T. (2010). Listening to your heart: How interoception shapes emotion experience and intuitive decision making. \emph{Psychological Science}, \emph{21}(12), 1835--1844.
+
+\leavevmode\vadjust pre{\hypertarget{ref-evans2011verbal}{}}%
+Evans, A. D., \& Lee, K. (2011). Verbal deception from late childhood to middle adolescence and its relation to executive functioning skills. \emph{Developmental Psychology}, \emph{47}(4), 1108.
+
+\leavevmode\vadjust pre{\hypertarget{ref-furman2013interoceptive}{}}%
+Furman, D. J., Waugh, C. E., Bhattacharjee, K., Thompson, R. J., \& Gotlib, I. H. (2013). Interoceptive awareness, positive affect, and decision making in major depressive disorder. \emph{Journal of Affective Disorders}, \emph{151}(2), 780--785.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fustos2013embodiment}{}}%
+Füstös, J., Gramann, K., Herbert, B. M., \& Pollatos, O. (2013). On the embodiment of emotion regulation: Interoceptive awareness facilitates reappraisal. \emph{Social Cognitive and Affective Neuroscience}, \emph{8}(8), 911--917.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gallant2020developing}{}}%
+Gallant, C. M., Lavis, L., \& Mahy, C. E. (2020). Developing an understanding of others' emotional states: Relations among affective theory of mind and empathy measures in early childhood. \emph{British Journal of Developmental Psychology}, \emph{38}(2), 151--166.
+
+\leavevmode\vadjust pre{\hypertarget{ref-garfinkel2013interoception}{}}%
+Garfinkel, S. N., \& Critchley, H. D. (2013). Interoception, emotion and brain: New insights link internal physiology to social behaviour. Commentary on: {``Anterior insular cortex mediates bodily sensibility and social anxiety''} by terasawa et al.(2012). \emph{Social Cognitive and Affective Neuroscience}, \emph{8}(3), 231--234.
+
+\leavevmode\vadjust pre{\hypertarget{ref-garfinkel2015knowing}{}}%
+Garfinkel, S. N., Seth, A. K., Barrett, A. B., Suzuki, K., \& Critchley, H. D. (2015). Knowing your own heart: Distinguishing interoceptive accuracy from interoceptive awareness. \emph{Biological Psychology}, \emph{104}, 65--74.
+
+\leavevmode\vadjust pre{\hypertarget{ref-jolliffe2006development}{}}%
+Jolliffe, D., \& Farrington, D. P. (2006). Development and validation of the basic empathy scale. \emph{Journal of Adolescence}, \emph{29}(4), 589--611.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lee2021lying}{}}%
+Lee, J. Y. S., \& Imuta, K. (2021). Lying and theory of mind: A meta-analysis. \emph{Child Development}, \emph{92}(2), 536--553.
+
+\leavevmode\vadjust pre{\hypertarget{ref-legrand2022heart}{}}%
+Legrand, N., Nikolova, N., Correa, C., Brændholt, M., Stuckert, A., Kildahl, N., Vejlø, M., Fardo, F., \& Allen, M. (2022). The heart rate discrimination task: A psychophysical method to estimate the accuracy and precision of interoceptive beliefs. \emph{Biological Psychology}, \emph{168}, 108239.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lenggenhager2013listening}{}}%
+Lenggenhager, B., Azevedo, R. T., Mancini, A., \& Aglioti, S. M. (2013). Listening to your heart and feeling yourself: Effects of exposure to interoceptive signals during the ultimatum game. \emph{Experimental Brain Research}, \emph{230}(2), 233--241.
+
+\leavevmode\vadjust pre{\hypertarget{ref-levine2011sender}{}}%
+Levine, T. R., Serota, K. B., Shulman, H., Clare, D. D., Park, H. S., Shaw, A. S., Shim, J. C., \& Lee, J. H. (2011). Sender demeanor: Individual differences in sender believability have a powerful impact on deception detection judgments. \emph{Human Communication Research}, \emph{37}(3), 377--403.
+
+\leavevmode\vadjust pre{\hypertarget{ref-performanceArticle}{}}%
+Lüdecke, D., Ben-Shachar, M., Patil, I., Waggoner, P., \& Makowski, D. (2021). {performance}: An {R} package for assessment, comparison and testing of statistical models. \emph{Journal of Open Source Software}, \emph{6}(60), 3139. \url{https://doi.org/10.21105/joss.03139}
+
+\leavevmode\vadjust pre{\hypertarget{ref-insightArticle}{}}%
+Lüdecke, D., Waggoner, P., \& Makowski, D. (2019). Insight: A unified interface to access information from model objects in {R}. \emph{Journal of Open Source Software}, \emph{4}(38), 1412. \url{https://doi.org/10.21105/joss.01412}
+
+\leavevmode\vadjust pre{\hypertarget{ref-makowski2019bayestestr}{}}%
+Makowski, D., Ben-Shachar, M. S., \& Lüdecke, D. (2019). bayestestR: Describing effects and their uncertainty, existence and significance within the bayesian framework. \emph{Journal of Open Source Software}, \emph{4}(40), 1541.
+
+\leavevmode\vadjust pre{\hypertarget{ref-correlationArticle}{}}%
+Makowski, D., Ben-Shachar, M., Patil, I., \& Lüdecke, D. (2020). Methods and algorithms for correlation analysis in {R}. \emph{Journal of Open Source Software}, \emph{5}(51), 2306. \url{https://doi.org/10.21105/joss.02306}
+
+\leavevmode\vadjust pre{\hypertarget{ref-makowski2021neurokit2}{}}%
+Makowski, D., Pham, T., Lau, Z. J., Brammer, J. C., Lespinasse, F., Pham, H., Schölzel, C., \& Chen, S. (2021). NeuroKit2: A python toolbox for neurophysiological signal processing. \emph{Behavior Research Methods}, \emph{53}(4), 1689--1696.
+
+\leavevmode\vadjust pre{\hypertarget{ref-makowski2021structure}{}}%
+Makowski, D., Pham, T., Lau, Z. J., Raine, A., \& Chen, S. (2021). The structure of deception: Validation of the lying profile questionnaire. \emph{Current Psychology}, 1--16.
+
+\leavevmode\vadjust pre{\hypertarget{ref-masip2017deception}{}}%
+Masip, J. (2017). Deception detection: State of the art and future prospects. \emph{Psicothema}, \emph{29}(2), 149--159.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mehling2012multidimensional}{}}%
+Mehling, W. E., Price, C., Daubenmier, J. J., Acree, M., Bartmess, E., \& Stewart, A. (2012). The multidimensional assessment of interoceptive awareness (MAIA). \emph{PloS One}, \emph{7}(11), e48230.
+
+\leavevmode\vadjust pre{\hypertarget{ref-murphy2019classifying}{}}%
+Murphy, J., Catmur, C., \& Bird, G. (2019). Classifying individual differences in interoception: Implications for the measurement of interoceptive awareness. \emph{Psychonomic Bulletin \& Review}, \emph{26}(5), 1467--1471.
+
+\leavevmode\vadjust pre{\hypertarget{ref-oviatt2018handbook}{}}%
+Oviatt, S., Schuller, B., Cohen, P. R., Sonntag, D., Potamianos, G., \& Krüger, A. (2018). \emph{The handbook of multimodal-multisensor interfaces: Signal processing, architectures, and detection of emotion and cognition-volume 2}. Association for Computing Machinery; Morgan \& Claypool.
+
+\leavevmode\vadjust pre{\hypertarget{ref-owens2018investigating}{}}%
+Owens, A. P., Friston, K. J., Low, D. A., Mathias, C. J., \& Critchley, H. D. (2018). Investigating the relationship between cardiac interoception and autonomic cardiac control using a predictive coding framework. \emph{Autonomic Neuroscience}, \emph{210}, 65--71.
+
+\leavevmode\vadjust pre{\hypertarget{ref-peirce2019psychopy2}{}}%
+Peirce, J., Gray, J. R., Simpson, S., MacAskill, M., Höchenberger, R., Sogo, H., Kastman, E., \& Lindeløv, J. K. (2019). PsychoPy2: Experiments in behavior made easy. \emph{Behavior Research Methods}, \emph{51}(1), 195--203.
+
+\leavevmode\vadjust pre{\hypertarget{ref-petzschner2021computational}{}}%
+Petzschner, F. H., Garfinkel, S. N., Paulus, M. P., Koch, C., \& Khalsa, S. S. (2021). Computational models of interoception and body regulation. \emph{Trends in Neurosciences}, \emph{44}(1), 63--76.
+
+\leavevmode\vadjust pre{\hypertarget{ref-pinna2020systematic}{}}%
+Pinna, T., \& Edwards, D. J. (2020). A systematic review of associations between interoception, vagal tone, and emotional regulation: Potential applications for mental health, wellbeing, psychological flexibility, and chronic conditions. \emph{Frontiers in Psychology}, \emph{11}, 1792.
+
+\leavevmode\vadjust pre{\hypertarget{ref-plans2021measuring}{}}%
+Plans, D., Ponzo, S., Morelli, D., Cairo, M., Ring, C., Keating, C. T., Cunningham, A., Catmur, C., Murphy, J., \& Bird, G. (2021). Measuring interoception: The phase adjustment task. \emph{Biological Psychology}, \emph{165}, 108171.
+
+\leavevmode\vadjust pre{\hypertarget{ref-pollatos2007heart}{}}%
+Pollatos, O., Herbert, B. M., Matthias, E., \& Schandry, R. (2007). Heart rate response after emotional picture presentation is modulated by interoceptive awareness. \emph{International Journal of Psychophysiology}, \emph{63}(1), 117--124.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ponzo2021measuring}{}}%
+Ponzo, S., Morelli, D., Suksasilp, C., Cairo, M., \& Plans, D. (2021). Measuring interoception: The CARdiac elevation detection task. \emph{Frontiers in Psychology}, \emph{12}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-RCoreTeam2022}{}}%
+R Core Team. (2022). \emph{R: A language and environment for statistical computing}. R Foundation for Statistical Computing. \url{https://www.R-project.org/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-roheger2022progression}{}}%
+Roheger, M., Brenning, J., Riemann, S., Martin, A. K., Flöel, A., \& Meinzer, M. (2022). Progression of socio-cognitive impairment from healthy aging to alzheimer's dementia: A systematic review and meta-analysis. \emph{Neuroscience \& Biobehavioral Reviews}, 104796.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rosky2013f}{}}%
+Rosky, J. W. (2013). The (f) utility of post-conviction polygraph testing. \emph{Sexual Abuse}, \emph{25}(3), 259--281.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schandry1981heart}{}}%
+Schandry, R. (1981). Heart beat perception and emotional experience. \emph{Psychophysiology}, \emph{18}(4), 483--488.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sebastian2012neural}{}}%
+Sebastian, C. L., Fontaine, N. M., Bird, G., Blakemore, S.-J., De Brito, S. A., McCrory, E. J., \& Viding, E. (2012). Neural processing associated with cognitive and affective theory of mind in adolescents and adults. \emph{Social Cognitive and Affective Neuroscience}, \emph{7}(1), 53--63.
+
+\leavevmode\vadjust pre{\hypertarget{ref-seth2012interoceptive}{}}%
+Seth, A. K., Suzuki, K., \& Critchley, H. D. (2012). An interoceptive predictive coding model of conscious presence. \emph{Frontiers in Psychology}, \emph{2}, 395.
+
+\leavevmode\vadjust pre{\hypertarget{ref-shamay2007dissociable}{}}%
+Shamay-Tsoory, S. G., \& Aharon-Peretz, J. (2007). Dissociable prefrontal networks for cognitive and affective theory of mind: A lesion study. \emph{Neuropsychologia}, \emph{45}(13), 3054--3067.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sip2012if}{}}%
+Sip, K. E., Skewes, J. C., Marchant, J. L., McGregor, W. B., Roepstorff, A., \& Frith, C. D. (2012). What if i get busted? Deception, choice, and decision-making in social interaction. \emph{Frontiers in Neuroscience}, \emph{6}, 58.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sternglanz2019review}{}}%
+Sternglanz, R. W., Morris, W. L., Morrow, M., \& Braverman, J. (2019). A review of meta-analyses about deception detection. \emph{The Palgrave Handbook of Deceptive Communication}, 303--326.
+
+\leavevmode\vadjust pre{\hypertarget{ref-takuma1995alternative}{}}%
+Takuma, K., Hori, S., Sasaki, J., Shinozawa, Y., Yoshikawa, T., Handa, S., Horikawa, M., \& Aikawa, N. (1995). An alternative limb lead system for electrocardiographs in emergency patients. \emph{The American Journal of Emergency Medicine}, \emph{13}(5), 514--517. \url{https://doi.org/10.1016/0735-6757(95)90160-4}
+
+\leavevmode\vadjust pre{\hypertarget{ref-talwar2017role}{}}%
+Talwar, V., Crossman, A., \& Wyman, J. (2017). The role of executive functioning and theory of mind in children's lies for another and for themselves. \emph{Early Childhood Research Quarterly}, \emph{41}, 126--135.
+
+\leavevmode\vadjust pre{\hypertarget{ref-talwar2007lying}{}}%
+Talwar, V., Gordon, H. M., \& Lee, K. (2007). Lying in the elementary school years: Verbal deception and its relation to second-order belief understanding. \emph{Developmental Psychology}, \emph{43}(3), 804.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vabba2022interoceptive}{}}%
+Vabba, A., Porciello, G., Panasiti, M. S., \& Aglioti, S. M. (2022). Interoceptive influences on the production of self-serving lies in reputation risk conditions. \emph{International Journal of Psychophysiology}, \emph{177}, 34--42.
+
+\leavevmode\vadjust pre{\hypertarget{ref-verigin2019lie}{}}%
+Verigin, B. L., Meijer, E. H., Bogaard, G., \& Vrij, A. (2019). Lie prevalence, lie characteristics and strategies of self-reported good liars. \emph{PloS One}, \emph{14}(12), e0225566.
+
+\leavevmode\vadjust pre{\hypertarget{ref-viji2022history}{}}%
+Viji, D., Gupta, N., \& Parekh, K. H. (2022). History of deception detection techniques. \emph{Proceedings of International Conference on Deep Learning, Computing and Intelligence}, 373--387.
+
+\leavevmode\vadjust pre{\hypertarget{ref-weiss2014interaction}{}}%
+Weiss, S., Sack, M., Henningsen, P., \& Pollatos, O. (2014). On the interaction of self-regulation, interoception and pain perception. \emph{Psychopathology}, \emph{47}(6), 377--382.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wellman2001meta}{}}%
+Wellman, H. M., Cross, D., \& Watson, J. (2001). Meta-analysis of theory-of-mind development: The truth about false belief. \emph{Child Development}, \emph{72}(3), 655--684.
+
+\leavevmode\vadjust pre{\hypertarget{ref-williams2016valjean}{}}%
+Williams, E. F., Pizarro, D., Ariely, D., \& Weinberg, J. D. (2016). The valjean effect: Visceral states and cheating. \emph{Emotion}, \emph{16}(6), 897.
+
+\leavevmode\vadjust pre{\hypertarget{ref-yoris2015roles}{}}%
+Yoris, A., Esteves, S., Couto, B., Melloni, M., Kichic, R., Cetkovich, M., Favaloro, R., Moser, J., Manes, F., Ibanez, A., et al. (2015). The roles of interoceptive sensitivity and metacognitive interoception in panic. \emph{Behavioral and Brain Functions}, \emph{11}(1), 1--6.
+
+\end{CSLReferences}
+
+\endgroup
+
+
+\end{document}
