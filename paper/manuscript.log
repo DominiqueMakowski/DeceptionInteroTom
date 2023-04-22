@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.11)  22 APR 2023 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.11)  22 APR 2023 22:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -739,15 +739,29 @@ File: ../figures/figure1.png Graphic file (type png)
 Package pdftex.def Info: ../figures/figure1.png  used on input line 295.
 (pdftex.def)             Requested size: 469.75827pt x 587.19783pt.
 
-LaTeX Warning: Float too large for page by 14.29175pt on input line 296.
+Overfull \hbox (77.07991pt too wide) in paragraph at lines 294--297
+[]\T1/lmr/m/n/12 \begin{figure} []
+ []
 
-[11] [12 <../figures/Figure1.png>]
-<../figures/figure2.png, id=165, 1003.75pt x 1003.75pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[12 <../figures/Figure1.png>] [13]
+<../figures/figure2.png, id=166, 1003.75pt x 1003.75pt>
 File: ../figures/figure2.png Graphic file (type png)
 <use ../figures/figure2.png>
 Package pdftex.def Info: ../figures/figure2.png  used on input line 310.
 (pdftex.def)             Requested size: 469.75618pt x 469.75618pt.
-[13] [14 <../figures/Figure2.png>] [15] [16] [17]
+[14 <../figures/Figure2.png>]
+Underfull \vbox (badness 4954) has occurred while \output is active []
+
+[15] [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[17] [18]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 350.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -763,9 +777,6 @@ Overfull \hbox (11.89522pt too wide) in paragraph at lines 352--352
 
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
-[18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -776,6 +787,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[23]
 Overfull \hbox (4.38086pt too wide) in paragraph at lines 507--509
  \T1/lmr/m/n/12 (2022). Pro-gres-sion of socio-cognitive im-pair-ment from healthy ag-ing to alzheimer's
  []
@@ -783,26 +797,26 @@ Overfull \hbox (4.38086pt too wide) in paragraph at lines 507--509
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23]
+[24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[24] AED endfloat: Processing end Figures and Tables [25] (./manuscript.aux)
+[25] AED endfloat: Processing end Figures and Tables [26] (./manuscript.aux)
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: 0D8B75E5D02746569CE306EC229E1D7C;2607.
+(rerunfilecheck)             Checksum: B5A1A698CFD88DA52A14D00FE6157B31;2607.
  ) 
 Here is how much of TeX's memory you used:
  16492 strings out of 477989
- 273329 string characters out of 5837889
- 1862340 words of memory out of 5000000
+ 273319 string characters out of 5837889
+ 1861340 words of memory out of 5000000
  36235 multiletter control sequences out of 15000+600000
  566386 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,11n,77p,1821b,562s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,11n,77p,1821b,583s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on manuscript.pdf (25 pages, 1042505 bytes).
+Output written on manuscript.pdf (26 pages, 1045236 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
+ 409 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
  134 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

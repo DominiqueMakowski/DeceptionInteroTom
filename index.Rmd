@@ -498,7 +498,7 @@ p1 <- ggplot(link_data, aes(x = ToM, y = Predicted)) +
   geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
   geom_line(aes(color = Condition), size=1) +
   geom_text(data=data.frame(ToM = -0.3, Predicted = 0.45, Condition = "Polygraph", Answer = "Lie"),
-            label = "***",
+            label = format_pd(0.9767, stars_only = TRUE),
             color = "#FF5722",
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
@@ -535,7 +535,7 @@ p2 <- ggplot(link_data, aes(x = Intero_Meta, y = Predicted)) +
   geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
   geom_line(aes(color = Condition), size=1) +
   geom_text(data=data.frame(Intero_Meta = -0.15, Predicted = 0.25, Condition = "Polygraph", Answer = "Lie"),
-            label = "***",
+            label = format_pd(0.9898, stars_only = TRUE),
             color = "#FF5722",
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
@@ -572,8 +572,12 @@ p3 <- ggplot(link_data, aes(x = Intero_Listening, y = Predicted)) +
   geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
   geom_line(aes(color = Condition), size=1) +
   geom_text(data=data.frame(Intero_Listening = 0.2, Predicted = 0.45, Condition = "Polygraph", Answer = "Lie"),
-            label = "***",
+            label = format_pd(1, stars_only = TRUE),
             color = "#FF5722",
+            size = 10, show.legend = FALSE, fontface = "bold") +
+  geom_text(data=data.frame(Intero_Listening = 0.2, Predicted = 0.27, Condition = "Polygraph", Answer = "Lie"),
+            label = format_pd(0.9804, stars_only = TRUE),
+            color = "#2196F3",
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
        x = expression(Interoception~"'Listening'"["  (.92 MAIA Body listening, -.60 HCT Awareness, .53 HCT Trusting)"])) +
@@ -612,7 +616,7 @@ p4 <- ggplot(link_data, aes(x = Intero_Focus, y = Predicted)) +
                             Predicted = c(0.55, 0.75),
                             Condition = c("Polygraph", "Interrogation"),
                             Answer = c("Truth", "Truth")),
-            label = c("*", "*"),
+            label = format_pd(c(0.9716, 0.9576), stars_only = TRUE),
             color = c("#2196F3", "#FF5722"),
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
@@ -653,7 +657,7 @@ p5 <- ggplot(link_data, aes(x = Intero_Regulation, y = Predicted)) +
                             Predicted = c(0.25, 0.45, 0.75),
                             Condition = c("Polygraph", "Interrogation", "Polygraph"), 
                             Answer = c("Lie", "Lie", "Truth")),
-            label = c("***", "*", "*"),
+            label = format_pd(c(0.9999, 0.9742, 0.9716), stars_only = TRUE),
             color = c("#FF5722", "#2196F3", "#FF5722"),
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
