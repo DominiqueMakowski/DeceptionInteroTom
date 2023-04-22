@@ -4,10 +4,10 @@ shorttitle        : "Deception, Interoception, and ToM"
 author:
   
   - name          : "Dominique Makowski"
-    affiliation   : "1"
+    affiliation   : "1, 2"
     corresponding : yes    # Define only one corresponding author
-    address       : "HSS 04-18, 48 Nanyang Avenue, Singapore"
-    email         : "dom.makowski@gmail.com"
+    address       : "Pevensey 1, University of Sussex, Brighton, UK"
+    email         : "D.Makowski@sussex.ac.uk"
     orcid         : 0000-0001-5375-9967
     role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
       - "Conceptualization"
@@ -24,11 +24,11 @@ author:
       - "Visualization"
       - "Writing – original draft"
   - name          : "Zen J. Lau"
-    affiliation   : " 1"
+    affiliation   : " 2"
   - name          : "Tam Pham"
-    affiliation   : " 1"
+    affiliation   : " 2"
   - name          : "An Shu Te"
-    affiliation   : "1"
+    affiliation   : "2"
     orcid         : 0000-0001-8008-2824
     role:
       - "Project administration"
@@ -36,19 +36,19 @@ author:
       - "Investigation"
       - "Writing – original draft"
   - name          : "Stephanie Kirk"
-    affiliation   : "1"
+    affiliation   : "2"
     orcid         : 0000-0002-9312-5552
     role:
       - "Project administration"
       - "Resources"
       - "Writing – original draft"
   - name          : "Claudia Liauw"
-    affiliation   : "1"
+    affiliation   : "2"
     role:
       - "Data curation"
       - "Formal Analysis"
   - name          : "S.H. Annabel Chen"
-    affiliation   : "1, 2, 3, 4"
+    affiliation   : "2, 3, 4, 5"
     orcid         : 0000-0002-1540-5516
     role:
       - "Project administration"
@@ -57,19 +57,21 @@ author:
       
 affiliation:
   - id            : "1"
-    institution   : "School of Social Sciences, Nanyang Technological University, Singapore"
+    institution   : "School of Psychology, University of Sussex, UK"
   - id            : "2"
-    institution   : "Centre for Research and Development in Learning, Nanyang Technological University, Singapore"
+    institution   : "School of Social Sciences, Nanyang Technological University, Singapore"
   - id            : "3"
-    institution   : "Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore"
+    institution   : "Centre for Research and Development in Learning, Nanyang Technological University, Singapore"
   - id            : "4"
+    institution   : "Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore"
+  - id            : "5"
     institution   : "National Institute of Education, Nanyang Technological University, Singapore"
 abstract: |
 output:
   papaja::apa6_pdf:
     keep_tex: yes
-keywords: "Deception, Interoception, Theory of Mind, Poygraph"
-wordcount: '3629'
+keywords: "Deception, Interoception, Theory of Mind, Poygraph, Lying Ability"
+wordcount: '3720'
 bibliography: ["references.bib"]
 floatsintext: yes
 figsintext: yes
@@ -184,15 +186,18 @@ This study is comprised of 2 sessions. During session 1, participants answered a
 
 ## Data Analysis
 
-EDA was not further analyzed for the study because most participants did not yield any skin conductance responses - which we believe was partly caused by the low temperature (22 degrees Celsius) of the experimental room.
+Aware of the low number of participants, we tried to take every steps to 1) maximize power by using all available data (from individual trials) with appropriate statistical tools and 2) ensure the robustness of results by cross-validating the findings accross different measures and approaches.
 
-To ensure that our outcome variables were sensitive to the experimental manipulations, we first tested the effect of the question phrasing (direct *vs.* indirect) and condition (polygraph *vs.* interrogation) on the outcome variables. This analysis was performed using mixed models with the participants and questions both entered as random factors. Marginal contrasts analysis (denoted by $\Delta$) was also performed to clarify the differences between conditions. To allow for a better quantification of the uncertainty associated with the effects, as well as to increase the robustness to outliers and artifactual findings, all statistics were undertaken under the Bayesian framework [@makowski2019bayestestr], using informative priors centred around 0 ($t_{Confidence}(1, 0, 1)$, $t_{RT}(1, 0, 3)$, $t_{Heartrate}(1, 0, 8)$).
+Firstly, a manipulation check was carried out to ensure that our outcome variables were sensitive to the experimental manipulations, by testing the effect of the question phrasing (direct *vs.* indirect) and condition (polygraph *vs.* interrogation) on the outcome variables. This analysis was performed using mixed models with the participants and questions both entered as random factors. Marginal contrasts analysis (denoted by $\Delta$) was also performed to clarify the differences between conditions. To allow for a better quantification of the uncertainty associated with the effects, as well as to increase the robustness to outliers and artefactual findings, all statistics were undertaken under the Bayesian framework [@makowski2019bayestestr], using informative priors centred around 0 ($t_{Confidence}(1, 0, 1)$, $t_{RT}(1, 0, 3)$, $t_{Heartrate}(1, 0, 8)$).
 
-To further counterbalance the low number of participants and maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, ToM and interoception) using factor analysis over PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modelled the relationship between these inter-individual composite scores (note that the analysis for all individual variables is nonetheless included in the analysis report) and the 3 outcome variables in interaction with the condition (polygraph *vs.* interrogation). Finally, we investigated the relationship between the deception scale traits, and the ToM and interoception scores using Bayesian correlations.
+To maximize the signal-to-noise ratio, we performed a feature reduction on our two groups of predictor variables (namely, ToM and interoception) using factor analysis over PCA, as the goal was to extract meaningful and consistent factors, rather than merely maximizing the variance explained. Then, we modelled the relationship between these inter-individual composite scores (note that the analysis for all individual variables is nonetheless included in the analysis report) and the 3 outcome variables in interaction with the condition (polygraph *vs.* interrogation). Finally, we investigated the relationship between the deception scale traits, and the ToM and interoception scores using Bayesian correlations. As all the analyses and data has been made available, we will in the manuscript focus on significant, i.e., - in this context - statistically reliable and in our opinion theoretically relevant.
 
-The data analysis was carried out using *R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@makowski2019bayestestr; @correlationArticle; @performanceArticle; @insightArticle], and the physiological signal processing was done using the default routines avaialble in *NeuroKit2* [@makowski2021neurokit2]. As the full reproducible analysis script and statistical results report are available at 
+The data analysis was carried out using *R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@makowski2019bayestestr; @correlationArticle; @performanceArticle; @insightArticle], and the physiological signal processing was done using the default routines avaialble in *NeuroKit2* [@makowski2021neurokit2]. Note that EDA was not further analyzed as most participants did not yield any skin conductance responses - which we believe was partly caused by the low temperature (with dry air-con air) of the experimental room. 
+
+The analysis was not pre-registered (stemming out from a student's project), but the full reproducible analysis script, statistical results report, and data, are available at 
 https://github.com/DominiqueMakowski/DeceptionInteroTom
-, we will only focus on significant results in the manuscript.
+
+
 
 # Results
 
@@ -246,7 +251,7 @@ The present study examined the contribution of ToM and interoception on our abil
 <!-- Using a bi-modal feedback deception task, we found partial support for our hypothesis. Specifically, participants reported lower lie confidence and took a longer time to respond, but were less physiologically aroused in the *Polygraph* condition, relative to the *Interrogation* condition. While this mixed finding is challenging to interpret, it is possible that one's interoceptive sensitivity, enhanced by the perceived interoceptive cues, interacted with the stress experienced in such deceptive interactions and led to a depletion of cognitive resources [@ten2015physically; @porter2012secrets]. Indeed, the experience of excessive stress has been shown to impair interoceptive accuracy, leading to a hyper-focus on internal bodily signals [@schulz2015interoception]. Furthermore, this is also in line with the established attentional switching hypothesis, which posits that an increase in attention towards internal signals and managing one's emotional reaction would confer less cognitive resources available for the actual act of telling a lie, thereby resulting in individuals taking a longer time to respond, and rating their lies with less confidence [@arnold2019interoception; @hanania2010selective]. This interplay of interoception and maladaptive stress response, and their effect on lying ability hence underscores the complexity underlying successful deceptive behaviour. -->
 
 <!-- TOM -->
-Our results suggest that higher ToM abilities were related to slower and less confident lies, but only in the polygraph condition. One possible interpretation of our findings is that people with stronger ToM abilities by default rely more on their social skills and altercentric inference when lying (i.e., they focus on - and try to read - the other person). When that mechanism is unavailable or unsuited (e.g., when there is no person to lie to - but a "machine" in our case), their corresponding lying ability decreases. In light of the current field of mixed findings relating interoception and ToM [@shah2017heart; @gao2019bodyl; @canino2022embodiment; @miller2015connections], future studies are necessary to investigate the interaction of these mechanisms in different social contexts.
+Our results suggest that higher ToM abilities were related to slower and less confident lies, but only in the polygraph condition. One possible interpretation of our findings is that people with stronger ToM abilities by default rely more on their social skills and altercentric inference when lying (i.e., they focus on - and try to read - the other person). When that mechanism is unavailable or unsuited (e.g., when there is no person to lie to - but a "machine" in our case), their corresponding lying ability decreases. In light of the current field of mixed findings relating interoception and ToM [@shah2017heart; @gao2019body; @canino2022embodiment; @miller2015connections], future studies are necessary to investigate the interaction of these mechanisms in different social contexts.
 
 
 <!-- Interoception -->
@@ -275,7 +280,7 @@ In conclusion, this study is a first step towards assessing the contribution of 
 
 # Data Availability
 
-The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, preregistration, etc.) for this research is available at **https://github.com/DominiqueMakowski/DeceptionInteroTom**.
+The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, etc.) for this research is available at **https://github.com/DominiqueMakowski/DeceptionInteroTom**.
 
 
 
@@ -290,7 +295,7 @@ The authors declare no conflict of interest.
 
 # Acknowledgements
 
-We would like to thank Jia Rong Low and Maximilian Yong for his help in data collection.
+We would like to thank Jia Rong Low and Maximilian Yong for their help in data collection.
 
 
 \newpage
