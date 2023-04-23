@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.11)  23 APR 2023 08:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.11)  23 APR 2023 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,24 +585,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./manuscript.aux)
 \openout1 = `manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 197.
-LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -653,118 +653,112 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package ragged2e Info: ABD: executing \RaggedRight on input line 197.
-Package hyperref Info: Link coloring OFF on input line 197.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 203.
+Package hyperref Info: Link coloring OFF on input line 203.
 (./manuscript.out) (./manuscript.out)
 \@outlinefile=\write5
 \openout5 = `manuscript.out'.
 
-
-Class apa6 Warning: Abstract not defined.
-
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 199.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 205.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 199.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 205.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 199.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 205.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 199.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 205.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 199.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 205.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 199.
+(Font)              <12> on input line 205.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 199.
+(Font)              <8> on input line 205.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 199.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 199.
+(Font)              <6> on input line 205.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 205.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 199.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 205.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] [3]
+] [2] [3] [4]
 Underfull \vbox (badness 4752) has occurred while \output is active []
 
-[4] [5]
-Overfull \hbox (6.39998pt too wide) in paragraph at lines 236--237
+[5] [6]
+Overfull \hbox (6.39998pt too wide) in paragraph at lines 242--243
  []\T1/lmr/bx/n/12 Interoception.[][] \T1/lmr/m/n/12 To as-sess par-tic-i-pants' in-te-ro-cep-tive abil-ity, par-tic-i-pants com-pleted a Heart-
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[6] [7] [8] [9]
-Overfull \hbox (22.22919pt too wide) in paragraph at lines 278--279
+[7] [8] [9] [10]
+Overfull \hbox (22.22919pt too wide) in paragraph at lines 284--285
 []\T1/lmr/m/n/12 Compared to truth, lies were rated with less con-fi-dence ($\OT1/lmr/m/n/12 ^^A = \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 35\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [\OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 46\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 23]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
 
-Overfull \hbox (16.16422pt too wide) in paragraph at lines 278--279
+Overfull \hbox (16.16422pt too wide) in paragraph at lines 284--285
 \T1/lmr/m/n/12 sig-nif-i-cantly more el-e-vated dur-ing lies as com-pared to truth ($\OT1/lmr/m/n/12 ^^A = 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 16\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 57\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 73]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
 
-Overfull \hbox (83.53224pt too wide) in paragraph at lines 278--279
+Overfull \hbox (83.53224pt too wide) in paragraph at lines 284--285
 $\OT1/lmr/m/n/12 100%$\T1/lmr/m/n/12 ), and dur-ing in-ter-ro-ga-tion as com-pared to the poly-graph con-di-tion ($\OT1/lmr/m/n/12 ^^A = 4\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 84\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [4\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 23\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 5\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 44]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
 
-Overfull \hbox (74.86479pt too wide) in paragraph at lines 280--281
+Overfull \hbox (74.86479pt too wide) in paragraph at lines 286--287
 []\T1/lmr/m/n/12 The in-di-rect phras-ing of the ques-tion only had a sig-nif-i-cant ef-fect on RT ($\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/12 = 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 36\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 21\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 51]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
-[10]
-Overfull \hbox (114.86024pt too wide) in paragraph at lines 292--293
+[11]
+Overfull \hbox (114.86024pt too wide) in paragraph at lines 298--299
 []\T1/lmr/m/n/12 The com-pos-ite \T1/lmr/m/it/12 TOM \T1/lmr/m/n/12 score was sig-nif-i-cantly as-so-ci-ated with less con-fi-dent ($\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 19\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [\OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 36\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 02]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
-<../figures/figure1.png, id=148, 867.24pt x 1084.05pt>
+<../figures/figure1.png, id=157, 867.24pt x 1084.05pt>
 File: ../figures/figure1.png Graphic file (type png)
 <use ../figures/figure1.png>
-Package pdftex.def Info: ../figures/figure1.png  used on input line 295.
+Package pdftex.def Info: ../figures/figure1.png  used on input line 301.
 (pdftex.def)             Requested size: 469.75827pt x 587.19783pt.
 
-LaTeX Warning: Float too large for page by 59.30771pt on input line 296.
+LaTeX Warning: Float too large for page by 59.30771pt on input line 302.
 
-[11] [12 <../figures/Figure1.png>]
-<../figures/figure2.png, id=165, 1003.75pt x 1003.75pt>
+[12] [13 <../figures/Figure1.png>]
+<../figures/figure2.png, id=174, 1003.75pt x 1003.75pt>
 File: ../figures/figure2.png Graphic file (type png)
 <use ../figures/figure2.png>
-Package pdftex.def Info: ../figures/figure2.png  used on input line 310.
+Package pdftex.def Info: ../figures/figure2.png  used on input line 316.
 (pdftex.def)             Requested size: 469.75618pt x 469.75618pt.
-[13] [14 <../figures/Figure2.png>] [15] [16] [17]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 350.
+[14] [15 <../figures/Figure2.png>] [16] [17] [18]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 357.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 352.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 359.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 352--352
+Overfull \hbox (11.89522pt too wide) in paragraph at lines 359--359
 []\T1/lmtt/m/n/12 ## Warning in readLines(file): incomplete final line found on \TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 references.bib\TS1/lmtt/m/n/12 '[] 
  []
 
 
 Underfull \vbox (badness 1028) has occurred while \output is active []
-
-[18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -776,33 +770,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [22]
-Overfull \hbox (4.38086pt too wide) in paragraph at lines 507--509
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[23]
+Overfull \hbox (4.38086pt too wide) in paragraph at lines 514--516
  \T1/lmr/m/n/12 (2022). Pro-gres-sion of socio-cognitive im-pair-ment from healthy ag-ing to alzheimer's
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23]
+[24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[24] AED endfloat: Processing end Figures and Tables [25] (./manuscript.aux)
+[25] AED endfloat: Processing end Figures and Tables [26] (./manuscript.aux)
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: 0D8B75E5D02746569CE306EC229E1D7C;2607.
+(rerunfilecheck)             Checksum: 4EF6530B6D06844668B0898A49927E2B;2693.
  ) 
 Here is how much of TeX's memory you used:
- 16492 strings out of 477989
- 273329 string characters out of 5837889
+ 16495 strings out of 477989
+ 273360 string characters out of 5837889
  1862340 words of memory out of 5000000
- 36235 multiletter control sequences out of 15000+600000
+ 36236 multiletter control sequences out of 15000+600000
  566386 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,11n,77p,1821b,562s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on manuscript.pdf (25 pages, 1042181 bytes).
+Output written on manuscript.pdf (26 pages, 1043430 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
- 134 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 352 compressed objects within 4 object streams
+ 136 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

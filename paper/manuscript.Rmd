@@ -67,6 +67,7 @@ affiliation:
   - id            : "5"
     institution   : "National Institute of Education, Nanyang Technological University, Singapore"
 abstract: |
+  While a large part of the deception literature focuses on lying detection, the factors contributing to one's ability to lie remain unclear. The present study examined the contribution of Theory of Mind (ToM) and interoception on our ability to lie using a directed lie paradigm with two conditions ("Interrogation" and "Polygraph"), designed to enhance each of the two mechanisms. Using a mixed-design Bayesian analysis, we show that various facets of interoceptive abilities are positively related to the self-rated confidence in one's own lies, especially when under the belief that bodily signals are being monitored (i.e., in the "Polygraph" condition). Beyond providing evidence for the role of the body in lying and raising interesting questions for deception science, these results carry practical implications for criminology and lie detection protocols.
 output:
   papaja::apa6_pdf:
     keep_tex: yes
@@ -195,7 +196,8 @@ To maximize the signal-to-noise ratio, we performed a feature reduction on our t
 The data analysis was carried out using *R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@makowski2019bayestestr; @correlationArticle; @performanceArticle; @insightArticle], and the physiological signal processing was done using the default routines avaialble in *NeuroKit2* [@makowski2021neurokit2]. Note that EDA was not further analyzed as most participants did not yield any skin conductance responses - which we believe was partly caused by the low temperature (with dry air-con air) of the experimental room. 
 
 The analysis was not pre-registered (stemming out from a student's project), but the full reproducible analysis script, statistical results report, and data, are available at 
-https://github.com/DominiqueMakowski/DeceptionInteroTom
+<!-- **[masked for blinding]** -->
+**https://github.com/DominiqueMakowski/DeceptionInteroTom**
 
 
 
@@ -280,13 +282,10 @@ In conclusion, this study is a first step towards assessing the contribution of 
 
 # Data Availability
 
-The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, etc.) for this research is available at **https://github.com/DominiqueMakowski/DeceptionInteroTom**.
+The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, etc.) for this research is available at 
+**https://github.com/DominiqueMakowski/DeceptionInteroTom**.
+<!-- **[masked for blinding]**. -->
 
-
-
-<!-- # Funding -->
-
-<!-- **no funding** -->
 
 
 # Conflict of Interest Statement
@@ -295,6 +294,7 @@ The authors declare no conflict of interest.
 
 # Acknowledgements
 
+<!-- **[masked for blinding]** -->
 We would like to thank Jia Rong Low and Maximilian Yong for their help in data collection.
 
 
