@@ -219,7 +219,7 @@ The 8 MAIA dimensions and the 3 HCT components were reduced to 4 factors (explai
 
 The composite *TOM* score was significantly associated with less confident ($\beta=-0.19,~95\%~CI~[-0.36, -0.02],~pd = 98.47\%$) and slower lies ($\beta=0.42,~95\%~CI~[0.01, 0.83],~pd = 97.67\%$), specifically in the polygraph condition. No significant effect was found with regards to heart rate, and no correlation was observed with dispositional lying traits (**Figure 1**).
 
-```{r message=FALSE, warning=FALSE, out.width="100%", fig.cap="Interindividual corrrelates of lying confidence. The lines shows the relationship (with 95\\% CI uncertainty), assessed via Bayesian mixed models (\\***pd > 97\\%, \\***pd > 99\\%, \\****pd > 99.9\\%), between the participants' interoceptive and TOM composite scores and the confidence ratings of their responses. Average lying confidence (+/- 1 SD) within the two experimental conditions is displayed as points for descriptive purposes as the models were ran on individual trials."}
+```{r message=FALSE, warning=FALSE, out.width="100%", fig.cap="Interindividual corrrelates of lying confidence. The lines shows the relationship (with 95\\% CI uncertainty), assessed via Bayesian mixed models (\\***pd > 97\\%, \\***pd > 99\\%, \\****pd > 99.9\\%), between the participants' interoceptive and ToM composite scores and the confidence ratings of their responses. Average lying confidence (+/- 1 SD) within the two experimental conditions is displayed as points for descriptive purposes as the models were ran on individual trials."}
 knitr::include_graphics("../figures/figure1.png")
 ```
 
