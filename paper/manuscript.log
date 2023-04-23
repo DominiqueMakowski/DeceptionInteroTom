@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.11)  23 APR 2023 10:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.11)  23 APR 2023 11:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -126,7 +126,11 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box51
+) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count267
 )
+\c@maskedRefs=\count268
 \b@level@one@skip=\skip50
 \e@level@one@skip=\skip51
 \b@level@two@skip=\skip52
@@ -151,11 +155,11 @@ Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
 \caption@hangindent=\dimen171
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count267
-\c@continuedfloat=\count268
+\c@caption@flags=\count269
+\c@continuedfloat=\count270
 Package caption Info: threeparttable package is loaded.
 )
-\c@APAenum=\count269
+\c@APAenum=\count271
 \@text@par@indent=\skip60
 \gr@box=\box52
 \gr@boxwidth=\skip61
@@ -168,7 +172,7 @@ Package: bm 2022/01/05 v1.2f Bold Symbol Support (DPC/FMi)
 Package bm Info: No bold for \OMX/lmex/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-\c@appendix=\count270
+\c@appendix=\count272
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip63
@@ -182,15 +186,15 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@orf=\skip71
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/endfloat/endfloat.sty
 Package: endfloat 2019/04/15 v2.7 LaTeX2e package puts figures and tables at end (jdm)
-\c@posttable=\count271
+\c@posttable=\count273
 \efloat@postttt=\write3
-\@ef@tttopen=\count272
-\c@postfigure=\count273
+\@ef@tttopen=\count274
+\c@postfigure=\count275
 \efloat@postfff=\write4
-\@ef@fffopen=\count274
+\@ef@fffopen=\count276
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count275
+\c@float@type=\count277
 \float@exts=\toks18
 \float@box=\box53
 \@float@everytoks=\toks19
@@ -212,14 +216,14 @@ LaTeX Info: Redefining \boldsymbol on input line 28.
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count276
+\inf@bad=\count278
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count277
-\leftroot@=\count278
+\uproot@=\count279
+\leftroot@=\count280
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count279
-\DOTSCASE@=\count280
+\classnum@=\count281
+\DOTSCASE@=\count282
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -232,20 +236,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen174
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count281
+\macc@depth=\count283
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count282
+\c@MaxMatrixCols=\count284
 \dotsspace@=\muskip16
-\c@parentequation=\count283
-\dspbrk@lvl=\count284
+\c@parentequation=\count285
+\dspbrk@lvl=\count286
 \tag@help=\toks21
-\row@=\count285
-\column@=\count286
-\maxfields@=\count287
+\row@=\count287
+\column@=\count288
+\maxfields@=\count289
 \andhelp@=\toks22
 \eqnshift@=\dimen175
 \alignsep@=\dimen176
@@ -308,24 +312,24 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 \cslentryspacingunit=\skip77
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count288
-\calc@Bcount=\count289
+\calc@Acount=\count290
+\calc@Bcount=\count291
 \calc@Adimen=\dimen181
 \calc@Bdimen=\dimen182
 \calc@Askip=\skip78
 \calc@Bskip=\skip79
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count290
+\calc@Ccount=\count292
 \calc@Cskip=\skip80
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2022/01/23 3.85 The Babel package
-\babel@savecnt=\count291
+\babel@savecnt=\count293
 \U@D=\dimen183
 \l@unhyphenated=\language3
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count292
+\bbl@dirlevel=\count294
 Package babel Info: You haven't specified a language as a class or package
 (babel)             option. I'll load 'nil'. Reported on input line 4410.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
@@ -348,24 +352,24 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTright=\skip82
 \LTpre=\skip83
 \LTpost=\skip84
-\LTchunksize=\count293
+\LTchunksize=\count295
 \LTcapwidth=\dimen184
 \LT@head=\box57
 \LT@firsthead=\box58
 \LT@foot=\box59
 \LT@lastfoot=\box60
 \LT@gbox=\box61
-\LT@cols=\count294
-\LT@rows=\count295
-\c@LT@tables=\count296
-\c@LT@chunks=\count297
+\LT@cols=\count296
+\LT@rows=\count297
+\c@LT@tables=\count298
+\c@LT@chunks=\count299
 \LT@p@ftn=\toks28
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip85
-\multirow@cntb=\count298
+\multirow@cntb=\count300
 \multirow@dima=\skip86
 \bigstrutjot=\dimen185
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
@@ -385,7 +389,7 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@old@col=\dimen190
 \TX@target=\dimen191
 \TX@delta=\dimen192
-\TX@cols=\count299
+\TX@cols=\count301
 \TX@ftn=\toks30
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
 Package: threeparttablex 2013/07/23 v0.3 by daleif
@@ -403,7 +407,7 @@ Failed to patch title.
 Package: expl3 2023-02-07 L3 programming layer (loader) 
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count300
+\l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box64
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
@@ -411,30 +415,30 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 Package: xparse 2023-02-02 L3 Experimental document command parser
 )) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2023/01/19 line numbers on paragraphs v5.1
-\linenopenalty=\count301
+\linenopenalty=\count303
 \output=\toks31
-\linenoprevgraf=\count302
+\linenoprevgraf=\count304
 \linenumbersep=\dimen193
 \linenumberwidth=\dimen194
-\c@linenumber=\count303
-\c@pagewiselinenumber=\count304
-\c@LN@truepage=\count305
-\c@internallinenumber=\count306
-\c@internallinenumbers=\count307
+\c@linenumber=\count305
+\c@pagewiselinenumber=\count306
+\c@LN@truepage=\count307
+\c@internallinenumber=\count308
+\c@internallinenumbers=\count309
 \quotelinenumbersep=\dimen195
 \bframerule=\dimen196
 \bframesep=\dimen197
 \bframebox=\box65
-\linenoamsmath@ams@eqpen=\count308
+\linenoamsmath@ams@eqpen=\count310
 LaTeX Info: Redefining \\ on input line 3131.
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count309
-\csq@gtype=\count310
-\csq@glevel=\count311
-\csq@qlevel=\count312
-\csq@maxlvl=\count313
-\csq@tshold=\count314
+\csq@reset=\count311
+\csq@gtype=\count312
+\csq@glevel=\count313
+\csq@qlevel=\count314
+\csq@maxlvl=\count315
+\csq@tshold=\count316
 \csq@ltx@everypar=\toks32
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
@@ -502,11 +506,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count315
+\c@section@level=\count317
 )
 \@linkdim=\dimen256
-\Hy@linkcounter=\count316
-\Hy@pagecounter=\count317
+\Hy@linkcounter=\count318
+\Hy@pagecounter=\count319
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -516,7 +520,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count318
+\Hy@SavedSpaceFactor=\count320
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -530,7 +534,7 @@ Package hyperref Info: Plain pages OFF on input line 4192.
 Package hyperref Info: Backreferencing OFF on input line 4197.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count319
+\c@Hy@tempcnt=\count321
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -542,7 +546,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count320
+\Fld@menulength=\count322
 \Field@Width=\dimen258
 \Fld@charsize=\dimen259
 Package hyperref Info: Hyper figures OFF on input line 6042.
@@ -556,9 +560,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count321
-\c@Item=\count322
-\c@Hfootnote=\count323
+\Hy@abspage=\count323
+\c@Item=\count324
+\c@Hfootnote=\count325
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -567,8 +571,8 @@ File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count324
-\c@bookmark@seq@number=\count325
+\Fld@listcount=\count326
+\c@bookmark@seq@number=\count327
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -585,24 +589,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./manuscript.aux)
 \openout1 = `manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -653,112 +657,115 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package ragged2e Info: ABD: executing \RaggedRight on input line 203.
-Package hyperref Info: Link coloring OFF on input line 203.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 202.
+Package hyperref Info: Link coloring OFF on input line 202.
 (./manuscript.out) (./manuscript.out)
 \@outlinefile=\write5
 \openout5 = `manuscript.out'.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 205.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 204.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 205.
-(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 205.
-(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 205.
-(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 205.
-(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 205.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 205.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 205.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 205.
-(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 205.
-(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] [3] [4]
+] [2] [3]
 Underfull \vbox (badness 4752) has occurred while \output is active []
 
-[5] [6]
-Overfull \hbox (6.39998pt too wide) in paragraph at lines 242--243
+[4] [5]
+Overfull \hbox (6.39998pt too wide) in paragraph at lines 241--242
  []\T1/lmr/bx/n/12 Interoception.[][] \T1/lmr/m/n/12 To as-sess par-tic-i-pants' in-te-ro-cep-tive abil-ity, par-tic-i-pants com-pleted a Heart-
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[7] [8] [9] [10]
-Overfull \hbox (22.22919pt too wide) in paragraph at lines 284--285
+[6] [7]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 268.
+(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 268.
+(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 268.
+(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 268.
+(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 268.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 268.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 268.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 268.
+(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 268.
+(c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [8] [9]
+Overfull \hbox (22.22919pt too wide) in paragraph at lines 283--284
 []\T1/lmr/m/n/12 Compared to truth, lies were rated with less con-fi-dence ($\OT1/lmr/m/n/12 ^^A = \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 35\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [\OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 46\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 23]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
 
-Overfull \hbox (16.16422pt too wide) in paragraph at lines 284--285
+Overfull \hbox (16.16422pt too wide) in paragraph at lines 283--284
 \T1/lmr/m/n/12 sig-nif-i-cantly more el-e-vated dur-ing lies as com-pared to truth ($\OT1/lmr/m/n/12 ^^A = 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 16\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 57\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 73]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
 
-Overfull \hbox (83.53224pt too wide) in paragraph at lines 284--285
+Overfull \hbox (83.53224pt too wide) in paragraph at lines 283--284
 $\OT1/lmr/m/n/12 100%$\T1/lmr/m/n/12 ), and dur-ing in-ter-ro-ga-tion as com-pared to the poly-graph con-di-tion ($\OT1/lmr/m/n/12 ^^A = 4\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 84\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [4\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 23\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 5\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 44]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
 
-Overfull \hbox (74.86479pt too wide) in paragraph at lines 286--287
+Overfull \hbox (74.86479pt too wide) in paragraph at lines 285--286
 []\T1/lmr/m/n/12 The in-di-rect phras-ing of the ques-tion only had a sig-nif-i-cant ef-fect on RT ($\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/12 = 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 36\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 21\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 51]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
-[11]
-Overfull \hbox (114.86024pt too wide) in paragraph at lines 298--299
+[10]
+Overfull \hbox (114.86024pt too wide) in paragraph at lines 297--298
 []\T1/lmr/m/n/12 The com-pos-ite \T1/lmr/m/it/12 TOM \T1/lmr/m/n/12 score was sig-nif-i-cantly as-so-ci-ated with less con-fi-dent ($\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 19\OML/lmm/m/it/12 ;  \OT1/lmr/m/n/12 95% \OML/lmm/m/it/12 CI \OT1/lmr/m/n/12 [\OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 36\OML/lmm/m/it/12 ; \OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 02]\OML/lmm/m/it/12 ;  pd \OT1/lmr/m/n/12 =$
  []
 
-<../figures/figure1.png, id=157, 867.24pt x 1084.05pt>
+<../figures/figure1.png, id=145, 867.24pt x 1084.05pt>
 File: ../figures/figure1.png Graphic file (type png)
 <use ../figures/figure1.png>
-Package pdftex.def Info: ../figures/figure1.png  used on input line 301.
+Package pdftex.def Info: ../figures/figure1.png  used on input line 300.
 (pdftex.def)             Requested size: 469.75827pt x 587.19783pt.
 
-LaTeX Warning: Float too large for page by 59.30771pt on input line 302.
+LaTeX Warning: Float too large for page by 59.30771pt on input line 301.
 
-[12] [13 <../figures/Figure1.png>]
-<../figures/figure2.png, id=174, 1003.75pt x 1003.75pt>
+[11] [12 <../figures/Figure1.png>]
+<../figures/figure2.png, id=162, 1003.75pt x 1003.75pt>
 File: ../figures/figure2.png Graphic file (type png)
 <use ../figures/figure2.png>
-Package pdftex.def Info: ../figures/figure2.png  used on input line 316.
+Package pdftex.def Info: ../figures/figure2.png  used on input line 315.
 (pdftex.def)             Requested size: 469.75618pt x 469.75618pt.
-[14] [15 <../figures/Figure2.png>] [16] [17] [18]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 357.
+[13] [14 <../figures/Figure2.png>] [15] [16] [17]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 356.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 359.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 358.
 (c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 359--359
+Overfull \hbox (11.89522pt too wide) in paragraph at lines 358--358
 []\T1/lmtt/m/n/12 ## Warning in readLines(file): incomplete final line found on \TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 references.bib\TS1/lmtt/m/n/12 '[] 
  []
 
 
 Underfull \vbox (badness 1028) has occurred while \output is active []
+
+[18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -770,36 +777,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [22]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[23]
-Overfull \hbox (4.38086pt too wide) in paragraph at lines 514--516
+Overfull \hbox (4.38086pt too wide) in paragraph at lines 513--515
  \T1/lmr/m/n/12 (2022). Pro-gres-sion of socio-cognitive im-pair-ment from healthy ag-ing to alzheimer's
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[24]
+[23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[25] AED endfloat: Processing end Figures and Tables [26] (./manuscript.aux)
+[24] AED endfloat: Processing end Figures and Tables [25] (./manuscript.aux)
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: 4EF6530B6D06844668B0898A49927E2B;2693.
  ) 
 Here is how much of TeX's memory you used:
- 16495 strings out of 477989
- 273360 string characters out of 5837889
+ 16546 strings out of 477989
+ 274528 string characters out of 5837889
  1862340 words of memory out of 5000000
- 36236 multiletter control sequences out of 15000+600000
- 566386 words of font info for 72 fonts, out of 8000000 for 9000
+ 36284 multiletter control sequences out of 15000+600000
+ 563394 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,11n,77p,1821b,562s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/domma/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on manuscript.pdf (26 pages, 1043430 bytes).
+Output written on manuscript.pdf (25 pages, 1032573 bytes).
 PDF statistics:
- 414 PDF objects out of 1000 (max. 8388607)
- 352 compressed objects within 4 object streams
- 136 named destinations out of 1000 (max. 500000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 135 named destinations out of 1000 (max. 500000)
  171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

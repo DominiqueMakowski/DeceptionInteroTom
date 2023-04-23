@@ -23,11 +23,11 @@ author:
       - "Validation"
       - "Visualization"
       - "Writing – original draft"
-  - name          : "Zen J. Lau"
+  - name          : "Zen J. Lau"  # lauzenjuen@gmail.com
     affiliation   : " 2"
-  - name          : "Tam Pham"
+  - name          : "Tam Pham"  # phamttam17@gmail.com
     affiliation   : " 2"
-  - name          : "An Shu Te"
+  - name          : "An Shu Te" # anshu.te@ntu.edu.sg
     affiliation   : "2"
     orcid         : 0000-0001-8008-2824
     role:
@@ -35,19 +35,19 @@ author:
       - "Resources"
       - "Investigation"
       - "Writing – original draft"
-  - name          : "Stephanie Kirk"
+  - name          : "Stephanie Kirk"  # stephanie.morgank@gmail.com
     affiliation   : "2"
     orcid         : 0000-0002-9312-5552
     role:
       - "Project administration"
       - "Resources"
       - "Writing – original draft"
-  - name          : "Claudia Liauw"
+  - name          : "Claudia Liauw"  # YLIAUW001@e.ntu.edu.sg
     affiliation   : "2"
     role:
       - "Data curation"
       - "Formal Analysis"
-  - name          : "S.H. Annabel Chen"
+  - name          : "S.H. Annabel Chen"  # AnnabelChen@ntu.edu.sg
     affiliation   : "2, 3, 4, 5"
     orcid         : 0000-0002-1540-5516
     role:
@@ -71,7 +71,7 @@ abstract: |
 output:
   papaja::apa6_pdf:
     keep_tex: yes
-keywords: "Deception, Interoception, Theory of Mind, Poygraph, Lying Ability"
+keywords: "Deception; Interoception; Theory of Mind; Poygraph; Lying Ability"
 wordcount: '3720'
 bibliography: ["references.bib"]
 floatsintext: yes
@@ -80,7 +80,7 @@ figurelist: no
 tablelist: no
 footnotelist: no
 linenumbers: yes
-mask: no
+mask: yes
 draft: no
 documentclass: apa6
 classoption: man
@@ -196,8 +196,8 @@ To maximize the signal-to-noise ratio, we performed a feature reduction on our t
 The data analysis was carried out using *R 4.2* [@RCoreTeam2022], *brms* [@Burkner2017], and the *easystats* collection of packages [@makowski2019bayestestr; @correlationArticle; @performanceArticle; @insightArticle], and the physiological signal processing was done using the default routines avaialble in *NeuroKit2* [@makowski2021neurokit2]. Note that EDA was not further analyzed as most participants did not yield any skin conductance responses - which we believe was partly caused by the low temperature (with dry air-con air) of the experimental room. 
 
 The analysis was not pre-registered (stemming out from a student's project), but the full reproducible analysis script, statistical results report, and data, are available at 
-<!-- **[masked for blinding]** -->
-**https://github.com/DominiqueMakowski/DeceptionInteroTom**
+**[masked for blinding]**
+<!-- **https://github.com/DominiqueMakowski/DeceptionInteroTom** -->
 
 
 
@@ -283,8 +283,8 @@ In conclusion, this study is a first step towards assessing the contribution of 
 # Data Availability
 
 The material (stimuli generation code, experiment code, raw data, analysis script with complementary figures and analyses, etc.) for this research is available at 
-**https://github.com/DominiqueMakowski/DeceptionInteroTom**.
-<!-- **[masked for blinding]**. -->
+<!-- **https://github.com/DominiqueMakowski/DeceptionInteroTom**. -->
+**[masked for blinding]**.
 
 
 
@@ -294,8 +294,8 @@ The authors declare no conflict of interest.
 
 # Acknowledgements
 
-<!-- **[masked for blinding]** -->
-We would like to thank Jia Rong Low and Maximilian Yong for their help in data collection.
+**[masked for blinding]**
+<!-- We would like to thank Jia Rong Low and Maximilian Yong for their help in data collection. -->
 
 
 \newpage
