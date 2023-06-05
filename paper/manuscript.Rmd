@@ -25,8 +25,18 @@ author:
       - "Writing – original draft"
   - name          : "Zen J. Lau"  # lauzenjuen@gmail.com
     affiliation   : " 2"
+    role:
+      - "Data curation"
+      - "Project administration"
+      - "Resources"
+      - "Investigation"
   - name          : "Tam Pham"  # phamttam17@gmail.com
     affiliation   : " 2"
+    role:
+      - "Data curation"
+      - "Project administration"
+      - "Resources"
+      - "Investigation"
   - name          : "An Shu Te" # anshu.te@ntu.edu.sg
     affiliation   : "2"
     orcid         : 0000-0001-8008-2824
@@ -69,7 +79,7 @@ affiliation:
 abstract: |
   While a large part of the deception literature focuses on lying detection, the factors contributing to one's ability to lie remain unclear. The present study examined the contribution of Theory of Mind (ToM) and interoception on our ability to lie using a directed lie paradigm with two conditions ("Interrogation" and "Polygraph"), designed to enhance each of the two mechanisms. Using a mixed-design Bayesian analysis, we show that various facets of interoceptive abilities are positively related to the self-rated confidence in one's own lies, especially when under the belief that bodily signals are being monitored (i.e., in the "Polygraph" condition). Beyond providing evidence for the role of the body in lying and raising interesting questions for deception science, these results carry practical implications for criminology and lie detection protocols.
 output:
-  papaja::apa6_pdf:
+  papaja::apa6_word:
     keep_tex: yes
 keywords: "Deception; Interoception; Theory of Mind; Poygraph; Lying Ability"
 wordcount: '3720'
