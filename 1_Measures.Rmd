@@ -57,8 +57,19 @@ df %>%
 ### BES Questionnaire
 
 ```{r message=FALSE}
-df %>% 
-  group_by(Participant) %>% 
+
+bes_items <- read.csv("preprocessing/BES_processed.csv")
+bes_items |>   # Cognitive
+  select(Q3,Q6,Q9,Q10,Q12,Q14,Q16,Q19,Q20) |> 
+  cronbachs_alpha()
+bes_items |> 
+  select(Q1,Q2,Q4,Q5,Q7,Q8,Q11,Q13,Q15,Q17,Q18) |> 
+  cronbachs_alpha()
+```
+
+```{r message=FALSE}
+df |> 
+  group_by(Participant) |> 
   select(starts_with("BES_")) |> 
   summarise_all(mean, na.rm=TRUE) |> 
   tidyr::pivot_longer(-Participant, values_to = "Scores") |> 
@@ -110,6 +121,42 @@ htt_data |>
 ### MAIA
 
 ```{r message=FALSE}
+items <- read.csv("preprocessing/MAIA2_processed.csv")
+# Noticing
+items |>  
+  select(Q1,Q2,Q3,Q4) |> 
+  performance::cronbachs_alpha()
+# Not-distracting
+items |>  
+  select(Q5,Q6,Q7,Q8,Q9,Q10) |> 
+  performance::cronbachs_alpha()
+# Not-worrying
+items |>  
+  select(Q11,Q12,Q13,Q14,Q15) |> 
+  performance::cronbachs_alpha()
+# AttentionRegulation
+items |>  
+  select(Q16,Q17,Q18,Q19,Q20,Q21,Q22) |> 
+  performance::cronbachs_alpha()
+# EmotionalAwareness
+items |>  
+  select(Q23,Q24,Q25,Q26,Q27) |> 
+  performance::cronbachs_alpha()
+# SelfRegulation
+items |>  
+  select(Q28,Q29,Q30,Q31) |> 
+  performance::cronbachs_alpha()
+# BodyListening
+items |>  
+  select(Q32,Q33,Q34) |> 
+  performance::cronbachs_alpha()
+# Trusting
+items |>  
+  select(Q35,Q36,Q37) |> 
+  performance::cronbachs_alpha()
+```
+
+```{r message=FALSE}
 df %>% 
   group_by(Participant) %>% 
   select(starts_with("MAIA_")) |> 
@@ -126,6 +173,26 @@ df %>%
 ## Deception
 
 ### LIE Scale
+
+```{r message=FALSE}
+items <- read.csv("preprocessing/LIE_processed.csv")
+# Ability
+items |>  
+  select(Q4,Q5,Q6,Q7) |> 
+  performance::cronbachs_alpha()
+# Frequency
+items |>  
+  select(Q1,Q2,Q3,Q8) |> 
+  performance::cronbachs_alpha()
+# Negativity
+items |>  
+  select(Q9,Q11,Q13,Q16) |> 
+  performance::cronbachs_alpha()
+# AContextuality
+items |>  
+  select(Q10,Q12,Q14,Q15) |> 
+  performance::cronbachs_alpha()
+```
 
 ```{r message=FALSE}
 df %>% 
