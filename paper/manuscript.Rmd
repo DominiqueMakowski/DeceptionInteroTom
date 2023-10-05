@@ -81,7 +81,7 @@ abstract: |
 output:
   papaja::apa6_pdf:
     keep_tex: yes
-keywords: "Deception; Interoception; Theory of Mind; Poygraph; Lying Ability"
+keywords: "Deception; Interoception; Theory of Mind; Polygraph; Lying Ability"
 wordcount: '5004'
 bibliography: ["references.bib"]
 floatsintext: yes
