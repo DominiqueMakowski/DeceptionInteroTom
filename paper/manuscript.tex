@@ -138,13 +138,13 @@
   {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
-% \usepackage{etoolbox}
 \makeatletter
-\patchcmd{\HyOrg@maketitle}
+\usepackage{etoolbox}
+\patchcmd{\maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\HyOrg@maketitle}
+\patchcmd{\maketitle}
   {\section{\protect\normalfont{\@title}}}
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
@@ -158,7 +158,7 @@
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
-\keywords{Deception; Interoception; Theory of Mind; Poygraph; Lying Ability\newline\indent Word count: 5004}
+\keywords{Deception; Interoception; Theory of Mind; Polygraph; Lying Ability\newline\indent Word count: 5004}
 \usepackage{lineno}
 
 \linenumbers
@@ -175,7 +175,7 @@
 \hypersetup{
   pdftitle={The Heart can Lie: A Preliminary Investigation of the Role of Interoception and Theory of Mind in Deception},
   pdflang={en-EN},
-  pdfkeywords={Deception; Interoception; Theory of Mind; Poygraph; Lying Ability},
+  pdfkeywords={Deception; Interoception; Theory of Mind; Polygraph; Lying Ability},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
