@@ -671,7 +671,7 @@ p5 <- ggplot(link_data, aes(x = Intero_Regulation, y = Predicted)) +
 p5
 
 
-p <- (p1 / p2 / p3 / p4 / p5) + plot_layout(guides = "collect") + plot_annotation(title = "Interindividual correlates of the confidence\nthat one tells a convincing lie", theme = list(plot.title = element_text(face = "bold", hjust = 0.5)))
+p <- (p1 / p2 / p3 / p4 / p5) + plot_layout(guides = "collect") + plot_annotation(title = "Interindividual correlates of the confidence\nthat one tells a convincing response", theme = list(plot.title = element_text(face = "bold", hjust = 0.5)))
 p
 ggsave("figures/Figure1.png", width=12, height=15)
 ```
