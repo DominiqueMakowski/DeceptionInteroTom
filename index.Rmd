@@ -65,13 +65,12 @@ df$HeartRate[df$Participant == "S30"] <- NA # Extreme values
 # df$Confidence[df$Participant %in% c("S9", "S29")] <- NA # Extreme responses
 df$RT[df$Participant == "S13"] <- NA # Slower than the others
 
-
 # Remove outlier trials
-df <- df |>
-  group_by(Participant) |>
-  mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore", threshold = qnorm(0.99999))),
-         Outliers_Physio = as.logical(performance::check_outliers(HeartRate, method = "zscore", threshold = qnorm(0.99999)))) |>
-  ungroup()
+# df <- df |>
+#   group_by(Participant) |>
+#   mutate(Outliers_RT = as.logical(performance::check_outliers(RT, method = "zscore", threshold = qnorm(0.99999))),
+#          Outliers_Physio = as.logical(performance::check_outliers(HeartRate, method = "zscore", threshold = qnorm(0.99999)))) |>
+#   ungroup()
 
 # Adjustments for beta models
 df$Confidence[df$Confidence == 1] <- 0.99999
@@ -472,9 +471,9 @@ data <- df |>
          Intero_Meta_Mean = ifelse(Condition == "Polygraph", Intero_Meta_Mean-0.01, Intero_Meta_Mean+0.01),
          Intero_Listening_Mean = ifelse(Condition == "Polygraph", Intero_Listening_Mean-0.01, Intero_Listening_Mean+0.01))
 
-model <- glmmTMB(Confidence ~ Answer / Condition / ToM + (1|Participant) + (1|Item), 
-                 data = df, 
-                 family = beta_family())
+# model <- glmmTMB(Confidence ~ Answer / Condition / ToM + (1|Participant) + (1|Item), 
+#                  data = df, 
+#                  family = beta_family())
 
 model <- brms::brm(Confidence ~ Answer / Condition / ToM + (1|Participant) + (1|Item), 
                    data = df, family = "beta", seed=3, refresh=0,
@@ -612,11 +611,11 @@ p4 <- ggplot(link_data, aes(x = Intero_Focus, y = Predicted)) +
               size=2) +
   geom_ribbon(aes(ymin = CI_low, ymax = CI_high, fill = Condition), alpha = 1/3) +
   geom_line(aes(color = Condition), size=1) +
-  geom_text(data=data.frame(Intero_Focus = -0.2,
+  geom_text(data=data.frame(Intero_Focus = -0.25,
                             Predicted = c(0.55, 0.75),
                             Condition = c("Polygraph", "Interrogation"),
                             Answer = c("Truth", "Truth")),
-            label = format_pd(c(0.9716, 0.9576), stars_only = TRUE),
+            label = format_pd(c(0.9576, 0.9716), stars_only = TRUE),
             color = c("#2196F3", "#FF5722"),
             size = 10, show.legend = FALSE, fontface = "bold") +
   labs(y = "Confidence",
