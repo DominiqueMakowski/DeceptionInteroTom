@@ -81,9 +81,9 @@ affiliation:
 abstract: |
   While a large part of the deception literature focuses on lying detection, the factors contributing to one's ability to lie remain unclear. The present study examined the contribution of Theory of Mind (ToM) and interoception on our ability to lie using a directed lie paradigm with two conditions ("Interrogation" and "Polygraph"), designed to enhance each of the two mechanisms. Given the relatively small sample size (n = 26 x 40 trials), special steps were taken to avoid false positives. Our results suggest that various facets of interoceptive abilities are positively related to the self-rated confidence in one's own lies, especially when under the belief that bodily signals are being monitored (i.e., in the "Polygraph" condition). Beyond providing evidence for the role of the body in lying and raising interesting questions for deception science, these results carry practical implications for criminology and lie detection protocols.
 output:
-  papaja::apa6_pdf:
-    keep_tex: yes
   papaja::apa6_word:
+    keep_tex: yes
+  papaja::apa6_pdf:
     keep_tex: yes
 keywords: "Deception; Interoception; Theory of Mind; Polygraph; Lying Ability"
 wordcount: '5004'
